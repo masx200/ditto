@@ -56,19 +56,21 @@
 </head>
 
 <body>
+    <noscript>Your browser does not support JavaScript!</noscript>
     <!-- 优化界面展示方式,使用bootstrap可折叠的导航栏和响应式布局和cdn加载依赖包 -->
 
 
 
     <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <a class="navbar-brand" href="#README">ditto</a> <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+            <a class="navbar-brand" href="#README">ditto</a> <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <!-- <ul class="navbar-nav">
                     <li class="nav-item"> -->
-                        <div id="sidebar" class="navbar-nav"></div>
-                    <!-- </li>
+                <div id="sidebar" class="navbar-nav"></div>
+                <!-- </li>
                 </ul> -->
 
 
@@ -112,8 +114,10 @@
             ditto.run();
         });
         // $("#sidebar > ul").addClass("navbar-nav")
-        function onhashchange(){
-            if(location.hash==="" ||location.hash==="#" )  {location.hash="#README"}
+        function onhashchange() {
+            if (location.hash === "" || location.hash === "#") {
+                location.hash = "#README"
+            }
         }
         $(window).on('hashchange', onhashchange);
         // if(location.hash===""  )  {location.hash="#README"}
