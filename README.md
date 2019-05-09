@@ -70,7 +70,43 @@ https://masx200.github.io/ditto
     }
 ```
 
+### ditto.css
+```css
+#sidebar {
+    /* position: fixed;
+    width: 220px;
+    height: 100%; */
 
+    /* overflow-y: scroll; */
+    overflow: -moz-scrollbars-vertical;
+
+    margin-right: 20px;
+    margin-top: 0;
+    padding-left: 25px;
+    padding-top: 0;
+
+    box-shadow: 0 0 40px #CCC;
+    -webkit-box-shadow: 0 0 40px #CCC;
+    -moz-box-shadow: 0 0 40px #CCC;
+    border-right: 1px solid #BBB;
+}
+#content {
+    /* width: 580px; */
+
+    /* margin-left: 300px; */
+    padding-top: 10px;
+    padding-bottom: 150px;
+
+    text-align: justify;
+    font-size: 1.0em;
+}
+input[type=search] {
+    display: block;
+    /* width: 180px; */
+    width: 100%;
+    text-align: left;
+}
+```
 
 ## cdn加载依赖包
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
