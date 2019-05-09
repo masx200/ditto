@@ -2,8 +2,71 @@
 Lightweight Markdown Documentation System based on ditto
 
 https://github.com/chutsu/ditto
+
 # 优化界面展示方式,使用bootstrap可折叠的导航栏和响应式布局和cdn加载依赖包
 
+## 使用bootstrap可折叠的导航栏和响应式布局
+
+
+### index.html
+
+```html
+ <div class="container-fluid">
+        <nav class="navbar navbar-expand-sm bg-light navbar-light">
+            <a class="navbar-brand" href="#readme">ditto</a> <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <!-- <ul class="navbar-nav">
+                    <li class="nav-item"> -->
+                        <div id="sidebar" class="navbar-nav"></div>
+                    <!-- </li>
+                </ul> -->
+
+
+            </div>
+
+        </nav>
+    </div>
+    
+    
+    <div class="container">
+        <div id="content"></div>
+        <div id="hide"></div>
+
+        <!-- OPTIONAL -->
+        <div id="back_to_top">top</div>
+        <!-- <div id="edit">edit</div> -->
+        <div id="loading">Loading ...</div>
+        <div id="error"></div>
+    </div>
+```
+
+### ditto.js
+
+```javascript
+
+    function init_sidebar_section() {
+        $.get(ditto.sidebar_file, function (data) {
+            ditto.sidebar_id.html(marked(data));
+
+            if (ditto.searchbar) {
+                init_searchbar();
+            }
+
+//由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
+            $("#sidebar > ul").addClass("navbar-nav")
+
+
+        }, "text").fail(function () {
+            alert("Opps! can't find the sidebar file to display!");
+        });
+
+    }
+```
+
+
+
+## cdn加载依赖包
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
 
 https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
