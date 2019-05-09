@@ -2,8 +2,29 @@
 Lightweight Markdown Documentation System based on ditto
 
 https://github.com/chutsu/ditto
+# 优化界面展示方式,使用bootstrap可折叠的导航栏和响应式布局和cdn加载依赖包
 
+https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
 
+https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
+
+https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js
+
+https://cdn.staticfile.org/marked/0.6.2/marked.min.js
+
+https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js
+
+https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js
+
+https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js
+
+https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js
+
+https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
+
+https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
+
+# ditto
 `ditto` inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
 documentation system, capable of producing documentation similar to
 [Three.js][2] and [Backbone.js][3], check out live demo [here][1]. It is
