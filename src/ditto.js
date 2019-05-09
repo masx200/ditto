@@ -408,8 +408,12 @@ $(function ($) {
                 }
             });
         }).fail(function () {
-            show_error("Opps! ... File not found!");
+            console.error("Opps! ... File not found!\n5秒后返回主页")
+            show_error("Opps! ... File not found!\n5秒后返回主页");
             stop_loading();
+            setTimeout(()=>{
+                location.hash="#"
+            },5000)
         });
     }
 
