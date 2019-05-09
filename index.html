@@ -112,7 +112,10 @@
             ditto.run();
         });
         // $("#sidebar > ul").addClass("navbar-nav")
-      if(location.hash===""  )  {location.hash="#README"}
+        $(window).on('hashchange', ()=>{
+            if(location.hash===""  )  {location.hash="#README"}
+        });
+        if(location.hash===""  )  {location.hash="#README"}
     </script>
 </body>
 
