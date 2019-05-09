@@ -1,6 +1,8 @@
 # ditto
 Lightweight Markdown Documentation System based on ditto
 
+轻量级markdown文档系统
+
 https://github.com/masx200/ditto
 
 使用parcel bundler打包文件
