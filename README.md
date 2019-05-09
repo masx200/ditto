@@ -10,7 +10,7 @@ https://github.com/chutsu/ditto
 
 ### index.html
 
-```
+```html
  <div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
             <a class="navbar-brand" href="#readme">ditto</a> <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -43,7 +43,7 @@ https://github.com/chutsu/ditto
 
 ### ditto.js
 
-```
+```javascript
 
     function init_sidebar_section() {
         $.get(ditto.sidebar_file, function (data) {
