@@ -1,4 +1,4 @@
-# [ditto](#readme)
+# [ditto](#README)
 <!-- version 0.15 -->
 
 <!-- - [Github Repository](http://github.com/chutsu/ditto/) -->
