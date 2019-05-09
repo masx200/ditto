@@ -3,7 +3,7 @@ Lightweight Markdown Documentation System based on ditto
 
 https://github.com/chutsu/ditto
 
-# ditto
+
 `ditto` inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
 documentation system, capable of producing documentation similar to
 [Three.js][2] and [Backbone.js][3], check out live demo [here][1]. It is
