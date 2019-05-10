@@ -3,6 +3,12 @@ Lightweight Markdown Documentation System based on ditto
 
 轻量级markdown文档系统的纯前端实现
 
+文档处于markdown状态
+
+无需构建过程（在浏览器上呈现markdown文件）
+
+可通过GitHub页面部署
+
 https://github.com/masx200/ditto
 
 使用parcel bundler打包文件
