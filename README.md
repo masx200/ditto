@@ -1,7 +1,7 @@
 # ditto
 Lightweight Markdown Documentation System based on ditto
 
-轻量级markdown文档系统
+轻量级markdown文档系统的纯前端实现
 
 https://github.com/masx200/ditto
 
