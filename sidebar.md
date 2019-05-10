@@ -1,11 +1,11 @@
-# [ditto](#README)
+- [ditto](#README)
 <!-- version 0.15 -->
 - [查看源代码](#docs/allsrc)
 - [Github Repository](http://github.com/masx200/ditto/)
 
 - [ditto:searchbar]
 
-## FAQ
+<!-- ## FAQ -->
 - [How do I use ditto?](#docs/how_do_i_use_ditto)
 - [How does it work?](#docs/how_does_it_work)
 - [Why use ditto?](#docs/why_use_ditto)
