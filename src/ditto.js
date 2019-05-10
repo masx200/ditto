@@ -73,7 +73,8 @@ $(function ($) {
             $("#sidebar > a").addClass("nav-link")
             $("#sidebar >ul> li").addClass("nav-item")
             // nav-item
-
+            $("#sidebar > ol").addClass("navbar-nav")
+            $("#sidebar >ol> li").addClass("nav-item")
         }, "text").fail(function () {
             alert("Opps! can't find the sidebar file to display!");
         });

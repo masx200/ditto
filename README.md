@@ -74,7 +74,8 @@ https://masx200.github.io/ditto
             $("#sidebar > li").addClass("nav-item")
             $("#sidebar > a").addClass("nav-link")
             $("#sidebar >ul> li").addClass("nav-item")
-
+   $("#sidebar > ol").addClass("navbar-nav")
+            $("#sidebar >ol> li").addClass("nav-item")
 
         }, "text").fail(function () {
             alert("Opps! can't find the sidebar file to display!");
