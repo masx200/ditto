@@ -66,16 +66,15 @@ https://masx200.github.io/ditto
             }
 
 //由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
-            $("#sidebar > ul").addClass("navbar-nav")
-            $("#sidebar > h1").addClass("nav-item")
-            $("#sidebar > p").addClass("nav-item")
-            $("#sidebar > p>a").addClass("nav-link")
-            $("#sidebar > h2").addClass("nav-item")
-            $("#sidebar > li").addClass("nav-item")
-            $("#sidebar > a").addClass("nav-link")
-            $("#sidebar >ul> li").addClass("nav-item")
-   $("#sidebar > ol").addClass("navbar-nav")
-            $("#sidebar >ol> li").addClass("nav-item")
+         $("#sidebar  ul").addClass("navbar-nav")
+            $("#sidebar  h1").addClass("nav-item")
+            $("#sidebar  p").addClass("nav-item")
+            $("#sidebar a").addClass("nav-link")
+            $("#sidebar  h2").addClass("nav-item")
+            $("#sidebar  li").addClass("nav-item")
+            $("#sidebar  ol").addClass("navbar-nav")
+            $("#sidebar  li").addClass("nav-item")
+            $("#sidebar  input").addClass("nav-link")
 
         }, "text").fail(function () {
             alert("Opps! can't find the sidebar file to display!");
