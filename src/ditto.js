@@ -72,11 +72,13 @@ $("#sidebar > h2").addClass("nav-item")
 $("#sidebar > li").addClass("nav-item")
 $("#sidebar > a").addClass("nav-link")
 $("#sidebar >ul> li").addClass("nav-item")
-// nav-item
+// nav-item navbar-nav nav-link
 $("#sidebar > ol").addClass("navbar-nav")
 $("#sidebar >ol> li").addClass("nav-item")
-$("#sidebar ol>li> a").addClass("nav-link")
-$("#sidebar ul>li> a").addClass("nav-link")
+$("#sidebar >ol>li> a").addClass("nav-link")
+$("#sidebar >ul>li> a").addClass("nav-link")
+$("#sidebar >h1> a").addClass("nav-link")
+$("#sidebar >ul>li> input").addClass("nav-link")
         }, "text").fail(function () {
             alert("Opps! can't find the sidebar file to display!");
         });
