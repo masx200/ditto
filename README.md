@@ -86,7 +86,7 @@ https://masx200.github.io/ditto
 
 
 ## cdn加载依赖包
-'''
+```
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
 
 https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
@@ -106,7 +106,7 @@ https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js
 https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
 
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
-'''
+```
 # ditto
 
 https://github.com/chutsu/ditto
