@@ -63,22 +63,22 @@ $(function ($) {
                 init_searchbar();
             }
 
-//由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
-$("#sidebar  ul").addClass("navbar-nav")
-$("#sidebar  h1").addClass("nav-item")
-$("#sidebar  p").addClass("nav-item")
-$("#sidebar a").addClass("nav-link")
-$("#sidebar  h2").addClass("nav-item")
-$("#sidebar  li").addClass("nav-item")
-// $("#sidebar > a").addClass("nav-link")
-// $("#sidebar >ul> li").addClass("nav-item")
-// nav-item navbar-nav nav-link
-$("#sidebar  ol").addClass("navbar-nav")
-$("#sidebar  li").addClass("nav-item")
-// $("#sidebar >ol>li> a").addClass("nav-link")
-// $("#sidebar >ul>li> a").addClass("nav-link")
-// $("#sidebar >h1> a").addClass("nav-link")
-$("#sidebar  input").addClass("nav-link")
+            //由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
+            $("#sidebar  ul").addClass("navbar-nav")
+            $("#sidebar  h1").addClass("nav-item")
+            $("#sidebar  p").addClass("nav-item")
+            $("#sidebar a").addClass("nav-link")
+            $("#sidebar  h2").addClass("nav-item")
+            $("#sidebar  li").addClass("nav-item")
+            // $("#sidebar > a").addClass("nav-link")
+            // $("#sidebar >ul> li").addClass("nav-item")
+            // nav-item navbar-nav nav-link
+            $("#sidebar  ol").addClass("navbar-nav")
+            $("#sidebar  li").addClass("nav-item")
+            // $("#sidebar >ol>li> a").addClass("nav-link")
+            // $("#sidebar >ul>li> a").addClass("nav-link")
+            // $("#sidebar >h1> a").addClass("nav-link")
+            $("#sidebar  input").addClass("nav-link")
         }, "text").fail(function () {
             alert("Opps! can't find the sidebar file to display!");
         });
@@ -205,7 +205,11 @@ $("#sidebar  input").addClass("nav-link")
             var url = github_api + search + query + search_details + github_repo;
             var accept_header = "application/vnd.github.v3.text-match+json";
 
-            $.ajax(url, { headers: { Accept: accept_header } }).done(function (data) {
+            $.ajax(url, {
+                headers: {
+                    Accept: accept_header
+                }
+            }).done(function (data) {
                 display_search_results(data);
             });
         }
@@ -220,7 +224,7 @@ $("#sidebar  input").addClass("nav-link")
     }
 
     function searchbar_listener(event) {
-        if (event.which === 13) {  // when user presses ENTER in search bar
+        if (event.which === 13) { // when user presses ENTER in search bar
             var q = $("input[name=" + ditto.search_name.selector + "]").val();
             if (q !== "") {
                 location.hash = "#search=" + q;
@@ -251,9 +255,13 @@ $("#sidebar  input").addClass("nav-link")
 
             // highlight the relevant section
             original_color = header.css("color");
-            header.animate({ color: "#ED1C24", }, 500, function () {
+            header.animate({
+                color: "#ED1C24",
+            }, 500, function () {
                 // revert back to orig color
-                $(this).animate({ color: original_color }, 2500);
+                $(this).animate({
+                    color: original_color
+                }, 2500);
             });
         });
     }
@@ -353,7 +361,7 @@ $("#sidebar  input").addClass("nav-link")
 
     function show_loading() {
         ditto.loading_id.show();
-        ditto.content_id.html("");  // clear content
+        ditto.content_id.html(""); // clear content
 
         // infinite loop until clearInterval() is called on loading
         ditto.loading_interval = setInterval(function () {
@@ -423,9 +431,9 @@ $("#sidebar  input").addClass("nav-link")
             console.error("Opps! ... File not found!\n5秒后返回主页")
             show_error("Opps! ... File not found!\n5秒后返回主页");
             stop_loading();
-            setTimeout(()=>{
-                location.hash="#"
-            },5000)
+            setTimeout(() => {
+                location.hash = "#"
+            }, 5000)
         });
     }
 
