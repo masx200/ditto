@@ -9,30 +9,34 @@ https://github.com/masx200/ditto
 https://masx200.github.io/ditto
 
 ## 使用bootstrap可折叠的导航栏和响应式布局
+修改了index.html,ditto.js,ditto.css
 
-
-### index.html
+### 修改 index.html
 
 ```html
- <div class="container-fluid">
+<div class="container-fluid">
         <nav class="navbar navbar-expand-sm bg-light navbar-light">
-            <a class="navbar-brand" href="#readme">ditto</a>
-             <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#collapsibleNavbar"> 
-                <span class="navbar-toggler-icon"></span>
-                 </button>
+                <a class="navbar-brand" href="https://masx200.github.io/index.html">masx200的github主页 </a>
+                <ul class="navbar-nav">
+                        <li class="nav-item"> 
+                                <a class="nav-link" href="#README">ditto</a>
+                            </li>
+                        </ul> 
+            <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#collapsibleNavbar">
+                 <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <!-- <ul class="navbar-nav">
-                    <li class="nav-item"> -->
-                        <div id="sidebar" class="navbar-nav"></div>
-                    <!-- </li>
-                </ul> -->
+               
+                <div id="sidebar" class="navbar-nav"></div>
+               
 
 
             </div>
 
         </nav>
     </div>
+
     
     
     <div class="container">
@@ -47,7 +51,7 @@ https://masx200.github.io/ditto
     </div>
 ```
 
-### ditto.js
+### 修改ditto.js
 
 ```javascript
 
@@ -61,6 +65,13 @@ https://masx200.github.io/ditto
 
 //由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
             $("#sidebar > ul").addClass("navbar-nav")
+            $("#sidebar > h1").addClass("nav-item")
+            $("#sidebar > p").addClass("nav-item")
+            $("#sidebar > p>a").addClass("nav-link")
+            $("#sidebar > h2").addClass("nav-item")
+            $("#sidebar > li").addClass("nav-item")
+            $("#sidebar > a").addClass("nav-link")
+            $("#sidebar >ul> li").addClass("nav-item")
 
 
         }, "text").fail(function () {
@@ -70,43 +81,7 @@ https://masx200.github.io/ditto
     }
 ```
 
-### ditto.css
-```css
-#sidebar {
-    /* position: fixed;
-    width: 220px;
-    height: 100%; */
 
-    /* overflow-y: scroll; */
-    overflow: -moz-scrollbars-vertical;
-
-    margin-right: 20px;
-    margin-top: 0;
-    padding-left: 25px;
-    padding-top: 0;
-
-    box-shadow: 0 0 40px #CCC;
-    -webkit-box-shadow: 0 0 40px #CCC;
-    -moz-box-shadow: 0 0 40px #CCC;
-    border-right: 1px solid #BBB;
-}
-#content {
-    /* width: 580px; */
-
-    /* margin-left: 300px; */
-    padding-top: 10px;
-    padding-bottom: 150px;
-
-    text-align: justify;
-    font-size: 1.0em;
-}
-input[type=search] {
-    display: block;
-    /* width: 180px; */
-    width: 100%;
-    text-align: left;
-}
-```
 
 ## cdn加载依赖包
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css

@@ -1,3 +1,94 @@
+# 查看所有源代码
+
+## index.html
+```html
+ <!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+                font-family: "Microsoft Yahei,PingFangSC-Regular,arial, verdana, sans-serif"
+            }
+        </style>
+        <title>ditto Lightweight Markdown Documentation System </title>
+        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <script src="https://cdn.staticfile.org/marked/0.6.2/marked.min.js"></script>
+        <link rel="stylesheet" href="github.css">
+        <script src="https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"></script>
+        <script type="text/x-mathjax-config">
+            
+        MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$']],
+          processRefs: true
+        },
+        TeX: {
+          equationNumbers: {
+            autoNumber: "all",
+            formatID: function(id) { return "(" + id  + ")"},
+            formatURL: function(id) { return null }
+          }
+        }
+      });
+    
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"></script>
+        <link rel="stylesheet" href="ditto.css">
+        <script src="ditto.js"></script>
+        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <noscript>Your browser does not support JavaScript!</noscript>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-sm bg-light navbar-light">
+                <a class="navbar-brand" href="https://masx200.github.io/index.html">masx200的github主页 </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#README">ditto</a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <div id="sidebar" class="navbar-nav"></div>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <div id="content"></div>
+            <div id="hide"></div>
+            <div id="back_to_top">top</div>
+            <div id="loading">Loading ...</div>
+            <div id="error"></div>
+        </div>
+        <script>
+            function t() {
+                "" !== location.hash && "#" !== location.hash || (location.hash = "#README")
+            }
+            $(function(t) {
+                ditto.index = "README.md",
+                ditto.sidebar_file = "sidebar.md",
+                ditto.github_username = "masx200",
+                ditto.github_repo = "ditto",
+                ditto.highlight_code = !0,
+                ditto.run()
+            }),
+            $(window).on("hashchange", t);
+        </script>
+    </body>
+</html>
+```
+
+## ditto.js
+```javascript
 $(function ($) {
 
     var ditto = {
@@ -477,3 +568,348 @@ $(function ($) {
 
     window.ditto = ditto;
 });
+
+```
+## ditto.css
+```css
+body {
+    color: #333;
+    margin: 0;
+    padding: 0
+}
+
+#sidebar {
+    overflow: -moz-scrollbars-vertical;
+    margin-right: 20px;
+    margin-top: 0;
+    padding-left: 25px;
+    padding-top: 0;
+    border-right: 1px solid #bbb
+}
+
+#sidebar h1 {
+    margin-bottom: 0;
+    padding-bottom: 0
+}
+
+#sidebar h1 a:link,#sidebar h1 a:visited {
+    color: #333
+}
+
+#sidebar h5 {
+    margin-top: 20px;
+    margin-bottom: 0
+}
+
+#sidebar a:link,#sidebar a:visited {
+    color: #4682be;
+    text-decoration: none
+}
+
+#sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 10px;
+    padding-top: 0
+}
+
+#sidebar ul li:before {
+    /* content: "-"; */
+    position: relative;
+    left: -5px
+}
+
+#sidebar ul li {
+    margin-top: 0;
+    margin-bottom: 2px;
+    margin-left: 10px;
+    padding: 0;
+    text-indent: -5px
+}
+
+#content {
+    padding-top: 10px;
+    padding-bottom: 150px;
+    text-align: justify;
+    font-size: 1em
+}
+
+#content pre {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 13px;
+    color: #fff;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    background: #f7fafb;
+    border-radius: 5px
+}
+
+#content pre code {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-size: 1.1em;
+    border: none
+}
+
+#content code {
+    padding: 1px 5px;
+    color: #555;
+    font-size: 10px;
+    font-weight: 400;
+    background: #f7fafb;
+    border: 1px solid #e3edf3;
+    border-radius: 2px
+}
+
+#content h2 {
+    font-size: 18px;
+    border-top: 2px solid #666
+}
+
+#content h2,#content h3 {
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-top: 20px;
+    padding-bottom: 0;
+    text-align: left
+}
+
+#content h3 {
+    border-top: 1px dotted #777
+}
+
+#content hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    border-bottom: 1px solid hsla(0,0%,100%,.3)
+}
+
+#content img {
+    max-width: 90%;
+    display: block;
+    margin: 40px auto;
+    border-radius: 5px
+}
+
+#content ul {
+    display: block;
+    list-style-type: none
+}
+
+#content ul li:before {
+    /* content: "-"; */
+    position: relative;
+    left: -5px
+}
+
+#content ul li {
+    text-indent: -5px;
+    font-size: 13px
+}
+
+#content ul li.link {
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+#content a:link,#content a:visited,#content ul li.link {
+    color: #4682be;
+    text-decoration: none
+}
+
+#back_to_top {
+    display: none;
+    position: fixed;
+    height: 20px;
+    line-height: 20px;
+    width: 50px;
+    top: 20px;
+    margin-left: 890px;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 5px;
+    background-color: #aaa
+}
+
+#back_to_top:hover {
+    background-color: #444;
+    cursor: pointer
+}
+
+#edit {
+    display: none;
+    position: fixed;
+    height: 20px;
+    line-height: 20px;
+    width: 50px;
+    top: 50px;
+    margin-left: 890px;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 5px;
+    background-color: #aaa
+}
+
+#edit:hover {
+    background-color: #444;
+    cursor: pointer
+}
+
+#error,#loading {
+    display: none;
+    position: fixed;
+    height: 17px;
+    top: 45%;
+    margin-left: 560px;
+    font-size: 14px;
+    font-weight: 700
+}
+
+input[type=search] {
+    display: block;
+    width: 100%;
+    text-align: left
+}
+
+.fragments {
+    margin: 0;
+    padding: 10px
+}
+
+.fragment {
+    padding: 0 10px
+}
+
+.search_results .link {
+    margin-top: 35px
+}
+
+#content ul li {
+    text-align: left
+}
+
+#content ul .fragments li:before {
+    /* content: ""; */
+    position: relative;
+    left: 0
+}
+
+#content ul li.fragment:before {
+    /* content: ""; */
+    margin: 0;
+    padding: 0
+}
+
+#content img.github_badges {
+    display: inline
+}
+
+#content .youtube_video {
+    margin-top: 20px
+}
+
+#hide {
+    display: none
+}
+
+
+```
+
+## github.css
+```css
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    color: #333;
+    background: #f8f8f8;
+    -webkit-text-size-adjust: none
+}
+
+.diff .hljs-header,.hljs-comment {
+    color: #998;
+    font-style: italic
+}
+
+.css .rule .hljs-keyword,.hljs-keyword,.hljs-request,.hljs-status,.hljs-subst,.hljs-winutils,.nginx .hljs-title {
+    color: #333;
+    font-weight: 700
+}
+
+.hljs-hexcolor,.hljs-number,.ruby .hljs-constant {
+    color: teal
+}
+
+.hljs-doctag,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula {
+    color: #d14
+}
+
+.hljs-id,.hljs-title,.scss .hljs-preprocessor {
+    color: #900;
+    font-weight: 700
+}
+
+.hljs-list .hljs-keyword,.hljs-subst {
+    font-weight: 400
+}
+
+.hljs-class .hljs-title,.hljs-type,.tex .hljs-command,.vhdl .hljs-literal {
+    color: #458;
+    font-weight: 700
+}
+
+.django .hljs-tag .hljs-keyword,.hljs-rule .hljs-property,.hljs-tag,.hljs-tag .hljs-title {
+    color: navy;
+    font-weight: 400
+}
+
+.hljs-attribute,.hljs-name,.hljs-variable,.lisp .hljs-body {
+    color: teal
+}
+
+.hljs-regexp {
+    color: #009926
+}
+
+.clojure .hljs-keyword,.hljs-prompt,.hljs-symbol,.lisp .hljs-keyword,.ruby .hljs-symbol .hljs-string,.scheme .hljs-keyword,.tex .hljs-special {
+    color: #990073
+}
+
+.hljs-built_in {
+    color: #0086b3
+}
+
+.hljs-cdata,.hljs-doctype,.hljs-pi,.hljs-pragma,.hljs-preprocessor,.hljs-shebang {
+    color: #999;
+    font-weight: 700
+}
+
+.hljs-deletion {
+    background: #fdd
+}
+
+.hljs-addition {
+    background: #dfd
+}
+
+.diff .hljs-change {
+    background: #0086b3
+}
+
+.hljs-chunk {
+    color: #aaa
+}
+
+
+```
