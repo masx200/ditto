@@ -1,10 +1,20 @@
-# [Project]()
-version 0.1
+- [ditto](#README)
+<!-- version 0.15 -->
+- [查看源代码](#docs/allsrc)
+- [Github Repository](http://github.com/masx200/ditto/)
 
-- [Github Repository](http://github.com/<username>/<repo>)
+- [ditto:searchbar]
 
-[ditto:searchbar]
+<!-- ## FAQ -->
+- [How do I use ditto?](#docs/how_do_i_use_ditto)
+- [How does it work?](#docs/how_does_it_work)
+- [Why use ditto?](#docs/why_use_ditto)
+- [How do I run ditto locally?](#docs/how_do_i_run_ditto_locally)
+- [How I write equations in ditto?](#docs/maths_demo)
+- [Features](#docs/features)
 
-## Header 2
-- [Page1](#docs/page1)
-- [Page2](#docs/page2)
+<!-- ## Projects that use ditto
+- [playground](http://chutsu.github.io/playground)
+- [direnv](http://direnv.net)
+- [rover](http://wallarelvo.github.io/rover)
+- [zeromq-ros](http://wallarelvo.github.io/zeromq-ros) -->
