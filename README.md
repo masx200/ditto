@@ -18,7 +18,7 @@ https://masx200.github.io/ditto
 
 ## 使用bootstrap可折叠的导航栏和响应式布局
 
-使用了固定在顶部的导航栏
+使用了固定在顶部的导航栏,给导航栏设置最大高度100%,并自动显示滚动条
 
 修改了index.html,ditto.js,ditto.css
 
