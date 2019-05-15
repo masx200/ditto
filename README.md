@@ -17,77 +17,21 @@ https://github.com/masx200/ditto
 https://masx200.github.io/ditto
 
 ## 使用bootstrap可折叠的导航栏和响应式布局
+
+使用了固定在顶部的导航栏
+
 修改了index.html,ditto.js,ditto.css
 
-### 修改 index.html
+修改 index.html
 
-```html
-<div class="container-fluid">
-        <nav class="navbar navbar-expand-sm bg-light navbar-light">
-                <a class="navbar-brand" href="https://masx200.github.io/index.html">masx200的github主页 </a>
-                <ul class="navbar-nav">
-                        <li class="nav-item"> 
-                                <a class="nav-link" href="#README">ditto</a>
-                            </li>
-                        </ul> 
-            <button class="navbar-toggler" type="button"
-                data-toggle="collapse" data-target="#collapsibleNavbar">
-                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-               
-                <div id="sidebar" class="navbar-nav"></div>
-               
+ 修改ditto.js
 
+ 在加载完sidebar.md之后,给导航栏里面的元素批量添加class,变成bootstrap导航栏的样式
 
-            </div>
+[查看 index.html源代码](./src/index.html)
 
-        </nav>
-    </div>
-
-    
-    
-    <div class="container">
-        <div id="content"></div>
-        <div id="hide"></div>
-
-        <!-- OPTIONAL -->
-        <div id="back_to_top">top</div>
-        <!-- <div id="edit">edit</div> -->
-        <div id="loading">Loading ...</div>
-        <div id="error"></div>
-    </div>
-```
-
-### 修改ditto.js
-
-```javascript
-
-    function init_sidebar_section() {
-        $.get(ditto.sidebar_file, function (data) {
-            ditto.sidebar_id.html(marked(data));
-
-            if (ditto.searchbar) {
-                init_searchbar();
-            }
-
-//由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
-         $("#sidebar  ul").addClass("navbar-nav")
-            $("#sidebar  h1").addClass("nav-item")
-            $("#sidebar  p").addClass("nav-item")
-            $("#sidebar a").addClass("nav-link")
-            $("#sidebar  h2").addClass("nav-item")
-            $("#sidebar  li").addClass("nav-item")
-            $("#sidebar  ol").addClass("navbar-nav")
-            $("#sidebar  li").addClass("nav-item")
-            $("#sidebar  input").addClass("nav-link")
-
-        }, "text").fail(function () {
-            alert("Opps! can't find the sidebar file to display!");
-        });
-
-    }
-```
+[查看ditto.js源代码](./src/ditto.js)
+ 
 
 
 

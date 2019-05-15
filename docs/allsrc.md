@@ -10,15 +10,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             * {
-                font-family: "Microsoft Yahei,PingFangSC-Regular,arial, verdana, sans-serif"
+                font-family: "Microsoft Yahei,PingFangSC-Regular,arial, verdana, sans-serif";
             }
         </style>
+        <!-- <link rel="stylesheet"
+        href="https://img.cdn.aliyun.dcloud.net.cn/mui/dist/css/mui.min.css?v=2017-02-15 11:53:40 +0800">
+    <script src="https://img.cdn.aliyun.dcloud.net.cn/mui/dist/js/mui.min.js?v=2018-01-12%2019:32:50%20+0800"> </script> -->
         <title>ditto Lightweight Markdown Documentation System </title>
+        <!-- JQUERY -->
+        <!-- <script src="./js/jquery-1.11.0.min.js"></script> -->
         <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+        <!-- <script src="./js/jquery-ui.min.js"></script> -->
         <script src="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- MARKED -->
+        <!-- <script src="./js/marked.js"></script> -->
         <script src="https://cdn.staticfile.org/marked/0.6.2/marked.min.js"></script>
-        <link rel="stylesheet" href="github.css">
+        <!-- HIGHLIGHT.JS -->
+        <link rel="stylesheet" href="./github.css">
+        <!-- <script src="js/highlight.js"></script> -->
         <script src="https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"></script>
+        <!-- MATHJAX -->
         <script type="text/x-mathjax-config">
             
         MathJax.Hub.Config({
@@ -36,17 +47,23 @@
       });
     
         </script>
+        <!-- <script type="text/javascript" src="js/mathjax.js">
+    </script> -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"></script>
-        <link rel="stylesheet" href="ditto.css">
-        <script src="ditto.js"></script>
+        <!-- <script src="js/MathJax/extensions/MathMenu.js"></script>
+<script src="js/MathJax/extensions/MathZoom.js"></script> -->
+        <!-- DITTO -->
+        <link rel="stylesheet" href="./ditto.css">
+        <script src="./ditto.js"></script>
         <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
         <noscript>Your browser does not support JavaScript!</noscript>
-        <div class="container-fluid">
+        <!-- 优化界面展示方式,使用bootstrap可折叠的导航栏和响应式布局和cdn加载依赖包 -->
+        <div id="my导航栏" class="container-fluid fixed-top">
             <nav class="navbar navbar-expand-sm bg-light navbar-light">
                 <a class="navbar-brand" href="https://masx200.github.io/index.html">masx200的github主页 </a>
                 <ul class="navbar-nav">
@@ -62,34 +79,57 @@
                 </div>
             </nav>
         </div>
-        <div class="container">
+        <!-- ESSENTIAL -->
+        <div id="my主体" class="container">
             <div id="content"></div>
             <div id="hide"></div>
+            <!-- OPTIONAL -->
             <div id="back_to_top">top</div>
+            <!-- <div id="edit">edit</div> -->
             <div id="loading">Loading ...</div>
             <div id="error"></div>
         </div>
+        <!-- DITTO -->
         <script>
-            function t() {
-                "" !== location.hash && "#" !== location.hash || (location.hash = "#README")
+            (()=>{
+                $("#my主体").css("padding-top", $("#my导航栏").height());
+                $(function($) {
+                    // essential settings
+                    ditto.index = "README.md",
+                    ditto.sidebar_file = "sidebar.md",
+
+                    // optional settings if you want github search
+                    ditto.github_username = "masx200";
+                    // <------- EDIT ME!!
+                    ditto.github_repo = "ditto";
+                    // <------- EDIT ME!!
+                    // ditto.highlight_code = false; // <------- EDIT ME!!
+                    ditto.highlight_code = true
+                    // where the docs are actually stored on github - so you can edit
+                    // ditto.base_url = "https://github.com/chutsu/ditto/edit/gh-pages";
+
+                    // run
+                    ditto.run();
+                });
+                // $("#sidebar > ul").addClass("navbar-nav")
+                function onhashchange() {
+                    if (location.hash === "" || location.hash === "#") {
+                        location.hash = "#README"
+                    }
+                }
+                $(window).on('hashchange', onhashchange);
+                // if(location.hash===""  )  {location.hash="#README"}
             }
-            $(function(t) {
-                ditto.index = "README.md",
-                ditto.sidebar_file = "sidebar.md",
-                ditto.github_username = "masx200",
-                ditto.github_repo = "ditto",
-                ditto.highlight_code = !0,
-                ditto.run()
-            }),
-            $(window).on("hashchange", t);
+            )()
         </script>
     </body>
 </html>
+
 ```
 
 ## ditto.js
 ```javascript
-$(function ($) {
+$(function($) {
 
     var ditto = {
         content_id: $("#content"),
@@ -147,25 +187,33 @@ $(function ($) {
     }
 
     function init_sidebar_section() {
-        $.get(ditto.sidebar_file, function (data) {
+        $.get(ditto.sidebar_file, function(data) {
             ditto.sidebar_id.html(marked(data));
 
             if (ditto.searchbar) {
                 init_searchbar();
             }
 
-//由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
-            $("#sidebar > ul").addClass("navbar-nav")
-            $("#sidebar > h1").addClass("nav-item")
-            $("#sidebar > p").addClass("nav-item")
-            $("#sidebar > p>a").addClass("nav-link")
-            $("#sidebar > h2").addClass("nav-item")
-            $("#sidebar > li").addClass("nav-item")
-            $("#sidebar > a").addClass("nav-link")
-            $("#sidebar >ul> li").addClass("nav-item")
-            // nav-item
+            //由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
+            $("#sidebar  ul").addClass("navbar-nav")
+            $("#sidebar  h1").addClass("nav-item")
+            $("#sidebar  p").addClass("nav-item")
+            $("#sidebar a").addClass("nav-link")
+            $("#sidebar  h2").addClass("nav-item")
+            $("#sidebar  li").addClass("nav-item")
+            // $("#sidebar > a").addClass("nav-link")
+            // $("#sidebar >ul> li").addClass("nav-item")
+            // nav-item navbar-nav nav-link
+            $("#sidebar  ol").addClass("navbar-nav")
+            $("#sidebar  li").addClass("nav-item")
+            // $("#sidebar >ol>li> a").addClass("nav-link")
+            // $("#sidebar >ul>li> a").addClass("nav-link")
+            // $("#sidebar >h1> a").addClass("nav-link")
+            $("#sidebar  input").addClass("nav-link")
 
-        }, "text").fail(function () {
+            $("#my主体").css("padding-top", $("#my导航栏").height());
+
+        }, "text").fail(function() {
             alert("Opps! can't find the sidebar file to display!");
         });
 
@@ -173,7 +221,7 @@ $(function ($) {
 
     function init_back_to_top_button() {
         ditto.back_to_top_id.show();
-        ditto.back_to_top_id.on("click", function () {
+        ditto.back_to_top_id.on("click", function() {
             $("body, html").animate({
                 scrollTop: 0
             }, 200);
@@ -186,7 +234,7 @@ $(function ($) {
 
         } else {
             ditto.edit_id.show();
-            ditto.edit_id.on("click", function () {
+            ditto.edit_id.on("click", function() {
                 var hash = location.hash.replace("#", "/");
 
                 if (hash === "") {
@@ -274,7 +322,7 @@ $(function ($) {
         }
 
         ditto.content_id.html(results_html);
-        $(ditto.search_results_class + " .link").click(function () {
+        $(ditto.search_results_class + " .link").click(function() {
             var destination = "#" + $(this).html().replace(".md", "");
             location.hash = destination;
         });
@@ -291,7 +339,11 @@ $(function ($) {
             var url = github_api + search + query + search_details + github_repo;
             var accept_header = "application/vnd.github.v3.text-match+json";
 
-            $.ajax(url, { headers: { Accept: accept_header } }).done(function (data) {
+            $.ajax(url, {
+                headers: {
+                    Accept: accept_header
+                }
+            }).done(function(data) {
                 display_search_results(data);
             });
         }
@@ -306,7 +358,8 @@ $(function ($) {
     }
 
     function searchbar_listener(event) {
-        if (event.which === 13) {  // when user presses ENTER in search bar
+        if (event.which === 13) {
+            // when user presses ENTER in search bar
             var q = $("input[name=" + ditto.search_name.selector + "]").val();
             if (q !== "") {
                 location.hash = "#search=" + q;
@@ -328,7 +381,7 @@ $(function ($) {
         li_tag.attr("class", "link");
 
         // add click listener - on click scroll to relevant header section
-        $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(function () {
+        $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(function() {
             // scroll to relevant section
             var header = $("h" + header_level + "." + li_tag.attr("id"));
             $('html, body').animate({
@@ -337,9 +390,13 @@ $(function ($) {
 
             // highlight the relevant section
             original_color = header.css("color");
-            header.animate({ color: "#ED1C24", }, 500, function () {
+            header.animate({
+                color: "#ED1C24",
+            }, 500, function() {
                 // revert back to orig color
-                $(this).animate({ color: original_color }, 2500);
+                $(this).animate({
+                    color: original_color
+                }, 2500);
             });
         });
     }
@@ -353,13 +410,13 @@ $(function ($) {
         for (var i = 2; i <= 4; i++) {
             // parse all headers
             var headers = [];
-            $(ditto.content_id.selector + ' h' + i).map(function () {
+            $(ditto.content_id.selector + ' h' + i).map(function() {
                 headers.push($(this).text());
                 $(this).addClass(replace_symbols($(this).text()));
             });
 
             // parse and set links between li and h2
-            $(ditto.content_id.selector + ' ul li').map(function () {
+            $(ditto.content_id.selector + ' ul li').map(function() {
                 for (var j = 0; j < headers.length; j++) {
                     if (headers[j] === $(this).text()) {
                         li_create_linkage($(this), i);
@@ -408,7 +465,7 @@ $(function ($) {
 
     function normalize_paths() {
         // images
-        ditto.content_id.find("img").map(function () {
+        ditto.content_id.find("img").map(function() {
             var src = $(this).attr("src").replace(/^\.\//, "");
             if ($(this).attr("src").slice(0, 5) !== "http") {
                 var url = location.hash.replace("#", "");
@@ -439,10 +496,11 @@ $(function ($) {
 
     function show_loading() {
         ditto.loading_id.show();
-        ditto.content_id.html("");  // clear content
+        ditto.content_id.html("");
+        // clear content
 
         // infinite loop until clearInterval() is called on loading
-        ditto.loading_interval = setInterval(function () {
+        ditto.loading_interval = setInterval(function() {
             ditto.loading_id.fadeIn(1000).fadeOut(1000);
         }, 2000);
 
@@ -454,12 +512,8 @@ $(function ($) {
     }
 
     function escape_github_badges(data) {
-        $("img").map(function () {
-            var ignore_list = [
-                "travis-ci.com",
-                "travis-ci.org",
-                "coveralls.io"
-            ];
+        $("img").map(function() {
+            var ignore_list = ["travis-ci.com", "travis-ci.org", "coveralls.io"];
             var src = $(this).attr("src");
 
             var base_url = src.split("/");
@@ -494,8 +548,8 @@ $(function ($) {
 
         // otherwise get the markdown and render it
         show_loading();
-        $.get(path, function (data) {
-            compile_into_dom(path, data, function () {
+        $.get(path, function(data) {
+            compile_into_dom(path, data, function() {
                 // rerender mathjax and reset mathjax equation counter
                 if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
                     MathJax.Extension["TeX/AMSmath"].startNumber = 0;
@@ -505,26 +559,23 @@ $(function ($) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
                 }
             });
-        }).fail(function () {
+        }).fail(function() {
             console.error("Opps! ... File not found!\n5秒后返回主页")
             show_error("Opps! ... File not found!\n5秒后返回主页");
             stop_loading();
             setTimeout(()=>{
-                location.hash="#"
-            },5000)
+                location.hash = "#"
+            }
+            , 5000)
         });
     }
 
     function escape_html(string) {
-        return string
-            .replace(/\\/g, "&#92;")
-            .replace(/\_/g, "&#95;");
+        return string.replace(/\\/g, "&#92;").replace(/\_/g, "&#95;");
     }
 
     function unescape_html(string) {
-        return string
-            .replace(/&amp;#92;/g, "\\")
-            .replace(/&amp;#95;/g, "_");
+        return string.replace(/&amp;#92;/g, "\\").replace(/&amp;#95;/g, "_");
     }
 
     function compile_into_dom(path, data, cb) {
@@ -542,7 +593,7 @@ $(function ($) {
         create_page_anchors();
 
         if (ditto.highlight_code) {
-            $('pre code').each(function (i, block) {
+            $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
         }
@@ -568,6 +619,7 @@ $(function ($) {
 
     window.ditto = ditto;
 });
+
 
 ```
 ## ditto.css

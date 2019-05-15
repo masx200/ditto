@@ -1,4 +1,4 @@
-$(function ($) {
+$(function($) {
 
     var ditto = {
         content_id: $("#content"),
@@ -56,7 +56,7 @@ $(function ($) {
     }
 
     function init_sidebar_section() {
-        $.get(ditto.sidebar_file, function (data) {
+        $.get(ditto.sidebar_file, function(data) {
             ditto.sidebar_id.html(marked(data));
 
             if (ditto.searchbar) {
@@ -79,7 +79,10 @@ $(function ($) {
             // $("#sidebar >ul>li> a").addClass("nav-link")
             // $("#sidebar >h1> a").addClass("nav-link")
             $("#sidebar  input").addClass("nav-link")
-        }, "text").fail(function () {
+
+            $("#my主体").css("padding-top", $("#my导航栏").height());
+
+        }, "text").fail(function() {
             alert("Opps! can't find the sidebar file to display!");
         });
 
@@ -87,7 +90,7 @@ $(function ($) {
 
     function init_back_to_top_button() {
         ditto.back_to_top_id.show();
-        ditto.back_to_top_id.on("click", function () {
+        ditto.back_to_top_id.on("click", function() {
             $("body, html").animate({
                 scrollTop: 0
             }, 200);
@@ -100,7 +103,7 @@ $(function ($) {
 
         } else {
             ditto.edit_id.show();
-            ditto.edit_id.on("click", function () {
+            ditto.edit_id.on("click", function() {
                 var hash = location.hash.replace("#", "/");
 
                 if (hash === "") {
@@ -188,7 +191,7 @@ $(function ($) {
         }
 
         ditto.content_id.html(results_html);
-        $(ditto.search_results_class + " .link").click(function () {
+        $(ditto.search_results_class + " .link").click(function() {
             var destination = "#" + $(this).html().replace(".md", "");
             location.hash = destination;
         });
@@ -209,7 +212,7 @@ $(function ($) {
                 headers: {
                     Accept: accept_header
                 }
-            }).done(function (data) {
+            }).done(function(data) {
                 display_search_results(data);
             });
         }
@@ -224,7 +227,8 @@ $(function ($) {
     }
 
     function searchbar_listener(event) {
-        if (event.which === 13) { // when user presses ENTER in search bar
+        if (event.which === 13) {
+            // when user presses ENTER in search bar
             var q = $("input[name=" + ditto.search_name.selector + "]").val();
             if (q !== "") {
                 location.hash = "#search=" + q;
@@ -246,7 +250,7 @@ $(function ($) {
         li_tag.attr("class", "link");
 
         // add click listener - on click scroll to relevant header section
-        $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(function () {
+        $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(function() {
             // scroll to relevant section
             var header = $("h" + header_level + "." + li_tag.attr("id"));
             $('html, body').animate({
@@ -257,7 +261,7 @@ $(function ($) {
             original_color = header.css("color");
             header.animate({
                 color: "#ED1C24",
-            }, 500, function () {
+            }, 500, function() {
                 // revert back to orig color
                 $(this).animate({
                     color: original_color
@@ -275,13 +279,13 @@ $(function ($) {
         for (var i = 2; i <= 4; i++) {
             // parse all headers
             var headers = [];
-            $(ditto.content_id.selector + ' h' + i).map(function () {
+            $(ditto.content_id.selector + ' h' + i).map(function() {
                 headers.push($(this).text());
                 $(this).addClass(replace_symbols($(this).text()));
             });
 
             // parse and set links between li and h2
-            $(ditto.content_id.selector + ' ul li').map(function () {
+            $(ditto.content_id.selector + ' ul li').map(function() {
                 for (var j = 0; j < headers.length; j++) {
                     if (headers[j] === $(this).text()) {
                         li_create_linkage($(this), i);
@@ -330,7 +334,7 @@ $(function ($) {
 
     function normalize_paths() {
         // images
-        ditto.content_id.find("img").map(function () {
+        ditto.content_id.find("img").map(function() {
             var src = $(this).attr("src").replace(/^\.\//, "");
             if ($(this).attr("src").slice(0, 5) !== "http") {
                 var url = location.hash.replace("#", "");
@@ -361,10 +365,11 @@ $(function ($) {
 
     function show_loading() {
         ditto.loading_id.show();
-        ditto.content_id.html(""); // clear content
+        ditto.content_id.html("");
+        // clear content
 
         // infinite loop until clearInterval() is called on loading
-        ditto.loading_interval = setInterval(function () {
+        ditto.loading_interval = setInterval(function() {
             ditto.loading_id.fadeIn(1000).fadeOut(1000);
         }, 2000);
 
@@ -376,12 +381,8 @@ $(function ($) {
     }
 
     function escape_github_badges(data) {
-        $("img").map(function () {
-            var ignore_list = [
-                "travis-ci.com",
-                "travis-ci.org",
-                "coveralls.io"
-            ];
+        $("img").map(function() {
+            var ignore_list = ["travis-ci.com", "travis-ci.org", "coveralls.io"];
             var src = $(this).attr("src");
 
             var base_url = src.split("/");
@@ -416,8 +417,8 @@ $(function ($) {
 
         // otherwise get the markdown and render it
         show_loading();
-        $.get(path, function (data) {
-            compile_into_dom(path, data, function () {
+        $.get(path, function(data) {
+            compile_into_dom(path, data, function() {
                 // rerender mathjax and reset mathjax equation counter
                 if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
                     MathJax.Extension["TeX/AMSmath"].startNumber = 0;
@@ -427,26 +428,23 @@ $(function ($) {
                     MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
                 }
             });
-        }).fail(function () {
+        }).fail(function() {
             console.error("Opps! ... File not found!\n5秒后返回主页")
             show_error("Opps! ... File not found!\n5秒后返回主页");
             stop_loading();
-            setTimeout(() => {
+            setTimeout(()=>{
                 location.hash = "#"
-            }, 5000)
+            }
+            , 5000)
         });
     }
 
     function escape_html(string) {
-        return string
-            .replace(/\\/g, "&#92;")
-            .replace(/\_/g, "&#95;");
+        return string.replace(/\\/g, "&#92;").replace(/\_/g, "&#95;");
     }
 
     function unescape_html(string) {
-        return string
-            .replace(/&amp;#92;/g, "\\")
-            .replace(/&amp;#95;/g, "_");
+        return string.replace(/&amp;#92;/g, "\\").replace(/&amp;#95;/g, "_");
     }
 
     function compile_into_dom(path, data, cb) {
@@ -464,7 +462,7 @@ $(function ($) {
         create_page_anchors();
 
         if (ditto.highlight_code) {
-            $('pre code').each(function (i, block) {
+            $('pre code').each(function(i, block) {
                 hljs.highlightBlock(block);
             });
         }
