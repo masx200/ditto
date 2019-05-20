@@ -9,6 +9,6 @@
   ,
   "scripts": {
     "build": "parcel build index.html --public-url ./ --no-source-maps",
-    "start": "parcel index.html --open --https"
+    "start": "parcel index.html --open --no-source-maps"
 }
 }
