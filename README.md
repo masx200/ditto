@@ -28,9 +28,9 @@ https://masx200.github.io/ditto
 
  在加载完sidebar.md之后,给导航栏里面的元素批量添加class,变成bootstrap导航栏的样式
 
-[查看 index.html源代码](./src/index.html)
+<!-- [查看 index.html源代码](./src/index.html)
 
-[查看ditto.js源代码](./src/ditto.js)
+[查看ditto.js源代码](./src/ditto.js) -->
  
 
 

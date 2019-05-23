@@ -1,6 +1,6 @@
 - [ditto](#README)
 <!-- version 0.15 -->
-- [查看源代码](#docs/allsrc)
+<!-- - [查看源代码](#docs/allsrc) -->
 - [Github Repository](http://github.com/masx200/ditto/)
 
 - [ditto:searchbar]
