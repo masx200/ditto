@@ -21,6 +21,7 @@ $(window).one("load", () => {
     });
     // $("#sidebar > ul").addClass("navbar-nav")
     function onhashchange() {
+      scrollTo(0, 0);
       $("#collapsibleNavbar").removeClass("show");
       $("#my主体").css("padding-top", $("#my导航栏").height());
       if (location.hash === "" || location.hash === "#") {
