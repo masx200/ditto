@@ -85,6 +85,19 @@
           $("#sidebar  input").addClass("nav-link");
 
           $("#my主体").css("padding-top", $("#my导航栏").height());
+
+          /* 预先加载sidebar当中的markdwon文件到head的link的prefetch元素,来提升加载速度 */
+
+          Array(...$("#sidebar a"))
+            .map(e => e.hash)
+            .filter(e => e.startsWith("#"))
+            .map(e => e.slice(1))
+            .forEach(e => {
+              var linkmarkdwon = document.createElement("link");
+              linkmarkdwon.rel = "prefetch";
+              linkmarkdwon.href = e+".md";
+              document.head.appendChild(linkmarkdwon);
+            });
         },
         "text"
       ).fail(function() {
