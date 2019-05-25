@@ -11,6 +11,9 @@ Lightweight Markdown Documentation System based on ditto
 
 https://github.com/masx200/ditto
 
+预先加载sidebar当中的markdwon文件到head的link的prefetch元素,来提升加载速度
+
+
 使用parcel bundler打包文件
 # 优化界面展示方式,使用bootstrap可折叠的导航栏和响应式布局和cdn加载依赖包
 
