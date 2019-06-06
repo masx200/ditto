@@ -1,0 +1,24 @@
+{
+    "scripts": {
+        "start": "live-server ."
+    },
+    "dependencies": {
+        "live-server": "^1.2.1"
+    },
+    "name": "ditto",
+    "description": "Lightweight Markdown Documentation System based on ditto",
+    "version": "1.0.0",
+    "directories": {
+        "doc": "docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/masx200/ditto.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/masx200/ditto/issues"
+    },
+    "homepage": "https://github.com/masx200/ditto#readme"
+}
