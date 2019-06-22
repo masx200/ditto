@@ -1,6 +1,19 @@
-import ditto from './ditto.js'
-import "./prefetchmd"
+import ditto from "./ditto.js";
+import "./prefetchmd";
 $(window).one("load", () => {
+  const clipboard = new ClipboardJS(".btn");
+
+  clipboard.on("success", function(e) {
+    if (!e.text) {
+      console.log("复制内容空");
+    } else {
+      //   console.info("Action:", e.action);
+      //   console.info("Text:", e.text);
+    }
+
+    e.clearSelection();
+  });
+
   (() => {
     $("#my主体").css("padding-top", $("#my导航栏").height());
     (function() {
@@ -25,12 +38,12 @@ $(window).one("load", () => {
       scrollTo(0, 0);
       $("#collapsibleNavbar").removeClass("show");
       $("#my主体").css("padding-top", $("#my导航栏").height());
-    //   if (location.hash === "" || location.hash === "#") {
-    //     location.hash = "#README";
-    //   }
+      //   if (location.hash === "" || location.hash === "#") {
+      //     location.hash = "#README";
+      //   }
     }
     $(window).on("hashchange", onhashchange);
-    new ClipboardJS(".btn")
+    new ClipboardJS(".btn");
     // if(location.hash===""  )  {location.hash="#README"}
   })();
 });
