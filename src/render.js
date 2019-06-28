@@ -1,3 +1,4 @@
+import "./RegisteraServiceWorkerFile.js";
 import ditto from "./ditto.js";
 import "./prefetchmd";
 $(window).one("load", () => {
