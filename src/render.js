@@ -1,6 +1,9 @@
+import "./ditto.css";
 import "./RegisteraServiceWorkerFile.js";
 import ditto from "./ditto.js";
 import "./prefetchmd";
+import "./hidewidthless500.css";
+import "./index.css";
 $(window).one("load", () => {
   const clipboard = new ClipboardJS(".btn");
 

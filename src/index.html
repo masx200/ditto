@@ -69,8 +69,8 @@
       rel="prefetch"
       href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"
     />
-    <style>
-      * {
+    <!-- <style>
+      /* * {
         -webkit-user-select: text;
         -moz-user-select: text;
         -o-user-select: text;
@@ -93,8 +93,8 @@
       #my导航栏 {
         overflow: auto;
         max-height: 100%;
-      }
-    </style>
+      } */
+    </style> -->
     <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script
         src="https://masx200.github.io/release/%E7%82%B9%E5%87%BB%E9%93%BE%E6%8E%A5%E4%B8%8D%E8%B7%B3%E8%BD%AC-%E4%BF%AE%E6%94%B9%E5%BD%93%E5%89%8D%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%B0%E5%9D%80-%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD%E7%BD%91%E9%A1%B5%E5%86%85%E5%AE%B9%E4%B8%8D%E5%88%B7%E6%96%B0.js"></script> -->
@@ -115,7 +115,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"></script>
-    <link rel="stylesheet" href="ditto.css" />
+    <!-- <link rel="stylesheet" href="ditto.css" /> -->
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- <script src="https://cdn.staticfile.org/mui/3.7.1/js/mui.min.js"></script> -->
@@ -123,12 +123,12 @@
     <!-- <link rel="prefetch" href="sidebar.md" />
     <link rel="prefetch" href="README.md" /> -->
     <script src="https://cdn.staticfile.org/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script src="render.js" async></script>
+
     <!-- <script
       src="点击链接不跳转-修改当前的网页地址-动态加载网页内容不刷新.js"
       async
     ></script> -->
-    <style>
+    <!-- <style>
       * {
         -webkit-user-select: text !important;
         -moz-user-select: text;
@@ -142,7 +142,7 @@
           "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei",
           "WenQuanYi Micro Hei", sans-serif !important;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
@@ -157,8 +157,12 @@
         style="padding-right:0;padding-left:0;"
       >
         <div>
-          <a class="navbar-brand" href="https://masx200.github.io/index.html"
-            >masx200的github主页
+          <a
+            class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
+            href="https://masx200.github.io/index.html"
+            >masx200的
+            <hr id="hidewidthless500" />
+            github主页
           </a>
           <button
             class="navbar-toggler"
@@ -192,5 +196,6 @@
     <!-- <script src="ditto.js"></script> -->
     <!-- <script src="render.js"></script> -->
     <!-- <script src="RegisteraServiceWorkerFile.js"></script> -->
+    <script src="render.js" async></script>
   </body>
 </html>
