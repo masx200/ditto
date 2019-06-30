@@ -4,6 +4,7 @@ import ditto from "./ditto.js";
 import "./prefetchmd";
 import "./hidewidthless500.css";
 import "./index.css";
+var doctitle = "ditto";
 $(window).one("load", () => {
   const clipboard = new ClipboardJS(".btn");
 
@@ -19,6 +20,8 @@ $(window).one("load", () => {
   });
 
   (() => {
+    document.title = doctitle + "-Lightweight Markdown Documentation System";
+    $("#title").text(doctitle);
     $("#my主体").css("padding-top", $("#my导航栏").height());
     (function() {
       // essential settings
@@ -47,7 +50,7 @@ $(window).one("load", () => {
       //   }
     }
     $(window).on("hashchange", onhashchange);
-    new ClipboardJS(".btn");
+    // new ClipboardJS(".btn");
     // if(location.hash===""  )  {location.hash="#README"}
   })();
 });
