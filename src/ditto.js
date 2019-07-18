@@ -1,6 +1,14 @@
+"use strict";
+import hljs from "./highlight.min.js";
+import marked from "./marked.min";
+import jQuery from "jquery";
+/* eslint-disable no-useless-escape */
+// var MathJax = window.MathJax;
+import MathJax from "./MathJax/index";
+var exports, module;
 (() => {
   "use strict";
-  (function($, globalThis) {
+  exports = (function($ /* globalThis */) {
     var ditto = {
       content_id: $("#content"),
       sidebar_id: $("#sidebar"),
@@ -184,8 +192,8 @@
         var url = matches[i].path;
 
         if (url !== ditto.sidebar_file) {
-          var hash = "#" + url.replace(".md", "");
-          var path = window.location.origin + "/" + hash;
+          // var hash = "#" + url.replace(".md", "");
+          // var path = window.location.origin + "/" + hash;
 
           // html += "<li>";
           html += "<li class='link'>";
@@ -271,7 +279,7 @@
 
     function li_create_linkage(li_tag, header_level) {
       // add custom id and class attributes
-      html_safe_tag = replace_symbols(li_tag.text());
+      var html_safe_tag = replace_symbols(li_tag.text());
       li_tag.attr("id", html_safe_tag);
       li_tag.attr("class", "link");
 
@@ -288,7 +296,7 @@
           );
 
           // highlight the relevant section
-          original_color = header.css("color");
+          var original_color = header.css("color");
           header.animate(
             {
               color: "#ED1C24"
@@ -429,7 +437,7 @@
         var src = $(this).attr("src");
 
         var base_url = src.split("/");
-        var protocol = base_url[0];
+        //  var protocol = base_url[0];
         var host = base_url[2];
 
         if ($.inArray(host, ignore_list) >= 0) {
@@ -518,7 +526,8 @@
         stop_loading();
 
         setTimeout(() => {
-          page_getter(true);
+          //   page_getter(true);
+          location.hash = "";
         }, 5000);
       });
     }
@@ -578,10 +587,13 @@
       }
     }
     // console.log(globalThis)
-    globalThis.ditto = ditto;
+
     if (typeof exports === "object" && typeof module !== "undefined") {
       module.exports = ditto;
+    } else {
+      //   globalThis.ditto = ditto;
     }
+    return ditto;
   })(
     jQuery,
     ("undefined" != typeof window && window) ||
@@ -589,3 +601,4 @@
       this
   );
 })();
+export default exports;

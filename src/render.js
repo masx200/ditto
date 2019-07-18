@@ -1,11 +1,15 @@
-import "./ditto.css";
+"use strict";
+console.log("加载render");
+import ClipboardJS from "./clipboard.min.js";
+
+import $ from "jquery";
+
 import "./RegisteraServiceWorkerFile.js";
-import ditto from "./ditto.js";
+import ditto from "./ditto";
 import "./prefetchmd";
-import "./hidewidthless500.css";
-import "./index.css";
+
 var doctitle = "ditto";
-$(window).one("load", () => {
+$(() => {
   const clipboard = new ClipboardJS(".btn");
 
   clipboard.on("success", function(e) {
