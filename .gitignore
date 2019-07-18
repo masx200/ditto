@@ -7,3 +7,4 @@ build/
 *.egg*
 .rope*
 run.sh
+*.bak
