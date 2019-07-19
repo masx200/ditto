@@ -1,12 +1,12 @@
 "use strict";
-console.log("加载render");
+// console.log("加载render");
 // import ClipboardJS from "./clipboard.min.js";
 
 import $ from "jquery";
 
 import "./RegisteraServiceWorkerFile.js";
 import ditto from "./ditto";
-console.log(ditto);
+// console.log(ditto);
 import "./prefetchmd";
 
 import config from "./config";
@@ -59,7 +59,7 @@ $(() => {
       //     location.hash = "#README";
       //   }
     }
-    $(window).on("hashchange", onhashchange);
+    window.addEventListener("hashchange", onhashchange);
     // new ClipboardJS(".btn");
     // if(location.hash===""  )  {location.hash="#README"}
   })();

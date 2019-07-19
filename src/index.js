@@ -42,7 +42,7 @@ document.getElementById("root").innerHTML = `
         </div>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#README" id="title">ditto</a>
+          <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title">ditto</a>
           </li>
         </ul>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -60,7 +60,8 @@ document.getElementById("root").innerHTML = `
       <div id="hide"></div>
       <div id="back_to_top">top</div>
 
-      <div id="error"></div>
+      <div >
+      <h1 id="error"></h1></div>
     </div>`;
 // $("head").append(`<script type="text/x-mathjax-config">
 //     MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],processRefs:!0},TeX:{equationNumbers:{autoNumber:"all",formatID:function(n){return"("+n+")"},formatURL:function(n){return null}}}});
@@ -72,7 +73,7 @@ document.getElementById("root").innerHTML = `
 
 // var MathJax = window.MathJax;
 import("./MathJax/index").then(module => {
-  console.log(module);
+  // console.log(module);
   var MathJax = module.default;
   MathJax.Hub.Config({
     tex2jax: { inlineMath: [["$", "$"]], processRefs: !0 },
@@ -96,7 +97,8 @@ import("./render");
 // });
 // });
 
-import("bootstrap").then(m => console.log(m));
+import("bootstrap");
+// .then(m => console.log(m));
 
 // import ClipboardJS from "./clipboard.min.js";
 
@@ -116,7 +118,7 @@ import("bootstrap").then(m => console.log(m));
 // });
 
 import("./clipboard").then(m => {
-  console.log(m);
+  // console.log(m);
   let ClipboardJS = m.default;
   const nclp = new ClipboardJS(".btn").on("success", function(e) {
     if (!e.text) {
@@ -128,5 +130,5 @@ import("./clipboard").then(m => {
 
     e.clearSelection();
   });
-  console.log(nclp);
+  // console.log(nclp);
 });
