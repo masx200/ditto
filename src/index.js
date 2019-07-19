@@ -97,10 +97,28 @@ import("./render");
 // });
 
 import("bootstrap").then(m => console.log(m));
-import("./clipboard.min.js").then(m => {
+
+// import ClipboardJS from "./clipboard.min.js";
+
+// // then(m => {
+// //   console.log(m);
+// //   let ClipboardJS = m.default;
+// new ClipboardJS(".btn").on("success", function(e) {
+//   if (!e.text) {
+//     console.log("复制内容空");
+//   } else {
+//     //   console.info("Action:", e.action);
+//     console.info("Text:", e.text);
+//   }
+
+//   e.clearSelection();
+// });
+// });
+
+import("./clipboard").then(m => {
   console.log(m);
   let ClipboardJS = m.default;
-  new ClipboardJS(".btn").on("success", function(e) {
+  const nclp = new ClipboardJS(".btn").on("success", function(e) {
     if (!e.text) {
       console.log("复制内容空");
     } else {
@@ -110,4 +128,5 @@ import("./clipboard.min.js").then(m => {
 
     e.clearSelection();
   });
+  console.log(nclp);
 });

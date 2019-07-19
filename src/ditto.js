@@ -515,7 +515,7 @@ var exports, module;
             jQuery(e)
               // .attr("contenteditable", true)
               .attr("id", codecontenguid)
-              .after(`<button class=" btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+              .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
                           </button>`);
           });
         //    <img class="clipbuttonimg" src="${jQuery("#clipsvg").attr("src")}" alt="复制到剪贴板">

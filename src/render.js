@@ -64,3 +64,7 @@ $(() => {
     // if(location.hash===""  )  {location.hash="#README"}
   })();
 });
+
+// then(m => {
+//   console.log(m);
+//   let ClipboardJS = m.default;
