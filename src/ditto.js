@@ -507,17 +507,17 @@ var exports, module;
         });
         /* Uncaught DOMException: Failed to execute 'querySelector' on 'Document': '#1895f0fd862578e8198037b27fe2bb1e0d9' is not a valid selector. */
         /* 批量设置clipboard的代码复制 */
-        [
-          ...jQuery("code.language-javascript.hljs"),
-          ...jQuery("code.language-html")
-        ].forEach(e => {
-          var codecontenguid = "clip" + guid();
-          jQuery(e)
-            // .attr("contenteditable", true)
-            .attr("id", codecontenguid)
-            .after(`<button class=" btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+        Array.from(jQuery("code.hljs"))
+          // ...jQuery("code.language-javascript.hljs"),
+          // ...jQuery("code.language-html")
+          .forEach(e => {
+            var codecontenguid = "clip" + guid();
+            jQuery(e)
+              // .attr("contenteditable", true)
+              .attr("id", codecontenguid)
+              .after(`<button class=" btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
                           </button>`);
-        });
+          });
         //    <img class="clipbuttonimg" src="${jQuery("#clipsvg").attr("src")}" alt="复制到剪贴板">
         // jQuery();
       }).fail(function() {
