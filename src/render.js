@@ -4,7 +4,7 @@
 
 import $ from "jquery";
 
-import "./RegisteraServiceWorkerFile.js";
+//import "./RegisteraServiceWorkerFile.js";
 import ditto from "./ditto";
 // console.log(ditto);
 import "./prefetchmd";
