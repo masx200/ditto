@@ -1,5 +1,6 @@
-"use strict";
-import "webpack-react-vue-spa-awesome-config/registerserviceworker.js"
+import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill.js";
+("use strict");
+import "webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import "./ditto.css";
 import "./hidewidthless500.css";
 import "./index.css";

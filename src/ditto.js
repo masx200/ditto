@@ -77,7 +77,7 @@ var readme加载失败 = false;
           ditto.sidebar_id.html(marked(data));
 
           if (ditto.searchbar) {
-            init_searchbar();
+            // init_searchbar();
           }
 
           //由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
@@ -154,133 +154,133 @@ var readme加载失败 = false;
       }
     }
 
-    function init_searchbar() {
-      var sidebar = ditto.sidebar_id.html();
-      var match = "[ditto:searchbar]";
+    // function init_searchbar() {
+    //   var sidebar = ditto.sidebar_id.html();
+    //   var match = "[ditto:searchbar]";
 
-      // html input searchbar
-      var search = "<input name='" + ditto.search_name.selector + "'";
-      search = search + " type='search'";
-      search = search + " results='10'>";
+    //   // html input searchbar
+    //   var search = "<input name='" + ditto.search_name.selector + "'";
+    //   search = search + " type='search'";
+    //   search = search + " results='10'>";
 
-      // replace match code with a real html input search bar
-      sidebar = sidebar.replace(match, search);
-      ditto.sidebar_id.html(sidebar);
+    //   // replace match code with a real html input search bar
+    //   sidebar = sidebar.replace(match, search);
+    //   ditto.sidebar_id.html(sidebar);
 
-      // add search listener
-      $("input[name=" + ditto.search_name.selector + "]").keydown(
-        searchbar_listener
-      );
-    }
+    //   // add search listener
+    //   $("input[name=" + ditto.search_name.selector + "]").keydown(
+    //     searchbar_listener
+    //   );
+    // }
 
-    function build_text_matches_html(fragments) {
-      var html = "";
-      var class_name = ditto.fragments_class.replace(".", "");
+    // function build_text_matches_html(fragments) {
+    //   var html = "";
+    //   var class_name = ditto.fragments_class.replace(".", "");
 
-      html += "<ul class='" + class_name + "'>";
-      for (var i = 0; i < fragments.length; i++) {
-        var fragment = fragments[i].fragment.replace("/[\uE000-\uF8FF]/g", "");
-        html += "<li class='" + ditto.fragment_class.replace(".", "") + "'>";
-        html += "<pre><code> ";
-        fragment = $("#hide")
-          .text(fragment)
-          .html();
-        html += fragment;
-        html += " </code></pre></li>";
-      }
-      html += "</ul>";
+    //   html += "<ul class='" + class_name + "'>";
+    //   for (var i = 0; i < fragments.length; i++) {
+    //     var fragment = fragments[i].fragment.replace("/[\uE000-\uF8FF]/g", "");
+    //     html += "<li class='" + ditto.fragment_class.replace(".", "") + "'>";
+    //     html += "<pre><code> ";
+    //     fragment = $("#hide")
+    //       .text(fragment)
+    //       .html();
+    //     html += fragment;
+    //     html += " </code></pre></li>";
+    //   }
+    //   html += "</ul>";
 
-      return html;
-    }
+    //   return html;
+    // }
 
-    function build_result_matches_html(matches) {
-      var html = "";
-      var class_name = ditto.search_results_class.replace(".", "");
+    // function build_result_matches_html(matches) {
+    //   var html = "";
+    //   var class_name = ditto.search_results_class.replace(".", "");
 
-      html += "<ul class='" + class_name + "'>";
-      for (var i = 0; i < matches.length; i++) {
-        var url = matches[i].path;
+    //   html += "<ul class='" + class_name + "'>";
+    //   for (var i = 0; i < matches.length; i++) {
+    //     var url = matches[i].path;
 
-        if (url !== ditto.sidebar_file) {
-          // var hash = "#" + url.replace(".md", "");
-          // var path = window.location.origin + "/" + hash;
+    //     if (url !== ditto.sidebar_file) {
+    //       // var hash = "#" + url.replace(".md", "");
+    //       // var path = window.location.origin + "/" + hash;
 
-          // html += "<li>";
-          html += "<li class='link'>";
-          html += url;
-          // html += "<a href='" + path +"'>" + url + "</a>";
-          html += "</li>";
+    //       // html += "<li>";
+    //       html += "<li class='link'>";
+    //       html += url;
+    //       // html += "<a href='" + path +"'>" + url + "</a>";
+    //       html += "</li>";
 
-          var match = build_text_matches_html(matches[i].text_matches);
-          html += match;
-        }
-      }
-      html += "</ul>";
+    //       var match = build_text_matches_html(matches[i].text_matches);
+    //       html += match;
+    //     }
+    //   }
+    //   html += "</ul>";
 
-      return html;
-    }
+    //   return html;
+    // }
 
-    function display_search_results(data) {
-      var results_html = "<h1>Search Results</h1>";
+    // function display_search_results(data) {
+    //   var results_html = "<h1>Search Results</h1>";
 
-      if (data.items.length) {
-        hide_errors();
-        results_html += build_result_matches_html(data.items);
-      } else {
-        show_error("Opps.. Found no matches!");
-      }
+    //   if (data.items.length) {
+    //     hide_errors();
+    //     results_html += build_result_matches_html(data.items);
+    //   } else {
+    //     show_error("Opps.. Found no matches!");
+    //   }
 
-      ditto.content_id.html(results_html);
-      $(ditto.search_results_class + " .link").click(function() {
-        var destination =
-          "#" +
-          $(this)
-            .html()
-            .replace(".md", "");
-        location.hash = destination;
-      });
-    }
+    //   ditto.content_id.html(results_html);
+    //   $(ditto.search_results_class + " .link").click(function() {
+    //     var destination =
+    //       "#" +
+    //       $(this)
+    //         .html()
+    //         .replace(".md", "");
+    //     location.hash = destination;
+    //   });
+    // }
 
-    function github_search(query) {
-      if (ditto.github_username && ditto.github_repo) {
-        // build github search api url string
-        var github_api = "https://api.github.com/";
-        var search = "search/code?q=";
-        var github_repo = ditto.github_username + "/" + ditto.github_repo;
-        var search_details = "+in:file+language:markdown+repo:";
+    // function github_search(query) {
+    //   if (ditto.github_username && ditto.github_repo) {
+    //     // build github search api url string
+    //     var github_api = "https://api.github.com/";
+    //     var search = "search/code?q=";
+    //     var github_repo = ditto.github_username + "/" + ditto.github_repo;
+    //     var search_details = "+in:file+language:markdown+repo:";
 
-        var url = github_api + search + query + search_details + github_repo;
-        var accept_header = "application/vnd.github.v3.text-match+json";
+    //     var url = github_api + search + query + search_details + github_repo;
+    //     var accept_header = "application/vnd.github.v3.text-match+json";
 
-        $.ajax(url, {
-          headers: {
-            Accept: accept_header
-          }
-        }).done(function(data) {
-          display_search_results(data);
-        });
-      }
+    //     $.ajax(url, {
+    //       headers: {
+    //         Accept: accept_header
+    //       }
+    //     }).done(function(data) {
+    //       display_search_results(data);
+    //     });
+    //   }
 
-      if (ditto.github_username == null && ditto.github_repo == null) {
-        alert("You have not set ditto.github_username and ditto.github_repo!");
-      } else if (ditto.github_username == null) {
-        alert("You have not set ditto.github_username!");
-      } else if (ditto.github_repo == null) {
-        alert("You have not set ditto.github_repo!");
-      }
-    }
+    //   if (ditto.github_username == null && ditto.github_repo == null) {
+    //     alert("You have not set ditto.github_username and ditto.github_repo!");
+    //   } else if (ditto.github_username == null) {
+    //     alert("You have not set ditto.github_username!");
+    //   } else if (ditto.github_repo == null) {
+    //     alert("You have not set ditto.github_repo!");
+    //   }
+    // }
 
-    function searchbar_listener(event) {
-      if (event.which === 13) {
-        // when user presses ENTER in search bar
-        var q = $("input[name=" + ditto.search_name.selector + "]").val();
-        if (q !== "") {
-          location.hash = "#search=" + q;
-        } else {
-          alert("Error! Empty search query!");
-        }
-      }
-    }
+    // function searchbar_listener(event) {
+    //   if (event.which === 13) {
+    //     // when user presses ENTER in search bar
+    //     var q = $("input[name=" + ditto.search_name.selector + "]").val();
+    //     if (q !== "") {
+    //       location.hash = "#search=" + q;
+    //     } else {
+    //       alert("Error! Empty search query!");
+    //     }
+    //   }
+    // }
 
     function replace_symbols(text) {
       // replace symbols with underscore
@@ -351,42 +351,42 @@ var readme加载失败 = false;
       }
     }
 
-    function youtube_url_extract(data) {
-      var yt_regex = /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+/g;
-      var yt_url = String(data.match(yt_regex));
-      yt_url = yt_url.replace(/]/g, "");
-      return yt_url;
-    }
+    // function youtube_url_extract(data) {
+    //   var yt_regex = /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+/g;
+    //   var yt_url = String(data.match(yt_regex));
+    //   yt_url = yt_url.replace(/]/g, "");
+    //   return yt_url;
+    // }
 
-    function youtube_url_to_embed(data) {
-      return (data = data.replace(/watch\?v\=/g, "embed/"));
-    }
+    // function youtube_url_to_embed(data) {
+    //   return (data = data.replace(/watch\?v\=/g, "embed/"));
+    // }
 
-    function create_youtube_embeds(data) {
-      // replaces [ditto:youtube:<some youtube link>]
-      // with a proper youtube embed iframe
-      var token_regex = /\[ditto\:youtube:(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+\]/g;
-      var yt_url = youtube_url_extract(data);
-      var yt_embed_url = youtube_url_to_embed(yt_url);
+    // function create_youtube_embeds(data) {
+    //   // replaces [ditto:youtube:<some youtube link>]
+    //   // with a proper youtube embed iframe
+    //   var token_regex = /\[ditto\:youtube:(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+\]/g;
+    //   var yt_url = youtube_url_extract(data);
+    //   var yt_embed_url = youtube_url_to_embed(yt_url);
 
-      // youtube embed html
-      var embed_html = `<div class="youtube_video">
-                <div style="position:relative;height:0;padding-bottom:56.25%">
-                  <iframe src="<link>?ecver=2"
-                    width="640"
-                    height="360"
-                    frameborder="0"
-                    style="position:absolute;width:100%;height:100%;left:0"
-                    allowfullscreen>
-                  </iframe>
-                </div>
-              </div>`;
-      embed_html = embed_html.replace("<link>", yt_embed_url);
+    //   // youtube embed html
+    //   var embed_html = `<div class="youtube_video">
+    //             <div style="position:relative;height:0;padding-bottom:56.25%">
+    //               <iframe src="<link>?ecver=2"
+    //                 width="640"
+    //                 height="360"
+    //                 frameborder="0"
+    //                 style="position:absolute;width:100%;height:100%;left:0"
+    //                 allowfullscreen>
+    //               </iframe>
+    //             </div>
+    //           </div>`;
+    //   embed_html = embed_html.replace("<link>", yt_embed_url);
 
-      // replace match code with youtube video
-      data = data.replace(token_regex, embed_html);
-      return data;
-    }
+    //   // replace match code with youtube video
+    //   data = data.replace(token_regex, embed_html);
+    //   return data;
+    // }
 
     // function normalize_paths() {
     //   // console.log($(this).attr("src"));
@@ -442,21 +442,21 @@ var readme加载失败 = false;
       ditto.loading_id.hide();
     }
 
-    function escape_github_badges(data) {
-      $("img").map(function() {
-        var ignore_list = ["travis-ci.com", "travis-ci.org", "coveralls.io"];
-        var src = $(this).attr("src");
+    // function escape_github_badges(data) {
+    //   $("img").map(function() {
+    //     var ignore_list = ["travis-ci.com", "travis-ci.org", "coveralls.io"];
+    //     var src = $(this).attr("src");
 
-        var base_url = src.split("/");
-        //  var protocol = base_url[0];
-        var host = base_url[2];
+    //     var base_url = src.split("/");
+    //     //  var protocol = base_url[0];
+    //     var host = base_url[2];
 
-        if ($.inArray(host, ignore_list) >= 0) {
-          $(this).attr("class", "github_badges");
-        }
-      });
-      return data;
-    }
+    //     if ($.inArray(host, ignore_list) >= 0) {
+    //       $(this).attr("class", "github_badges");
+    //     }
+    //   });
+    //   return data;
+    // }
     function guid() {
       return "xxxxxxxxyxxxxyxxxyyxxxyxxxxxxxxxxxx".replace(/[xy]/g, function(
         c
@@ -568,13 +568,13 @@ var readme加载失败 = false;
     function compile_into_dom(path, data, cb) {
       hide_errors();
 
-      data = create_youtube_embeds(data);
+      //   data = create_youtube_embeds(data);
       data = marked(escape_html(data));
       data = unescape_html(data);
       ditto.content_id.html(data);
 
       stop_loading();
-      escape_github_badges(data);
+      //   escape_github_badges(data);
 
       // normalize_paths();
       create_page_anchors();
@@ -603,11 +603,11 @@ var readme加载失败 = false;
         page_getter();
       } else {
         if (ditto.searchbar) {
-          var searchdate = location.hash.slice(
-            location.hash.indexOf(`search`) + `search=`.length
-          );
+          //   var searchdate = location.hash.slice(
+          //     location.hash.indexOf(`search`) + `search=`.length
+          //   );
           //   github_search(hash.replace("#search=", ""));
-          github_search(searchdate);
+          //   github_search(searchdate);
         }
       }
     }
