@@ -26,6 +26,8 @@ document.getElementById("root").innerHTML = `
         style="padding-right:0;padding-left:0;"
       >
         <div>
+        <a class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title">ditto</a>
+        <!--
           <a
             class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
             href="https://masx200.github.io/index.html"
@@ -33,6 +35,7 @@ document.getElementById("root").innerHTML = `
             <hr id="hidewidthless500" />
             github主页
           </a>
+          -->
           <button
             class="navbar-toggler"
             type="button"
@@ -44,7 +47,9 @@ document.getElementById("root").innerHTML = `
         </div>
         <ul class="navbar-nav">
           <li class="nav-item">
+          <!--
           <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title">ditto</a>
+          -->
           </li>
         </ul>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">

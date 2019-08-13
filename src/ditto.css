@@ -33,7 +33,7 @@ body {
   /* box-shadow: 0 0 40px #CCC;
     -webkit-box-shadow: 0 0 40px #CCC;
     -moz-box-shadow: 0 0 40px #CCC; */
-  border-right: 1px solid #bbb;
+  /* border-right: 1px solid #bbb; */
 }
 
 #sidebar h1 {
@@ -47,9 +47,9 @@ body {
   color: #333;
 }
 
-#sidebar h2 {
+/* #sidebar h2 {
   /* font-size: 15px; */
-}
+/* } */
 
 #sidebar h5 {
   margin-top: 20px;
