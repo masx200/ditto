@@ -12,7 +12,7 @@ Lightweight Markdown Documentation System based on ditto
 
 https://github.com/masx200/ditto
 
-预先加载 sidebar 当中的 markdwon 文件到 head 的 link 的 prefetch 元素,来提升加载速度
+预先加载 目录 当中的 markdwon 文件到 head 的 link 的 prefetch 元素,来提升加载速度
 
 新版:使用 webpack-react-vue-spa-awesome-config 打包
 

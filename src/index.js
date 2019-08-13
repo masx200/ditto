@@ -1,5 +1,7 @@
 import "webpack-react-vue-spa-awesome-config/ie11babelpolyfill.js";
 ("use strict");
+import "./我的侧边栏.css";
+
 import "webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import "./ditto.css";
 import "./hidewidthless500.css";
@@ -26,7 +28,19 @@ document.getElementById("root").innerHTML = `
         style="padding-right:0;padding-left:0;"
       >
         <div>
-        <a class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title">ditto</a>
+        <a class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title"
+        style="
+    
+    top: 0;
+"
+        >ditto</a>
+        <button
+       
+        type="button"
+   id='cebianlantoggle'
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
         <!--
           <a
             class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
@@ -55,7 +69,14 @@ document.getElementById("root").innerHTML = `
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <div id="sidebar" class="navbar-nav"></div>
         </div>
+       
       </nav>
+    </div>
+
+    <div class="container-fluid ">
+    <div id='cebianlan' class="el-container" style="/* height: 500px; */border: 1px solid white;position: fixed;">
+    
+    <aside class="el-aside" style="width: 300px;background-color:white;"></aside> </div>
     </div>
     <div id="my主体" class="container">
       <div id="loading">
@@ -65,7 +86,8 @@ document.getElementById("root").innerHTML = `
       </div>
       <div id="content"></div>
       <div id="hide"></div>
-      <div id="back_to_top">top</div>
+      <div style="display: none;"><div id="back_to_top">top</div></div>
+      
 
       <div >
       <h1 id="error"></h1></div>

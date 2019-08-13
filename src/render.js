@@ -68,3 +68,6 @@ $(() => {
 // then(m => {
 //   console.log(m);
 //   let ClipboardJS = m.default;
+$("#cebianlantoggle").click(() => {
+  $("#cebianlan").toggle();
+});

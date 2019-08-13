@@ -76,6 +76,9 @@ var readme加载失败 = false;
 
           ditto.sidebar_id.html(marked(data));
 
+          $("#cebianlan .el-aside").html(marked(data));
+          $("#cebianlan").css("top", $("#my导航栏").height());
+          $("#cebianlan  ul").addClass("navbar-nav");
           if (ditto.searchbar) {
             // init_searchbar();
           }
