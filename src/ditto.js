@@ -1,4 +1,5 @@
-"use strict";
+import { 内容调整左边偏移 } from "./render";
+("use strict");
 import hljs from "./highlight.min.js";
 import marked from "./marked.min";
 import jQuery from "jquery";
@@ -79,6 +80,9 @@ var readme加载失败 = false;
           $("#cebianlan .el-aside").html(marked(data));
           $("#cebianlan").css("top", $("#my导航栏").height());
           $("#cebianlan  ul").addClass("navbar-nav");
+
+          内容调整左边偏移();
+
           if (ditto.searchbar) {
             // init_searchbar();
           }
@@ -542,6 +546,8 @@ var readme加载失败 = false;
           });
         //    <img class="clipbuttonimg" src="${jQuery("#clipsvg").attr("src")}" alt="复制到剪贴板">
         // jQuery();
+
+        内容调整左边偏移();
       }).fail(function() {
         console.error("Opps! ... File not found!\n5秒后返回主页");
         show_error("Opps! ... File not found!\n5秒后返回主页");
