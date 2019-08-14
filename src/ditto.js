@@ -151,14 +151,14 @@ var readme加载失败 = false;
                 new URL(
                   e.endsWith(".md") ? e : e + ".md",
                   webpackrequirepublicpath
-                )
-                // {
-                //   credentials: "omit",
-                //   headers: { accept: "*/*" },
-                //   body: null,
-                //   method: "GET",
-                //   mode: "cors"
-                // }
+                ),
+                {
+                  credentials: "omit",
+                  //   headers: { accept: "*/*" },
+                  body: null,
+                  method: "GET",
+                  mode: "cors"
+                }
               );
 
               //   document.head.appendChild(linkmarkdwon);
