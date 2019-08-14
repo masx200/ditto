@@ -1,7 +1,7 @@
 {
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
-        "build": "webpack-react-vue-spa-awesome-config build  --output-public-path=https://cdn.jsdelivr.net/gh/masx200/ditto@latest/ ",
+        "build": "webpack-react-vue-spa-awesome-config build  --output-public-path=https://cdn.jsdelivr.net/gh/masx200/markdown-reader@latest/ ",
         "test": "webpack-react-vue-spa-awesome-config build"
     },
     "dependencies": {
@@ -13,8 +13,8 @@
         "webpack": "^4.36.1",
         "webpack-react-vue-spa-awesome-config": "https://github.com/masx200/webpack-react-vue-spa-awesome-config.git"
     },
-    "name": "ditto",
-    "description": "Lightweight Markdown Documentation System based on ditto",
+    "name": "markdown-reader",
+    "description": "Lightweight Markdown Documentation System ",
     "version": "2.1.0",
     "directories": {
         "doc": "docs"
