@@ -604,6 +604,9 @@ var readme加载失败 = false;
             }, 0);
 
             $("#markdownurlsrc").text(path);
+if (window.innerWidth < 550) {
+      $("#cebianlan").hide();
+}
           })
           .catch(function() {
             console.error("Opps! ... File not found!\n5秒后返回主页");
