@@ -11,7 +11,7 @@ import ditto from "./ditto";
 
 import config from "./config";
 
-var doctitle = config.doctitle || "ditto";
+var doctitle = config.doctitle || "Markdown Reader";
 var subtitle = config.subtitle || "Lightweight Markdown Documentation System";
 var github_username = config.github_username;
 var github_repo = config.github_repo;
@@ -85,6 +85,10 @@ export function 内容调整左边偏移() {
         "padding-left": 左边偏移量 + 15
       });
       // }, 0);
+    });
+  } else {
+    $("#content").css({
+      "padding-left": +15
     });
   }
 }

@@ -1,4 +1,9 @@
 @media (max-width: 550px) {
+  /* 宽度小 */
+
+  #mynewsidelan {
+    width: 100%;
+  }
   button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: inline-block !important;
   }
@@ -9,16 +14,29 @@
     display: flex !important;
   }
   #cebianlan {
-    display: none;
+    width: 100%;
+    /* display: none; */
   }
-  #cebianlantoggle {
+  /* #cebianlantoggle {
     display: none;
-  }
+  } */
 }
 #cebianlan {
+  overflow: auto;
   max-height: 100%;
 }
+#mynewsidelan {
+  overflow: auto;
+}
+#cebianlantoggle {
+  display: inline-block;
+}
 @media (min-width: 550px) {
+  /*宽度 大 */
+
+  #mynewsidelan {
+    width: 300px;
+  }
   button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: none !important;
   }

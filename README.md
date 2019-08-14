@@ -1,4 +1,4 @@
-# ditto
+# Markdown Reader
 
 Lightweight Markdown Documentation System based on ditto
 
@@ -10,7 +10,7 @@ Lightweight Markdown Documentation System based on ditto
 
 可通过 GitHub 页面部署
 
-https://github.com/masx200/ditto
+<!-- https://github.com/masx200/ditto -->
 
 预先加载 目录 当中的 markdwon 文件到 head 的 link 的 prefetch 元素,来提升加载速度
 
@@ -20,7 +20,7 @@ https://github.com/masx200/ditto
 
 # 优化界面展示方式,使用 bootstrap 可折叠的导航栏和响应式布局和 cdn 加载依赖包
 
-https://masx200.github.io/ditto
+<!-- https://masx200.github.io/ditto -->
 
 ## 使用 bootstrap 可折叠的导航栏和响应式布局
 
@@ -38,7 +38,7 @@ https://masx200.github.io/ditto
 
 [查看ditto.js源代码](./src/ditto.js) -->
 
-## cdn 加载依赖包
+<!-- ## cdn 加载依赖包
 
 ```
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css
@@ -61,6 +61,7 @@ https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js
 
 https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
 ```
+ -->
 
 # ditto
 

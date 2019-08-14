@@ -70,9 +70,8 @@ var readme加载失败 = false;
     }
 
     function init_sidebar_section() {
-      $.get(
-        ditto.sidebar_file,
-        function(data) {
+      $.get(ditto.sidebar_file)
+        .then(function(data) {
           //加载完目录部分的markdown的回调函数
 
           ditto.sidebar_id.html(marked(data));
@@ -81,6 +80,9 @@ var readme加载失败 = false;
           $("#cebianlan").css("top", $("#my导航栏").height());
           $("#cebianlan  ul").addClass("navbar-nav");
 
+          $("#mynewsidelan  a").addClass(
+            `mui-btn mui-btn-primary mui-btn-outlined`
+          );
           内容调整左边偏移();
 
           if (ditto.searchbar) {
@@ -107,7 +109,18 @@ var readme加载失败 = false;
           $("#my主体").css("padding-top", $("#my导航栏").height());
           /* 预先加载sidebar当中的markdwon文件到head的link的prefetch元素,来提升加载速度 */
 
-          Array(...$("#sidebar a"))
+          //   Array(...$("#sidebar a"))
+          //     .map(e => e.hash)
+          //     .filter(e => e.startsWith("#"))
+          //     .map(e => e.slice(1))
+          //     .forEach(e => {
+          //       var linkmarkdwon = document.createElement("link");
+          //       linkmarkdwon.rel = "prefetch";
+          //       linkmarkdwon.href = e + ".md";
+          //       document.head.appendChild(linkmarkdwon);
+          //     });
+          // })
+          Array(...$("#mynewsidelan a"))
             .map(e => e.hash)
             .filter(e => e.startsWith("#"))
             .map(e => e.slice(1))
@@ -117,17 +130,21 @@ var readme加载失败 = false;
               linkmarkdwon.href = e + ".md";
               document.head.appendChild(linkmarkdwon);
             });
-        },
-        "text"
-      ).fail(function() {
-        stop_loading();
-        setTimeout(() => {
-          page_getter(true);
-          // location.hash = "#";
-        }, 5000);
-        console.error("Opps! can't find the sidebar file to display!");
-        throw new Error("load failed");
-      });
+        })
+
+        // }
+
+        //     })
+        // "text"
+        .catch(function() {
+          stop_loading();
+          setTimeout(() => {
+            page_getter(true);
+            // location.hash = "#";
+          }, 5000);
+          console.error("Opps! can't find the sidebar file to display!");
+          console.warn("load failed");
+        });
     }
 
     function init_back_to_top_button() {
@@ -507,9 +524,10 @@ var readme加载失败 = false;
         // console.log(path)
         // normalize_paths();
       }
-      $.get(path, function(data) {
-        /* 设置所有代码段都可以编辑,不知为何,网页所有部分都不能选择文字? */
-        /*<style>
+      $.get(path)
+        .then(function(data) {
+          /* 设置所有代码段都可以编辑,不知为何,网页所有部分都不能选择文字? */
+          /*<style>
  * {
         -webkit-user-select: text;
         -moz-user-select: text;
@@ -517,53 +535,54 @@ var readme加载失败 = false;
         user-select: text;
       }
       </style> */
-        //加载完主体部分的markdown的回调函数
-        $("#collapsibleNavbar").removeClass("show");
-        $("#my主体").css("padding-top", $("#my导航栏").height());
+          //加载完主体部分的markdown的回调函数
+          $("#collapsibleNavbar").removeClass("show");
+          $("#my主体").css("padding-top", $("#my导航栏").height());
 
-        compile_into_dom(path, data, function() {
-          // rerender mathjax and reset mathjax equation counter
-          if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
-            MathJax.Extension["TeX/AMSmath"].startNumber = 0;
-            MathJax.Extension["TeX/AMSmath"].labels = {};
+          compile_into_dom(path, data, function() {
+            // rerender mathjax and reset mathjax equation counter
+            if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
+              MathJax.Extension["TeX/AMSmath"].startNumber = 0;
+              MathJax.Extension["TeX/AMSmath"].labels = {};
 
-            var content = document.getElementById("content");
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
-          }
-        });
-        /* Uncaught DOMException: Failed to execute 'querySelector' on 'Document': '#1895f0fd862578e8198037b27fe2bb1e0d9' is not a valid selector. */
-        /* 批量设置clipboard的代码复制 */
-        Array.from(jQuery("code.hljs"))
-          // ...jQuery("code.language-javascript.hljs"),
-          // ...jQuery("code.language-html")
-          .forEach(e => {
-            var codecontenguid = "clip" + guid();
-            jQuery(e)
-              // .attr("contenteditable", true)
-              .attr("id", codecontenguid)
-              .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
-                          </button>`);
+              var content = document.getElementById("content");
+              MathJax.Hub.Queue(["Typeset", MathJax.Hub, content]);
+            }
           });
-        //    <img class="clipbuttonimg" src="${jQuery("#clipsvg").attr("src")}" alt="复制到剪贴板">
-        // jQuery();
+          /* Uncaught DOMException: Failed to execute 'querySelector' on 'Document': '#1895f0fd862578e8198037b27fe2bb1e0d9' is not a valid selector. */
+          /* 批量设置clipboard的代码复制 */
+          Array.from(jQuery("code.hljs"))
+            // ...jQuery("code.language-javascript.hljs"),
+            // ...jQuery("code.language-html")
+            .forEach(e => {
+              var codecontenguid = "clip" + guid();
+              jQuery(e)
+                // .attr("contenteditable", true)
+                .attr("id", codecontenguid)
+                .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+                          </button>`);
+            });
+          //    <img class="clipbuttonimg" src="${jQuery("#clipsvg").attr("src")}" alt="复制到剪贴板">
+          // jQuery();
 
-        内容调整左边偏移();
-      }).fail(function() {
-        console.error("Opps! ... File not found!\n5秒后返回主页");
-        show_error("Opps! ... File not found!\n5秒后返回主页");
-        stop_loading();
+          内容调整左边偏移();
+        })
+        .catch(function() {
+          console.error("Opps! ... File not found!\n5秒后返回主页");
+          show_error("Opps! ... File not found!\n5秒后返回主页");
+          stop_loading();
 
-        if (!readme加载失败) {
-          setTimeout(() => {
-            page_getter(true);
-            // location.hash = "#";
-          }, 5000);
-        }
-        if (path === "./" + ditto.index) {
-          readme加载失败 = true;
-        }
-        throw new Error("load failed");
-      });
+          if (!readme加载失败) {
+            setTimeout(() => {
+              page_getter(true);
+              // location.hash = "#";
+            }, 5000);
+          }
+          if (path === "./" + ditto.index) {
+            readme加载失败 = true;
+          }
+          console.warn("load failed");
+        });
     }
 
     function escape_html(string) {

@@ -50,6 +50,8 @@ document.getElementById("root").innerHTML = `
             github主页
           </a>
           -->
+
+          <!--
           <button
             class="navbar-toggler"
             type="button"
@@ -58,6 +60,7 @@ document.getElementById("root").innerHTML = `
           >
             <span class="navbar-toggler-icon"></span>
           </button>
+          -->
         </div>
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -66,17 +69,27 @@ document.getElementById("root").innerHTML = `
           -->
           </li>
         </ul>
+
+        <!--
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <div id="sidebar" class="navbar-nav"></div>
         </div>
        
+-->
       </nav>
     </div>
 
     <div class="container-fluid ">
     <div id='cebianlan' class="el-container" style="/* height: 500px; */border: 1px solid white;position: fixed;">
     
-    <aside class="el-aside" style="width: 300px;background-color:white;"></aside> </div>
+    <aside id="mynewsidelan" class="el-aside" style="
+    /*
+
+    width: 300px;
+    */
+
+    background-color:white;"></aside> </div>
     </div>
     <div id="my主体" class="container">
       <div id="loading">
@@ -126,7 +139,7 @@ import("./render");
 // });
 // });
 
-import("bootstrap");
+// import("bootstrap");
 // .then(m => console.log(m));
 
 // import ClipboardJS from "./clipboard.min.js";
