@@ -143,13 +143,25 @@ var readme加载失败 = false;
             .filter(e => e.startsWith("#"))
             .map(e => e.slice(1))
             .forEach(e => {
-              var linkmarkdwon = document.createElement("link");
-              linkmarkdwon.rel = "prefetch";
-              linkmarkdwon.href = new URL(
-                e.endsWith(".md") ? e : e + ".md",
-                webpackrequirepublicpath
+              /* The FetchEvent for "https://cdn.jsdelivr.net/gh/masx200/markdown-reader@2.1.1/docs/why_use_ditto.md" resulted in a network error response: an "opaque" response was used for a request whose type is not no-cors */
+              //   var linkmarkdwon = document.createElement("link");
+              //   linkmarkdwon.rel = "prefetch";
+              //   linkmarkdwon.href =
+              fetch(
+                new URL(
+                  e.endsWith(".md") ? e : e + ".md",
+                  webpackrequirepublicpath
+                )
+                // {
+                //   credentials: "omit",
+                //   headers: { accept: "*/*" },
+                //   body: null,
+                //   method: "GET",
+                //   mode: "cors"
+                // }
               );
-              document.head.appendChild(linkmarkdwon);
+
+              //   document.head.appendChild(linkmarkdwon);
             });
         })
 
