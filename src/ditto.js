@@ -51,11 +51,11 @@ var readme加载失败 = false;
       }
 
       if (ditto.back_to_top_button) {
-        init_back_to_top_button();
+        // init_back_to_top_button();
       }
 
       if (ditto.edit_button) {
-        init_edit_button();
+        // init_edit_button();
       }
 
       // intialize highligh.js
@@ -147,36 +147,36 @@ var readme加载失败 = false;
         });
     }
 
-    function init_back_to_top_button() {
-      ditto.back_to_top_id.show();
-      ditto.back_to_top_id.on("click", function() {
-        $("body, html").animate(
-          {
-            scrollTop: 0
-          },
-          200
-        );
-      });
-    }
+    // function init_back_to_top_button() {
+    //   ditto.back_to_top_id.show();
+    //   ditto.back_to_top_id.on("click", function() {
+    //     $("body, html").animate(
+    //       {
+    //         scrollTop: 0
+    //       },
+    //       200
+    //     );
+    //   });
+    // }
 
-    function init_edit_button() {
-      if (ditto.base_url === null) {
-        alert("Error! You didn't set 'base_url' when calling ditto.run()!");
-      } else {
-        ditto.edit_id.show();
-        ditto.edit_id.on("click", function() {
-          var hash = location.hash.replace("#", "/");
+    // function init_edit_button() {
+    //   if (ditto.base_url === null) {
+    //     // alert("Error! You didn't set 'base_url' when calling ditto.run()!");
+    //   } else {
+    //     ditto.edit_id.show();
+    //     ditto.edit_id.on("click", function() {
+    //       var hash = location.hash.replace("#", "/");
 
-          if (hash === "") {
-            hash = "/" + ditto.index.replace(".md", "");
-          }
+    //       if (hash === "") {
+    //         hash = "/" + ditto.index.replace(".md", "");
+    //       }
 
-          window.open(ditto.base_url + hash + ".md");
-          // open is better than redirecting, as the previous page history
-          // with redirect is a bit messed up
-        });
-      }
-    }
+    //       window.open(ditto.base_url + hash + ".md");
+    //       // open is better than redirecting, as the previous page history
+    //       // with redirect is a bit messed up
+    //     });
+    //   }
+    // }
 
     // function init_searchbar() {
     //   var sidebar = ditto.sidebar_id.html();
@@ -306,74 +306,74 @@ var readme加载失败 = false;
     //   }
     // }
 
-    function replace_symbols(text) {
-      // replace symbols with underscore
-      return text.replace(/[&\/\\#,+=()$~%.'":*?<>{}\ \]\[]/g, "_");
-    }
+    // function replace_symbols(text) {
+    //   // replace symbols with underscore
+    //   return text.replace(/[&\/\\#,+=()$~%.'":*?<>{}\ \]\[]/g, "_");
+    // }
 
-    function li_create_linkage(li_tag, header_level) {
-      // add custom id and class attributes
-      var html_safe_tag = replace_symbols(li_tag.text());
-      li_tag.attr("id", html_safe_tag);
-      li_tag.attr("class", "link");
+    // function li_create_linkage(li_tag, header_level) {
+    //   // add custom id and class attributes
+    //   var html_safe_tag = replace_symbols(li_tag.text());
+    //   li_tag.attr("id", html_safe_tag);
+    //   li_tag.attr("class", "link");
 
-      // add click listener - on click scroll to relevant header section
-      $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(
-        function() {
-          // scroll to relevant section
-          var header = $("h" + header_level + "." + li_tag.attr("id"));
-          $("html, body").animate(
-            {
-              scrollTop: header.offset().top
-            },
-            200
-          );
+    //   // add click listener - on click scroll to relevant header section
+    //   $(ditto.content_id.selector + " li#" + li_tag.attr("id")).click(
+    //     function() {
+    //       // scroll to relevant section
+    //       var header = $("h" + header_level + "." + li_tag.attr("id"));
+    //       $("html, body").animate(
+    //         {
+    //           scrollTop: header.offset().top
+    //         },
+    //         200
+    //       );
 
-          // highlight the relevant section
-          var original_color = header.css("color");
-          header.animate(
-            {
-              color: "#ED1C24"
-            },
-            500,
-            function() {
-              // revert back to orig color
-              $(this).animate(
-                {
-                  color: original_color
-                },
-                2500
-              );
-            }
-          );
-        }
-      );
-    }
+    //       // highlight the relevant section
+    //       var original_color = header.css("color");
+    //       header.animate(
+    //         {
+    //           color: "#ED1C24"
+    //         },
+    //         500,
+    //         function() {
+    //           // revert back to orig color
+    //           $(this).animate(
+    //             {
+    //               color: original_color
+    //             },
+    //             2500
+    //           );
+    //         }
+    //       );
+    //     }
+    //   );
+    // }
 
-    function create_page_anchors() {
-      // create page anchors by matching li's to headers
-      // if there is a match, create click listeners
-      // and scroll to relevant sections
+    // function create_page_anchors() {
+    //   // create page anchors by matching li's to headers
+    //   // if there is a match, create click listeners
+    //   // and scroll to relevant sections
 
-      // go through header level 2 and 3
-      for (var i = 2; i <= 4; i++) {
-        // parse all headers
-        var headers = [];
-        $(ditto.content_id.selector + " h" + i).map(function() {
-          headers.push($(this).text());
-          $(this).addClass(replace_symbols($(this).text()));
-        });
+    //   // go through header level 2 and 3
+    //   for (var i = 2; i <= 4; i++) {
+    //     // parse all headers
+    //     var headers = [];
+    //     $(ditto.content_id.selector + " h" + i).map(function() {
+    //       headers.push($(this).text());
+    //       $(this).addClass(replace_symbols($(this).text()));
+    //     });
 
-        // parse and set links between li and h2
-        $(ditto.content_id.selector + " ul li").map(function() {
-          for (var j = 0; j < headers.length; j++) {
-            if (headers[j] === $(this).text()) {
-              li_create_linkage($(this), i);
-            }
-          }
-        });
-      }
-    }
+    //     // parse and set links between li and h2
+    //     $(ditto.content_id.selector + " ul li").map(function() {
+    //       for (var j = 0; j < headers.length; j++) {
+    //         if (headers[j] === $(this).text()) {
+    //           li_create_linkage($(this), i);
+    //         }
+    //       }
+    //     });
+    //   }
+    // }
 
     // function youtube_url_extract(data) {
     //   var yt_regex = /(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+/g;
@@ -539,7 +539,7 @@ var readme加载失败 = false;
           $("#collapsibleNavbar").removeClass("show");
           $("#my主体").css("padding-top", $("#my导航栏").height());
 
-          compile_into_dom(path, data, function() {
+          compile_into_dom(data, function() {
             // rerender mathjax and reset mathjax equation counter
             if (MathJax && MathJax.Extension["Tex/AMSmath"]) {
               MathJax.Extension["TeX/AMSmath"].startNumber = 0;
@@ -593,7 +593,7 @@ var readme加载失败 = false;
       return string.replace(/&amp;#92;/g, "\\").replace(/&amp;#95;/g, "_");
     }
 
-    function compile_into_dom(path, data, cb) {
+    function compile_into_dom(data, cb) {
       hide_errors();
 
       //   data = create_youtube_embeds(data);
@@ -605,7 +605,7 @@ var readme加载失败 = false;
       //   escape_github_badges(data);
 
       // normalize_paths();
-      create_page_anchors();
+      //   create_page_anchors();
 
       if (ditto.highlight_code) {
         $("pre code").each(function(i, block) {
@@ -618,9 +618,9 @@ var readme加载失败 = false;
       }
     }
 
-    function router(e) {
+    function router() {
       var hash = location.hash;
-      e && console.log(e);
+      //   e && console.log(e);
       if (
         !(
           hash.slice(2, 8) == "search" ||

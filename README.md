@@ -18,7 +18,7 @@ Lightweight Markdown Documentation System based on ditto
 
 旧版:使用 parcel bundler 打包文件
 
-# 优化界面展示方式,使用 bootstrap 可折叠的导航栏和响应式布局和 cdn 加载依赖包
+# 优化界面展示方式,使用 侧边栏 可折叠的导航栏和响应式布局和 cdn 加载依赖包
 
 <!-- https://masx200.github.io/ditto -->
 
