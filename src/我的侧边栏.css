@@ -62,3 +62,16 @@
   text-align: center;
   line-height: 30px;
 }
+h5#markdownurlsrc {
+  position: relative !important;
+}
+button.btn.btn-outline-primary.clipbutton {
+  /* mui中设置按钮 relative导致按钮前置?*/
+  position: static !important;
+}
+* {
+  transition-property: all;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}

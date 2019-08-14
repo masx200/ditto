@@ -62,14 +62,14 @@ document.getElementById("root").innerHTML = `
           </button>
           -->
         </div>
-        <ul class="navbar-nav">
+        <!--   <ul class="navbar-nav">
           <li class="nav-item">
           <!--
           <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title"></a>
           -->
-          </li>
+          <!--   </li>
         </ul>
-
+        -->
         <!--
 
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -92,12 +92,17 @@ document.getElementById("root").innerHTML = `
     background-color:white;"></aside> </div>
     </div>
     <div id="my主体" class="container">
+    <div id="loadingparent">
       <div id="loading">
         <h1>
           Loading ...
         </h1>
       </div>
+      </div>
+      <div >
+      <h5 class="mui-btn mui-btn-primary mui-btn-outlined" id='markdownurlsrc'></h5>
       <div id="content"></div>
+      </div>
       <div id="hide"></div>
       <div style="display: none;"><div id="back_to_top">top</div></div>
       
