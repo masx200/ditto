@@ -1,3 +1,7 @@
+import webpackrequirepublicpath from "./webpack-require-public-path";
+const summaryfile = "summary.md";
+
+// console.log(webpackrequirepublicpath);
 import { 内容调整左边偏移 } from "./render";
 ("use strict");
 import hljs from "./highlight.min.js";
@@ -6,6 +10,7 @@ import jQuery from "jquery";
 /* eslint-disable no-useless-escape */
 // var MathJax = window.MathJax;
 import MathJax from "./MathJax/index";
+// import { connectableObservableDescriptor } from "rxjs/internal/observable/ConnectableObservable";
 var exports, module;
 var readme加载失败 = false;
 (() => {
@@ -70,7 +75,8 @@ var readme加载失败 = false;
     }
 
     function init_sidebar_section() {
-      $.get(ditto.sidebar_file)
+      //   $.get(ditto.sidebar_file)
+      $.get(summaryfile)
         .then(function(data) {
           //加载完目录部分的markdown的回调函数
 
@@ -121,13 +127,26 @@ var readme加载失败 = false;
           //     });
           // })
           Array(...$("#mynewsidelan a"))
+            /* 改成summary.md文件了 ,链接不带#*/
+
+            .map(a => {
+              //   a.href = "#" + a.href;
+
+              var b = new URL("#" + a.getAttribute("href"), location.href);
+              //   console.log(b);
+              a.href = b.href;
+              return b;
+            })
             .map(e => e.hash)
             .filter(e => e.startsWith("#"))
             .map(e => e.slice(1))
             .forEach(e => {
               var linkmarkdwon = document.createElement("link");
               linkmarkdwon.rel = "prefetch";
-              linkmarkdwon.href = e + ".md";
+              linkmarkdwon.href = new URL(
+                e.endsWith(".md") ? e : e + ".md",
+                webpackrequirepublicpath
+              );
               document.head.appendChild(linkmarkdwon);
             });
         })
@@ -514,7 +533,7 @@ var readme加载失败 = false;
         a.join("/") +
         (location.hash === ""
           ? "./" + ditto.index
-          : location.hash.replace("#", "./") + ".md");
+          : location.hash.replace("#", "./")); /* + ".md" */
       show_loading();
       if (转到主页 === false) {
         // console.log(path)
@@ -524,6 +543,7 @@ var readme加载失败 = false;
         // console.log(path)
         // normalize_paths();
       }
+      path = path.endsWith(".md") ? path : path + ".md";
       $.get(path)
         .then(function(data) {
           /* 设置所有代码段都可以编辑,不知为何,网页所有部分都不能选择文字? */
