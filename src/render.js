@@ -74,16 +74,19 @@ $("#cebianlantoggle").click(() => {
   内容调整左边偏移();
 });
 export function 内容调整左边偏移() {
-  var 左边偏移量 = $("#cebianlan")[0].offsetWidth - $("#content").offset().left;
-  //   if (左边偏移量 < 15) 左边偏移量 = 15;
-  左边偏移量 = Math.max(左边偏移量, 15);
-  requestAnimationFrame(() => {
-    // setTimeout(() => {
-    $("#content").css({
-      "padding-left": 左边偏移量 + 15
+  if (window.innerWidth > 550) {
+    requestAnimationFrame(() => {
+      var 左边偏移量 =
+        $("#cebianlan")[0].offsetWidth - $("#content").offset().left;
+      //   if (左边偏移量 < 15) 左边偏移量 = 15;
+      左边偏移量 = Math.max(左边偏移量, 15);
+      // setTimeout(() => {
+      $("#content").css({
+        "padding-left": 左边偏移量 + 15
+      });
+      // }, 0);
     });
-    // }, 0);
-  });
+  }
 }
 window.addEventListener("resize", () => {
   内容调整左边偏移();
