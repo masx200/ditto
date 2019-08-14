@@ -1,6 +1,6 @@
 import fetchajaxgettext from "./fetchajaxgettext";
 import webpackrequirepublicpath from "./webpack-require-public-path";
-const summaryfile = "summary.md";
+const summaryfile = new URL("summary.md", webpackrequirepublicpath).href;
 
 // console.log(webpackrequirepublicpath);
 import { 内容调整左边偏移 } from "./render";
@@ -98,21 +98,21 @@ var readme加载失败 = false;
           }
 
           //由于当作bootstrap导航栏,所以给sidebar中的ul增加class为"navbar-nav"
-          $("#sidebar  ul").addClass("navbar-nav");
-          $("#sidebar  h1").addClass("nav-item");
-          $("#sidebar  p").addClass("nav-item");
-          $("#sidebar a").addClass("nav-link");
-          $("#sidebar  h2").addClass("nav-item");
-          $("#sidebar  li").addClass("nav-item");
-          // $("#sidebar > a").addClass("nav-link")
-          // $("#sidebar >ul> li").addClass("nav-item")
-          // nav-item navbar-nav nav-link
-          $("#sidebar  ol").addClass("navbar-nav");
-          $("#sidebar  li").addClass("nav-item");
-          // $("#sidebar >ol>li> a").addClass("nav-link")
-          // $("#sidebar >ul>li> a").addClass("nav-link")
-          // $("#sidebar >h1> a").addClass("nav-link")
-          $("#sidebar  input").addClass("nav-link");
+          //   $("#sidebar  ul").addClass("navbar-nav");
+          //   $("#sidebar  h1").addClass("nav-item");
+          //   $("#sidebar  p").addClass("nav-item");
+          //   $("#sidebar a").addClass("nav-link");
+          //   $("#sidebar  h2").addClass("nav-item");
+          //   $("#sidebar  li").addClass("nav-item");
+          //   // $("#sidebar > a").addClass("nav-link")
+          //   // $("#sidebar >ul> li").addClass("nav-item")
+          //   // nav-item navbar-nav nav-link
+          //   $("#sidebar  ol").addClass("navbar-nav");
+          //   $("#sidebar  li").addClass("nav-item");
+          //   // $("#sidebar >ol>li> a").addClass("nav-link")
+          //   // $("#sidebar >ul>li> a").addClass("nav-link")
+          //   // $("#sidebar >h1> a").addClass("nav-link")
+          //   $("#sidebar  input").addClass("nav-link");
 
           $("#my主体").css("padding-top", $("#my导航栏").height());
           /* 预先加载sidebar当中的markdwon文件到head的link的prefetch元素,来提升加载速度 */
