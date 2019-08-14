@@ -22,7 +22,7 @@ Lightweight Markdown Documentation System based on ditto
 
 <!-- https://masx200.github.io/ditto -->
 
-## 使用 bootstrap 可折叠的导航栏和响应式布局
+## 使用 媒体查询的侧边栏 可折叠的导航栏和响应式布局
 
 使用了固定在顶部的导航栏,给导航栏设置最大高度 100%,并自动显示滚动条
 
