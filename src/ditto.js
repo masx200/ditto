@@ -74,7 +74,7 @@ var readme加载失败 = false;
         .then(function(data) {
           //加载完目录部分的markdown的回调函数
 
-          ditto.sidebar_id.html(marked(data));
+          //   ditto.sidebar_id.html(marked(data));
 
           $("#cebianlan .el-aside").html(marked(data));
           $("#cebianlan").css("top", $("#my导航栏").height());
