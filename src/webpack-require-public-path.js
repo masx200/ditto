@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // // module.exports = require.p;
 // // export default import.meta;
 // console.log(require);
@@ -9,5 +10,18 @@
 // // __webpack_require__.p = "/"; */
 
 //https://github.com/webpack/webpack/issues/2776#issuecomment-233208623
-export default new URL(".",__webpack_public_path__)
+// console.log(__webpack_public_path__);
+
+var webpackpublicpath = __webpack_public_path__;
+var exporturl;
+if (
+  webpackpublicpath.startsWith("http://") ||
+  webpackpublicpath.startsWith("https://")
+) {
+  exporturl = new URL(".", webpackpublicpath);
+} else {
+  exporturl = new URL(".", new URL(webpackpublicpath, location.href));
+}
+
+export default String(exporturl);
 //module.exports = new URL(".", document.currentScript.src);

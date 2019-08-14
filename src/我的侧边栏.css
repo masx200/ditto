@@ -71,7 +71,7 @@ button.btn.btn-outline-primary.clipbutton {
 }
 * {
   transition-property: all;
-  transition-duration: 0s;
+  transition-duration: 0s !important;
   transition-timing-function: linear;
   transition-delay: 0s;
 }

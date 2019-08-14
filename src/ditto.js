@@ -164,7 +164,7 @@ var readme加载失败 = false;
             // location.hash = "#";
           }, 5000);
           console.error("Opps! can't find the sidebar file to display!");
-          console.warn("load failed" + path);
+          console.warn("load failed " + path);
         });
     }
 
@@ -604,9 +604,9 @@ var readme加载失败 = false;
             }, 0);
 
             $("#markdownurlsrc").text(path);
-if (window.innerWidth < 550) {
-      $("#cebianlan").hide();
-}
+            if (window.innerWidth < 550) {
+              $("#cebianlan").hide();
+            }
           })
           .catch(function() {
             console.error("Opps! ... File not found!\n5秒后返回主页");
@@ -622,7 +622,7 @@ if (window.innerWidth < 550) {
             if (path === "./" + ditto.index) {
               readme加载失败 = true;
             }
-            console.warn("load failed" + path);
+            console.warn("load failed " + path);
           });
       }
     }
