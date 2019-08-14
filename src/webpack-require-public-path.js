@@ -7,4 +7,7 @@
 // /*   // __webpack_public_path__
 //     /******/
 // // __webpack_require__.p = "/"; */
-module.exports = new URL(".", document.currentScript.src);
+
+
+export default new URL(".",__webpack_public_path__)
+//module.exports = new URL(".", document.currentScript.src);
