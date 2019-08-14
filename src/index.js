@@ -33,9 +33,9 @@ document.getElementById("root").innerHTML = `
     
     top: 0;
 "
-        >ditto</a>
+        >Markdon Reader</a>
         <button
-       
+        class="mui-btn mui-btn-primary mui-btn-outlined"
         type="button"
    id='cebianlantoggle'
       >
@@ -65,7 +65,7 @@ document.getElementById("root").innerHTML = `
         <ul class="navbar-nav">
           <li class="nav-item">
           <!--
-          <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title">ditto</a>
+          <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title"></a>
           -->
           </li>
         </ul>

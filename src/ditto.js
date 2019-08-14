@@ -529,11 +529,14 @@ var readme加载失败 = false;
       var a = location.pathname.split("/");
       a[a.length - 1] = "";
       var path =
-        location.origin +
-        a.join("/") +
-        (location.hash === ""
+        // location.origin +
+        // a.join("/")
+
+        // +
+        location.hash === ""
           ? "./" + ditto.index
-          : location.hash.replace("#", "./")); /* + ".md" */
+          : location.hash.replace("#", "./"); /* + ".md" */
+
       show_loading();
       if (转到主页 === false) {
         // console.log(path)
@@ -544,6 +547,8 @@ var readme加载失败 = false;
         // normalize_paths();
       }
       path = path.endsWith(".md") ? path : path + ".md";
+      path = new URL(path, webpackrequirepublicpath);
+      //   console.log(path);
       $.get(path)
         .then(function(data) {
           /* 设置所有代码段都可以编辑,不知为何,网页所有部分都不能选择文字? */

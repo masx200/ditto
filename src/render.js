@@ -53,8 +53,11 @@ $(() => {
     // $("#sidebar > ul").addClass("navbar-nav")
     function onhashchange() {
       scrollTo(0, 0);
-      $("#collapsibleNavbar").removeClass("show");
+      //   $("#collapsibleNavbar").removeClass("show");
+
       $("#my主体").css("padding-top", $("#my导航栏").height());
+
+      $("#cebianlan").hide();
       //   if (location.hash === "" || location.hash === "#") {
       //     location.hash = "#README";
       //   }
@@ -79,16 +82,16 @@ export function 内容调整左边偏移() {
       var 左边偏移量 =
         $("#cebianlan")[0].offsetWidth - $("#content").offset().left;
       //   if (左边偏移量 < 15) 左边偏移量 = 15;
-      左边偏移量 = Math.max(左边偏移量, 15);
+      左边偏移量 = Math.max(左边偏移量, 20);
       // setTimeout(() => {
       $("#content").css({
-        "padding-left": 左边偏移量 + 15
+        "padding-left": 左边偏移量 + 20
       });
       // }, 0);
     });
   } else {
     $("#content").css({
-      "padding-left": +15
+      "padding-left": 20
     });
   }
 }
