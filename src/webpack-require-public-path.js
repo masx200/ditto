@@ -8,6 +8,6 @@
 //     /******/
 // // __webpack_require__.p = "/"; */
 
-
+//https://github.com/webpack/webpack/issues/2776#issuecomment-233208623
 export default new URL(".",__webpack_public_path__)
 //module.exports = new URL(".", document.currentScript.src);
