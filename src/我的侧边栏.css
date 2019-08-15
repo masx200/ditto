@@ -64,6 +64,7 @@
 }
 h5#markdownurlsrc {
   position: relative !important;
+max-width: 100%;
 }
 button.btn.btn-outline-primary.clipbutton {
   /* mui中设置按钮 relative导致按钮前置?*/
