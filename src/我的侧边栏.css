@@ -4,8 +4,8 @@
   #mynewsidelan {
     width: 100%;
   }
- 
-/* button.navbar-toggler[data-target="#collapsibleNavbar"] {
+
+  /* button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: inline-block !important;
   }*/
   div#collapsibleNavbar.collapse.navbar-collapse {
@@ -65,7 +65,7 @@
 }
 h5#markdownurlsrc {
   position: relative !important;
-max-width: 100%;
+  max-width: 100%;
 }
 button.btn.btn-outline-primary.clipbutton {
   /* mui中设置按钮 relative导致按钮前置?*/
