@@ -4,9 +4,10 @@
   #mynewsidelan {
     width: 100%;
   }
-  button.navbar-toggler[data-target="#collapsibleNavbar"] {
+ 
+/* button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: inline-block !important;
-  }
+  }*/
   div#collapsibleNavbar.collapse.navbar-collapse {
     display: none !important;
   }
