@@ -85,7 +85,7 @@ export function 内容调整左边偏移() {
       //   if (左边偏移量 < 15) 左边偏移量 = 15;
       左边偏移量 = Math.max(左边偏移量, 20);
       // setTimeout(() => {
-      $("#content").css({
+      $("#contentcontainer").css({
         "padding-left": 左边偏移量 + 20
       });
       $("#markdownurlsrc").css({
@@ -96,7 +96,7 @@ export function 内容调整左边偏移() {
       $("#markdownurlsrc").css({
         left: 20
       });
-      $("#content").css({
+      $("#contentcontainer").css({
         "padding-left": 20
       });
     }
