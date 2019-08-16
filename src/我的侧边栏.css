@@ -1,3 +1,6 @@
+#content {
+  text-align: center !important;
+}
 @media (max-width: 550px) {
   /* 宽度小 */
 
@@ -64,8 +67,14 @@
   line-height: 30px;
 }
 h5#markdownurlsrc {
+  padding: 3px 3px;
+  color: #007aff;
+  border-radius: 3px;
+  border: 1px solid #007aff;
   position: relative !important;
-  max-width: 100%;
+  max-width: 95%;
+  display: block !important;
+  text-align: center !important;
 }
 button.btn.btn-outline-primary.clipbutton {
   /* mui中设置按钮 relative导致按钮前置?*/
