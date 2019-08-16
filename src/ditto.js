@@ -84,7 +84,9 @@ var readme加载失败 = false;
 
           //   ditto.sidebar_id.html(marked(data));
 
-          $("#cebianlan .el-aside").html(marked(data));
+          document.querySelector("#cebianlan .el-aside").innerHTML = marked(
+            data
+          );
           $("#cebianlan").css("top", $("#my导航栏").height());
           $("#cebianlan  ul").addClass("navbar-nav");
 
@@ -653,7 +655,8 @@ var readme加载失败 = false;
       //   data = create_youtube_embeds(data);
       data = marked(escape_html(data));
       data = unescape_html(data);
-      ditto.content_id.html(data);
+      document.getElementById("content").innerHTML = data;
+      //   ditto.content_id.html(data);
 
       stop_loading();
       //   escape_github_badges(data);

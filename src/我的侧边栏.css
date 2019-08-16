@@ -11,12 +11,12 @@
   /* button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: inline-block !important;
   }*/
-  div#collapsibleNavbar.collapse.navbar-collapse {
+  /* div#collapsibleNavbar.collapse.navbar-collapse {
     display: none !important;
   }
   div#collapsibleNavbar.collapse.navbar-collapse.show {
     display: flex !important;
-  }
+  } */
   #cebianlan {
     width: 100%;
     /* display: none; */
@@ -44,9 +44,9 @@
   /* button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: none !important;
   } */
-  div#collapsibleNavbar.collapse.navbar-collapse {
+  /* div#collapsibleNavbar.collapse.navbar-collapse {
     display: none !important;
-  }
+  } */
 
   #cebianlan {
     display: inline-block;
