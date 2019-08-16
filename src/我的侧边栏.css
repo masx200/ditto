@@ -41,9 +41,9 @@
   #mynewsidelan {
     width: 300px;
   }
-  button.navbar-toggler[data-target="#collapsibleNavbar"] {
+  /* button.navbar-toggler[data-target="#collapsibleNavbar"] {
     display: none !important;
-  }
+  } */
   div#collapsibleNavbar.collapse.navbar-collapse {
     display: none !important;
   }
