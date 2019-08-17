@@ -1,7 +1,13 @@
+import newconfig from "./config";
 import fetchajaxgettext from "./fetchajaxgettext";
 import webpackrequirepublicpath from "./webpack-require-public-path";
-const summaryfile = new URL("summary.md", webpackrequirepublicpath).href;
+// const summaryfile = new URL("summary.md", webpackrequirepublicpath).href;
 
+const summaryfile = new URL(
+  newconfig.summary,
+
+  webpackrequirepublicpath
+).href;
 // console.log(webpackrequirepublicpath);
 import { 内容调整左边偏移 } from "./render";
 ("use strict");
