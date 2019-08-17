@@ -1,4 +1,4 @@
-# Markdown Reader
+# Markdown Reader 轻量级 markdown 阅读器
 
 Lightweight Markdown Documentation System based on ditto
 
