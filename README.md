@@ -16,7 +16,7 @@ Lightweight Markdown Documentation System based on ditto
 
 新版:使用 webpack-react-vue-spa-awesome-config 打包
 
-旧版:使用 parcel bundler 打包文件
+<!-- 旧版:使用 parcel bundler 打包文件 -->
 
 # 优化界面展示方式,使用 侧边栏 可折叠的导航栏和响应式布局和 cdn 加载依赖包
 
@@ -26,13 +26,13 @@ Lightweight Markdown Documentation System based on ditto
 
 使用了固定在顶部的导航栏,给导航栏设置最大高度 100%,并自动显示滚动条
 
-修改了 index.html,ditto.js,ditto.css
+<!-- 修改了 index.html,ditto.js,ditto.css
 
 修改 index.html
 
-修改 ditto.js
+修改 ditto.js -->
 
-在加载完 目录 之后,给导航栏里面的元素批量添加 class,变成  导航栏的样式
+在加载完 目录 之后,给导航栏里面的元素批量添加 class,变成 导航栏的样式
 
 <!-- [查看 index.html源代码](./src/index.html)
 
@@ -63,6 +63,8 @@ https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js
 ```
  -->
 
+受到 `ditto` 的启发,魔改而成
+
 # ditto
 
 https://github.com/chutsu/ditto
@@ -87,7 +89,7 @@ Enter the following command and follow instructions:
 
 Or alternatively see this page for [instructions][4].
 
-### LICENSE
+<!-- ### LICENSE
 
 The MIT License (MIT)
 
@@ -114,4 +116,4 @@ THE SOFTWARE.
 [1]: http://chutsu.github.io/ditto
 [2]: http://threejs.org/docs/
 [3]: http://backbonejs.org/
-[4]: http://chutsu.github.io/ditto/#docs/how_do_i_use_ditto
+[4]: http://chutsu.github.io/ditto/#docs/how_do_i_use_ditto -->
