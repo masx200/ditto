@@ -629,6 +629,7 @@ var readme加载失败 = false;
             }
           })
           .catch(function() {
+            if (readme加载失败) return;
             console.error("Opps! ... File not found!\n5秒后返回主页");
             show_error("Opps! ... File not found!\n5秒后返回主页");
             stop_loading();
@@ -636,12 +637,12 @@ var readme加载失败 = false;
             if (!readme加载失败) {
               setTimeout(() => {
                 page_getter(true);
-                location.hash = "#";
+                // location.hash = "#";
               }, 5000);
             }
-            if (path === "./" + ditto.index) {
-              readme加载失败 = true;
-            }
+            // if (path === "./" + ditto.index) {
+            readme加载失败 = true;
+            // }
             console.warn("load failed " + path);
           });
       }
