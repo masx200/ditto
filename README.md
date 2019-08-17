@@ -81,13 +81,13 @@ You want to use ditto because
 - No build process needed (markdown files are rendered on the browser)
 - Deployable via GitHub Pages
 
-## How do I start?
+<!-- ## How do I start?
 
 Enter the following command and follow instructions:
 
     curl -L https://git.io/v6T7r > install.sh && sh install.sh
 
-Or alternatively see this page for [instructions][4].
+Or alternatively see this page for [instructions][4]. -->
 
 <!-- ### LICENSE
 
