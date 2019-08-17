@@ -32,7 +32,7 @@ Lightweight Markdown Documentation System based on ditto
 
 修改 ditto.js
 
-在加载完 sidebar.md 之后,给导航栏里面的元素批量添加 class,变成 bootstrap 导航栏的样式
+在加载完 目录 之后,给导航栏里面的元素批量添加 class,变成  导航栏的样式
 
 <!-- [查看 index.html源代码](./src/index.html)
 
