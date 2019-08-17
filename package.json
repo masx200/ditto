@@ -1,8 +1,8 @@
 {
-    "version": "2.2.0",
+    "version": "2.2.1",
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
-        "build": "webpack-react-vue-spa-awesome-config build  --output-public-path=https://cdn.jsdelivr.net/gh/masx200/markdown-reader@2.2.0/ ",
+        "build": "webpack-react-vue-spa-awesome-config build  --output-public-path=https://cdn.jsdelivr.net/gh/masx200/markdown-reader@2.2.1/ ",
         "test": "webpack-react-vue-spa-awesome-config build"
     },
     "dependencies": {
