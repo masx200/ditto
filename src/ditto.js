@@ -171,6 +171,7 @@ var readme加载失败 = false;
 
               //   document.head.appendChild(linkmarkdwon);
             });
+          $("#markdownerror").hide();
         })
 
         // }
@@ -185,6 +186,9 @@ var readme加载失败 = false;
           }, 5000);
           console.error("Opps! can't find the sidebar file to display!");
           console.warn("load failed " + path);
+
+          $("#markdownerror").text("加载失败 " + path);
+          $("#markdownerror").show();
         });
     }
 
@@ -644,6 +648,7 @@ var readme加载失败 = false;
             readme加载失败 = true;
             // }
             console.warn("load failed " + path);
+            $("#markdownurlsrc").text("加载失败 " + path);
           });
       }
     }

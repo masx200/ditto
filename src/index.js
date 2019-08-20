@@ -107,7 +107,7 @@ document.getElementById("root").innerHTML = `
 <div id="contentcontainer">
 
 <h5 class="" id='markdownurlsrc'></h5>
-
+<h5 class="" id='markdownerror'></h5>
  <div id="content"></div>
 
 </div>
@@ -128,10 +128,10 @@ document.getElementById("root").innerHTML = `
 //   console.log(window.MathJax);
 
 // var MathJax = window.MathJax;
-import * as modulemathjax from "./MathJax/index";
-(module => {
+import modulemathjax from "./MathJax/index";
+(MathJax => {
   // console.log(module);
-  var MathJax = module.default;
+  // var MathJax = module.default;
   MathJax.Hub.Config({
     tex2jax: { inlineMath: [["$", "$"]], processRefs: !0 },
     TeX: {
@@ -174,11 +174,11 @@ import "./render";
 // });
 // });
 
-import * as moduleclipboard from " ./clipboard";
+import ClipboardJS from "./clipboard.js";
 
-(m => {
+(ClipboardJS => {
   // console.log(m);
-  let ClipboardJS = m.default;
+  // let ClipboardJS = m.default;
   // const nclp =
   new ClipboardJS(".btn").on("success", function(e) {
     if (!e.text) {
@@ -191,4 +191,4 @@ import * as moduleclipboard from " ./clipboard";
     e.clearSelection();
   });
   // console.log(nclp);
-})(moduleclipboard);
+})(ClipboardJS);
