@@ -128,7 +128,8 @@ document.getElementById("root").innerHTML = `
 //   console.log(window.MathJax);
 
 // var MathJax = window.MathJax;
-import("./MathJax/index").then(module => {
+import * as modulemathjax from "./MathJax/index";
+(module => {
   // console.log(module);
   var MathJax = module.default;
   MathJax.Hub.Config({
@@ -145,9 +146,9 @@ import("./MathJax/index").then(module => {
       }
     }
   });
-});
+})(modulemathjax);
 
-import("./render");
+import "./render";
 // .then(() => {
 //   // console.log("加载render");
 // });
@@ -173,7 +174,9 @@ import("./render");
 // });
 // });
 
-import("./clipboard").then(m => {
+import * as moduleclipboard from " ./clipboard";
+
+(m => {
   // console.log(m);
   let ClipboardJS = m.default;
   // const nclp =
@@ -188,4 +191,4 @@ import("./clipboard").then(m => {
     e.clearSelection();
   });
   // console.log(nclp);
-});
+})(moduleclipboard);
