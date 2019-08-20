@@ -176,7 +176,8 @@ import("./render");
 import("./clipboard").then(m => {
   // console.log(m);
   let ClipboardJS = m.default;
-  const nclp = new ClipboardJS(".btn").on("success", function(e) {
+  // const nclp =
+  new ClipboardJS(".btn").on("success", function(e) {
     if (!e.text) {
       console.log("复制内容空");
     } else {
