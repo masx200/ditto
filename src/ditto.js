@@ -715,6 +715,9 @@ export default (() => {
       data = unescape_html(data);
       //   document.getElementById("content").innerHTML = data;
       ApphomeVm.content = data;
+
+      /* vue组件异步刷新! */
+
       requestAnimationFrame(() => {
         stop_loading();
         //   escape_github_badges(data);
@@ -723,8 +726,7 @@ export default (() => {
         //   create_page_anchors();
 
         if (ditto.highlight_code) {
-          Array.from($("pre code"))
-          .forEach(function(block) {
+          Array.from($("pre code")).forEach(function(block) {
             hljs.highlightBlock(block);
           });
         }
