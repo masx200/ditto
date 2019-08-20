@@ -1,5 +1,7 @@
 # Markdown Reader 轻量级 markdown 阅读器
 
+新版:使用 Vue 重构,取代之前用 JQuery
+
 Lightweight Markdown Documentation System based on ditto
 
 轻量级 markdown 文档系统的纯前端实现
@@ -15,6 +17,8 @@ Lightweight Markdown Documentation System based on ditto
 预先加载 目录 当中的 markdwon 文件到 预加载,来提升加载速度
 
 新版:使用 webpack-react-vue-spa-awesome-config 打包
+
+https://github.com/masx200/markdown-reader
 
 <!-- 旧版:使用 parcel bundler 打包文件 -->
 

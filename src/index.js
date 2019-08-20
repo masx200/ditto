@@ -18,107 +18,12 @@ function 主页() {
 
 render(<主页 />, document.getElementById("root"));
 */
-document.getElementById("root").innerHTML = `
-<div
-      id="my导航栏"
-      class="container-fluid fixed-top"
-      style="padding-right:0;padding-left:0;"
-    >
-      <nav
-        class="navbar navbar-expand-sm bg-light navbar-light"
-        style="padding-right:0;padding-left:0;"
-      >
-        <div>
-        <a class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title"
-        style="
-    
-    top: 0;
-"
-        >Markdon Reader</a>
-        <button
-        class="mui-btn mui-btn-primary mui-btn-outlined"
-        type="button"
-   id='cebianlantoggle'
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-        <!--
-          <a
-            class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
-            href="https://masx200.github.io/index.html"
-            >masx200的
-            <hr id="hidewidthless500" />
-            github主页
-          </a>
-          -->
+document.getElementById("root").innerHTML = `<div>
+<h1>loading</h1>
+<span class="mui-spinner mui-spinner-custom">
 
-          <!--
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapsibleNavbar"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          -->
-        </div>
-        <!--   <ul class="navbar-nav">
-          <li class="nav-item">
-          <!--
-          <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title"></a>
-          -->
-          <!--   </li>
-        </ul>
-        -->
-        <!--
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <div id="sidebar" class="navbar-nav"></div>
-        </div>
-       
--->
-      </nav>
-    </div>
-
-    <div class="container-fluid ">
-    <div id='cebianlan' class="el-container" style="/* height: 500px; */border: 1px solid white;position: fixed;">
-    
-    <aside id="mynewsidelan" class="el-aside" style="
-    /*
-
-    width: 300px;
-    */
-
-    background-color:white;"></aside> </div>
-    </div>
-    <div id="my主体" class="container">
-    <div id="loadingparent">
-      <div id="loading">
-        <h1>
-          Loading ...
-        </h1>
-      </div>
-      </div>
-      <div >
-     
-     
-
-<div id="contentcontainer">
-
-<h5 class="" id='markdownurlsrc'></h5>
-<h5 class="" id='markdownerror'></h5>
- <div id="content"></div>
-
-</div>
-      </div>
-      <div id="hide"></div>
-      <div style="display: none;"><div id="back_to_top">top</div></div>
-      
-
-      <div >
-      <h1 id="error"></h1></div>
-    </div>`;
+</span></div>
+`;
 // $("head").append(`<script type="text/x-mathjax-config">
 //     MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],processRefs:!0},TeX:{equationNumbers:{autoNumber:"all",formatID:function(n){return"("+n+")"},formatURL:function(n){return null}}}});
 //   </script>`);
@@ -192,3 +97,9 @@ import ClipboardJS from "./clipboard.js";
   });
   // console.log(nclp);
 })(ClipboardJS);
+import app from "./app-home.vue";
+import vue from "vue/dist/vue.esm";
+// console.log(App);
+const ApphomeVm = new vue({ el: document.getElementById("root"), ...app });
+// console.log(ApphomeVm);
+export { ApphomeVm };
