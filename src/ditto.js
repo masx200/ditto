@@ -715,23 +715,24 @@ export default (() => {
       data = unescape_html(data);
       //   document.getElementById("content").innerHTML = data;
       ApphomeVm.content = data;
+      requestAnimationFrame(() => {
+        stop_loading();
+        //   escape_github_badges(data);
+
+        // normalize_paths();
+        //   create_page_anchors();
+
+        if (ditto.highlight_code) {
+          $("pre code").each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        }
+
+        if (cb) {
+          cb(data);
+        }
+      });
       //   ditto.content_id.html(data);
-
-      stop_loading();
-      //   escape_github_badges(data);
-
-      // normalize_paths();
-      //   create_page_anchors();
-
-      if (ditto.highlight_code) {
-        $("pre code").each(function(i, block) {
-          hljs.highlightBlock(block);
-        });
-      }
-
-      if (cb) {
-        cb(data);
-      }
     }
 
     function router() {
