@@ -99,6 +99,7 @@ import ClipboardJS from "./clipboard.js";
 })(ClipboardJS);
 import app from "./app-home.vue";
 import vue from "vue/dist/vue.esm";
+vue.config.devtools = true;
 // console.log(App);
 const ApphomeVm = new vue({ el: document.getElementById("root"), ...app });
 // console.log(ApphomeVm);
