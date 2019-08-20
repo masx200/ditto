@@ -723,7 +723,8 @@ export default (() => {
         //   create_page_anchors();
 
         if (ditto.highlight_code) {
-          $("pre code").each(function(i, block) {
+          Array.from($("pre code"))
+          .forEach(function(block) {
             hljs.highlightBlock(block);
           });
         }
