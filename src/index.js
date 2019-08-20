@@ -140,7 +140,7 @@ import * as modulemathjax from "./MathJax/index";
         formatID: function(n) {
           return "(" + n + ")";
         },
-        formatURL: function(n) {
+        formatURL: function() {
           return null;
         }
       }
