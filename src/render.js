@@ -1,6 +1,6 @@
 // @ts-nocheck
 "use strict";
-import { ApphomeVm } from "./index";
+import { ApphomeVm } from "./mark-down-reader";
 // console.log("加载render");
 // import ClipboardJS from "./clipboard.min.js";
 
@@ -13,21 +13,28 @@ import ditto from "./ditto";
 
 import newconfig from "./config";
 
-var oldconfig = {
-  doctitle: "markdown-reader",
-  subtitle: "Lightweight Markdown Documentation System",
-  github_username: "masx200",
-  github_repo: "markdown-reader"
-};
-var config = { ...oldconfig, ...newconfig };
-var doctitle = config.doctitle || "Markdown Reader";
-var subtitle = config.subtitle || "Lightweight Markdown Documentation System";
-var github_username = config.github_username;
-var github_repo = config.github_repo;
-
-ditto.index = config.index;
 export function 挂载初始() {
+  window.addEventListener("resize", () => {
+    内容调整左边偏移();
+
+    //   $("#my主体").css("padding-top", $("#my导航栏").height());
+  });
+
   $(() => {
+    var oldconfig = {
+      doctitle: "markdown-reader",
+      subtitle: "Lightweight Markdown Documentation System",
+      github_username: "masx200",
+      github_repo: "markdown-reader"
+    };
+    var config = { ...oldconfig, ...newconfig };
+    var doctitle = config.doctitle || "Markdown Reader";
+    var subtitle =
+      config.subtitle || "Lightweight Markdown Documentation System";
+    var github_username = config.github_username;
+    var github_repo = config.github_repo;
+
+    ditto.index = config.index;
     // const clipboard = new ClipboardJS(".btn");
 
     // clipboard.on("success", function(e) {
@@ -121,8 +128,3 @@ export function 内容调整左边偏移() {
     });
   });
 }
-window.addEventListener("resize", () => {
-  内容调整左边偏移();
-
-  //   $("#my主体").css("padding-top", $("#my导航栏").height());
-});
