@@ -14,7 +14,7 @@ export default (() => {
     'use strict';
     return function ($) {
         var ditto = {
-            sidebar_file: 'sidebar.md',
+            //sidebar_file: 'sidebar.md',
             index: 'README.md',
             content_id: $('#content'),
             sidebar_id: $('#sidebar'),
