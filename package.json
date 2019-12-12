@@ -1,4 +1,4 @@
-{
+{"name": "@masx200/markdown-reader",
   "version": "2.3.1",
   "scripts": {
     "start": "webpack-react-vue-spa-awesome-config start",
@@ -25,7 +25,7 @@
     "vue": "^2.6.10",
     "webpack": "^4.36.1"
   },
-  "name": "markdown-reader",
+  
   "description": "Lightweight Markdown Documentation System ",
   "directories": {
     "doc": "docs"
