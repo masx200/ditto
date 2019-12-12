@@ -32,12 +32,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/masx200/ditto.git"
+    "url": "git+https://github.com/masx200/markdown-reader.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/masx200/ditto/issues"
+    "url": "https://github.com/masx200/markdown-reader/issues"
   },
-  "homepage": "https://github.com/masx200/ditto#readme"
+  "homepage": "https://github.com/masx200/markdown-reader#readme"
 }
