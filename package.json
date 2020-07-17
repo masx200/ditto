@@ -8,20 +8,14 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@masx200/webpack-react-vue-spa-awesome-config": "https://gitee.com/masx200/webpack-react-vue-spa-awesome-config.git",
+    "@masx200/webpack-react-vue-spa-awesome-config": "2.7.1",
     "@types/highlight.js": "^9.12.3",
     "babel-eslint": "^10.0.2",
     "bootstrap": "^4.3.1",
-    
 
-
-
-
-
-"eslint": "^6.8.0",
-"minimist":"1.2.5",
-"acorn":"7.1.1",
-
+    "eslint": "^6.8.0",
+    "minimist": "1.2.5",
+    "acorn": "7.1.1",
 
     "eslint-plugin-vue": "^5.2.3",
     "highlight.js": "^9.16.2",
@@ -36,7 +30,7 @@
     "vue": "^2.6.10",
     "webpack": "^4.36.1"
   },
-  
+
   "description": "Lightweight Markdown Documentation System ",
   "directories": {
     "doc": "docs"
