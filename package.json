@@ -27,7 +27,7 @@
     "terser": "^4.4.2",
     "terser-webpack-plugin": "^2.2.2",
     "typescript": "^3.9.7",
-    "vue": "^2.6.11,
+    "vue": "^2.6.11",
     "webpack": "^4.44.1"
   },
 
