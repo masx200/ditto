@@ -1,5 +1,5 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-import { config, mountinit } from "./mark-down-reader";
+import { config, mount } from "./mark-down-reader";
 Object.assign(config, {
   doctitle: "markdown-reader",
   subtitle: "Lightweight Markdown Documentation System",
@@ -7,4 +7,4 @@ Object.assign(config, {
 
   summary: "summary.md",
 });
-mountinit( document.getElementById("root"));
+mount( document.getElementById("root"));
