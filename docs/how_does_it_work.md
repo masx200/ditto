@@ -2,8 +2,8 @@
 
 **Contents**:
 
-- General
-- Other
+-   General
+-   Other
 
 ## General
 
@@ -36,8 +36,8 @@ and uses `marked` up to render the file and display it in `#content`.
 
 `ditto` also performs other magick as well, such as :
 
-- Normalizing paths
-- Creating page anchors automatically
+-   Normalizing paths
+-   Creating page anchors automatically
 
 ### Normalizing paths
 

@@ -1,2 +1,2 @@
 import { config, mount } from "./mark-down-reader";
-export default {config, mount:mount}
+export default { config, mount: mount };

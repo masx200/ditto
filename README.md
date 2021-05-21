@@ -38,6 +38,6 @@ you can also host it yourself.
 
 You want to use ditto because
 
-- Docs are in markdown
-- No build process needed (markdown files are rendered on the browser)
-- Deployable via GitHub Pages
+-   Docs are in markdown
+-   No build process needed (markdown files are rendered on the browser)
+-   Deployable via GitHub Pages

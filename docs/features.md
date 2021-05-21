@@ -1,6 +1,6 @@
 # Features
 
-- Embed Youtube videos
+-   Embed Youtube videos
 
 ## Embed Youtube videos
 
