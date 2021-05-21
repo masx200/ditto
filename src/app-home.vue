@@ -15,31 +15,39 @@ export default {
     content: "",
     mulu: "",
     urltext: "",
-    xianshicebianlan: true
+    xianshicebianlan: true,
   }),
   methods: {
     togglecebian() {
       this.xianshicebianlan = !this.xianshicebianlan;
       内容调整左边偏移();
-    }
-  }
+    },
+  },
 };
 </script>
 <template>
   <div id="root">
-    <div id="my导航栏" class="container-fluid fixed-top" style="padding-right:0;padding-left:0;">
+    <div
+      id="my导航栏"
+      class="container-fluid fixed-top"
+      style="padding-right: 0; padding-left: 0"
+    >
       <nav
         class="navbar navbar-expand-sm bg-light navbar-light"
-        style="padding-right:0;padding-left:0;"
+        style="padding-right: 0; padding-left: 0"
       >
         <div>
           <a
-            class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
+            class="
+              navbar-brand navbar-brand
+              mui-btn mui-btn-primary mui-btn-outlined
+            "
             href="#README"
             id="title"
             v-text="mytitle"
-            style="top: 0;"
-          >Markdon Reader</a>
+            style="top: 0"
+            >Markdon Reader</a
+          >
           <button
             class="mui-btn mui-btn-primary mui-btn-outlined"
             type="button"
@@ -92,10 +100,15 @@ export default {
         ref="我的侧边栏"
         id="cebianlan"
         class="el-container"
-        style="border: 1px solid white;position: fixed;"
+        style="border: 1px solid white; position: fixed"
         v-show="xianshicebianlan"
       >
-        <aside v-html="mulu" id="mynewsidelan" class="el-aside" style="background-color:white;"></aside>
+        <aside
+          v-html="mulu"
+          id="mynewsidelan"
+          class="el-aside"
+          style="background-color: white"
+        ></aside>
       </div>
     </div>
     <div id="my主体" class="container">
@@ -107,12 +120,17 @@ export default {
       <div>
         <div id="contentcontainer">
           <h5 class id="markdownurlsrc" v-text="urltext"></h5>
-          <h5 class id="markdownerror" v-if="showerror" v-text="errorcontent"></h5>
+          <h5
+            class
+            id="markdownerror"
+            v-if="showerror"
+            v-text="errorcontent"
+          ></h5>
           <div id="content" v-html="content" ref="markdown内容"></div>
         </div>
       </div>
       <div id="hide"></div>
-      <div style="display: none;">
+      <div style="display: none">
         <div id="back_to_top">top</div>
       </div>
 

@@ -6,7 +6,5 @@ Object.assign(config, {
   index: "README.md",
 
   summary: "summary.md",
-  
-
 });
 mountinit();

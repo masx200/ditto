@@ -12,8 +12,6 @@ When you open the `index.html` file, the javascript file `ditto.js` opens
 [marked][marked_github] and displays the rendered html (unless defined
 differently by you otherwise).
 
-
-
 Documentation defined in `sidebar.md` should be of the form:
 
     #folder_containing_docs/file_name_without_extension

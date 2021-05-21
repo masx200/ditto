@@ -148,7 +148,6 @@ because you have to scroll down to the relevant function.
 
 Instead of this:
 
-
     /**
      * Square root of n with Newton-Raphson approximation
      *
@@ -164,9 +163,7 @@ Instead of this:
     }
     System.out.println( "r = " + r );  // print the final r value
 
-
 Would you not want to refactor the above code and work with this?:
-
 
     private double SquareRootApproximation(n) {
         r = n / 2;
@@ -181,7 +178,6 @@ This is the major reason why I've created `ditto`, I think markdown files are
 the easiest way to have both the source and documentation side by side, so that
 programmers can either focus on code or generate documentation or both without
 being slowed down, and I hope you like it :)
-
 
 [1]: http://blog.codinghorror.com/coding-without-comments/
 [2]: http://jashkenas.github.io/docco/

@@ -11,8 +11,8 @@
   else if (typeof define === "function" && define.amd) define([], factory);
   else if (typeof exports === "object") exports["ClipboardJS"] = factory();
   else root["ClipboardJS"] = factory();
-})(this, function() {
-  return /******/ (function(modules) {
+})(this, function () {
+  return /******/ (function (modules) {
     // webpackBootstrap
     /******/ // The module cache
     /******/ var installedModules = {}; // The require function
@@ -27,7 +27,7 @@
       /******/ /******/ var module = (installedModules[moduleId] = {
         /******/ i: moduleId,
         /******/ l: false,
-        /******/ exports: {}
+        /******/ exports: {},
         /******/
       }); // Execute the module function
       /******/
@@ -49,21 +49,21 @@
     /******/
     /******/ /******/ __webpack_require__.c = installedModules; // define getter function for harmony exports
     /******/
-    /******/ /******/ __webpack_require__.d = function(exports, name, getter) {
+    /******/ /******/ __webpack_require__.d = function (exports, name, getter) {
       /******/ if (!__webpack_require__.o(exports, name)) {
         /******/ Object.defineProperty(exports, name, {
           enumerable: true,
-          get: getter
+          get: getter,
         });
         /******/
       }
       /******/
     }; // define __esModule on exports
     /******/
-    /******/ /******/ __webpack_require__.r = function(exports) {
+    /******/ /******/ __webpack_require__.r = function (exports) {
       /******/ if (typeof Symbol !== "undefined" && Symbol.toStringTag) {
         /******/ Object.defineProperty(exports, Symbol.toStringTag, {
-          value: "Module"
+          value: "Module",
         });
         /******/
       }
@@ -71,39 +71,37 @@
       /******/
     }; // create a fake namespace object // mode & 1: value is a module id, require it // mode & 2: merge all properties of value into the ns // mode & 4: return value when already ns object // mode & 8|1: behave like require
     /******/
-    /******/ /******/ /******/ /******/ /******/ /******/ __webpack_require__.t = function(
-      value,
-      mode
-    ) {
-      /******/ if (mode & 1) value = __webpack_require__(value);
-      /******/ if (mode & 8) return value;
-      /******/ if (
-        mode & 4 &&
-        typeof value === "object" &&
-        value &&
-        value.__esModule
-      )
-        return value;
-      /******/ var ns = Object.create(null);
-      /******/ __webpack_require__.r(ns);
-      /******/ Object.defineProperty(ns, "default", {
-        enumerable: true,
-        value: value
-      });
-      /******/ if (mode & 2 && typeof value != "string")
-        for (var key in value)
-          __webpack_require__.d(
-            ns,
-            key,
-            function(key) {
-              return value[key];
-            }.bind(null, key)
-          );
-      /******/ return ns;
-      /******/
-    }; // getDefaultExport function for compatibility with non-harmony modules
+    /******/ /******/ /******/ /******/ /******/ /******/ __webpack_require__.t =
+      function (value, mode) {
+        /******/ if (mode & 1) value = __webpack_require__(value);
+        /******/ if (mode & 8) return value;
+        /******/ if (
+          mode & 4 &&
+          typeof value === "object" &&
+          value &&
+          value.__esModule
+        )
+          return value;
+        /******/ var ns = Object.create(null);
+        /******/ __webpack_require__.r(ns);
+        /******/ Object.defineProperty(ns, "default", {
+          enumerable: true,
+          value: value,
+        });
+        /******/ if (mode & 2 && typeof value != "string")
+          for (var key in value)
+            __webpack_require__.d(
+              ns,
+              key,
+              function (key) {
+                return value[key];
+              }.bind(null, key)
+            );
+        /******/ return ns;
+        /******/
+      }; // getDefaultExport function for compatibility with non-harmony modules
     /******/
-    /******/ /******/ __webpack_require__.n = function(module) {
+    /******/ /******/ __webpack_require__.n = function (module) {
       /******/ var getter =
         module && module.__esModule
           ? /******/ function getDefault() {
@@ -117,7 +115,7 @@
       /******/
     }; // Object.prototype.hasOwnProperty.call
     /******/
-    /******/ /******/ __webpack_require__.o = function(object, property) {
+    /******/ /******/ __webpack_require__.o = function (object, property) {
       return Object.prototype.hasOwnProperty.call(object, property);
     }; // __webpack_public_path__
     /******/
@@ -130,15 +128,15 @@
     /************************************************************************/
     /******/ [
       /* 0 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function (module, exports, __webpack_require__) {
         "use strict";
 
         var _typeof =
           typeof Symbol === "function" && typeof Symbol.iterator === "symbol"
-            ? function(obj) {
+            ? function (obj) {
                 return typeof obj;
               }
-            : function(obj) {
+            : function (obj) {
                 return obj &&
                   typeof Symbol === "function" &&
                   obj.constructor === Symbol &&
@@ -147,7 +145,7 @@
                   : typeof obj;
               };
 
-        var _createClass = (function() {
+        var _createClass = (function () {
           function defineProperties(target, props) {
             for (var i = 0; i < props.length; i++) {
               var descriptor = props[i];
@@ -157,7 +155,7 @@
               Object.defineProperty(target, descriptor.key, descriptor);
             }
           }
-          return function(Constructor, protoProps, staticProps) {
+          return function (Constructor, protoProps, staticProps) {
             if (protoProps) defineProperties(Constructor.prototype, protoProps);
             if (staticProps) defineProperties(Constructor, staticProps);
             return Constructor;
@@ -212,8 +210,8 @@
                 value: subClass,
                 enumerable: false,
                 writable: true,
-                configurable: true
-              }
+                configurable: true,
+              },
             }
           );
           if (superClass)
@@ -226,7 +224,7 @@
          * Base class which takes one or more elements, adds event listeners to them,
          * and instantiates a new `ClipboardAction` on each click.
          */
-        var Clipboard = (function(_Emitter) {
+        var Clipboard = (function (_Emitter) {
           _inherits(Clipboard, _Emitter);
 
           /**
@@ -281,7 +279,7 @@
                     _typeof(options.container) === "object"
                       ? options.container
                       : document.body;
-                }
+                },
 
                 /**
                  * Adds a click event listener to the passed trigger.
@@ -296,11 +294,11 @@
                   this.listener = (0, _goodListener2.default)(
                     trigger,
                     "click",
-                    function(e) {
+                    function (e) {
                       return _this2.onClick(e);
                     }
                   );
-                }
+                },
 
                 /**
                  * Defines a new `ClipboardAction` on each click event.
@@ -322,9 +320,9 @@
                     text: this.text(trigger),
                     container: this.container,
                     trigger: trigger,
-                    emitter: this
+                    emitter: this,
                   });
-                }
+                },
 
                 /**
                  * Default `action` lookup function.
@@ -335,7 +333,7 @@
                 key: "defaultAction",
                 value: function defaultAction(trigger) {
                   return getAttributeValue("action", trigger);
-                }
+                },
 
                 /**
                  * Default `target` lookup function.
@@ -350,7 +348,7 @@
                   if (selector) {
                     return document.querySelector(selector);
                   }
-                }
+                },
 
                 /**
                  * Returns the support of the given action, or all actions if no action is
@@ -367,7 +365,7 @@
                  */
                 value: function defaultText(trigger) {
                   return getAttributeValue("text", trigger);
-                }
+                },
 
                 /**
                  * Destroy lifecycle.
@@ -382,8 +380,8 @@
                     this.clipboardAction.destroy();
                     this.clipboardAction = null;
                   }
-                }
-              }
+                },
+              },
             ],
             [
               {
@@ -397,14 +395,14 @@
                   var actions = typeof action === "string" ? [action] : action;
                   var support = !!document.queryCommandSupported;
 
-                  actions.forEach(function(action) {
+                  actions.forEach(function (action) {
                     support =
                       support && !!document.queryCommandSupported(action);
                   });
 
                   return support;
-                }
-              }
+                },
+              },
             ]
           );
 
@@ -432,15 +430,15 @@
         /***/
       },
       /* 1 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function (module, exports, __webpack_require__) {
         "use strict";
 
         var _typeof =
           typeof Symbol === "function" && typeof Symbol.iterator === "symbol"
-            ? function(obj) {
+            ? function (obj) {
                 return typeof obj;
               }
-            : function(obj) {
+            : function (obj) {
                 return obj &&
                   typeof Symbol === "function" &&
                   obj.constructor === Symbol &&
@@ -449,7 +447,7 @@
                   : typeof obj;
               };
 
-        var _createClass = (function() {
+        var _createClass = (function () {
           function defineProperties(target, props) {
             for (var i = 0; i < props.length; i++) {
               var descriptor = props[i];
@@ -459,7 +457,7 @@
               Object.defineProperty(target, descriptor.key, descriptor);
             }
           }
-          return function(Constructor, protoProps, staticProps) {
+          return function (Constructor, protoProps, staticProps) {
             if (protoProps) defineProperties(Constructor.prototype, protoProps);
             if (staticProps) defineProperties(Constructor, staticProps);
             return Constructor;
@@ -484,7 +482,7 @@
          * Inner class which performs selection from either `text` or `target`
          * properties and then executes copy or cut operations.
          */
-        var ClipboardAction = (function() {
+        var ClipboardAction = (function () {
           /**
            * @param {Object} options
            */
@@ -517,7 +515,7 @@
                 this.trigger = options.trigger;
 
                 this.selectedText = "";
-              }
+              },
 
               /**
                * Decides which selection strategy is going to be applied based
@@ -532,7 +530,7 @@
                 } else if (this.target) {
                   this.selectTarget();
                 }
-              }
+              },
 
               /**
                * Creates a fake textarea element, sets its value from `text` property,
@@ -549,7 +547,7 @@
 
                 this.removeFake();
 
-                this.fakeHandlerCallback = function() {
+                this.fakeHandlerCallback = function () {
                   return _this.removeFake();
                 };
                 this.fakeHandler =
@@ -580,7 +578,7 @@
 
                 this.selectedText = (0, _select2.default)(this.fakeElem);
                 this.copyText();
-              }
+              },
 
               /**
                * Only removes the fake element after another click event, that way
@@ -603,7 +601,7 @@
                   this.container.removeChild(this.fakeElem);
                   this.fakeElem = null;
                 }
-              }
+              },
 
               /**
                * Selects the content from element passed on `target` property.
@@ -614,7 +612,7 @@
               value: function selectTarget() {
                 this.selectedText = (0, _select2.default)(this.target);
                 this.copyText();
-              }
+              },
 
               /**
                * Executes the copy operation based on the current selection.
@@ -632,7 +630,7 @@
                 }
 
                 this.handleResult(succeeded);
-              }
+              },
 
               /**
                * Fires an event based on the copy operation result.
@@ -646,9 +644,9 @@
                   action: this.action,
                   text: this.selectedText,
                   trigger: this.trigger,
-                  clearSelection: this.clearSelection.bind(this)
+                  clearSelection: this.clearSelection.bind(this),
                 });
-              }
+              },
 
               /**
                * Moves focus away from `target` and back to the trigger, removes current selection.
@@ -662,7 +660,7 @@
                 }
 
                 window.getSelection().removeAllRanges();
-              }
+              },
 
               /**
                * Sets the `action` to be performed which can be either 'copy' or 'cut'.
@@ -677,7 +675,7 @@
                */
               value: function destroy() {
                 this.removeFake();
-              }
+              },
             },
             {
               key: "action",
@@ -702,7 +700,7 @@
                */
               get: function get() {
                 return this._action;
-              }
+              },
 
               /**
                * Sets the `target` property using an element
@@ -755,8 +753,8 @@
                */
               get: function get() {
                 return this._target;
-              }
-            }
+              },
+            },
           ]);
 
           return ClipboardAction;
@@ -767,7 +765,7 @@
         /***/
       },
       /* 2 */
-      /***/ function(module, exports) {
+      /***/ function (module, exports) {
         function select(element) {
           var selectedText;
 
@@ -816,25 +814,25 @@
         /***/
       },
       /* 3 */
-      /***/ function(module, exports) {
+      /***/ function (module, exports) {
         function E() {
           // Keep this empty so it's easier to inherit from
           // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
         }
 
         E.prototype = {
-          on: function(name, callback, ctx) {
+          on: function (name, callback, ctx) {
             var e = this.e || (this.e = {});
 
             (e[name] || (e[name] = [])).push({
               fn: callback,
-              ctx: ctx
+              ctx: ctx,
             });
 
             return this;
           },
 
-          once: function(name, callback, ctx) {
+          once: function (name, callback, ctx) {
             var self = this;
             function listener() {
               self.off(name, listener);
@@ -845,7 +843,7 @@
             return this.on(name, listener, ctx);
           },
 
-          emit: function(name) {
+          emit: function (name) {
             var data = [].slice.call(arguments, 1);
             var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
             var i = 0;
@@ -858,7 +856,7 @@
             return this;
           },
 
-          off: function(name, callback) {
+          off: function (name, callback) {
             var e = this.e || (this.e = {});
             var evts = e[name];
             var liveEvents = [];
@@ -877,7 +875,7 @@
             liveEvents.length ? (e[name] = liveEvents) : delete e[name];
 
             return this;
-          }
+          },
         };
 
         module.exports = E;
@@ -885,7 +883,7 @@
         /***/
       },
       /* 4 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function (module, exports, __webpack_require__) {
         var is = __webpack_require__(5);
         var delegate = __webpack_require__(6);
 
@@ -937,9 +935,9 @@
           node.addEventListener(type, callback);
 
           return {
-            destroy: function() {
+            destroy: function () {
               node.removeEventListener(type, callback);
-            }
+            },
           };
         }
 
@@ -953,16 +951,16 @@
          * @return {Object}
          */
         function listenNodeList(nodeList, type, callback) {
-          Array.prototype.forEach.call(nodeList, function(node) {
+          Array.prototype.forEach.call(nodeList, function (node) {
             node.addEventListener(type, callback);
           });
 
           return {
-            destroy: function() {
-              Array.prototype.forEach.call(nodeList, function(node) {
+            destroy: function () {
+              Array.prototype.forEach.call(nodeList, function (node) {
                 node.removeEventListener(type, callback);
               });
-            }
+            },
           };
         }
 
@@ -984,14 +982,14 @@
         /***/
       },
       /* 5 */
-      /***/ function(module, exports) {
+      /***/ function (module, exports) {
         /**
          * Check if argument is a HTML element.
          *
          * @param {Object} value
          * @return {Boolean}
          */
-        exports.node = function(value) {
+        exports.node = function (value) {
           return (
             value !== undefined &&
             value instanceof HTMLElement &&
@@ -1005,7 +1003,7 @@
          * @param {Object} value
          * @return {Boolean}
          */
-        exports.nodeList = function(value) {
+        exports.nodeList = function (value) {
           var type = Object.prototype.toString.call(value);
 
           return (
@@ -1023,7 +1021,7 @@
          * @param {Object} value
          * @return {Boolean}
          */
-        exports.string = function(value) {
+        exports.string = function (value) {
           return typeof value === "string" || value instanceof String;
         };
 
@@ -1033,7 +1031,7 @@
          * @param {Object} value
          * @return {Boolean}
          */
-        exports.fn = function(value) {
+        exports.fn = function (value) {
           var type = Object.prototype.toString.call(value);
 
           return type === "[object Function]";
@@ -1042,7 +1040,7 @@
         /***/
       },
       /* 6 */
-      /***/ function(module, exports, __webpack_require__) {
+      /***/ function (module, exports, __webpack_require__) {
         var closest = __webpack_require__(7);
 
         /**
@@ -1061,9 +1059,9 @@
           element.addEventListener(type, listenerFn, useCapture);
 
           return {
-            destroy: function() {
+            destroy: function () {
               element.removeEventListener(type, listenerFn, useCapture);
-            }
+            },
           };
         }
 
@@ -1096,7 +1094,7 @@
           }
 
           // Handle Array-like based usage
-          return Array.prototype.map.call(elements, function(element) {
+          return Array.prototype.map.call(elements, function (element) {
             return _delegate(element, selector, type, callback, useCapture);
           });
         }
@@ -1111,7 +1109,7 @@
          * @return {Function}
          */
         function listener(element, selector, type, callback) {
-          return function(e) {
+          return function (e) {
             e.delegateTarget = closest(e.target, selector);
 
             if (e.delegateTarget) {
@@ -1125,7 +1123,7 @@
         /***/
       },
       /* 7 */
-      /***/ function(module, exports) {
+      /***/ function (module, exports) {
         var DOCUMENT_NODE_TYPE = 9;
 
         /**
@@ -1164,7 +1162,7 @@
         module.exports = closest;
 
         /***/
-      }
+      },
       /******/
     ]
   );
