@@ -1,6 +1,4 @@
-<script src="./app-home.js">
-
-</script>
+<script src="./app-home.js"></script>
 <template>
   <div id="root">
     <div
@@ -32,9 +30,7 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-         
         </div>
-      
       </nav>
     </div>
 

@@ -6551,12 +6551,10 @@
                     y.RADIO(["Browser", "Browser"], "context")
                   ),
                   y.COMMAND(["Scale", "Scale All Math ..."], b.Scale),
-                  y
-                    .RULE()
-                    .With({
-                      hidden: !x.showDiscoverable,
-                      name: ["", "discover_rule"],
-                    }),
+                  y.RULE().With({
+                    hidden: !x.showDiscoverable,
+                    name: ["", "discover_rule"],
+                  }),
                   y.CHECKBOX(
                     ["Discoverable", "Highlight on Hover"],
                     "discoverable",
@@ -6579,12 +6577,10 @@
                   ["Locale", "Language"],
                   { hidden: !x.showLocale, ltr: !0 },
                   y.RADIO("en", "locale", { action: b.Locale }),
-                  y
-                    .RULE()
-                    .With({
-                      hidden: !x.showLocaleURL,
-                      name: ["", "localURL_rule"],
-                    }),
+                  y.RULE().With({
+                    hidden: !x.showLocaleURL,
+                    name: ["", "localURL_rule"],
+                  }),
                   y.COMMAND(["LoadLocale", "Load from URL ..."], b.LoadLocale, {
                     hidden: !x.showLocaleURL,
                   })

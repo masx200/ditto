@@ -2,13 +2,12 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import vue from "vue";
 import app from "./app-home.vue";
-
 import ClipboardJS from "./clipboard.js";
 import config from "./config";
 import "./ditto.css";
+import "./error-alert";
 import "./hidewidthless500.css";
 import "./index.css";
-
 import modulemathjax from "./MathJax/index";
 import "./我的侧边栏.css";
 import "./样式.css";
@@ -57,10 +56,16 @@ document.getElementById("root").innerHTML = `<div>
   // console.log(nclp);
 })(ClipboardJS);
 vue.config.devtools = true;
+Vue.config.productionTip = false;
+Vue.config.silent = true;
+Vue.config.errorHandler = function (err, vm, info) {
+  throw err;
+};
 // console.log(App);
-let ApphomeVm;
-export function mountinit() {
-  ApphomeVm = new vue({ el: document.getElementById("root"), ...app });
+let ApphomeVm = new vue({ ...app });
+export function mountinit(el) {
+  // ApphomeVm = new vue({ el: document.getElementById("root"), ...app });
+  ApphomeVm.$mount(el.appendChild(document.createElement('div')));
 }
 
 // console.log(ApphomeVm);

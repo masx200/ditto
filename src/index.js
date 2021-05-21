@@ -7,4 +7,4 @@ Object.assign(config, {
 
   summary: "summary.md",
 });
-mountinit();
+mountinit( document.getElementById("root"));
