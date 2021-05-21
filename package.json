@@ -1,4 +1,8 @@
 {
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.com/"
+    },
     "name": "@masx200/markdown-reader",
     "version": "3.0.0",
     "main": "./src/export.js",
