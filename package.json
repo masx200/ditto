@@ -9,18 +9,17 @@
     "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.html */*.js */*.css */*.md */*.json */*.vue"
   },
   "devDependencies": {
-    "@masx200/webpack-react-vue-spa-awesome-config": "2.8.0",
-    "webpack": "^4.44.1",
-    "terser-webpack-plugin": "^2.2.2",
-    "terser": "^4.4.2",
-    "typescript": "^3.9.7",
-    "prettier": "2.3.0"
+    "@masx200/webpack-react-vue-spa-awesome-config": "3.0.4",
+    "prettier": "2.3.0",
+    "terser": "^5.7.0",
+    "terser-webpack-plugin": "^5.1.2",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.1"
   },
   "dependencies": {
-    
-    "highlight.js": "^10.4.1",
-    "jquery": "^3.4.1",
-    "vue": "^2.6.11"
+    "highlight.js": "^10.7.2",
+    "jquery": "^3.6.0",
+    "vue": "^2.6.12"
   },
   "description": "Lightweight Markdown Documentation System ",
   "directories": {
