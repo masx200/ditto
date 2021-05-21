@@ -1,6 +1,6 @@
 <script src="./app-home.js"></script>
 <template>
-  <div id="root">
+  <div >
     <div
       id="my导航栏"
       class="container-fluid fixed-top"
