@@ -1,29 +1,5 @@
-<script>
-import { 挂载初始 } from "./render";
-import $ from "jquery";
-import { 内容调整左边偏移 } from "./render";
-export default {
-  mounted() {
-    $("#my主体").css("padding-top", $("#my导航栏").height());
-    内容调整左边偏移();
-    挂载初始();
-  },
-  data: () => ({
-    mytitle: "",
-    showerror: false,
-    errorcontent: "",
-    content: "",
-    mulu: "",
-    urltext: "",
-    xianshicebianlan: true,
-  }),
-  methods: {
-    togglecebian() {
-      this.xianshicebianlan = !this.xianshicebianlan;
-      内容调整左边偏移();
-    },
-  },
-};
+<script src="./app-home.js">
+
 </script>
 <template>
   <div id="root">
@@ -56,42 +32,9 @@ export default {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <!--
-          <a
-            class="navbar-brand navbar-brand mui-btn mui-btn-primary mui-btn-outlined"
-            href="https://masx200.github.io/index.html"
-            >masx200的
-            <hr id="hidewidthless500" />
-            github主页
-          </a>
-          -->
-
-          <!--
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapsibleNavbar"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          -->
+         
         </div>
-        <!--   <ul class="navbar-nav">
-          <li class="nav-item">
-          
-          <a class="nav-link mui-btn mui-btn-primary mui-btn-outlined" href="#README" id="title"></a>
-        -->
-        <!--   </li>
-        </ul>
-        -->
-        <!--
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <div id="sidebar" class="navbar-nav"></div>
-        </div>
-       
-        -->
+      
       </nav>
     </div>
 
