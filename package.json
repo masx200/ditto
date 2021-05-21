@@ -1,38 +1,50 @@
 {
-  "name": "@masx200/markdown-reader",
-  "version": "3.0.0",
-  "main": "./src/export.js",
-  "scripts": {
-    "start": "webpack-react-vue-spa-awesome-config start",
-    "build": "webpack-react-vue-spa-awesome-config build  --output-public-path=https://cdn.jsdelivr.net/gh/masx200/markdown-reader@2.3.1/ ",
-    "test": "webpack-react-vue-spa-awesome-config build",
-    "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.html */*.js */*.css */*.md */*.json */*.vue"
-  },
-  "devDependencies": {
-    "@masx200/webpack-react-vue-spa-awesome-config": "3.0.4",
-    "prettier": "2.3.0",
-    "terser": "^5.7.0",
-    "terser-webpack-plugin": "^5.1.2",
-    "typescript": "^4.2.4",
-    "webpack": "^5.37.1"
-  },
-  "dependencies": {
-    "highlight.js": "^10.7.2",
-    "jquery": "^3.6.0",
-    "vue": "^2.6.12"
-  },
-  "description": "Lightweight Markdown Documentation System ",
-  "directories": {
-    "doc": "docs"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/masx200/markdown-reader.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/masx200/markdown-reader/issues"
-  },
-  "homepage": "https://github.com/masx200/markdown-reader#readme"
+    "name": "@masx200/markdown-reader",
+    "version": "3.0.0",
+    "main": "./src/export.js",
+    "scripts": {
+        "start": "webpack-react-vue-spa-awesome-config start",
+        "build": "webpack-react-vue-spa-awesome-config build  --output-public-path=https://cdn.jsdelivr.net/gh/masx200/markdown-reader@2.3.1/ ",
+        "test": "webpack-react-vue-spa-awesome-config build",
+        "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.html */*.js */*.css */*.md */*.json */*.vue"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@masx200/webpack-react-vue-spa-awesome-config": "3.0.4",
+        "prettier": "2.3.0",
+        "terser": "^5.7.0",
+        "terser-webpack-plugin": "^5.1.2",
+        "typescript": "^4.2.4",
+        "webpack": "^5.37.1"
+    },
+    "dependencies": {
+        "highlight.js": "^10.7.2",
+        "jquery": "^3.6.0",
+        "vue": "^2.6.12"
+    },
+    "description": "Lightweight Markdown Documentation System ",
+    "directories": {
+        "doc": "docs"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/masx200/markdown-reader.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/masx200/markdown-reader/issues"
+    },
+    "homepage": "https://github.com/masx200/markdown-reader#readme"
 }
