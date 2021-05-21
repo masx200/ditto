@@ -11,8 +11,7 @@ export function 挂载初始() {
         var oldconfig = {
             doctitle: 'markdown-reader',
             subtitle: 'Lightweight Markdown Documentation System',
-            github_username: 'masx200',
-            github_repo: 'markdown-reader'
+          
         };
         var config = {
             ...oldconfig,
@@ -20,16 +19,15 @@ export function 挂载初始() {
         };
         var doctitle = config.doctitle || 'Markdown Reader';
         var subtitle = config.subtitle || 'Lightweight Markdown Documentation System';
-        var github_username = config.github_username;
-        var github_repo = config.github_repo;
+    
+       
         ditto.index = config.index;
         (() => {
             document.title = doctitle + ' ' + subtitle;
             ApphomeVm.mytitle = doctitle;
             $('#my主体').css('padding-top', $('#my导航栏').height());
             (function () {
-                ditto.github_username = github_username;
-                ditto.github_repo = github_repo;
+             
                 ditto.highlight_code = true;
                 ditto.run();
             }());

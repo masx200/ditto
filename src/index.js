@@ -6,7 +6,7 @@ Object.assign(config, {
   index: "README.md",
 
   summary: "summary.md",
-  github_username: "masx200",
-  github_repo: "markdown-reader"
+  
+
 });
 mountinit();

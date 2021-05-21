@@ -31,8 +31,7 @@ export default (() => {
             edit_button: false,
             back_to_top_button: true,
             searchbar: true,
-            github_username: null,
-            github_repo: null,
+          
             run: initialize
         };
         function initialize() {
