@@ -166,6 +166,7 @@ export default (() => {
             }
             path = path.endsWith(".md") ? path : path + ".md";
             path = new URL(path, baseurl).toString();
+            console.log(path);
             if (path !== ApphomeVm.urltext) {
                 const marktext = cachemarkdown.get(path);
                 console.log(cachemarkdown);
