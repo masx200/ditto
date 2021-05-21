@@ -51,6 +51,7 @@ export default (() => {
         }
         function init_sidebar_section() {
             const summaryfile = new URL(config.summary, baseurl).href;
+            console.log(summaryfile);
             var path = summaryfile;
             fetchajaxgettext(path)
                 .then(function (data) {
