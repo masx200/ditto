@@ -40,9 +40,7 @@ document.getElementById("root").innerHTML = `<div>
 })(modulemathjax);
 
 ((ClipboardJS) => {
-  // console.log(m);
-  // let ClipboardJS = m.default;
-  // const nclp =
+  
   new ClipboardJS(".btn").on("success", function (e) {
     if (!e.text) {
       console.log("复制内容空");
@@ -53,7 +51,7 @@ document.getElementById("root").innerHTML = `<div>
 
     e.clearSelection();
   });
-  // console.log(nclp);
+ 
 })(ClipboardJS);
 vue.config.devtools = true;
 Vue.config.productionTip = false;
@@ -68,6 +66,6 @@ export function mount(el) {
   ApphomeVm.$mount(el.appendChild(document.createElement('div')));
 }
 
-// console.log(ApphomeVm);
+
 export { ApphomeVm };
 export { config };
