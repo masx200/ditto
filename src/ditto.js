@@ -8,8 +8,8 @@ import MathJax from "./MathJax/index";
 import { 内容调整左边偏移 } from "./render";
 
 function getbaseurl() {
-    
-    return config.baseurl; }
+    return config.baseurl;
+}
 const cachemarkdown = new Map();
 ("use strict");
 var readme加载失败 = false;
@@ -52,7 +52,7 @@ export default (() => {
             window.addEventListener("hashchange", router);
         }
         function init_sidebar_section() {
-            const baseurl=getbaseurl()
+            const baseurl = getbaseurl();
             const summaryfile = new URL(config.summary, baseurl).href;
             console.log(summaryfile);
             var path = summaryfile;
@@ -157,7 +157,7 @@ export default (() => {
             );
         }
         function page_getter(转到主页 = false) {
-            const baseurl = getbaseurl()
+            const baseurl = getbaseurl();
 
             window.scrollTo(0, 0);
             var path =
