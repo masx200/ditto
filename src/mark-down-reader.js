@@ -1,41 +1,27 @@
 // @ts-nocheck
-import "./样式.css";
-// import "@masx200/webpack-react-vue-spa-awesome-config/ie11babelpolyfill.js";
-("use strict");
-import "./我的侧边栏.css";
-
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
+import vue from "vue";
+import app from "./app-home.vue";
+
+import ClipboardJS from "./clipboard.js";
+import config from "./config";
 import "./ditto.css";
 import "./hidewidthless500.css";
 import "./index.css";
-// import $ from "jquery";
-// alert("hello world");
-/*import React from "react";
-import { render } from "react-dom";
 
-function 主页() {
-  return <div>hello world</div>;
-}
+import modulemathjax from "./MathJax/index";
+import "./我的侧边栏.css";
+import "./样式.css";
 
-render(<主页 />, document.getElementById("root"));
-*/
+("use strict");
+
 document.getElementById("root").innerHTML = `<div>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">
 
 </span></div>
 `;
-// $("head").append(`<script type="text/x-mathjax-config">
-//     MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"]],processRefs:!0},TeX:{equationNumbers:{autoNumber:"all",formatID:function(n){return"("+n+")"},formatURL:function(n){return null}}}});
-//   </script>`);
-// $.getScript(
-//   "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"
-// ).then(() => {
-//   console.log(window.MathJax);
-
-// var MathJax = window.MathJax;
-import modulemathjax from "./MathJax/index";
-(MathJax => {
+((MathJax) => {
   // console.log(module);
   // var MathJax = module.default;
   MathJax.Hub.Config({
@@ -43,50 +29,22 @@ import modulemathjax from "./MathJax/index";
     TeX: {
       equationNumbers: {
         autoNumber: "all",
-        formatID: function(n) {
+        formatID: function (n) {
           return "(" + n + ")";
         },
-        formatURL: function() {
+        formatURL: function () {
           return null;
-        }
-      }
-    }
+        },
+      },
+    },
   });
 })(modulemathjax);
 
-// import "./render";
-// .then(() => {
-//   // console.log("加载render");
-// });
-// });
-
-// import("bootstrap");
-// .then(m => console.log(m));
-
-// import ClipboardJS from "./clipboard.min.js";
-
-// // then(m => {
-// //   console.log(m);
-// //   let ClipboardJS = m.default;
-// new ClipboardJS(".btn").on("success", function(e) {
-//   if (!e.text) {
-//     console.log("复制内容空");
-//   } else {
-//     //   console.info("Action:", e.action);
-//     console.info("Text:", e.text);
-//   }
-
-//   e.clearSelection();
-// });
-// });
-
-import ClipboardJS from "./clipboard.js";
-
-(ClipboardJS => {
+((ClipboardJS) => {
   // console.log(m);
   // let ClipboardJS = m.default;
   // const nclp =
-  new ClipboardJS(".btn").on("success", function(e) {
+  new ClipboardJS(".btn").on("success", function (e) {
     if (!e.text) {
       console.log("复制内容空");
     } else {
@@ -98,8 +56,6 @@ import ClipboardJS from "./clipboard.js";
   });
   // console.log(nclp);
 })(ClipboardJS);
-import app from "./app-home.vue";
-import vue from "vue/dist/vue.esm";
 vue.config.devtools = true;
 // console.log(App);
 let ApphomeVm;
@@ -109,6 +65,4 @@ export function mountinit() {
 
 // console.log(ApphomeVm);
 export { ApphomeVm };
-
-import config from "./config";
 export { config };
