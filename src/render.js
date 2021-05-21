@@ -4,6 +4,7 @@ import $ from "jquery";
 import ditto from "./ditto";
 import config from "./config";
 export function 挂载初始() {
+    Object.assign(ditto, config);
     window.addEventListener("resize", () => {
         内容调整左边偏移();
     });
