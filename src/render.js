@@ -5,6 +5,7 @@ import ditto from "./ditto";
 import config from "./config";
 export function 挂载初始() {
     Object.assign(ditto, config);
+    console.log(ditto)
     window.addEventListener("resize", () => {
         内容调整左边偏移();
     });
