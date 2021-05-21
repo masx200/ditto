@@ -1,12 +1,13 @@
 import jQuery from "jquery";
-import newconfig from "./config";
+import config from "./config";
 import fetchajaxgettext from "./fetchajaxgettext";
 import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader";
 import marked from "./marked.min";
 import MathJax from "./MathJax/index";
 import { 内容调整左边偏移 } from "./render";
-import webpackrequirepublicpath from "./webpack-require-public-path";
+
+const baseurl=config.baseurl
 const cachemarkdown = new Map();
 ("use strict");
 var readme加载失败 = false;
@@ -49,7 +50,7 @@ export default (() => {
       window.addEventListener("hashchange", router);
     }
     function init_sidebar_section() {
-      const summaryfile = new URL(newconfig.summary, webpackrequirepublicpath)
+      const summaryfile = new URL(config.summary, baseurl)
         .href;
       var path = summaryfile;
       fetchajaxgettext(path)
@@ -82,7 +83,7 @@ export default (() => {
                   fetch(
                     new URL(
                       e.endsWith(".md") ? e : e + ".md",
-                      webpackrequirepublicpath
+                      baseurl
                     ).toString(),
                     {
                       credentials: "omit",
@@ -147,7 +148,7 @@ export default (() => {
         path = "./" + ditto.index;
       }
       path = path.endsWith(".md") ? path : path + ".md";
-      path = new URL(path, webpackrequirepublicpath).toString();
+      path = new URL(path, baseurl).toString();
       if (path !== ApphomeVm.urltext) {
         const marktext = cachemarkdown.get(path);
         console.log(cachemarkdown);

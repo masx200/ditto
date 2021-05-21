@@ -2,23 +2,17 @@
 import { ApphomeVm } from "./mark-down-reader";
 import $ from "jquery";
 import ditto from "./ditto";
-import newconfig from "./config";
+import config from "./config";
 export function 挂载初始() {
   window.addEventListener("resize", () => {
     内容调整左边偏移();
   });
   $(() => {
-    var oldconfig = {
-      doctitle: "markdown-reader",
-      subtitle: "Lightweight Markdown Documentation System",
-    };
-    var config = {
-      ...oldconfig,
-      ...newconfig,
-    };
-    var doctitle = config.doctitle || "Markdown Reader";
+    
+    
+    var doctitle = config.doctitle 
     var subtitle =
-      config.subtitle || "Lightweight Markdown Documentation System";
+      config.subtitle 
 
     ditto.index = config.index;
     (() => {

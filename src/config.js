@@ -4,4 +4,5 @@ export default {
   index: "README.md",
 
   summary: "summary.md",
+  baseurl:location.href
 };
