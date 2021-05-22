@@ -25,15 +25,14 @@ export default (() => {
             back_to_top_id: $("#back_to_top"),
             loading_id: $("#loading"),
             error_id: $("#error"),
-            search_name: $("#search"),
-            search_results_class: ".search_results",
+
             fragments_class: ".fragments",
             fragment_class: ".fragment",
             highlight_code: true,
             sidebar: true,
             edit_button: false,
             back_to_top_button: true,
-            searchbar: true,
+
 
             run: initialize,
         };
@@ -297,17 +296,10 @@ export default (() => {
             });
         }
         function router() {
-            var hash = location.hash;
-            if (
-                !(
-                    hash.slice(2, 8) == "search" ||
-                    hash.slice(1, 7) == "search" ||
-                    location.hash.includes(`search`)
-                )
-            ) {
-                page_getter();
-            } else {
-            }
+
+            page_getter();
+            // } else {
+            // }
         }
         return ditto;
     })(jQuery);
