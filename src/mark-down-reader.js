@@ -9,7 +9,7 @@ import "./ditto.css";
 import "./error-alert";
 import "./hidewidthless500.css";
 import "./index.css";
-import modulemathjax from "./MathJax/index";
+
 import "./我的侧边栏.css";
 import "./样式.css";
 
@@ -21,24 +21,6 @@ document.getElementById("root").innerHTML = `<div>
 
 </span></div>
 `;
-((MathJax) => {
-    // console.log(module);
-    // var MathJax = module.default;
-    MathJax.Hub.Config({
-        tex2jax: { inlineMath: [["$", "$"]], processRefs: !0 },
-        TeX: {
-            equationNumbers: {
-                autoNumber: "all",
-                formatID: function (n) {
-                    return "(" + n + ")";
-                },
-                formatURL: function () {
-                    return null;
-                },
-            },
-        },
-    });
-})(modulemathjax);
 
 ((ClipboardJS) => {
     new ClipboardJS(".btn").on("success", function (e) {

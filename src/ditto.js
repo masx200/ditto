@@ -4,7 +4,7 @@ import fetchajaxgettext from "./fetchajaxgettext";
 import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader";
 import marked from "./marked.min";
-import MathJax from "./MathJax/index";
+
 import { 内容调整左边偏移 } from "./render";
 
 function getbaseurl() {
@@ -12,7 +12,7 @@ function getbaseurl() {
 }
 const cachemarkdown = new Map();
 ("use strict");
-var readme加载失败 = false;
+
 export default (() => {
     "use strict";
     return (function ($) {
@@ -115,9 +115,7 @@ export default (() => {
                 })
                 .catch(function () {
                     stop_loading();
-                    setTimeout(() => {
-                        page_getter(true);
-                    }, 5000);
+
                     console.error(
                         "Opps! can't find the sidebar file to display!"
                     );
@@ -182,39 +180,11 @@ export default (() => {
                                 "padding-top",
                                 $("#my导航栏").height()
                             );
-                            return compile_into_dom(data)
-                                .then(function () {
-                                    return new Promise((r) => {
-                                        requestAnimationFrame(() => {
-                                            if (
-                                                MathJax &&
-                                                MathJax.Extension["Tex/AMSmath"]
-                                            ) {
-                                                MathJax.Extension[
-                                                    "TeX/AMSmath"
-                                                ].startNumber = 0;
-                                                MathJax.Extension[
-                                                    "TeX/AMSmath"
-                                                ].labels = {};
-                                                var content =
-                                                    ApphomeVm.$refs
-                                                        .markdown内容;
-                                                MathJax.Hub.Queue([
-                                                    "Typeset",
-                                                    MathJax.Hub,
-                                                    content,
-                                                ]);
-                                            }
-                                            r();
-                                        });
-                                    });
-                                })
-                                .then(() => {
-                                    return new Promise((r) => {
-                                        requestAnimationFrame(() => {
-                                            Array.from(
-                                                jQuery("code.hljs")
-                                            ).forEach((e) => {
+                            return compile_into_dom(data).then(() => {
+                                return new Promise((r) => {
+                                    requestAnimationFrame(() => {
+                                        Array.from(jQuery("code.hljs")).forEach(
+                                            (e) => {
                                                 var codecontenguid =
                                                     "clip" + guid();
                                                 jQuery(e).attr(
@@ -223,30 +193,28 @@ export default (() => {
                                                 )
                                                     .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
                                         </button>`);
-                                            });
-                                            内容调整左边偏移();
-                                            setTimeout(() => {
-                                                stop_loading();
-                                            }, 0);
-                                            ApphomeVm.urltext = path;
-                                            if (window.innerWidth < 550) {
-                                                ApphomeVm.xianshicebianlan = false;
                                             }
-                                            var contenthtml =
-                                                ApphomeVm.$refs.markdown内容
-                                                    .innerHTML;
-                                            cachemarkdown.set(
-                                                path,
-                                                contenthtml
-                                            );
-                                            r();
+                                        );
+                                        内容调整左边偏移();
+                                        requestAnimationFrame(() => {
+                                            stop_loading();
                                         });
+                                        ApphomeVm.urltext = path;
+                                        if (window.innerWidth < 550) {
+                                            ApphomeVm.xianshicebianlan = false;
+                                        }
+                                        var contenthtml =
+                                            ApphomeVm.$refs.markdown内容
+                                                .innerHTML;
+                                        cachemarkdown.set(path, contenthtml);
+                                        r();
                                     });
                                 });
+                            });
                         })
                         .catch(function () {
                             ApphomeVm.urltext = "加载失败 " + path;
-                            if (readme加载失败) return;
+
                             console.error(
                                 "Opps! ... File not found!\n5秒后返回主页"
                             );
@@ -254,12 +222,7 @@ export default (() => {
                                 "Opps! ... File not found!\n5秒后返回主页"
                             );
                             stop_loading();
-                            if (!readme加载失败) {
-                                setTimeout(() => {
-                                    page_getter(true);
-                                }, 5000);
-                            }
-                            readme加载失败 = true;
+
                             console.warn("load failed " + path);
                             ApphomeVm.urltext = "加载失败 " + path;
                         });
@@ -293,8 +256,6 @@ export default (() => {
         }
         function router() {
             page_getter();
-            // } else {
-            // }
         }
         return ditto;
     })(jQuery);
