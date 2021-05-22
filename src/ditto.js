@@ -33,7 +33,6 @@ export default (() => {
             edit_button: false,
             back_to_top_button: true,
 
-
             run: initialize,
         };
         function initialize() {
@@ -296,7 +295,6 @@ export default (() => {
             });
         }
         function router() {
-
             page_getter();
             // } else {
             // }
