@@ -12,6 +12,8 @@ When you open the `index.html` file, the javascript file `ditto.js` opens
 [marked][marked_github] and displays the rendered html (unless defined
 differently by you otherwise).
 
+![layout](images/layout.png)
+
 Documentation defined in `sidebar.md` should be of the form:
 
     #folder_containing_docs/file_name_without_extension
@@ -62,4 +64,4 @@ click on the `li` element, the page would automatically scroll down to the
 relevant section, with the relevant section glowing red for a moment to attract
 attention.
 
-[marked_github]: https://github.com/chjj/marked
+[marked_github]: https://github.com/markedjs/marked

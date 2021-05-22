@@ -28,103 +28,80 @@ host your files.
 [Download][index_file](<- right-click "Save as") or copy the following code
 snippet and save it as `index.html`
 
-```html
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
     <head>
-        <link
-            rel="stylesheet"
-            href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
-        />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>
-            * {
-                font-family: "Microsoft Yahei,PingFangSC-Regular,arial, verdana, sans-serif";
-            }
-        </style>
-        <title>ditto Lightweight Markdown Documentation System</title>
-        <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdn.staticfile.org/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <script src="https://cdn.staticfile.org/marked/0.6.2/marked.min.js"></script>
-        <link rel="stylesheet" href="github.css" />
-        <script src="https://cdn.staticfile.org/highlight.js/9.15.6/highlight.min.js"></script>
-        <script type="text/x-mathjax-config">
+        <title>TITLE</title>  <!-- EDIT ME!! -->
 
-              MathJax.Hub.Config({
-              tex2jax: {
-                inlineMath: [['$','$']],
-                processRefs: true
-              },
-              TeX: {
-                equationNumbers: {
-                  autoNumber: "all",
-                  formatID: function(id) { return "(" + id  + ")"},
-                  formatURL: function(id) { return null }
+        <!-- JQUERY -->
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+        <!-- MARKED -->
+        <script src="//chutsu.github.io/ditto/ver/latest/marked.js"></script>
+
+        <!-- HIGHLIGHT.JS -->
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/github.css">
+        <script src="//chutsu.github.io/ditto/ver/latest/highlight.js"></script>
+
+        <!-- MATHJAX -->
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [['$','$']],
+                    processRefs: true
+                },
+                TeX: {
+                    equationNumbers: {
+                        autoNumber: "all",
+                        formatID: function(id) { return null },
+                        formatURL: function(id) { return null }
+                    }
                 }
-              }
             });
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathMenu.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/extensions/MathZoom.js"></script>
-        <link rel="stylesheet" href="ditto.css" />
-        <script src="ditto.js"></script>
-        <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-        <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript"
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+        </script>
+
+        <!-- DITTO CSS -->
+        <link rel="stylesheet" href="//chutsu.github.io/ditto/ver/latest/ditto.css">
+        <script src="//chutsu.github.io/ditto/ver/latest/ditto.js"></script>
     </head>
     <body>
-        <noscript>Your browser does not support JavaScript!</noscript>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-sm bg-light navbar-light">
-                <a
-                    class="navbar-brand"
-                    href="https://masx200.github.io/index.html"
-                    >masx200的github主页
-                </a>
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#README">ditto</a>
-                    </li>
-                </ul>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#collapsibleNavbar"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <div id="sidebar" class="navbar-nav"></div>
-                </div>
-            </nav>
-        </div>
-        <div class="container">
-            <div id="content"></div>
-            <div id="hide"></div>
-            <div id="back_to_top">top</div>
-            <div id="loading">Loading ...</div>
-            <div id="error"></div>
-        </div>
+        <!-- ESSENTIAL -->
+        <div id="sidebar"></div>
+        <div id="content"></div>
+        <div id="hide"></div>
+
+        <!-- OPTIONAL -->
+        <div id="back_to_top">top</div>
+        <div id="edit">edit</div>
+        <div id="loading">Loading ...</div>
+        <div id="error"></div>
+
+        <!-- DITTO -->
         <script>
-            function t() {
-                ("" !== location.hash && "#" !== location.hash) ||
-                    (location.hash = "#README");
-            }
-            $(function (t) {
-                (ditto.index = "README.md"),
-                    (ditto.sidebar_file = "sidebar.md"),
-                    (ditto.github_username = "masx200"),
-                    (ditto.github_repo = "ditto"),
-                    (ditto.highlight_code = !0),
-                    ditto.run();
-            }),
-                $(window).on("hashchange", t);
+            $(function($) {
+            // essential settings
+            ditto.index = "README.md",
+            ditto.sidebar_file = "sidebar.md",
+
+            // optional settings if you want github search
+            ditto.github_username = null;   // <------- EDIT ME!!
+            ditto.github_repo = null;       // <------- EDIT ME!!
+            ditto.highlight_code = false;    // <------- EDIT ME!!
+
+            // where the docs are actually stored on github - so you can edit
+            // e.g. https://github.com/chutsu/ditto/edit/gh-pages
+            ditto.base_url = "";            // <------- EDIT ME!!
+
+            // run
+            ditto.run();
+            });
         </script>
     </body>
-</html>
-```
+    </html>
 
 Edit:
 
