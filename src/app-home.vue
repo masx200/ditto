@@ -16,7 +16,7 @@
                             navbar-brand navbar-brand
                             mui-btn mui-btn-primary mui-btn-outlined
                         "
-                        href="#README"
+                        v-bind:href="indexhref"
                         id="title"
                         v-text="mytitle"
                         style="top: 0"

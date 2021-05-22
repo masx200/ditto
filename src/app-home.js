@@ -1,11 +1,17 @@
-import { 挂载初始 } from "./render";
+import { 挂载初始 } from "./render.js";
 import $ from "jquery";
-import { 内容调整左边偏移 } from "./render";
+import { 内容调整左边偏移 } from "./render.js";
+import config from "./config.js";
 export default {
     mounted() {
         $("#my主体").css("padding-top", $("#my导航栏").height());
         内容调整左边偏移();
         挂载初始();
+    },
+    computed: {
+        indexhref() {
+            return "#" + config.index;
+        },
     },
     data: () => ({
         mytitle: "",
