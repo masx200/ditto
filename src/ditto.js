@@ -154,7 +154,7 @@ export default (() => {
                 }
             );
         }
-        function page_getter(转到主页 = false) {
+        function page_getter() {
             const baseurl = getbaseurl();
 
             window.scrollTo(0, 0);
@@ -163,10 +163,7 @@ export default (() => {
                     ? "./" + ditto.index
                     : location.hash.replace("#", "./");
             show_loading();
-            if (转到主页 === false) {
-            } else {
-                path = "./" + ditto.index;
-            }
+
             path = path.endsWith(".md") ? path : path + ".md";
             path = new URL(path, baseurl).toString();
             console.log(path);
