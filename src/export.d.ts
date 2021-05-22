@@ -1,12 +1,10 @@
-type mountfun = (el: Element) => void;
-export default {
+export default interface markdownreader {
     config: {
-        doctitle: string,
-        subtitle: string,
-        index: string,
-
-        summary: string,
-        baseurl: string,
-    },
-    mount: mountfun,
-};
+        doctitle: string;
+        subtitle: string;
+        index: string;
+        summary: string;
+        baseurl: string;
+    };
+    mount: (el: any) => void;
+}
