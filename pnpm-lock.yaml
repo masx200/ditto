@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.0.5
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.0.6
   highlight.js: ^10.7.2
   jquery: ^3.6.0
   prettier: 2.3.0
@@ -17,7 +17,7 @@ dependencies:
   vue: 2.6.12
 
 devDependencies:
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.0.5
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.0.6
   prettier: 2.3.0
   terser: 5.7.0
   terser-webpack-plugin: 5.1.2_webpack@5.37.1
@@ -548,6 +548,16 @@ packages:
       '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3_@babel+core@7.12.3
     dev: true
 
+  /@babel/plugin-proposal-nullish-coalescing-operator/7.14.2_@babel+core@7.12.3:
+    resolution: {integrity: sha512-ebR0zU9OvI2N4qiAC38KIAK75KItpIPTpAtd2r4OZmMFeKbKJpUFLYP2EuDut82+BmYi8sz42B+TfTptJ9iG5Q==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.12.3
+      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/plugin-syntax-nullish-coalescing-operator': 7.8.3_@babel+core@7.12.3
+    dev: true
+
   /@babel/plugin-proposal-nullish-coalescing-operator/7.14.2_@babel+core@7.14.3:
     resolution: {integrity: sha512-ebR0zU9OvI2N4qiAC38KIAK75KItpIPTpAtd2r4OZmMFeKbKJpUFLYP2EuDut82+BmYi8sz42B+TfTptJ9iG5Q==}
     peerDependencies:
@@ -560,6 +570,16 @@ packages:
 
   /@babel/plugin-proposal-numeric-separator/7.12.1_@babel+core@7.12.3:
     resolution: {integrity: sha512-MR7Ok+Af3OhNTCxYVjJZHS0t97ydnJZt/DbR4WISO39iDnhiD8XHrY12xuSJ90FFEGjir0Fzyyn7g/zY6hxbxA==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.12.3
+      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/plugin-syntax-numeric-separator': 7.10.4_@babel+core@7.12.3
+    dev: true
+
+  /@babel/plugin-proposal-numeric-separator/7.14.2_@babel+core@7.12.3:
+    resolution: {integrity: sha512-DcTQY9syxu9BpU3Uo94fjCB3LN9/hgPS8oUL7KrSW3bA2ePrKZZPJcc5y0hoJAM9dft3pGfErtEUvxXQcfLxUg==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -626,6 +646,17 @@ packages:
 
   /@babel/plugin-proposal-optional-chaining/7.12.1_@babel+core@7.12.3:
     resolution: {integrity: sha512-c2uRpY6WzaVDzynVY9liyykS+kVU+WRZPMPYpkelXH8KBt1oXoI89kPbZKKG/jDT5UK92FTW2fZkZaJhdiBabw==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.12.3
+      '@babel/helper-plugin-utils': 7.13.0
+      '@babel/helper-skip-transparent-expression-wrappers': 7.12.1
+      '@babel/plugin-syntax-optional-chaining': 7.8.3_@babel+core@7.12.3
+    dev: true
+
+  /@babel/plugin-proposal-optional-chaining/7.14.2_@babel+core@7.12.3:
+    resolution: {integrity: sha512-qQByMRPwMZJainfig10BoaDldx/+VDtNcrA7qdNaEOAj6VXud+gfrkA8j4CRAU5HjnWREXqIpSpH30qZX1xivA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -1499,6 +1530,15 @@ packages:
       '@babel/helper-plugin-utils': 7.13.0
     dev: true
 
+  /@babel/plugin-transform-react-display-name/7.14.2_@babel+core@7.12.3:
+    resolution: {integrity: sha512-zCubvP+jjahpnFJvPaHPiGVfuVUjXHhFvJKQdNnsmSsiU9kR/rCZ41jHc++tERD2zV+p7Hr6is+t5b6iWTCqSw==}
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    dependencies:
+      '@babel/core': 7.12.3
+      '@babel/helper-plugin-utils': 7.13.0
+    dev: true
+
   /@babel/plugin-transform-react-display-name/7.14.2_@babel+core@7.14.3:
     resolution: {integrity: sha512-zCubvP+jjahpnFJvPaHPiGVfuVUjXHhFvJKQdNnsmSsiU9kR/rCZ41jHc++tERD2zV+p7Hr6is+t5b6iWTCqSw==}
     peerDependencies:
@@ -1798,11 +1838,11 @@ packages:
       '@babel/plugin-proposal-export-namespace-from': 7.14.2_@babel+core@7.12.3
       '@babel/plugin-proposal-json-strings': 7.14.2_@babel+core@7.12.3
       '@babel/plugin-proposal-logical-assignment-operators': 7.14.2_@babel+core@7.12.3
-      '@babel/plugin-proposal-nullish-coalescing-operator': 7.12.1_@babel+core@7.12.3
-      '@babel/plugin-proposal-numeric-separator': 7.12.1_@babel+core@7.12.3
+      '@babel/plugin-proposal-nullish-coalescing-operator': 7.14.2_@babel+core@7.12.3
+      '@babel/plugin-proposal-numeric-separator': 7.14.2_@babel+core@7.12.3
       '@babel/plugin-proposal-object-rest-spread': 7.14.2_@babel+core@7.12.3
       '@babel/plugin-proposal-optional-catch-binding': 7.14.2_@babel+core@7.12.3
-      '@babel/plugin-proposal-optional-chaining': 7.12.1_@babel+core@7.12.3
+      '@babel/plugin-proposal-optional-chaining': 7.14.2_@babel+core@7.12.3
       '@babel/plugin-proposal-private-methods': 7.13.0_@babel+core@7.12.3
       '@babel/plugin-proposal-unicode-property-regex': 7.12.13_@babel+core@7.12.3
       '@babel/plugin-syntax-async-generators': 7.8.4_@babel+core@7.12.3
@@ -1973,7 +2013,7 @@ packages:
     dependencies:
       '@babel/core': 7.12.3
       '@babel/helper-plugin-utils': 7.13.0
-      '@babel/plugin-transform-react-display-name': 7.12.1_@babel+core@7.12.3
+      '@babel/plugin-transform-react-display-name': 7.14.2_@babel+core@7.12.3
       '@babel/plugin-transform-react-jsx': 7.14.3_@babel+core@7.12.3
       '@babel/plugin-transform-react-jsx-development': 7.12.17_@babel+core@7.12.3
       '@babel/plugin-transform-react-jsx-self': 7.12.13_@babel+core@7.12.3
@@ -2101,8 +2141,8 @@ packages:
       '@hapi/hoek': 8.5.1
     dev: true
 
-  /@masx200/webpack-react-vue-spa-awesome-config/3.0.5:
-    resolution: {integrity: sha512-9q/uK/8rr9bG+SMQVEdQa88M7ffoYE4ewhGOsSthJ450LpnOEL/2Yi2rzu24wXfW19++i39dQHX13yhCsOQQFw==}
+  /@masx200/webpack-react-vue-spa-awesome-config/3.0.6:
+    resolution: {integrity: sha512-WUXPM1oOFo2PSQGjMZCWEr1ayLHRvY085NzAg+9qIiN7U0ihcLg6PCml55xuRdpMrhPMOozkYDZlqF+bJB9uvw==}
     hasBin: true
     dependencies:
       '@babel/core': 7.14.3
@@ -9169,7 +9209,7 @@ packages:
   /wide-align/1.1.3:
     resolution: {integrity: sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 2.1.1
     dev: true
 
   /wildcard/2.0.0:
