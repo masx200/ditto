@@ -1,4 +1,4 @@
-export default interface markdownreader {
+interface Markdownreader {
     config: {
         doctitle: string;
         subtitle: string;
@@ -8,3 +8,5 @@ export default interface markdownreader {
     };
     mount: (el: any) => void;
 }
+declare const markdownreader: Markdownreader;
+export default markdownreader;
