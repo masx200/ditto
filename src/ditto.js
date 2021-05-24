@@ -124,6 +124,7 @@ export default (() => {
                     console.warn("load failed " + path);
                     ApphomeVm.errorcontent = "加载失败 " + path;
                     ApphomeVm.showerror = true;
+                    throw e;
                 });
         }
         function show_error(err_msg) {
@@ -227,7 +228,7 @@ export default (() => {
                             stop_loading();
 
                             console.warn("load failed " + path);
-                            ApphomeVm.urltext = "加载失败 " + path;
+                            throw e;
                         });
                 }
             }
