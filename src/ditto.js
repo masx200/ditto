@@ -252,7 +252,7 @@ export default (() => {
                 Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
                     console.log(e);
                     var imgsrc = e.getAttribute("src");
-                    console.log(imgsrc);
+                    console.log(imgsrc,e.src);
                 });
                 ApphomeVm.content = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
