@@ -115,7 +115,7 @@ export default (() => {
                     });
                 })
                 .catch(function (e) {
-                    console.error(e)
+                    console.error(e);
                     stop_loading();
 
                     console.error(
@@ -215,7 +215,7 @@ export default (() => {
                             });
                         })
                         .catch(function (e) {
-                            console.error(e)
+                            console.error(e);
                             ApphomeVm.urltext = "加载失败 " + path;
 
                             console.error(
@@ -256,11 +256,14 @@ export default (() => {
                     var imgsrc = e.getAttribute("src");
                     console.log(imgsrc, e.src);
                     if (
-                        (imgsrc !== e.src) &&
+                        imgsrc !== e.src &&
                         !imgsrc.startsWith("http://") &&
                         !imgsrc.startsWith("https://")
                     ) {
-                        console.log(e,"相对路径图片")
+                        console.log(e, "相对路径图片");
+                        var imgrealurl = String(new URL(imgsrc, mdurl));
+                        console.log(imgrealurl);
+                        e.src = imgrealurl;
                     }
                 });
                 ApphomeVm.content = tmpdoc.body.innerHTML;
