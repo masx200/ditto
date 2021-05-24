@@ -249,7 +249,9 @@ export default (() => {
                 data = unescape_html(data);
 
                 //修改img的路径为相对md文件的路径
-                const tmpdoc = document.implementation.createHTMLDocument();
+                const tmpdoc =
+                    document.implementation.createHTMLDocument("title");
+                //参数是必选项 ie
                 tmpdoc.body.innerHTML = data;
                 //判断img是否是相对路径
                 Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
