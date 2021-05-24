@@ -180,7 +180,7 @@ export default (() => {
                                 "padding-top",
                                 $("#my导航栏").height()
                             );
-                            return compile_into_dom(data).then(() => {
+                            return compile_into_dom(data, path).then(() => {
                                 return new Promise((r) => {
                                     requestAnimationFrame(() => {
                                         Array.from(jQuery("code.hljs")).forEach(
@@ -237,11 +237,14 @@ export default (() => {
                 .replace(/&amp;#92;/g, "\\")
                 .replace(/&amp;#95;/g, "_");
         }
-        function compile_into_dom(data) {
+        function compile_into_dom(data, mdurl) {
+            console.log(mdurl);
             return new Promise((r) => {
                 hide_errors();
                 data = marked(escape_html(data));
                 data = unescape_html(data);
+
+                //修改img的路径为相对md文件的路径
                 ApphomeVm.content = data;
                 requestAnimationFrame(() => {
                     stop_loading();
