@@ -245,6 +245,9 @@ export default (() => {
                 data = unescape_html(data);
 
                 //修改img的路径为相对md文件的路径
+                const tmpdoc = document.implementation.createHTMLDocument();
+                tmpdoc.body.innerHTML = data;
+
                 ApphomeVm.content = data;
                 requestAnimationFrame(() => {
                     stop_loading();
