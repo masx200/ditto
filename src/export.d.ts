@@ -10,3 +10,4 @@ interface Markdownreader {
 }
 declare const markdownreader: Markdownreader;
 export default markdownreader;
+export { Markdownreader };
