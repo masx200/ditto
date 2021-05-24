@@ -114,7 +114,8 @@ export default (() => {
                         });
                     });
                 })
-                .catch(function () {
+                .catch(function (e) {
+                    console.error(e)
                     stop_loading();
 
                     console.error(
