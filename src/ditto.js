@@ -213,7 +213,8 @@ export default (() => {
                                 });
                             });
                         })
-                        .catch(function () {
+                        .catch(function (e) {
+                            console.error(e)
                             ApphomeVm.urltext = "加载失败 " + path;
 
                             console.error(
@@ -252,7 +253,14 @@ export default (() => {
                 Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
                     console.log(e);
                     var imgsrc = e.getAttribute("src");
-                    console.log(imgsrc,e.src);
+                    console.log(imgsrc, e.src);
+                    if (
+                        (imgsrc !== e.src) &&
+                        !imgsrc.startsWith("http://") &&
+                        !imgsrc.startsWith("https://")
+                    ) {
+                        console.log(e,"相对路径图片")
+                    }
                 });
                 ApphomeVm.content = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
