@@ -247,7 +247,7 @@ export default (() => {
                 //修改img的路径为相对md文件的路径
                 const tmpdoc = document.implementation.createHTMLDocument();
                 tmpdoc.body.innerHTML = data;
-
+                //判断img是否是相对路径
                 ApphomeVm.content = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
                     stop_loading();
