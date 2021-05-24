@@ -44,7 +44,8 @@ export default (() => {
             if (ditto.edit_button) {
             }
             if (ditto.highlight_code) {
-                hljs.initHighlightingOnLoad();
+                hljs.highlightAll();
+                //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
             }
             router();
             window.addEventListener("hashchange", router);
