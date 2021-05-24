@@ -4,7 +4,7 @@
         "registry": "https://registry.npmjs.com/"
     },
     "name": "@masx200/markdown-reader",
-    "version": "3.0.3",
+    "version": "3.0.4",
     "main": "./src/export.js",
     "types": "./src/export.d.ts",
     "scripts": {
@@ -13,7 +13,7 @@
         "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.ts */*.html */*.js */*.css */*.md */*.json */*.vue"
     },
     "devDependencies": {
-        "@masx200/webpack-react-vue-spa-awesome-config": "3.0.6",
+        "@masx200/webpack-react-vue-spa-awesome-config": "3.0.7",
         "prettier": "2.3.0",
         "terser": "^5.7.0",
         "terser-webpack-plugin": "^5.1.2",
