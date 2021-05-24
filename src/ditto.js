@@ -248,7 +248,7 @@ export default (() => {
                 const tmpdoc = document.implementation.createHTMLDocument();
                 tmpdoc.body.innerHTML = data;
 
-                ApphomeVm.content = data;
+                ApphomeVm.content = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
                     stop_loading();
                     if (ditto.highlight_code) {
