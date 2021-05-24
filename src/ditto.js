@@ -256,7 +256,8 @@ export default (() => {
                     var imgsrc = e.getAttribute("src");
                     console.log(imgsrc, e.src);
                     if (
-                        imgsrc !== e.src &&
+                        // imgsrc !== e.src &&
+                        //firefox浏览器不兼容
                         !imgsrc.startsWith("http://") &&
                         !imgsrc.startsWith("https://")
                     ) {
