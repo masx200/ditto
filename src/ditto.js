@@ -257,7 +257,9 @@ export default (() => {
                     stop_loading();
                     if (ditto.highlight_code) {
                         Array.from($("pre code")).forEach(function (block) {
-                            hljs.highlightBlock(block);
+                            hljs.highlightElement(block);
+                            /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0
+ Deprecated as of 10.7.0. Please use highlightElement now. */
                         });
                     }
                     r();
