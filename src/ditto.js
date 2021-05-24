@@ -248,6 +248,9 @@ export default (() => {
                 const tmpdoc = document.implementation.createHTMLDocument();
                 tmpdoc.body.innerHTML = data;
                 //判断img是否是相对路径
+                Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
+                    console.log(e);
+                });
                 ApphomeVm.content = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
                     stop_loading();
