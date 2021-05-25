@@ -13,7 +13,7 @@
         "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.ts */*.html */*.js */*.css */*.md */*.json */*.vue"
     },
     "devDependencies": {
-        "@masx200/webpack-react-vue-spa-awesome-config": "3.0.7",
+        "@masx200/webpack-react-vue-spa-awesome-config": "3.0.8",
         "prettier": "2.3.0",
         "terser": "^5.7.0",
         "terser-webpack-plugin": "^5.1.2",
