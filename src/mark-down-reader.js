@@ -42,6 +42,7 @@ Vue.config.errorHandler = function (err, vm, info) {
 };
 // console.log(App);
 let ApphomeVm = new vue({ ...app });
+console.log(ApphomeVm);
 export function mount(el) {
     // ApphomeVm = new vue({ el: document.getElementById("root"), ...app });
     ApphomeVm.$mount(el.appendChild(document.createElement("div")));

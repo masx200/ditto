@@ -12,6 +12,11 @@ export default {
         indexhref() {
             return "#" + config.index;
         },
+        markdownerrorstyle() {
+            return {
+                visibility: this.showerror ? "visible" : "hidden",
+            };
+        },
     },
     data: () => ({
         mytitle: "",
