@@ -57,7 +57,7 @@ export default (() => {
             var path = summaryfile;
             fetchajaxgettext(path)
                 .then(function (data) {
-                    ApphomeVm.mulu = marked(data);
+                    ApphomeVm.muluhtml = marked(data);
                     return new Promise((r) => {
                         requestAnimationFrame(() => {
                             $(ApphomeVm.$refs.我的侧边栏).css(
@@ -174,7 +174,7 @@ export default (() => {
                 if (marktext) {
                     ApphomeVm.urltext = path;
                     stop_loading();
-                    ApphomeVm.content = marktext;
+                    ApphomeVm.contenthtml = marktext;
                 } else {
                     fetchajaxgettext(path)
                         .then(function (data) {
@@ -270,7 +270,7 @@ export default (() => {
                         e.src = imgrealurl;
                     }
                 });
-                ApphomeVm.content = tmpdoc.body.innerHTML;
+                ApphomeVm.contenthtml = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
                     stop_loading();
                     if (ditto.highlight_code) {

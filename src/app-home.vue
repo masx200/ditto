@@ -43,7 +43,7 @@
                 v-show="xianshicebianlan"
             >
                 <aside
-                    v-html="mulu"
+                    v-html="muluhtml"
                     id="mynewsidelan"
                     class="el-aside"
                     style="background-color: white"
@@ -65,7 +65,7 @@
                         v-if="showerror"
                         v-text="errorcontent"
                     ></h5>
-                    <div id="content" v-html="content" ref="markdown内容"></div>
+                    <div id="content" v-html="contenthtml" ref="markdown内容"></div>
                 </div>
             </div>
             <div id="hide"></div>
