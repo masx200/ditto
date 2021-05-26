@@ -62,7 +62,7 @@
                     <h5
                         class
                         id="markdownerror"
-                        v-if="showerror"
+                        v-show="showerror"
                         v-text="errorcontent"
                     ></h5>
                     <div id="content" v-html="contenthtml" ref="markdown内容"></div>
