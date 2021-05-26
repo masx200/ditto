@@ -44,7 +44,6 @@
             >
                 <aside
                     ref="目录内容"
-                
                     id="mynewsidelan"
                     class="el-aside"
                     style="background-color: white"
@@ -66,11 +65,7 @@
                         v-show="showerror"
                         v-text="errorcontent"
                     ></h5>
-                    <div
-                        id="content"
-                        
-                        ref="markdown内容"
-                    ></div>
+                    <div id="content" ref="markdown内容"></div>
                 </div>
             </div>
             <div id="hide"></div>
