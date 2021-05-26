@@ -62,7 +62,7 @@
                     <h5
                         class
                         id="markdownerror"
-                        :style="markdownerrorstyle"
+                        v-show="showerror"
                         v-text="errorcontent"
                     ></h5>
                     <div

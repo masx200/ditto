@@ -74,7 +74,7 @@ h5#markdownerror {
     border: 1px solid #007aff;
     /* position: relative !important; */
     max-width: 95%;
-    display: block !important;
+    /* display: block !important; */
     text-align: center !important;
 }
 button.btn.btn-outline-primary.clipbutton {
