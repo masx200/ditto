@@ -86,11 +86,17 @@ export default (() => {
                                 ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
                             )
                                 .map((a) => {
-                                    var b = new URL(
-                                        "#" + a.getAttribute("href"),
-                                        location.href
-                                    );
-                                    a.href = b.href;
+                                    var ahref = a.getAttribute("href");
+                                    var b = new URL(location.href);
+
+                                    if (
+                                        !ahref.startsWith("http://") &&
+                                        !ahref.startsWith("https://") &&
+                                        ahref.endsWith(".md")
+                                    ) {
+                                        b.hash = "#" + a.getAttribute("href");
+                                        a.href = b.href;
+                                    }
                                     return b;
                                 })
                                 .map((e) => e.hash)
@@ -228,6 +234,9 @@ export default (() => {
                             stop_loading();
 
                             console.warn("load failed " + path);
+                            requestAnimationFrame(() => {
+                                location.hash = "";
+                            });
                             throw e;
                         });
                 }

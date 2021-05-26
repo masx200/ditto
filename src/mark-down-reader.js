@@ -1,5 +1,6 @@
-// @ts-nocheck
+import "./polyfill.NodeList.forEach.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
+
 import vue from "vue";
 const Vue = vue;
 import app from "./app-home.vue";
