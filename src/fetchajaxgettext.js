@@ -3,7 +3,7 @@ const fetchajaxgettext = async function (u) {
     if (r.ok) {
         return r.text();
     } else {
-        throw new Error("fetch failed:"+r.status+"\n" + u);
+        throw new Error("fetch failed:" + r.status + "\n" + u);
     }
 };
 export default fetchajaxgettext;
