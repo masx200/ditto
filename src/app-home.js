@@ -12,14 +12,21 @@ export default {
         indexhref() {
             return "#" + config.index;
         },
-
+        muluhtml: {
+            get() {
+                return this.$refs.目录内容.innerHTML;
+            },
+            set(c) {
+                this.$refs.目录内容.innerHTML = c;
+            },
+        },
     },
     data: () => ({
         mytitle: "",
         showerror: false,
         errorcontent: "",
         contenthtml: "",
-        muluhtml: "",
+        // muluhtml: "",
         urltext: "",
         xianshicebianlan: true,
     }),

@@ -43,7 +43,8 @@
                 v-show="xianshicebianlan"
             >
                 <aside
-                    v-html="muluhtml"
+                    ref="目录内容"
+                
                     id="mynewsidelan"
                     class="el-aside"
                     style="background-color: white"
