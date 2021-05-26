@@ -68,7 +68,7 @@
                     ></h5>
                     <div
                         id="content"
-                        v-html="contenthtml"
+                        
                         ref="markdown内容"
                     ></div>
                 </div>

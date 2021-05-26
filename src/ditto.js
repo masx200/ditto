@@ -206,9 +206,9 @@ export default (() => {
                                         if (window.innerWidth < 550) {
                                             ApphomeVm.xianshicebianlan = false;
                                         }
-                                        var contenthtml =
-                                            ApphomeVm.$refs.markdown内容
-                                                .innerHTML;
+                                        var contenthtml = ApphomeVm.contenthtml;
+                                        // ApphomeVm.$refs.markdown内容
+                                        //     .innerHTML;
                                         cachemarkdown.set(path, contenthtml);
                                         r();
                                     });

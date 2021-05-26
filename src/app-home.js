@@ -20,12 +20,20 @@ export default {
                 this.$refs.目录内容.innerHTML = c;
             },
         },
+        contenthtml: {
+            get() {
+                return this.$refs.markdown内容.innerHTML;
+            },
+            set(c) {
+                this.$refs.markdown内容.innerHTML = c;
+            },
+        },
     },
     data: () => ({
         mytitle: "",
         showerror: false,
         errorcontent: "",
-        contenthtml: "",
+        // contenthtml: "",
         // muluhtml: "",
         urltext: "",
         xianshicebianlan: true,
