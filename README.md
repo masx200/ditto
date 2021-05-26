@@ -1,4 +1,4 @@
-# Markdown Reader 轻量级 markdown 阅读器
+#  轻量级 markdown 阅读器 浏览器端渲染
 
 新版:使用 Vue 重构,取代之前用 JQuery
 
