@@ -14,7 +14,7 @@ Lightweight Markdown Documentation System based on ditto
 
 预先加载 目录 当中的 markdwon 文件到 预加载,来提升加载速度
 
-新版:使用 webpack-react-vue-spa-awesome-config 打包
+新版:使用 `@masx200/webpack-react-vue-spa-awesome-config` 打包
 
 https://github.com/masx200/markdown-reader
 
