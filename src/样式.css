@@ -4,3 +4,6 @@ p {
 pre {
     text-align: left !important;
 }
+#content p {
+    font-size: 1rem;
+}

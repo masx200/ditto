@@ -66,3 +66,6 @@ yarn.lock
 .vscode/
 yarn-error.log
 yarn-error.log
+dist/
+yarn.lock
+package-lock.json

@@ -13,10 +13,11 @@ import "./index.css";
 
 import "./我的侧边栏.css";
 import "./样式.css";
+import { guid } from "./guid.js";
 
 ("use strict");
-
-document.getElementById("root").innerHTML = `<div>
+export const initloadingid = guid();
+document.getElementById("root").innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">
 

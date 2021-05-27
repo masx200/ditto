@@ -1,13 +1,8 @@
-import { 挂载初始 } from "./render.js";
-import $ from "jquery";
 import { 内容调整左边偏移 } from "./render.js";
 import config from "./config.js";
+import { mounted } from "./mounted.js";
 export default {
-    mounted() {
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-        内容调整左边偏移();
-        挂载初始();
-    },
+    mounted,
     computed: {
         indexhref() {
             return "#" + config.index;
@@ -20,21 +15,12 @@ export default {
                 this.$refs.目录内容.innerHTML = c;
             },
         },
-        contenthtml: {
-            get() {
-                return this.$refs.markdown内容.innerHTML;
-            },
-            set(c) {
-                this.$refs.markdown内容.innerHTML = c;
-            },
-        },
     },
     data: () => ({
         mytitle: "",
         showerror: false,
         errorcontent: "",
-        // contenthtml: "",
-        // muluhtml: "",
+
         urltext: "",
         xianshicebianlan: true,
     }),
@@ -42,6 +28,12 @@ export default {
         togglecebian() {
             this.xianshicebianlan = !this.xianshicebianlan;
             内容调整左边偏移();
+        },
+        scrolltotop() {
+            scrollTo(0, 0);
+        },
+        scrolltobottom() {
+            scrollTo(0, document.body.scrollHeight);
         },
     },
 };
