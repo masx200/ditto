@@ -213,7 +213,7 @@ export default (() => {
                 tmpdoc.body.innerHTML = data;
                 //判断img是否是相对路径
                 Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
-                    console.log(e);
+                    // console.log(e);
                     var imgsrc = e.getAttribute("src");
                     console.log(imgsrc, e.src);
                     if (
@@ -222,7 +222,7 @@ export default (() => {
                         !imgsrc.startsWith("http://") &&
                         !imgsrc.startsWith("https://")
                     ) {
-                        console.log(e, "相对路径图片");
+                        console.log("相对路径图片", e);
                         var imgrealurl = String(new URL(imgsrc, mdurl));
                         console.log(imgrealurl);
                         e.src = imgrealurl;
