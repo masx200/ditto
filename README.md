@@ -26,7 +26,7 @@ Lightweight Markdown Documentation System based on ditto
 
 根据目录的 md 文件生成侧边栏，添加翻页按钮
 
-删除不好用的mathjax
+删除不好用的 mathjax
 
 受到 `ditto` 的启发,魔改而成
 
