@@ -3,6 +3,9 @@ const $ = jQuery;
 import config from "./config.js";
 import { escapemarkedunescape } from "./escapemarkedunescape";
 import fetchajaxgettext from "./fetchajaxgettext.js";
+
+import { precheckfetchajaxmarkdown } from "./fetchajaxgettext.js";
+
 import { guid } from "./guid";
 import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader.js";
@@ -85,12 +88,13 @@ async function init_sidebar_section() {
                             summaryfile
                         ).toString();
                         path = urlclearhash(path);
-                        fetch(path, {
+                        /*  fetch(path, {
                             credentials: "omit",
 
                             method: "HEAD",
                             mode: "cors",
-                        })
+                        })*/
+                        precheckfetchajaxmarkdown(path)
                             .then((res) => {
                                 console.log(res);
                                 r();
