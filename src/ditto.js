@@ -53,39 +53,40 @@ export default (() => {
                         内容调整左边偏移().then(() => r());
                     });
                 });
-                await new Promise((r) => {
+                await new Promise((r, j) => {
                     requestAnimationFrame(() => {
                         $("#my主体").css(
                             "padding-top",
                             $("#my导航栏").height()
                         );
-                        Array.from(
+                        var links = Array.from(
                             ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
-                        )
-                            .map((a) => {
-                                var ahref = a.getAttribute("href");
-                                var b = new URL(location.href);
+                        );
+                        var urls = links.map((a) => {
+                            var ahref = a.getAttribute("href");
+                            var b = new URL(location.href);
 
-                                if (
-                                    !ahref.startsWith("http://") &&
-                                    !ahref.startsWith("https://") &&
-                                    ahref.endsWith(".md")
-                                ) {
-                                    b.hash =
-                                        "#" +
-                                        new URL(
-                                            a.getAttribute("href"),
-                                            summaryfile
-                                        );
-                                    a.href = b.href;
-                                    console.log(a.href);
-                                }
-                                return b;
-                            })
-                            .map((e) => e.hash)
+                            if (
+                                // !ahref.startsWith("http://") &&
+                                // !ahref.startsWith("https://") &&
+                                ahref.endsWith(".md")
+                            ) {
+                                var realmdpath = isrelativepath(ahref)
+                                    ? new URL(ahref, summaryfile)
+                                    : ahref;
+                                b.hash = "#" + realmdpath;
+
+                                a.href = b.href;
+                                console.log(a.href);
+                            }
+                            return b;
+                        });
+                        urls.map((e) => e.hash)
                             .filter((e_1) => e_1.startsWith("#"))
                             .map((e_2) => e_2.slice(1))
                             .forEach((e_3) => {
+                                console.log(e_3);
+                                //不管相对路径还是绝对路径都行
                                 fetch(
                                     new URL(
                                         e_3.endsWith(".md") ? e_3 : e_3 + ".md",
@@ -97,9 +98,15 @@ export default (() => {
                                         method: "GET",
                                         mode: "cors",
                                     }
-                                ).then(() => {
-                                    r();
-                                });
+                                )
+                                    .then((res) => {
+                                        console.log(res);
+                                        r();
+                                    })
+                                    .catch((e) => {
+                                        console.error(e);
+                                        j(e);
+                                    });
                             });
                         ApphomeVm.showerror = false;
                     });
@@ -184,6 +191,9 @@ export default (() => {
                                 requestAnimationFrame(() => {
                                     stop_loading();
                                 });
+
+                                //处理md文件相互引用的问题
+
                                 ApphomeVm.urltext = path;
 
                                 var currentcontenthtml = contenthtml.get();
