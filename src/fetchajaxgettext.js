@@ -21,7 +21,7 @@ async function precheckfetchajaxmarkdown(u) {
     const r = await fetch(u, {
         credentials: "omit",
 
-        method: "GET",
+        method: "HEAD",
         mode: "cors",
     });
 
