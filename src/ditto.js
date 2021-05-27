@@ -28,7 +28,7 @@ export default (() => {
 
             window.addEventListener("hashchange", router);
             await init_sidebar_section();
-            page_getter();
+            router();
             hljs.highlightAll();
         }
         async function init_sidebar_section() {
@@ -120,7 +120,7 @@ export default (() => {
             $("#loadingparent").hide();
         }
 
-        function page_getter() {
+        function router() {
             const baseurl = getbaseurl();
 
             window.scrollTo(0, 0);
