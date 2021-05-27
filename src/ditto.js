@@ -17,11 +17,10 @@ export default (() => {
     "use strict";
     return (function ($) {
         var loading_interval;
+        var loading_id = $("#loading");
+        var error_id = $("#error");
         var ditto = {
             index: "README.md",
-
-            loading_id: $("#loading"),
-            error_id: $("#error"),
 
             run: initialize,
             ...config,
@@ -105,21 +104,21 @@ export default (() => {
             }
         }
         function show_error(err_msg) {
-            ditto.error_id.html(err_msg);
-            ditto.error_id.show();
+            error_id.html(err_msg);
+            error_id.show();
         }
         function hide_errors() {
-            ditto.error_id.hide();
+            error_id.hide();
         }
         function show_loading() {
-            ditto.loading_id.show();
+            loading_id.show();
             loading_interval = setInterval(function () {
-                ditto.loading_id.fadeIn(1000).fadeOut(1000);
+                loading_id.fadeIn(1000).fadeOut(1000);
             }, 2000);
         }
         function stop_loading() {
             clearInterval(loading_interval);
-            ditto.loading_id.hide();
+            loading_id.hide();
             $("#loadingparent").hide();
         }
 
