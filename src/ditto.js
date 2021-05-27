@@ -28,7 +28,7 @@ export default (() => {
 
             window.addEventListener("hashchange", routerpageget);
             await init_sidebar_section();
-            routerpageget();
+            await routerpageget();
             hljs.highlightAll();
         }
         async function init_sidebar_section() {
@@ -120,7 +120,7 @@ export default (() => {
             $("#loadingparent").hide();
         }
 
-        function routerpageget() {
+        async function routerpageget() {
             const baseurl = getbaseurl();
 
             window.scrollTo(0, 0);
@@ -140,6 +140,7 @@ export default (() => {
                     ApphomeVm.urltext = path;
                     stop_loading();
                     ApphomeVm.contenthtml = marktext;
+                    return;
                 } else {
                     fetchajaxgettext(path)
                         .then(async function (data) {
