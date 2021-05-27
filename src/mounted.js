@@ -10,4 +10,5 @@ export async function mounted() {
     document.getElementById(initloadingid).style.display = "none";
 
     window.dispatch(new Event("hashchange"))
+//初始化完成就隐藏侧边栏，屏幕较小的宽度生效
 }
