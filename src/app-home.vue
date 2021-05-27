@@ -69,9 +69,6 @@
                 </div>
             </div>
             <div id="hide"></div>
-            <div style="display: none">
-                <div id="back_to_top">top</div>
-            </div>
 
             <div>
                 <h1 id="error"></h1>

@@ -17,21 +17,13 @@ export default (() => {
     "use strict";
     return (function ($) {
         var ditto = {
-            //sidebar_file: 'sidebar.md',
             index: "README.md",
-            content_id: $("#content"),
-            sidebar_id: $("#sidebar"),
-            edit_id: $("#edit"),
-            back_to_top_id: $("#back_to_top"),
+
             loading_id: $("#loading"),
             error_id: $("#error"),
 
-            fragments_class: ".fragments",
-            fragment_class: ".fragment",
             highlight_code: true,
             sidebar: true,
-            edit_button: false,
-            back_to_top_button: true,
 
             run: initialize,
         };
@@ -39,10 +31,7 @@ export default (() => {
             if (ditto.sidebar) {
                 init_sidebar_section();
             }
-            if (ditto.back_to_top_button) {
-            }
-            if (ditto.edit_button) {
-            }
+
             if (ditto.highlight_code) {
                 hljs.highlightAll();
                 //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
