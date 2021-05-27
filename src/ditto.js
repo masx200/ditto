@@ -7,12 +7,10 @@ import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { contenthtml } from "./contenthtml.js";
-function getbaseurl() {
-    return config.baseurl;
-}
+import { getbaseurl, getabsolutesummary, getabsoluteindex } from "./getbaseurl";
+import { isrelativepath } from "./isrelativepath";
 const cachemarkdown = new Map();
 ("use strict");
-
 export default (() => {
     "use strict";
     return (function ($) {
@@ -32,8 +30,9 @@ export default (() => {
             hljs.highlightAll();
         }
         async function init_sidebar_section() {
-            const baseurl = getbaseurl();
-            const summaryfile = new URL(config.summary, baseurl).href;
+            // const baseurl = getbaseurl();
+            // const summaryfile = new URL(config.summary, baseurl).href;
+            const summaryfile = getabsolutesummary();
             console.log(summaryfile);
             var path = summaryfile;
             try {
@@ -85,7 +84,7 @@ export default (() => {
                                 fetch(
                                     new URL(
                                         e_3.endsWith(".md") ? e_3 : e_3 + ".md",
-                                        baseurl
+                                        summaryfile
                                     ).toString(),
                                     {
                                         credentials: "omit",
@@ -100,6 +99,11 @@ export default (() => {
                         ApphomeVm.showerror = false;
                     });
                 });
+                var currentcontenthtml = ApphomeVm.muluhtml;
+                if (!cachemarkdown.get(path)) {
+                    console.log([path, currentcontenthtml]);
+                    cachemarkdown.set(path, currentcontenthtml);
+                }
             } catch (e_4) {
                 console.error(e_4);
                 stop_loading();
@@ -136,12 +140,14 @@ export default (() => {
             window.scrollTo(0, 0);
             var path =
                 location.hash === ""
-                    ? "./" + ditto.index
-                    : location.hash.replace("#", "./");
+                    ? getabsoluteindex()
+                    : location.hash.replace("#", "");
             show_loading();
 
             path = path.endsWith(".md") ? path : path + ".md";
-            path = new URL(path, baseurl).toString();
+            if (isrelativepath(path)) {
+                path = new URL(path, baseurl).toString();
+            }
             console.log(path);
             if (path !== ApphomeVm.urltext) {
                 const marktext = cachemarkdown.get(path);
