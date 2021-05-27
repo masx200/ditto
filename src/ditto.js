@@ -66,11 +66,7 @@ export default (() => {
                             var ahref = a.getAttribute("href");
                             var b = new URL(location.href);
 
-                            if (
-                                // !ahref.startsWith("http://") &&
-                                // !ahref.startsWith("https://") &&
-                                ahref.endsWith(".md")
-                            ) {
+                            if (ahref.endsWith(".md")) {
                                 var realmdpath = isrelativepath(ahref)
                                     ? new URL(ahref, summaryfile)
                                     : ahref;
@@ -193,7 +189,28 @@ export default (() => {
                                 });
 
                                 //处理md文件相互引用的问题
+                                var links = Array.from(
+                                    ApphomeVm.$refs.markdown内容.querySelectorAll(
+                                        "a"
+                                    )
+                                );
+                                links.forEach((a) => {
+                                    var ahref = a.getAttribute("href");
+                                    var b = new URL(location.href);
+                                    if (ahref.endsWith(".md")) {
+                                        var realmdpath = isrelativepath(ahref)
+                                            ? new URL(ahref, ApphomeVm.urltext)
+                                            : ahref;
+                                        b.hash = "#" + realmdpath;
 
+                                        a.href = b.href;
+                                        console.log(a.href);
+                                        //变成按钮的形状
+                                        $(a).addClass(
+                                            `mui-btn mui-btn-primary mui-btn-outlined`
+                                        );
+                                    }
+                                });
                                 ApphomeVm.urltext = path;
 
                                 var currentcontenthtml = contenthtml.get();
