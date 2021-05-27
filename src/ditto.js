@@ -71,7 +71,12 @@ export default (() => {
                                     !ahref.startsWith("https://") &&
                                     ahref.endsWith(".md")
                                 ) {
-                                    b.hash = "#" + a.getAttribute("href");
+                                    b.hash =
+                                        "#" +
+                                        new URL(
+                                            a.getAttribute("href"),
+                                            summaryfile
+                                        );
                                     a.href = b.href;
                                     console.log(a.href);
                                 }
