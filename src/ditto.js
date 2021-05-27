@@ -1,5 +1,5 @@
 import jQuery from "jquery";
-import config from "./config";
+import config from "./config.js";
 import fetchajaxgettext from "./fetchajaxgettext";
 import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader";
@@ -38,6 +38,7 @@ export default (() => {
             sidebar: true,
 
             run: initialize,
+            ...config,
         };
         function initialize() {
             if (ditto.sidebar) {
@@ -281,6 +282,7 @@ export default (() => {
         function router() {
             page_getter();
         }
+
         return ditto;
     })(jQuery);
 })();
