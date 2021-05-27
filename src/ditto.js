@@ -3,7 +3,7 @@ import config from "./config.js";
 import fetchajaxgettext from "./fetchajaxgettext";
 import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader";
-import marked from "./marked.min";
+import marked from "./marked.min.js";
 
 import { 内容调整左边偏移 } from "./render";
 function guid() {
@@ -21,6 +21,11 @@ function unescape_html(string) {
 }
 function getbaseurl() {
     return config.baseurl;
+}
+function escapemarkedunescape(data) {
+    data = marked(escape_html(data));
+    data = unescape_html(data);
+    return data;
 }
 const cachemarkdown = new Map();
 ("use strict");
@@ -59,7 +64,7 @@ export default (() => {
             var path = summaryfile;
             fetchajaxgettext(path)
                 .then(function (data) {
-                    ApphomeVm.muluhtml = marked(data);
+                    ApphomeVm.muluhtml = escapemarkedunescape(data);
                     return new Promise((r) => {
                         requestAnimationFrame(() => {
                             $(ApphomeVm.$refs.我的侧边栏).css(
@@ -240,8 +245,8 @@ export default (() => {
             console.log(mdurl);
             return new Promise((r) => {
                 hide_errors();
-                data = marked(escape_html(data));
-                data = unescape_html(data);
+
+                data = escapemarkedunescape(data);
 
                 //修改img的路径为相对md文件的路径
                 const tmpdoc =
