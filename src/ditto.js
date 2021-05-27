@@ -25,97 +25,83 @@ export default (() => {
             run: initialize,
             ...config,
         };
-        function initialize() {
-            hljs.highlightAll();
+        async function initialize() {
             //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
 
             window.addEventListener("hashchange", router);
-            return init_sidebar_section().then(() => {
-                page_getter();
-            });
+            await init_sidebar_section();
+            page_getter();
+            hljs.highlightAll();
         }
-        function init_sidebar_section() {
+        async function init_sidebar_section() {
             const baseurl = getbaseurl();
             const summaryfile = new URL(config.summary, baseurl).href;
             console.log(summaryfile);
             var path = summaryfile;
-            return fetchajaxgettext(path)
-                .then(function (data) {
-                    ApphomeVm.muluhtml = escapemarkedunescape(data);
-                    return new Promise((r) => {
-                        requestAnimationFrame(() => {
-                            $(ApphomeVm.$refs.我的侧边栏).css(
-                                "top",
-                                $("#my导航栏").height()
-                            );
-                            $(
-                                ApphomeVm.$refs.我的侧边栏.querySelectorAll(
-                                    "ul"
-                                )
-                            ).addClass("navbar-nav");
-                            $(
-                                ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
-                            ).addClass(
-                                `mui-btn mui-btn-primary mui-btn-outlined`
-                            );
-                            内容调整左边偏移().then(() => r());
-                        });
-                    }).then(() => {
-                        requestAnimationFrame(() => {
-                            $("#my主体").css(
-                                "padding-top",
-                                $("#my导航栏").height()
-                            );
-                            Array.from(
-                                ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
-                            )
-                                .map((a) => {
-                                    var ahref = a.getAttribute("href");
-                                    var b = new URL(location.href);
-
-                                    if (
-                                        !ahref.startsWith("http://") &&
-                                        !ahref.startsWith("https://") &&
-                                        ahref.endsWith(".md")
-                                    ) {
-                                        b.hash = "#" + a.getAttribute("href");
-                                        a.href = b.href;
-                                    }
-                                    return b;
-                                })
-                                .map((e) => e.hash)
-                                .filter((e) => e.startsWith("#"))
-                                .map((e) => e.slice(1))
-                                .forEach((e) => {
-                                    fetch(
-                                        new URL(
-                                            e.endsWith(".md") ? e : e + ".md",
-                                            baseurl
-                                        ).toString(),
-                                        {
-                                            credentials: "omit",
-                                            body: null,
-                                            method: "GET",
-                                            mode: "cors",
-                                        }
-                                    );
-                                });
-                            ApphomeVm.showerror = false;
-                        });
+            try {
+                const data = await fetchajaxgettext(path);
+                ApphomeVm.muluhtml = escapemarkedunescape(data);
+                await new Promise((r) => {
+                    requestAnimationFrame(() => {
+                        $(ApphomeVm.$refs.我的侧边栏).css(
+                            "top",
+                            $("#my导航栏").height()
+                        );
+                        $(
+                            ApphomeVm.$refs.我的侧边栏.querySelectorAll("ul")
+                        ).addClass("navbar-nav");
+                        $(
+                            ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
+                        ).addClass(`mui-btn mui-btn-primary mui-btn-outlined`);
+                        内容调整左边偏移().then(() => r());
                     });
-                })
-                .catch(function (e) {
-                    console.error(e);
-                    stop_loading();
-
-                    console.error(
-                        "Opps! can't find the sidebar file to display!"
-                    );
-                    console.warn("load failed " + path);
-                    ApphomeVm.errorcontent = "加载失败 " + path;
-                    ApphomeVm.showerror = true;
-                    throw e;
                 });
+                requestAnimationFrame(() => {
+                    $("#my主体").css("padding-top", $("#my导航栏").height());
+                    Array.from(ApphomeVm.$refs.我的侧边栏.querySelectorAll("a"))
+                        .map((a) => {
+                            var ahref = a.getAttribute("href");
+                            var b = new URL(location.href);
+
+                            if (
+                                !ahref.startsWith("http://") &&
+                                !ahref.startsWith("https://") &&
+                                ahref.endsWith(".md")
+                            ) {
+                                b.hash = "#" + a.getAttribute("href");
+                                a.href = b.href;
+                            }
+                            return b;
+                        })
+                        .map((e) => e.hash)
+                        .filter((e_1) => e_1.startsWith("#"))
+                        .map((e_2) => e_2.slice(1))
+                        .forEach((e_3) => {
+                            fetch(
+                                new URL(
+                                    e_3.endsWith(".md") ? e_3 : e_3 + ".md",
+                                    baseurl
+                                ).toString(),
+                                {
+                                    credentials: "omit",
+                                    body: null,
+                                    method: "GET",
+                                    mode: "cors",
+                                }
+                            );
+                        });
+                    ApphomeVm.showerror = false;
+                });
+            } catch (e_4) {
+                console.error(e_4);
+                stop_loading();
+
+                console.error("Opps! can't find the sidebar file to display!");
+                console.warn("load failed " + path);
+                ApphomeVm.errorcontent = "加载失败 " + path;
+                ApphomeVm.showerror = true;
+                throw e_4;
+            }
         }
         function show_error(err_msg) {
             ditto.error_id.html(err_msg);
@@ -158,41 +144,37 @@ export default (() => {
                     ApphomeVm.contenthtml = marktext;
                 } else {
                     fetchajaxgettext(path)
-                        .then(function (data) {
+                        .then(async function (data) {
                             $("#collapsibleNavbar").removeClass("show");
                             $("#my主体").css(
                                 "padding-top",
                                 $("#my导航栏").height()
                             );
-                            return compile_into_dom(data, path).then(() => {
-                                return new Promise((r) => {
-                                    requestAnimationFrame(() => {
-                                        Array.from(jQuery("code.hljs")).forEach(
-                                            (e) => {
-                                                var codecontenguid =
-                                                    "clip" + guid();
-                                                jQuery(e).attr(
-                                                    "id",
-                                                    codecontenguid
-                                                )
-                                                    .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+                            await compile_into_dom(data, path);
+                            return await new Promise((r) => {
+                                requestAnimationFrame(() => {
+                                    Array.from(jQuery("code.hljs")).forEach(
+                                        (e) => {
+                                            var codecontenguid =
+                                                "clip" + guid();
+                                            jQuery(e).attr("id", codecontenguid)
+                                                .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
                                         </button>`);
-                                            }
-                                        );
-                                        内容调整左边偏移();
-                                        requestAnimationFrame(() => {
-                                            stop_loading();
-                                        });
-                                        ApphomeVm.urltext = path;
-                                        if (window.innerWidth < 550) {
-                                            ApphomeVm.xianshicebianlan = false;
                                         }
-                                        var contenthtml = ApphomeVm.contenthtml;
-                                        // ApphomeVm.$refs.markdown内容
-                                        //     .innerHTML;
-                                        cachemarkdown.set(path, contenthtml);
-                                        r();
+                                    );
+                                    内容调整左边偏移();
+                                    requestAnimationFrame(() => {
+                                        stop_loading();
                                     });
+                                    ApphomeVm.urltext = path;
+                                    if (window.innerWidth < 550) {
+                                        ApphomeVm.xianshicebianlan = false;
+                                    }
+                                    var contenthtml = ApphomeVm.contenthtml;
+                                    // ApphomeVm.$refs.markdown内容
+                                    //     .innerHTML;
+                                    cachemarkdown.set(path, contenthtml);
+                                    r();
                                 });
                             });
                         })
