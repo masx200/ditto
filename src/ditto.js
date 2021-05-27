@@ -54,41 +54,51 @@ export default (() => {
                         内容调整左边偏移().then(() => r());
                     });
                 });
-                requestAnimationFrame(() => {
-                    $("#my主体").css("padding-top", $("#my导航栏").height());
-                    Array.from(ApphomeVm.$refs.我的侧边栏.querySelectorAll("a"))
-                        .map((a) => {
-                            var ahref = a.getAttribute("href");
-                            var b = new URL(location.href);
+                await new Promise((r) => {
+                    requestAnimationFrame(() => {
+                        $("#my主体").css(
+                            "padding-top",
+                            $("#my导航栏").height()
+                        );
+                        Array.from(
+                            ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
+                        )
+                            .map((a) => {
+                                var ahref = a.getAttribute("href");
+                                var b = new URL(location.href);
 
-                            if (
-                                !ahref.startsWith("http://") &&
-                                !ahref.startsWith("https://") &&
-                                ahref.endsWith(".md")
-                            ) {
-                                b.hash = "#" + a.getAttribute("href");
-                                a.href = b.href;
-                            }
-                            return b;
-                        })
-                        .map((e) => e.hash)
-                        .filter((e_1) => e_1.startsWith("#"))
-                        .map((e_2) => e_2.slice(1))
-                        .forEach((e_3) => {
-                            fetch(
-                                new URL(
-                                    e_3.endsWith(".md") ? e_3 : e_3 + ".md",
-                                    baseurl
-                                ).toString(),
-                                {
-                                    credentials: "omit",
-                                    body: null,
-                                    method: "GET",
-                                    mode: "cors",
+                                if (
+                                    !ahref.startsWith("http://") &&
+                                    !ahref.startsWith("https://") &&
+                                    ahref.endsWith(".md")
+                                ) {
+                                    b.hash = "#" + a.getAttribute("href");
+                                    a.href = b.href;
+                                    console.log(a.href);
                                 }
-                            );
-                        });
-                    ApphomeVm.showerror = false;
+                                return b;
+                            })
+                            .map((e) => e.hash)
+                            .filter((e_1) => e_1.startsWith("#"))
+                            .map((e_2) => e_2.slice(1))
+                            .forEach((e_3) => {
+                                fetch(
+                                    new URL(
+                                        e_3.endsWith(".md") ? e_3 : e_3 + ".md",
+                                        baseurl
+                                    ).toString(),
+                                    {
+                                        credentials: "omit",
+                                        body: null,
+                                        method: "GET",
+                                        mode: "cors",
+                                    }
+                                ).then(() => {
+                                    r();
+                                });
+                            });
+                        ApphomeVm.showerror = false;
+                    });
                 });
             } catch (e_4) {
                 console.error(e_4);
