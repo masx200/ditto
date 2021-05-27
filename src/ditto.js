@@ -152,56 +152,49 @@ export default (() => {
                     ApphomeVm.contenthtml = marktext;
                     return;
                 } else {
-                    fetchajaxgettext(path)
-                        .then(async function (data) {
-                            $("#my主体").css(
-                                "padding-top",
-                                $("#my导航栏").height()
-                            );
-                            await compile_into_dom(data, path);
-                            return await new Promise((r) => {
-                                requestAnimationFrame(() => {
-                                    Array.from(jQuery("code.hljs")).forEach(
-                                        (e) => {
-                                            var codecontenguid =
-                                                "clip" + guid();
-                                            jQuery(e).attr("id", codecontenguid)
-                                                .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
-                                        </button>`);
-                                        }
-                                    );
-                                    内容调整左边偏移();
-                                    requestAnimationFrame(() => {
-                                        stop_loading();
-                                    });
-                                    ApphomeVm.urltext = path;
-
-                                    var contenthtml = ApphomeVm.contenthtml;
-                                    // ApphomeVm.$refs.markdown内容
-                                    //     .innerHTML;
-                                    cachemarkdown.set(path, contenthtml);
-                                    r();
-                                });
-                            });
-                        })
-                        .catch(function (e) {
-                            console.error(e);
-                            ApphomeVm.urltext = "加载失败 " + path;
-
-                            console.error(
-                                "Opps! ... File not found!\n5秒后返回主页"
-                            );
-                            show_error(
-                                "Opps! ... File not found!\n5秒后返回主页"
-                            );
-                            stop_loading();
-
-                            console.warn("load failed " + path);
+                    try {
+                        const data = await fetchajaxgettext(path);
+                        $("#my主体").css(
+                            "padding-top",
+                            $("#my导航栏").height()
+                        );
+                        await compile_into_dom(data, path);
+                        return await await new Promise((r) => {
                             requestAnimationFrame(() => {
-                                location.hash = "";
+                                Array.from(jQuery("code.hljs")).forEach((e) => {
+                                    var codecontenguid = "clip" + guid();
+                                    jQuery(e).attr("id", codecontenguid)
+                                        .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+                                        </button>`);
+                                });
+                                await 内容调整左边偏移();
+                                requestAnimationFrame(() => {
+                                    stop_loading();
+                                });
+                                ApphomeVm.urltext = path;
+
+                                var contenthtml = ApphomeVm.contenthtml;
+
+                                cachemarkdown.set(path, contenthtml);
+                                r();
                             });
-                            throw e;
                         });
+                    } catch (e_1) {
+                        console.error(e_1);
+                        ApphomeVm.urltext = "加载失败 " + path;
+
+                        console.error(
+                            "Opps! ... File not found!\n5秒后返回主页"
+                        );
+                        show_error("Opps! ... File not found!\n5秒后返回主页");
+                        stop_loading();
+
+                        console.warn("load failed " + path);
+                        requestAnimationFrame(() => {
+                            location.hash = "";
+                        });
+                        throw e_1;
+                    }
                 }
             }
         }
