@@ -18,9 +18,9 @@ export function 挂载初始() {
             document.title = doctitle + " " + subtitle;
             ApphomeVm.mytitle = doctitle;
             $("#my主体").css("padding-top", $("#my导航栏").height());
-            (function () {
-                ditto.run();
-            })();
+
+            ditto.run();
+
             function onhashchange() {
                 scrollTo(0, 0);
                 $("#my主体").css("padding-top", $("#my导航栏").height());
