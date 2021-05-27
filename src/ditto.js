@@ -35,6 +35,9 @@ export default (() => {
             const summaryfile = getabsolutesummary();
             console.log(summaryfile);
             var path = summaryfile;
+var tmpurl=new URL(path)
+tmpurl.hash=""
+path=tmpurl.href
             try {
                 const data = await fetchajaxgettext(path);
                 ApphomeVm.muluhtml = escapemarkedunescape(data);
@@ -83,14 +86,18 @@ export default (() => {
                             .forEach((e_3) => {
                                 console.log(e_3);
                                 //不管相对路径还是绝对路径都行
-                                fetch(
-                                    new URL(
+var path=new URL(
                                         e_3.endsWith(".md") ? e_3 : e_3 + ".md",
                                         summaryfile
-                                    ).toString(),
+                                    ).toString()
+var tmpurl=new URL(path)
+tmpurl.hash=""
+path=tmpurl.href
+                                fetch(path
+                                    ,
                                     {
                                         credentials: "omit",
-                                        body: null,
+                                        
                                         method: "GET",
                                         mode: "cors",
                                     }
@@ -157,6 +164,11 @@ export default (() => {
             if (isrelativepath(path)) {
                 path = new URL(path, baseurl).toString();
             }
+
+var tmpurl=new URL(path)
+tmpurl.hash=""
+path=tmpurl.href
+
             console.log(path);
             if (path !== ApphomeVm.urltext) {
                 const marktext = cachemarkdown.get(path);
