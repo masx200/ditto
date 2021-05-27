@@ -143,7 +143,6 @@ export default (() => {
                 } else {
                     fetchajaxgettext(path)
                         .then(async function (data) {
-                            $("#collapsibleNavbar").removeClass("show");
                             $("#my主体").css(
                                 "padding-top",
                                 $("#my导航栏").height()
@@ -165,9 +164,7 @@ export default (() => {
                                         stop_loading();
                                     });
                                     ApphomeVm.urltext = path;
-                                    if (window.innerWidth < 550) {
-                                        ApphomeVm.xianshicebianlan = false;
-                                    }
+
                                     var contenthtml = ApphomeVm.contenthtml;
                                     // ApphomeVm.$refs.markdown内容
                                     //     .innerHTML;
