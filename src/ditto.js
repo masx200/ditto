@@ -6,7 +6,7 @@ import { guid } from "./guid";
 import hljs from "./highlight.min.js";
 import { ApphomeVm } from "./mark-down-reader.js";
 import { 内容调整左边偏移 } from "./render.js";
-
+import { contenthtml } from "./contenthtml.js";
 function getbaseurl() {
     return config.baseurl;
 }
@@ -149,11 +149,12 @@ export default (() => {
                 if (marktext) {
                     ApphomeVm.urltext = path;
                     stop_loading();
-                    ApphomeVm.contenthtml = marktext;
+                    contenthtml.set(marktext);
                     return;
                 } else {
                     try {
                         const data = await fetchajaxgettext(path);
+                        ApphomeVm.urltext = path;
                         $("#my主体").css(
                             "padding-top",
                             $("#my导航栏").height()
@@ -173,9 +174,12 @@ export default (() => {
                                 });
                                 ApphomeVm.urltext = path;
 
-                                var contenthtml = ApphomeVm.contenthtml;
-
-                                cachemarkdown.set(path, contenthtml);
+                                var currentcontenthtml = contenthtml.get();
+                                //切换页面太快导致问题缓存出错,原因在于vue把他缓存了
+                                if (!cachemarkdown.get(path)) {
+                                    console.log([path, currentcontenthtml]);
+                                    cachemarkdown.set(path, currentcontenthtml);
+                                }
                                 r();
                             });
                         });
@@ -228,7 +232,7 @@ export default (() => {
                         e.src = imgrealurl;
                     }
                 });
-                ApphomeVm.contenthtml = tmpdoc.body.innerHTML;
+                contenthtml.set(tmpdoc.body.innerHTML);
                 requestAnimationFrame(() => {
                     stop_loading();
 
