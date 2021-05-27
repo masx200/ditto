@@ -35,7 +35,7 @@ export default (() => {
             const summaryfile = getabsolutesummary();
             console.log(summaryfile);
             var path = summaryfile;
-path=urlclearhash(path);
+            path = urlclearhash(path);
             try {
                 const data = await fetchajaxgettext(path);
                 ApphomeVm.muluhtml = escapemarkedunescape(data);
@@ -84,20 +84,17 @@ path=urlclearhash(path);
                             .forEach((e_3) => {
                                 console.log(e_3);
                                 //不管相对路径还是绝对路径都行
-var path=new URL(
-                                        e_3.endsWith(".md") ? e_3 : e_3 + ".md",
-                                        summaryfile
-                                    ).toString();
-path=urlclearhash(path);
-                                fetch(path
-                                    ,
-                                    {
-                                        credentials: "omit",
-                                        
-                                        method: "GET",
-                                        mode: "cors",
-                                    }
-                                )
+                                var path = new URL(
+                                    e_3.endsWith(".md") ? e_3 : e_3 + ".md",
+                                    summaryfile
+                                ).toString();
+                                path = urlclearhash(path);
+                                fetch(path, {
+                                    credentials: "omit",
+
+                                    method: "GET",
+                                    mode: "cors",
+                                })
                                     .then((res) => {
                                         console.log(res);
                                         r();
@@ -161,8 +158,7 @@ path=urlclearhash(path);
                 path = new URL(path, baseurl).toString();
             }
 
-
-path=urlclearhash(path)
+            path = urlclearhash(path);
 
             console.log(path);
             if (path !== ApphomeVm.urltext) {
@@ -296,11 +292,10 @@ path=urlclearhash(path)
         return ditto;
     })(jQuery);
 })();
-function urlclearhash(path){
-var tmpurl=new URL(path)
-tmpurl.hash=""
-path=tmpurl.href
+function urlclearhash(path) {
+    var tmpurl = new URL(path);
+    tmpurl.hash = "";
+    path = tmpurl.href;
 
-return path
-
+    return path;
 }
