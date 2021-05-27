@@ -3,6 +3,7 @@ import { ApphomeVm } from "./mark-down-reader";
 import $ from "jquery";
 import ditto from "./ditto";
 import config from "./config";
+import { myonhashchangehandler } from "./onhashchange";
 export async function 挂载初始() {
     Object.assign(ditto, config);
     console.log(ditto);
@@ -19,14 +20,7 @@ export async function 挂载初始() {
     ApphomeVm.mytitle = doctitle;
     $("#my主体").css("padding-top", $("#my导航栏").height());
 
-    function onhashchange() {
-        scrollTo(0, 0);
-        $("#my主体").css("padding-top", $("#my导航栏").height());
-        if (window.innerWidth < 550) {
-            ApphomeVm.xianshicebianlan = false;
-        }
-    }
-    window.addEventListener("hashchange", onhashchange);
+    window.addEventListener("hashchange", myonhashchangehandler);
     return ditto.run();
 }
 export function 内容调整左边偏移() {
