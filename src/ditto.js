@@ -159,7 +159,7 @@ export default (() => {
                             $("#my导航栏").height()
                         );
                         await compile_into_dom(data, path);
-                        return await await new Promise((r) => {
+                        return await new Promise(async (r) => {
                             requestAnimationFrame(() => {
                                 Array.from(jQuery("code.hljs")).forEach((e) => {
                                     var codecontenguid = "clip" + guid();
