@@ -8,4 +8,6 @@ export async function mounted() {
     await 内容调整左边偏移();
     await 挂载初始();
     document.getElementById(initloadingid).style.display = "none";
+
+    window.dispatch(new Event("hashchange"))
 }
