@@ -26,14 +26,13 @@ export default (() => {
             ...config,
         };
         function initialize() {
-            init_sidebar_section().then(() => {
-                router();
-            });
-
             hljs.highlightAll();
             //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
 
             window.addEventListener("hashchange", router);
+            return init_sidebar_section().then(() => {
+                page_getter();
+            });
         }
         function init_sidebar_section() {
             const baseurl = getbaseurl();
@@ -261,9 +260,6 @@ export default (() => {
                     r();
                 });
             });
-        }
-        function router() {
-            page_getter();
         }
 
         return ditto;
