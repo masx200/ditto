@@ -21,8 +21,10 @@
         "webpack": "^5.37.1"
     },
     "dependencies": {
+        "clipboard": "^2.0.8",
         "highlight.js": "^10.7.2",
         "jquery": "^3.6.0",
+        "marked": "^2.0.6",
         "vue": "^2.6.12"
     },
     "description": "Lightweight Markdown Documentation System ",

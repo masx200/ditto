@@ -1,4 +1,4 @@
-import marked from "./marked.min.js";
+import marked from "marked";
 import { escape_html } from "./escape_html";
 import { unescape_html } from "./unescape_html";
 
