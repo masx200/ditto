@@ -20,8 +20,6 @@ export default (() => {
         var loading_id = $("#loading");
         var error_id = $("#error");
         var ditto = {
-            index: "README.md",
-
             run: initialize,
             ...config,
         };
