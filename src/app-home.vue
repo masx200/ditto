@@ -19,7 +19,7 @@
                         v-bind:href="indexhref"
                         id="title"
                         v-text="mytitle"
-                        style="top: 0"
+                        style="margin: 0; top: 0px"
                         >Markdon Reader</a
                     >
                     <button
