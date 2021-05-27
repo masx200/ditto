@@ -19,7 +19,6 @@ export function 挂载初始() {
             ApphomeVm.mytitle = doctitle;
             $("#my主体").css("padding-top", $("#my导航栏").height());
             (function () {
-                ditto.highlight_code = true;
                 ditto.run();
             })();
             function onhashchange() {

@@ -1,31 +1,14 @@
 import jQuery from "jquery";
 import config from "./config.js";
-import fetchajaxgettext from "./fetchajaxgettext";
+import { escapemarkedunescape } from "./escapemarkedunescape";
+import fetchajaxgettext from "./fetchajaxgettext.js";
+import { guid } from "./guid";
 import hljs from "./highlight.min.js";
-import { ApphomeVm } from "./mark-down-reader";
-import marked from "./marked.min.js";
+import { ApphomeVm } from "./mark-down-reader.js";
+import { 内容调整左边偏移 } from "./render.js";
 
-import { 内容调整左边偏移 } from "./render";
-function guid() {
-    return "xxxxxxxxyxxxxyxxxyyxxxyxxxxxxxxxxxx".replace(/[xy]/g, function (c) {
-        var r = (Math.random() * 16) | 0,
-            v = c == "x" ? r : (r & 3) | 8;
-        return v.toString(16);
-    });
-}
-function escape_html(string) {
-    return string.replace(/\\/g, "&#92;").replace(/\_/g, "&#95;");
-}
-function unescape_html(string) {
-    return string.replace(/&amp;#92;/g, "\\").replace(/&amp;#95;/g, "_");
-}
 function getbaseurl() {
     return config.baseurl;
-}
-function escapemarkedunescape(data) {
-    data = marked(escape_html(data));
-    data = unescape_html(data);
-    return data;
 }
 const cachemarkdown = new Map();
 ("use strict");
@@ -39,22 +22,17 @@ export default (() => {
             loading_id: $("#loading"),
             error_id: $("#error"),
 
-            highlight_code: true,
-            sidebar: true,
-
             run: initialize,
             ...config,
         };
         function initialize() {
-            if (ditto.sidebar) {
-                init_sidebar_section();
-            }
+            init_sidebar_section().then(() => {
+                router();
+            });
 
-            if (ditto.highlight_code) {
-                hljs.highlightAll();
-                //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
-            }
-            router();
+            hljs.highlightAll();
+            //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
+
             window.addEventListener("hashchange", router);
         }
         function init_sidebar_section() {
@@ -62,7 +40,7 @@ export default (() => {
             const summaryfile = new URL(config.summary, baseurl).href;
             console.log(summaryfile);
             var path = summaryfile;
-            fetchajaxgettext(path)
+            return fetchajaxgettext(path)
                 .then(function (data) {
                     ApphomeVm.muluhtml = escapemarkedunescape(data);
                     return new Promise((r) => {
@@ -273,13 +251,13 @@ export default (() => {
                 ApphomeVm.contenthtml = tmpdoc.body.innerHTML;
                 requestAnimationFrame(() => {
                     stop_loading();
-                    if (ditto.highlight_code) {
-                        Array.from($("pre code")).forEach(function (block) {
-                            hljs.highlightElement(block);
-                            /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0
+
+                    Array.from($("pre code")).forEach(function (block) {
+                        hljs.highlightElement(block);
+                        /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0
  Deprecated as of 10.7.0. Please use highlightElement now. */
-                        });
-                    }
+                    });
+
                     r();
                 });
             });
