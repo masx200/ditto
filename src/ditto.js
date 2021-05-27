@@ -13,6 +13,12 @@ function guid() {
         return v.toString(16);
     });
 }
+function escape_html(string) {
+    return string.replace(/\\/g, "&#92;").replace(/\_/g, "&#95;");
+}
+function unescape_html(string) {
+    return string.replace(/&amp;#92;/g, "\\").replace(/&amp;#95;/g, "_");
+}
 function getbaseurl() {
     return config.baseurl;
 }
@@ -228,14 +234,7 @@ export default (() => {
                 }
             }
         }
-        function escape_html(string) {
-            return string.replace(/\\/g, "&#92;").replace(/\_/g, "&#95;");
-        }
-        function unescape_html(string) {
-            return string
-                .replace(/&amp;#92;/g, "\\")
-                .replace(/&amp;#95;/g, "_");
-        }
+
         function compile_into_dom(data, mdurl) {
             console.log(mdurl);
             return new Promise((r) => {
