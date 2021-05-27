@@ -35,9 +35,7 @@ export default (() => {
             const summaryfile = getabsolutesummary();
             console.log(summaryfile);
             var path = summaryfile;
-var tmpurl=new URL(path)
-tmpurl.hash=""
-path=tmpurl.href
+path=urlclearhash(path);
             try {
                 const data = await fetchajaxgettext(path);
                 ApphomeVm.muluhtml = escapemarkedunescape(data);
@@ -89,10 +87,8 @@ path=tmpurl.href
 var path=new URL(
                                         e_3.endsWith(".md") ? e_3 : e_3 + ".md",
                                         summaryfile
-                                    ).toString()
-var tmpurl=new URL(path)
-tmpurl.hash=""
-path=tmpurl.href
+                                    ).toString();
+path=urlclearhash(path);
                                 fetch(path
                                     ,
                                     {
@@ -165,9 +161,8 @@ path=tmpurl.href
                 path = new URL(path, baseurl).toString();
             }
 
-var tmpurl=new URL(path)
-tmpurl.hash=""
-path=tmpurl.href
+
+path=urlclearhash(path)
 
             console.log(path);
             if (path !== ApphomeVm.urltext) {
@@ -301,3 +296,11 @@ path=tmpurl.href
         return ditto;
     })(jQuery);
 })();
+function urlclearhash(path){
+var tmpurl=new URL(path)
+tmpurl.hash=""
+path=tmpurl.href
+
+return path
+
+}
