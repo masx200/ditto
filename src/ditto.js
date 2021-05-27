@@ -16,6 +16,7 @@ const cachemarkdown = new Map();
 export default (() => {
     "use strict";
     return (function ($) {
+        var loading_interval;
         var ditto = {
             index: "README.md",
 
@@ -112,12 +113,12 @@ export default (() => {
         }
         function show_loading() {
             ditto.loading_id.show();
-            ditto.loading_interval = setInterval(function () {
+            loading_interval = setInterval(function () {
                 ditto.loading_id.fadeIn(1000).fadeOut(1000);
             }, 2000);
         }
         function stop_loading() {
-            clearInterval(ditto.loading_interval);
+            clearInterval(loading_interval);
             ditto.loading_id.hide();
             $("#loadingparent").hide();
         }
