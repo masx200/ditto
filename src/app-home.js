@@ -1,8 +1,10 @@
 import { 内容调整左边偏移 } from "./render.js";
 import config from "./config.js";
-import { mounted } from "./mounted.js";
+import { mymounted } from "./mounted.js";
 export default {
-    mounted,
+    mounted() {
+        mymounted();
+    },
     computed: {
         indexhref() {
             return "#" + config.index;

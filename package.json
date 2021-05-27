@@ -10,7 +10,7 @@
     "scripts": {
         "start": "webpack-react-vue-spa-awesome-config start",
         "build": "webpack-react-vue-spa-awesome-config build   ",
-        "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.ts */*.html */**/*.js */*.css */*.md */*.json */*.vue"
+        "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.ts */*.html */**/*.js */*.css */*.md */*.json */*.vue */*.js"
     },
     "devDependencies": {
         "@masx200/webpack-react-vue-spa-awesome-config": "3.0.8",
