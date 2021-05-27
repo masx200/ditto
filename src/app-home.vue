@@ -30,6 +30,20 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="scrolltotop"
+                    >
+                        顶部
+                    </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="scrolltobottom"
+                    >
+                        底部
+                    </button>
                 </div>
             </nav>
         </div>

@@ -34,5 +34,11 @@ export default {
             this.xianshicebianlan = !this.xianshicebianlan;
             内容调整左边偏移();
         },
+        scrolltotop() {
+            scrollTo(0, 0);
+        },
+        scrolltobottom() {
+            scrollTo(0, document.body.scrollHeight);
+        },
     },
 };
