@@ -14,22 +14,21 @@ export function 挂载初始() {
         var subtitle = config.subtitle;
 
         ditto.index = config.index;
-        (() => {
-            document.title = doctitle + " " + subtitle;
-            ApphomeVm.mytitle = doctitle;
+
+        document.title = doctitle + " " + subtitle;
+        ApphomeVm.mytitle = doctitle;
+        $("#my主体").css("padding-top", $("#my导航栏").height());
+
+        ditto.run();
+
+        function onhashchange() {
+            scrollTo(0, 0);
             $("#my主体").css("padding-top", $("#my导航栏").height());
-
-            ditto.run();
-
-            function onhashchange() {
-                scrollTo(0, 0);
-                $("#my主体").css("padding-top", $("#my导航栏").height());
-                if (window.innerWidth < 550) {
-                    ApphomeVm.xianshicebianlan = false;
-                }
+            if (window.innerWidth < 550) {
+                ApphomeVm.xianshicebianlan = false;
             }
-            window.addEventListener("hashchange", onhashchange);
-        })();
+        }
+        window.addEventListener("hashchange", onhashchange);
     });
 }
 export function 内容调整左边偏移() {
