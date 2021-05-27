@@ -30,7 +30,7 @@ Lightweight Markdown Documentation System based on ditto
 
 受到 `ditto` 的启发,魔改而成
 
-<hr><hr>
+<hr></hr>
 
 # ditto
 
