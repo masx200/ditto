@@ -3,33 +3,31 @@ import { ApphomeVm } from "./mark-down-reader";
 import $ from "jquery";
 import ditto from "./ditto";
 import config from "./config";
-export function 挂载初始() {
+export async function 挂载初始() {
     Object.assign(ditto, config);
     console.log(ditto);
     window.addEventListener("resize", () => {
         内容调整左边偏移();
     });
-    $(() => {
-        var doctitle = config.doctitle;
-        var subtitle = config.subtitle;
 
-        ditto.index = config.index;
+    var doctitle = config.doctitle;
+    var subtitle = config.subtitle;
 
-        document.title = doctitle + " " + subtitle;
-        ApphomeVm.mytitle = doctitle;
+    ditto.index = config.index;
+
+    document.title = doctitle + " " + subtitle;
+    ApphomeVm.mytitle = doctitle;
+    $("#my主体").css("padding-top", $("#my导航栏").height());
+
+    function onhashchange() {
+        scrollTo(0, 0);
         $("#my主体").css("padding-top", $("#my导航栏").height());
-
-        ditto.run();
-
-        function onhashchange() {
-            scrollTo(0, 0);
-            $("#my主体").css("padding-top", $("#my导航栏").height());
-            if (window.innerWidth < 550) {
-                ApphomeVm.xianshicebianlan = false;
-            }
+        if (window.innerWidth < 550) {
+            ApphomeVm.xianshicebianlan = false;
         }
-        window.addEventListener("hashchange", onhashchange);
-    });
+    }
+    window.addEventListener("hashchange", onhashchange);
+    return ditto.run();
 }
 export function 内容调整左边偏移() {
     return new Promise((r) => {
