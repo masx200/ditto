@@ -26,9 +26,9 @@ export default (() => {
         async function initialize() {
             //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
 
-            window.addEventListener("hashchange", router);
+            window.addEventListener("hashchange", routerpageget);
             await init_sidebar_section();
-            router();
+            routerpageget();
             hljs.highlightAll();
         }
         async function init_sidebar_section() {
@@ -120,7 +120,7 @@ export default (() => {
             $("#loadingparent").hide();
         }
 
-        function router() {
+        function routerpageget() {
             const baseurl = getbaseurl();
 
             window.scrollTo(0, 0);
