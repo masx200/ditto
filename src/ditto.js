@@ -143,8 +143,9 @@ export default (() => {
             const baseurl = getbaseurl();
 
             window.scrollTo(0, 0);
+            //ie浏览器中可能为"#"
             var path =
-                location.hash === ""
+                location.hash === "" || location.hash === "#"
                     ? getabsoluteindex()
                     : location.hash.replace("#", "");
             show_loading();
