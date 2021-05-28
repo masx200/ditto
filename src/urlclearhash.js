@@ -3,5 +3,5 @@ export function urlclearhash(path) {
     tmpurl.hash = "";
     path = tmpurl.href;
 
-    return path;
+    return path.split("#")[0];
 }
