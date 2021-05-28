@@ -27,6 +27,7 @@ window.addEventListener(
 
     () => {
         import("clipboard").then((module) => {
+            console.log(module);
             const ClipboardJS = module.default;
 
             ((ClipboardJS) => {
