@@ -18,7 +18,7 @@ export async function init_sidebar_section() {
     path = urlclearhash(path);
     try {
         const data = await fetchajaxgettext(path);
-        ApphomeVm.muluhtml = escapemarkedunescape(data);
+        ApphomeVm.muluhtml = await escapemarkedunescape(data);
         await new Promise((r) => {
             requestAnimationFrame(() => {
                 $(ApphomeVm.$refs.我的侧边栏).css(
