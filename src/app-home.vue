@@ -27,7 +27,7 @@
                         v-bind:href="indexhref"
                         v-text="mytitle"
                         style="margin: 0; top: 0px"
-                        >Markdon Reader</a
+                        >Markdown Reader</a
                     >
                     <button
                         class="mui-btn mui-btn-primary mui-btn-outlined"
