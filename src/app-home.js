@@ -1,6 +1,7 @@
 import config from "./config.js";
 //import { mymounted } from "./mymounted.js";
 import { 内容调整左边偏移 } from "./render.js";
+import { tonextpage, toprevpage } from "./toprevpage.js";
 export default {
     mounted() {
         (async () => {
@@ -46,7 +47,7 @@ export default {
         scrolltobottom() {
             scrollTo(0, document.body.scrollHeight);
         },
-        toprevpage() {},
-        tonextpage() {},
+        toprevpage: toprevpage,
+        tonextpage: tonextpage,
     },
 };
