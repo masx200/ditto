@@ -12,9 +12,6 @@ export async function 挂载初始() {
     var ditto = module.default;
     Object.assign(ditto, config);
     console.log(ditto);
-    window.addEventListener("resize", () => {
-        内容调整左边偏移();
-    });
 
     var doctitle = config.doctitle;
     var subtitle = config.subtitle;
@@ -29,5 +26,8 @@ export async function 挂载初始() {
     );
 
     window.addEventListener("hashchange", myonhashchangehandler);
+    window.addEventListener("hashchange", 内容调整左边偏移);
+    window.addEventListener("resize", myonhashchangehandler);
+    window.addEventListener("resize", 内容调整左边偏移);
     return ditto.run();
 }
