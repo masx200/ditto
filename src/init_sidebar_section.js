@@ -112,7 +112,7 @@ export async function init_sidebar_section() {
             menulist.push(url);
         });
         Object.freeze(menulist);
-        console.log(menulist);
+        console.log("menulist", menulist);
         return;
     } catch (e_4) {
         console.error(e_4);
