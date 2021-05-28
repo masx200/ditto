@@ -6,8 +6,8 @@ import { isrelativepath } from "./isrelativepath";
 import { ApphomeVm } from "./mark-down-reader.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { urlclearhash } from "./urlclearhash";
-import { $, cachemarkdown, stop_loading } from "./ditto";
-
+import {  cachemarkdown, stop_loading } from "./ditto";
+import $ from "jquery";
 export async function init_sidebar_section() {
     // const baseurl = getbaseurl();
     // const summaryfile = new URL(config.summary, baseurl).href;

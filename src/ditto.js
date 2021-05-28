@@ -3,7 +3,7 @@ import config from "./config.js";
 import hljs from "./highlight.min.js";
 import { init_sidebar_section } from "./init_sidebar_section";
 import { routerpageget } from "./routerpageget";
-export { $ };
+// export { $ };
 
 export const cachemarkdown = new Map();
 ("use strict");
