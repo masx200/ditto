@@ -20,6 +20,7 @@ export function toprevpage() {
         console.error("已经到达菜单列表的起始处或结尾处");
         return;
     }
+    location.hash = menulist[pageindextogo];
 }
 export function tonextpage() {
     var currentpageindex = findindexexmenulist();
@@ -32,4 +33,5 @@ export function tonextpage() {
         console.error("已经到达菜单列表的起始处或结尾处");
         return;
     }
+    location.hash = menulist[pageindextogo];
 }
