@@ -7,3 +7,21 @@ pre {
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 p {
     font-size: 1rem;
 }
+@media (min-width: 500px) {
+    #nav-3fa9878ebc0dbb05688f058e3bcafc57386 {
+        display: flex !important;
+    }
+    #nav-6fc6d0bc9128ba5f98a1e493cb2adf11550,
+    #nav-7e7dd758bdb27a9c889a4eaa0fce55cf2d7 {
+        display: none !important;
+    }
+}
+@media (max-width: 500px) {
+    #nav-3fa9878ebc0dbb05688f058e3bcafc57386 {
+        display: none !important;
+    }
+    #nav-6fc6d0bc9128ba5f98a1e493cb2adf11550,
+    #nav-7e7dd758bdb27a9c889a4eaa0fce55cf2d7 {
+        display: flex !important;
+    }
+}
