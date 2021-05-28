@@ -18,7 +18,7 @@ Lightweight Markdown Documentation System based on ditto
 
 优化界面展示方式,使用 侧边栏 可折叠的导航栏和响应式布局和 cdn 加载依赖包
 
-使用 css媒体查询的侧边栏 ,flex布局的导航栏和响应式布局
+使用 css 媒体查询的侧边栏 ,flex 布局的导航栏和响应式布局
 
 使用了固定在顶部的导航栏,给导航栏设置最大高度 100%,并自动显示滚动条
 
