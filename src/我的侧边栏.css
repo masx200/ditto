@@ -1,4 +1,4 @@
-#content {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 {
     text-align: center !important;
 }
 @media (max-width: 550px) {
@@ -57,8 +57,8 @@
     text-align: center;
     line-height: 30px;
 }
-h5#markdownurlsrc,
-h5#markdownerror {
+h5#markdownurlsrc-63228f01b0737ac6a8b1c08af92dec0eb11,
+h5#markdownerror-4c6b19f7b26c2b519b8ff480769b5565d6b {
     padding: 3px 3px;
     color: #007aff;
     border-radius: 3px;
@@ -78,7 +78,7 @@ button.btn.btn-outline-primary.clipbutton {
     transition-timing-function: linear;
     transition-delay: 0s;
 }
-#content li {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 li {
     text-align: center !important;
 }
 h1,

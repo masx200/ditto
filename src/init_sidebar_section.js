@@ -37,7 +37,7 @@ export async function init_sidebar_section() {
         });
         await new Promise((r, j) => {
             requestAnimationFrame(() => {
-                $("#my主体-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
+                $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
                     "padding-top",
                     $(
                         "#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"

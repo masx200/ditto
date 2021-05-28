@@ -47,7 +47,7 @@ export async function routerpageget() {
             try {
                 const data = await fetchajaxgettext(path);
                 ApphomeVm.urltext = path;
-                $("#my主体-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
+                $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
                     "padding-top",
                     $(
                         "#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"

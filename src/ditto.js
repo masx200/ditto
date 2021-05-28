@@ -9,7 +9,7 @@ export const cachemarkdown = new Map();
 ("use strict");
 
 var loading_interval;
-var loading_id = $("#loading");
+var loading_id = $("#loading-36bec0d286ad9ab9ca8c1d923b0095c1c06");
 var error_id = $("#error");
 var ditto = {
     run: initialize,
@@ -39,7 +39,7 @@ export function show_loading() {
 export function stop_loading() {
     clearInterval(loading_interval);
     loading_id.hide();
-    $("#loadingparent").hide();
+    $("#loadingparent-b80f303d89182a8e58b02981c0822deb975").hide();
 }
 
 export default ditto;

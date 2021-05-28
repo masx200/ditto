@@ -85,7 +85,7 @@ body {
     /* font-size: 12px; */
 }
 
-#content {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 {
     /* width: 580px; */
 
     /* margin-left: 300px; */
@@ -96,7 +96,7 @@ body {
     font-size: 1em;
 }
 
-#content pre {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 pre {
     margin-left: auto;
     margin-right: auto;
 
@@ -116,7 +116,7 @@ body {
     border-radius: 5px;
 }
 
-#content pre code {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 pre code {
     padding-top: 0px;
     padding-bottom: 0px;
     padding-left: 0;
@@ -124,7 +124,7 @@ body {
     border: none;
 }
 
-#content code {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 code {
     padding-left: 5px;
     padding-right: 5px;
     padding-top: 1px;
@@ -140,7 +140,7 @@ body {
     border-radius: 2px;
 }
 
-#content h2 {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 h2 {
     margin-top: 50px;
     margin-bottom: 0px;
 
@@ -153,7 +153,7 @@ body {
     border-top: 2px solid #666;
 }
 
-#content h3 {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 h3 {
     margin-top: 50px;
     margin-bottom: 0px;
 
@@ -164,14 +164,14 @@ body {
     border-top: 1px dotted #777;
 }
 
-#content hr {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 hr {
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-#content img {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 img {
     max-width: 90%;
     display: block;
 
@@ -183,24 +183,24 @@ body {
     border-radius: 5px;
 }
 
-#content ul {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul {
     display: block;
     list-style-type: none;
 }
 
-#content ul li:before {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li:before {
     /* a hack to have dashes as a list style */
     /* content: "-"; */
     position: relative;
     left: -5px;
 }
 
-#content ul li {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li {
     text-indent: -5px; /* to compensate for the padding for the dash */
     font-size: 13px;
 }
 
-#content ul li.link {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li.link {
     color: #4682be;
     text-decoration: none;
     font-size: 13px;
@@ -208,8 +208,8 @@ body {
     cursor: pointer;
 }
 
-#content a:link,
-#content a:visited {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 a:link,
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 a:visited {
     color: #4682be;
     text-decoration: none;
 }
@@ -264,7 +264,7 @@ body {
     cursor: pointer;
 }
 
-#loading,
+#loading-36bec0d286ad9ab9ca8c1d923b0095c1c06,
 #error {
     display: none;
     position: fixed;
@@ -306,29 +306,29 @@ input[type="search"] {
     margin-top: 35px;
 }
 
-#content ul li {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li {
     text-align: left;
 }
 
-#content ul .fragments li:before {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul .fragments li:before {
     /* content: ""; */
     position: relative;
     left: 0px;
 }
 
-#content ul li.fragment:before {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li.fragment:before {
     /* content: ""; */
     margin: 0;
     padding: 0;
 }
 
-#content img.github_badges {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 img.github_badges {
     display: inline;
     /* margin-top: 0; */
     /* margin-bottom: 0; */
 }
 
-#content .youtube_video {
+#content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 .youtube_video {
     margin-top: 20px;
 }
 
