@@ -92,3 +92,17 @@ h5,
 h6 {
     text-align: center !important;
 }
+@media (min-width: 550px) {
+    /*宽度 大 */
+
+    #daohanglanhuanhang {
+        display: none;
+    }
+}
+@media (max-width: 550px) {
+    /*宽度 大 */
+
+    #daohanglanhuanhang {
+        display: block;
+    }
+}
