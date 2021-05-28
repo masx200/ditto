@@ -2,7 +2,7 @@
 <template>
     <div>
         <div
-            id="mynavigationbar"
+            id="mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
             class="container-fluid fixed-top"
             style="padding-right: 0; padding-left: 0"
         >
@@ -25,7 +25,6 @@
                             mui-btn mui-btn-primary mui-btn-outlined
                         "
                         v-bind:href="indexhref"
-                        id="title"
                         v-text="mytitle"
                         style="margin: 0; top: 0px"
                         >Markdon Reader</a
@@ -33,7 +32,7 @@
                     <button
                         class="mui-btn mui-btn-primary mui-btn-outlined"
                         type="button"
-                        id="cebianlantoggle"
+                        id="cebianlantoggle-fa1acbfa95662b9c3a8474970d5a42a303d"
                         v-on:click="togglecebian"
                     >
                         <span class="navbar-toggler-icon"></span>
@@ -74,20 +73,20 @@
         <div class="container-fluid">
             <div
                 ref="我的侧边栏"
-                id="cebianlan"
+                id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
                 class="el-container"
                 style="border: 1px solid white; position: fixed"
                 v-show="xianshicebianlan"
             >
                 <aside
                     ref="目录内容"
-                    id="mynewsidelan"
+                    id="mynewsidelan-c887e2d697f11af869981691c9830ebd892"
                     class="el-aside"
                     style="background-color: white"
                 ></aside>
             </div>
         </div>
-        <div id="my主体" class="container">
+        <div id="my主体-143af32b9b8f396b798aeb8d4ee68ed9ca3" class="container">
             <div id="loadingparent">
                 <div id="loading">
                     <h1>Loading ...</h1>

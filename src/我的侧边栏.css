@@ -4,49 +4,46 @@
 @media (max-width: 550px) {
     /* 宽度小 */
 
-    #mynewsidelan {
+    #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
         width: 100%;
     }
 
-    #cebianlan {
+    #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
         width: 100%;
         /* display: none; */
     }
-    /* #cebianlantoggle {
-    display: none;
-  } */
 }
-#cebianlan {
+#cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
     overflow: auto;
     max-height: 93%;
 }
-#mynewsidelan {
+#mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
     overflow: auto;
 }
-#cebianlantoggle {
+#cebianlantoggle-fa1acbfa95662b9c3a8474970d5a42a303d {
     display: inline-block;
 }
 @media (min-width: 550px) {
     /*宽度 大 */
 
-    #cebianlan {
+    #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
         display: inline-block;
     }
-    #cebianlantoggle {
+    #cebianlantoggle-fa1acbfa95662b9c3a8474970d5a42a303d {
         display: inline-block;
     }
 }
 @media (min-width: 550px) {
     /*宽度 大 */
 
-    #mynewsidelan {
+    #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
         width: 300px;
     }
 }
 @media (min-width: 992px) {
     /*宽度 大 */
 
-    #mynewsidelan {
+    #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
         width: 400px;
     }
 }
