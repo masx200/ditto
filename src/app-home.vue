@@ -11,6 +11,7 @@
                 style="padding-right: 0; padding-left: 0"
             >
                 <div
+                    id="nav-6fc6d0bc9128ba5f98a1e493cb2adf11550"
                     style="
                         display: flex;
                         width: 100%;
@@ -39,6 +40,7 @@
                     </button>
                 </div>
                 <div
+                    id="nav-7e7dd758bdb27a9c889a4eaa0fce55cf2d7"
                     style="
                         display: flex;
                         width: 100%;
@@ -47,6 +49,63 @@
                         align-items: stretch;
                     "
                 >
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="scrolltotop"
+                    >
+                        顶部
+                    </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="scrolltobottom"
+                    >
+                        底部
+                    </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="toprevpage"
+                    >
+                        前页
+                    </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="tonextpage"
+                    >
+                        后页
+                    </button>
+                </div>
+                <div
+                    id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
+                    style="
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        align-items: stretch;
+                    "
+                >
+                    <a
+                        class="
+                            navbar-brand navbar-brand
+                            mui-btn mui-btn-primary mui-btn-outlined
+                        "
+                        v-bind:href="indexhref"
+                        v-text="mytitle"
+                        style="margin: 0; top: 0px"
+                        >Markdown Reader</a
+                    >
+                    <button
+                        style="display: inline-block"
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="togglecebian"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                     <button
                         class="mui-btn mui-btn-primary mui-btn-outlined"
                         type="button"
