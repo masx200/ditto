@@ -10,7 +10,15 @@
                 class="navbar navbar-expand-sm bg-light navbar-light"
                 style="padding-right: 0; padding-left: 0"
             >
-                <div>
+                <div
+                    style="
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        align-items: stretch;
+                    "
+                >
                     <a
                         class="
                             navbar-brand navbar-brand
@@ -30,7 +38,7 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <br id="daohanglanhuanhang" />
+                    <!-- <br id="daohanglanhuanhang" /> -->
                     <button
                         class="mui-btn mui-btn-primary mui-btn-outlined"
                         type="button"
