@@ -15,7 +15,7 @@ import "./样式.css";
 const Vue = vue;
 
 ("use strict");
-export const initloadingid = guid();
+export const initloadingid = "first-" + guid();
 document.getElementById("root").innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">
