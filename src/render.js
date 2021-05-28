@@ -1,6 +1,6 @@
 "use strict";
 import $ from "jquery";
-export function 内容调整左边偏移() {
+export async function 内容调整左边偏移() {
     return new Promise((r) => {
         requestAnimationFrame(() => {
             if (window.innerWidth > 550) {
