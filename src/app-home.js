@@ -6,7 +6,7 @@ export default {
         (async () => {
             var module = await import("./mymounted.js");
 
-            console.log(module);
+            //console.log(module);
             var mymounted = module.mymounted;
             mymounted();
         })();

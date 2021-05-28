@@ -13,7 +13,7 @@ export async function init_sidebar_section() {
     // const baseurl = getbaseurl();
     // const summaryfile = new URL(config.summary, baseurl).href;
     const summaryfile = getabsolutesummary();
-    console.log(summaryfile);
+    //console.log(summaryfile);
     var path = summaryfile;
     path = urlclearhash(path);
     menulist.push(path);
@@ -68,7 +68,7 @@ export async function init_sidebar_section() {
                         b.hash = "#" + realmdpath;
 
                         a.href = b.href;
-                        console.log(a.href);
+                        //console.log(a.href);
                     }
                     return b;
                 });
@@ -76,7 +76,7 @@ export async function init_sidebar_section() {
                     .filter((e_1) => e_1.startsWith("#"))
                     .map((e_2) => e_2.slice(1))
                     .forEach((e_3) => {
-                        console.log(e_3);
+                        //console.log(e_3);
                         //不管相对路径还是绝对路径都行
                         var path = new URL(
                             e_3.endsWith(".md") ? e_3 : e_3 + ".md",
@@ -89,7 +89,7 @@ export async function init_sidebar_section() {
                         //
                         precheckfetchajaxmarkdown(path)
                             .then((res) => {
-                                console.log(res);
+                                //console.log(res);
                                 r();
                             })
                             .catch((e) => {
@@ -102,7 +102,7 @@ export async function init_sidebar_section() {
         });
         var currentcontenthtml = ApphomeVm.muluhtml;
         if (!cachemarkdown.get(path)) {
-            console.log([path, currentcontenthtml]);
+            //console.log([path, currentcontenthtml]);
             cachemarkdown.set(path, currentcontenthtml);
         }
         //
@@ -112,7 +112,7 @@ export async function init_sidebar_section() {
             menulist.push(url);
         });
         Object.freeze(menulist);
-        console.log("menulist", menulist);
+        //console.log("menulist", menulist);
         return;
     } catch (e_4) {
         console.error(e_4);

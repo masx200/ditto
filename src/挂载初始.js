@@ -8,10 +8,10 @@ import { 内容调整左边偏移 } from "./render";
 
 export async function 挂载初始() {
     var module = await import("./ditto.js");
-    console.log(module);
+    //console.log(module);
     var ditto = module.default;
     Object.assign(ditto, config);
-    console.log(ditto);
+    //console.log(ditto);
 
     var doctitle = config.doctitle;
     var subtitle = config.subtitle;

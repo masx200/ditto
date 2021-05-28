@@ -34,10 +34,10 @@ export async function routerpageget() {
 
     path = urlclearhash(path);
 
-    console.log(path);
+    //console.log(path);
     if (path !== ApphomeVm.urltext) {
         const marktext = cachemarkdown.get(path);
-        console.log(cachemarkdown);
+        //console.log(cachemarkdown);
         if (marktext) {
             ApphomeVm.urltext = path;
             stop_loading();
@@ -83,7 +83,7 @@ export async function routerpageget() {
                                 b.hash = "#" + realmdpath;
 
                                 a.href = b.href;
-                                console.log(a.href);
+                                //console.log(a.href);
                                 //变成按钮的形状
                                 $(a).addClass(
                                     `mui-btn mui-btn-primary mui-btn-outlined`
@@ -95,7 +95,7 @@ export async function routerpageget() {
                         var currentcontenthtml = contenthtml.get();
                         //切换页面太快导致问题缓存出错,原因在于vue把他缓存了
                         if (!cachemarkdown.get(path)) {
-                            console.log([path, currentcontenthtml]);
+                            //console.log([path, currentcontenthtml]);
                             cachemarkdown.set(path, currentcontenthtml);
                         }
                         document.getElementById(initloadingid).style.display =

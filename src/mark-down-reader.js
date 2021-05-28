@@ -28,13 +28,13 @@ window.addEventListener(
     async () => {
         var module = await import("clipboard");
 
-        console.log(module);
+        //console.log(module);
         const ClipboardJS = module.default;
 
         // ((ClipboardJS) => {
         new ClipboardJS(".btn").on("success", function (e) {
             if (!e.text) {
-                console.log("复制内容空");
+                //console.log("复制内容空");
             } else {
                 console.info("Text:", e.text);
             }
@@ -54,7 +54,7 @@ Vue.config.errorHandler = function (err, vm, info) {
 };
 
 let ApphomeVm = new vue({ ...app });
-console.log(ApphomeVm);
+//console.log(ApphomeVm);
 export function mount(el) {
     ApphomeVm.$mount(el.appendChild(document.createElement("div")));
 }

@@ -4,7 +4,7 @@ import hljs from "./highlight.min.js";
 import { hide_errors, stop_loading } from "./ditto";
 import $ from "jquery";
 export async function compile_into_dom(data, mdurl) {
-    console.log(mdurl);
+    //console.log(mdurl);
 
     hide_errors();
 
@@ -16,18 +16,18 @@ export async function compile_into_dom(data, mdurl) {
     tmpdoc.body.innerHTML = data;
     //判断img是否是相对路径
     Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
-        // console.log(e);
+        // //console.log(e);
         var imgsrc = e.getAttribute("src");
-        console.log(imgsrc, e.src);
+        //console.log(imgsrc, e.src);
         if (
             // imgsrc !== e.src &&
             //firefox浏览器不兼容
             !imgsrc.startsWith("http://") &&
             !imgsrc.startsWith("https://")
         ) {
-            console.log("相对路径图片", e);
+            //console.log("相对路径图片", e);
             var imgrealurl = String(new URL(imgsrc, mdurl));
-            console.log(imgrealurl);
+            //console.log(imgrealurl);
             e.src = imgrealurl;
         }
     });
