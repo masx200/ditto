@@ -54,7 +54,7 @@ export async function routerpageget() {
                     ).height()
                 );
                 await compile_into_dom(data, path);
-                return await new Promise((r) => {
+                await new Promise((r) => {
                     requestAnimationFrame(async () => {
                         Array.from($("code.hljs")).forEach((e) => {
                             var codecontenguid = "clip" + guid();
@@ -103,6 +103,8 @@ export async function routerpageget() {
                         r();
                     });
                 });
+                window.scrollTo(0, 0);
+                return;
             } catch (e_1) {
                 console.error(e_1);
                 ApphomeVm.urltext = "加载失败 " + path;

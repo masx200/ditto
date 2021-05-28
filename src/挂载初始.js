@@ -3,7 +3,7 @@ import $ from "jquery";
 import config from "./config";
 // import ditto from "./ditto";
 import { ApphomeVm } from "./mark-down-reader";
-import { Adjustthedistance } from "./onhashchange";
+import { Adjustthedistance } from "./Adjustthedistance.js";
 import { 内容调整左边偏移 } from "./render";
 
 export async function 挂载初始() {

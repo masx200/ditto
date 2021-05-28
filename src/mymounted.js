@@ -1,6 +1,6 @@
 import $ from "jquery";
 import { initloadingid } from "./mark-down-reader.js";
-import { Adjustthedistance } from "./onhashchange.js";
+import { Adjustthedistance } from "./Adjustthedistance.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { 挂载初始 } from "./挂载初始";
 export async function mymounted() {
