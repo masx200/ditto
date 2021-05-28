@@ -6,7 +6,7 @@ import config from "./config.js";
 import "./ditto.css";
 import "./error-alert";
 import { guid } from "./guid.js";
-import "./hidewidthless500.css";
+//import "./hidewidthless500.css";
 import "./index.css";
 import "./polyfill.NodeList.forEach.js";
 import "./我的侧边栏.css";

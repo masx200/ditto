@@ -8,15 +8,6 @@
         width: 100%;
     }
 
-    /* button.navbar-toggler[data-target="#collapsibleNavbar"] {
-    display: inline-block !important;
-  }*/
-    /* div#collapsibleNavbar.collapse.navbar-collapse {
-    display: none !important;
-  }
-  div#collapsibleNavbar.collapse.navbar-collapse.show {
-    display: flex !important;
-  } */
     #cebianlan {
         width: 100%;
         /* display: none; */
@@ -38,16 +29,6 @@
 @media (min-width: 550px) {
     /*宽度 大 */
 
-    #mynewsidelan {
-        width: 300px;
-    }
-    /* button.navbar-toggler[data-target="#collapsibleNavbar"] {
-    display: none !important;
-  } */
-    /* div#collapsibleNavbar.collapse.navbar-collapse {
-    display: none !important;
-  } */
-
     #cebianlan {
         display: inline-block;
     }
@@ -55,7 +36,20 @@
         display: inline-block;
     }
 }
+@media (min-width: 550px) {
+    /*宽度 大 */
 
+    #mynewsidelan {
+        width: 300px;
+    }
+}
+@media (min-width: 992px) {
+    /*宽度 大 */
+
+    #mynewsidelan {
+        width: 400px;
+    }
+}
 .el-container {
     margin-bottom: 40px;
 }
