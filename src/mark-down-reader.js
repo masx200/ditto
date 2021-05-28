@@ -51,6 +51,8 @@ Vue.config.errorHandler = function (err, vm, info) {
 let ApphomeVm = new vue({ ...app });
 //console.log(ApphomeVm);
 export function mount(el) {
+config.baseurl=String(new URL(baseurl,location.href))
+console.log(config)
     //document.getElementById("root").
     el.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
