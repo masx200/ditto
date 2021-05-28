@@ -47,7 +47,7 @@ export async function routerpageget() {
             try {
                 const data = await fetchajaxgettext(path);
                 ApphomeVm.urltext = path;
-                $("#my主体").css("padding-top", $("#my导航栏").height());
+                $("#my主体").css("padding-top", $("#mynavigationbar").height());
                 await compile_into_dom(data, path);
                 return await new Promise((r) => {
                     requestAnimationFrame(async () => {

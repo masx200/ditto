@@ -23,7 +23,7 @@ export async function 挂载初始() {
 
     document.title = doctitle + " " + subtitle;
     ApphomeVm.mytitle = doctitle;
-    $("#my主体").css("padding-top", $("#my导航栏").height());
+    $("#my主体").css("padding-top", $("#mynavigationbar").height());
 
     window.addEventListener("hashchange", myonhashchangehandler);
     return ditto.run();

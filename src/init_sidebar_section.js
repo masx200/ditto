@@ -22,7 +22,7 @@ export async function init_sidebar_section() {
             requestAnimationFrame(() => {
                 $(ApphomeVm.$refs.我的侧边栏).css(
                     "top",
-                    $("#my导航栏").height()
+                    $("#mynavigationbar").height()
                 );
                 $(ApphomeVm.$refs.我的侧边栏.querySelectorAll("ul")).addClass(
                     "navbar-nav"
@@ -35,7 +35,7 @@ export async function init_sidebar_section() {
         });
         await new Promise((r, j) => {
             requestAnimationFrame(() => {
-                $("#my主体").css("padding-top", $("#my导航栏").height());
+                $("#my主体").css("padding-top", $("#mynavigationbar").height());
                 var links = Array.from(
                     ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
                 );

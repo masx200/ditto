@@ -2,7 +2,7 @@
 <template>
     <div>
         <div
-            id="my导航栏"
+            id="mynavigationbar"
             class="container-fluid fixed-top"
             style="padding-right: 0; padding-left: 0"
         >
@@ -38,7 +38,7 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <!-- <br id="daohanglanhuanhang" /> -->
+
                     <button
                         class="mui-btn mui-btn-primary mui-btn-outlined"
                         type="button"

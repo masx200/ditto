@@ -5,7 +5,7 @@ import { 内容调整左边偏移 } from "./render.js";
 import { 挂载初始 } from "./挂载初始";
 export async function mymounted() {
     myonhashchangehandler();
-    $("#my主体").css("padding-top", $("#my导航栏").height());
+    $("#my主体").css("padding-top", $("#mynavigationbar").height());
     await 内容调整左边偏移();
     await 挂载初始();
     document.getElementById(initloadingid).style.display = "none";
