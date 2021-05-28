@@ -1,13 +1,14 @@
+import $ from "jquery";
+import { cachemarkdown, stop_loading } from "./ditto";
 import { escapemarkedunescape } from "./escapemarkedunescape";
 import fetchajaxgettext from "./fetchajaxgettext.js";
-import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown";
 import { getabsolutesummary } from "./getbaseurl";
 import { isrelativepath } from "./isrelativepath";
 import { ApphomeVm } from "./mark-down-reader.js";
+import { menulist } from "./menulist.js";
+import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown";
 import { 内容调整左边偏移 } from "./render.js";
 import { urlclearhash } from "./urlclearhash";
-import { cachemarkdown, stop_loading } from "./ditto";
-import $ from "jquery";
 export async function init_sidebar_section() {
     // const baseurl = getbaseurl();
     // const summaryfile = new URL(config.summary, baseurl).href;
@@ -15,6 +16,7 @@ export async function init_sidebar_section() {
     console.log(summaryfile);
     var path = summaryfile;
     path = urlclearhash(path);
+    menulist.push(path);
     try {
         const data = await fetchajaxgettext(path);
         ApphomeVm.muluhtml = await escapemarkedunescape(data);
@@ -81,12 +83,10 @@ export async function init_sidebar_section() {
                             summaryfile
                         ).toString();
                         path = urlclearhash(path);
-                        /*  fetch(path, {
-                            credentials: "omit",
-    
-                            method: "HEAD",
-                            mode: "cors",
-                        })*/
+
+                        //
+                        menulist.push(path);
+                        //
                         precheckfetchajaxmarkdown(path)
                             .then((res) => {
                                 console.log(res);
@@ -105,6 +105,15 @@ export async function init_sidebar_section() {
             console.log([path, currentcontenthtml]);
             cachemarkdown.set(path, currentcontenthtml);
         }
+        //
+        var tmpmenuset = new Set(menulist);
+        menulist.length = 0;
+        tmpmenuset.forEach((url) => {
+            menulist.push(url);
+        });
+        Object.freeze(menulist);
+        console.log(menulist);
+        return;
     } catch (e_4) {
         console.error(e_4);
         stop_loading();

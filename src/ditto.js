@@ -1,8 +1,6 @@
 import $ from "jquery";
 import config from "./config.js";
-import hljs from "./highlight.min.js";
-import { init_sidebar_section } from "./init_sidebar_section";
-import { routerpageget } from "./routerpageget";
+import { initialize } from "./initialize";
 // export { $ };
 
 export const cachemarkdown = new Map();
@@ -15,14 +13,6 @@ var ditto = {
     run: initialize,
     ...config,
 };
-async function initialize() {
-    //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
-
-    window.addEventListener("hashchange", routerpageget);
-    await init_sidebar_section();
-    await routerpageget();
-    hljs.highlightAll();
-}
 // export function show_error(err_msg) {
 //     error_id.html(err_msg);
 //     error_id.show();
