@@ -1,19 +1,18 @@
-import "./polyfill.NodeList.forEach.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-
-import vue from "vue";
-const Vue = vue;
-import app from "./app-home.vue";
 import ClipboardJS from "clipboard";
+import vue from "vue";
+import app from "./app-home.vue";
 import config from "./config.js";
 import "./ditto.css";
 import "./error-alert";
+import { guid } from "./guid.js";
 import "./hidewidthless500.css";
 import "./index.css";
-
+import "./polyfill.NodeList.forEach.js";
 import "./我的侧边栏.css";
 import "./样式.css";
-import { guid } from "./guid.js";
+
+const Vue = vue;
 
 ("use strict");
 export const initloadingid = guid();

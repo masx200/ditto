@@ -1,6 +1,6 @@
-import { 内容调整左边偏移 } from "./render.js";
 import config from "./config.js";
 import { mymounted } from "./mounted.js";
+import { 内容调整左边偏移 } from "./render.js";
 export default {
     mounted() {
         mymounted();

@@ -1,6 +1,6 @@
 "use strict";
-import { ApphomeVm } from "./mark-down-reader";
 import $ from "jquery";
+import { ApphomeVm } from "./mark-down-reader";
 
 export function myonhashchangehandler() {
     scrollTo(0, 0);

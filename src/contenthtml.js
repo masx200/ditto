@@ -1,3 +1,5 @@
+import { ApphomeVm } from "./mark-down-reader.js";
+
 const contenthtml = {
     get() {
         return ApphomeVm.$refs.markdown内容.innerHTML;
@@ -7,4 +9,3 @@ const contenthtml = {
     },
 };
 export { contenthtml };
-import { ApphomeVm } from "./mark-down-reader.js";

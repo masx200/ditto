@@ -1,8 +1,7 @@
-import { 挂载初始 } from "./render.js";
 import $ from "jquery";
-import { 内容调整左边偏移 } from "./render.js";
 import { initloadingid } from "./mark-down-reader.js";
 import { myonhashchangehandler } from "./onhashchange.js";
+import { 内容调整左边偏移, 挂载初始 } from "./render.js";
 
 export async function mymounted() {
     myonhashchangehandler();

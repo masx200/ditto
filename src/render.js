@@ -1,8 +1,8 @@
 "use strict";
-import { ApphomeVm } from "./mark-down-reader";
 import $ from "jquery";
-import ditto from "./ditto";
 import config from "./config";
+import ditto from "./ditto";
+import { ApphomeVm } from "./mark-down-reader";
 import { myonhashchangehandler } from "./onhashchange";
 export async function 挂载初始() {
     Object.assign(ditto, config);
