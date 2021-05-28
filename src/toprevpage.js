@@ -15,11 +15,21 @@ export function toprevpage() {
         console.error("没有在菜单列表中找到当前页面");
         return;
     }
+    var pageindextogo = currentpageindex - 1;
+    if (!(pageindextogo >= 0 && pageindextogo <= menulist.length - 1)) {
+        console.error("已经到达菜单列表的起始处或结尾处");
+        return;
+    }
 }
 export function tonextpage() {
     var currentpageindex = findindexexmenulist();
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {
         console.error("没有在菜单列表中找到当前页面");
+        return;
+    }
+    var pageindextogo = currentpageindex + 1;
+    if (!(pageindextogo >= 0 && pageindextogo <= menulist.length - 1)) {
+        console.error("已经到达菜单列表的起始处或结尾处");
         return;
     }
 }
