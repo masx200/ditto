@@ -1,5 +1,5 @@
 -   [markdown-reader](README.md)
--   [ditto](docs/README.md)
+-   [ditto](docs/readme.md)
 -   [How do I use ditto?](docs/how_do_i_use_ditto.md)
 -   [How does it work?](docs/how_does_it_work.md)
 -   [Why use ditto?](docs/why_use_ditto.md)
