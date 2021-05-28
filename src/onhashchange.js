@@ -2,7 +2,7 @@
 import $ from "jquery";
 import { ApphomeVm } from "./mark-down-reader";
 
-export function myonhashchangehandler() {
+export function Adjustthedistance() {
     scrollTo(0, 0);
     $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
         "padding-top",

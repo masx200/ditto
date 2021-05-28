@@ -3,7 +3,7 @@ import $ from "jquery";
 import config from "./config";
 // import ditto from "./ditto";
 import { ApphomeVm } from "./mark-down-reader";
-import { myonhashchangehandler } from "./onhashchange";
+import { Adjustthedistance } from "./onhashchange";
 import { 内容调整左边偏移 } from "./render";
 
 export async function 挂载初始() {
@@ -25,9 +25,9 @@ export async function 挂载初始() {
         $("#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95").height()
     );
 
-    window.addEventListener("hashchange", myonhashchangehandler);
+    window.addEventListener("hashchange", Adjustthedistance);
     window.addEventListener("hashchange", 内容调整左边偏移);
-    window.addEventListener("resize", myonhashchangehandler);
+    window.addEventListener("resize", Adjustthedistance);
     window.addEventListener("resize", 内容调整左边偏移);
     return ditto.run();
 }
