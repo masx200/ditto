@@ -20,16 +20,11 @@
 #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
     overflow: auto;
 }
-#cebianlantoggle-fa1acbfa95662b9c3a8474970d5a42a303d {
-    display: inline-block;
-}
+
 @media (min-width: 550px) {
     /*宽度 大 */
 
     #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
-        display: inline-block;
-    }
-    #cebianlantoggle-fa1acbfa95662b9c3a8474970d5a42a303d {
         display: inline-block;
     }
 }

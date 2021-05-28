@@ -30,9 +30,9 @@
                         >Markdown Reader</a
                     >
                     <button
+                        style="display: inline-block"
                         class="mui-btn mui-btn-primary mui-btn-outlined"
                         type="button"
-                        id="cebianlantoggle-fa1acbfa95662b9c3a8474970d5a42a303d"
                         v-on:click="togglecebian"
                     >
                         <span class="navbar-toggler-icon"></span>
