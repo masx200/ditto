@@ -37,7 +37,16 @@
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                </div>
+                <div
+                    style="
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        flex-direction: row;
+                        align-items: stretch;
+                    "
+                >
                     <button
                         class="mui-btn mui-btn-primary mui-btn-outlined"
                         type="button"
