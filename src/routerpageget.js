@@ -1,4 +1,4 @@
-import jQuery from "jquery";
+import $ from "jquery";
 import { compile_into_dom } from "./compile_into_dom";
 import { contenthtml } from "./contenthtml.js";
 import fetchajaxgettext from "./fetchajaxgettext.js";
@@ -12,8 +12,8 @@ import {
     show_loading,
     cachemarkdown,
     stop_loading,
-    $,
-    show_error,
+    // $,
+    // show_error,
 } from "./ditto";
 
 export async function routerpageget() {
@@ -51,9 +51,9 @@ export async function routerpageget() {
                 await compile_into_dom(data, path);
                 return await new Promise((r) => {
                     requestAnimationFrame(async () => {
-                        Array.from(jQuery("code.hljs")).forEach((e) => {
+                        Array.from($("code.hljs")).forEach((e) => {
                             var codecontenguid = "clip" + guid();
-                            jQuery(e).attr("id", codecontenguid)
+                            $(e).attr("id", codecontenguid)
                                 .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
                                         </button>`);
                         });
@@ -101,7 +101,7 @@ export async function routerpageget() {
                 ApphomeVm.urltext = "加载失败 " + path;
 
                 console.error("Opps! ... File not found!\n5秒后返回主页");
-                show_error("Opps! ... File not found!\n5秒后返回主页");
+                // show_error("Opps! ... File not found!\n5秒后返回主页");
                 stop_loading();
 
                 console.warn("load failed " + path);

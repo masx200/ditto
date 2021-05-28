@@ -1,9 +1,9 @@
-import jQuery from "jquery";
+import $ from "jquery";
 import config from "./config.js";
 import hljs from "./highlight.min.js";
 import { init_sidebar_section } from "./init_sidebar_section";
 import { routerpageget } from "./routerpageget";
-export const $ = jQuery;
+export { $ };
 
 export const cachemarkdown = new Map();
 ("use strict");
@@ -23,10 +23,10 @@ async function initialize() {
     await routerpageget();
     hljs.highlightAll();
 }
-export function show_error(err_msg) {
-    error_id.html(err_msg);
-    error_id.show();
-}
+// export function show_error(err_msg) {
+//     error_id.html(err_msg);
+//     error_id.show();
+// }
 export function hide_errors() {
     error_id.hide();
 }

@@ -1,28 +1,5 @@
 "use strict";
 import $ from "jquery";
-import config from "./config";
-import ditto from "./ditto";
-import { ApphomeVm } from "./mark-down-reader";
-import { myonhashchangehandler } from "./onhashchange";
-export async function 挂载初始() {
-    Object.assign(ditto, config);
-    console.log(ditto);
-    window.addEventListener("resize", () => {
-        内容调整左边偏移();
-    });
-
-    var doctitle = config.doctitle;
-    var subtitle = config.subtitle;
-
-    ditto.index = config.index;
-
-    document.title = doctitle + " " + subtitle;
-    ApphomeVm.mytitle = doctitle;
-    $("#my主体").css("padding-top", $("#my导航栏").height());
-
-    window.addEventListener("hashchange", myonhashchangehandler);
-    return ditto.run();
-}
 export function 内容调整左边偏移() {
     return new Promise((r) => {
         requestAnimationFrame(() => {

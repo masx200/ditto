@@ -3,11 +3,13 @@ import config from "./config.js";
 import { 内容调整左边偏移 } from "./render.js";
 export default {
     mounted() {
-        import("./mymounted.js").then((module) => {
+        (async () => {
+            var module = await import("./mymounted.js");
+
             console.log(module);
             var mymounted = module.mymounted;
             mymounted();
-        });
+        })();
     },
     computed: {
         indexhref() {

@@ -1,7 +1,6 @@
 import { escapemarkedunescape } from "./escapemarkedunescape";
-import fetchajaxgettext, {
-    precheckfetchajaxmarkdown,
-} from "./fetchajaxgettext.js";
+import fetchajaxgettext from "./fetchajaxgettext.js";
+import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown";
 import { getabsolutesummary } from "./getbaseurl";
 import { isrelativepath } from "./isrelativepath";
 import { ApphomeVm } from "./mark-down-reader.js";

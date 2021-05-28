@@ -1,5 +1,11 @@
-const fetchajaxgettext = async function (u) {
-    const r = await fetch(u);
+export { precheckfetchajaxmarkdown };
+async function precheckfetchajaxmarkdown(u) {
+    const r = await fetch(u, {
+        credentials: "omit",
+
+        method: "HEAD",
+        mode: "cors",
+    });
 
     if (!r.ok) {
         throw new Error("fetch failed:" + "status:" + r.status + "\n" + u);
@@ -12,7 +18,6 @@ const fetchajaxgettext = async function (u) {
                 u
         );
     } else {
-        return r.text();
+        return r;
     }
-};
-export default fetchajaxgettext;
+}

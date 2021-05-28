@@ -25,22 +25,21 @@ document.getElementById("root").innerHTML = `<div id=${initloadingid}>
 window.addEventListener(
     "load",
 
-    () => {
-        import("clipboard").then((module) => {
-            console.log(module);
-            const ClipboardJS = module.default;
+    async () => {
+        var module = await import("clipboard");
 
-            ((ClipboardJS) => {
-                new ClipboardJS(".btn").on("success", function (e) {
-                    if (!e.text) {
-                        console.log("复制内容空");
-                    } else {
-                        console.info("Text:", e.text);
-                    }
+        console.log(module);
+        const ClipboardJS = module.default;
 
-                    e.clearSelection();
-                });
-            })(ClipboardJS);
+        // ((ClipboardJS) => {
+        new ClipboardJS(".btn").on("success", function (e) {
+            if (!e.text) {
+                console.log("复制内容空");
+            } else {
+                console.info("Text:", e.text);
+            }
+
+            e.clearSelection();
         });
     },
 
