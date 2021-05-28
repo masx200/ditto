@@ -1,4 +1,4 @@
-import { config, mount } from "./mark-down-reader.js";
+import { config, mount } from "./export.js";
 Object.assign(config, {
     doctitle: "Markdown Reader",
     subtitle: "Lightweight Markdown Documentation System",

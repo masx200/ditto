@@ -16,12 +16,7 @@ const Vue = vue;
 
 ("use strict");
 export const initloadingid = "first-" + guid();
-document.getElementById("root").innerHTML = `<div id=${initloadingid}>
-<h1>loading</h1>
-<span class="mui-spinner mui-spinner-custom">
 
-</span></div>
-`;
 window.addEventListener(
     "load",
 
@@ -56,6 +51,13 @@ Vue.config.errorHandler = function (err, vm, info) {
 let ApphomeVm = new vue({ ...app });
 //console.log(ApphomeVm);
 export function mount(el) {
+    //document.getElementById("root").
+    el.innerHTML = `<div id=${initloadingid}>
+<h1>loading</h1>
+<span class="mui-spinner mui-spinner-custom">
+
+</span></div>
+`;
     ApphomeVm.$mount(el.appendChild(document.createElement("div")));
 }
 
