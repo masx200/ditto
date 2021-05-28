@@ -8,6 +8,10 @@ export function Adjustthedistance() {
         "padding-top",
         $("#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95").height()
     );
+    $(ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644).css(
+        "top",
+        $("#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95").height()
+    );
     if (window.innerWidth < 550) {
         ApphomeVm.xianshicebianlan = false;
     }
