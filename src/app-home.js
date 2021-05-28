@@ -1,9 +1,12 @@
 import config from "./config.js";
-import { mymounted } from "./mounted.js";
+//import { mymounted } from "./mymounted.js";
 import { 内容调整左边偏移 } from "./render.js";
 export default {
     mounted() {
-        mymounted();
+        import("./mymounted.js").then((module) => {
+            var mymounted = module.mymounted;
+            mymounted();
+        });
     },
     computed: {
         indexhref() {

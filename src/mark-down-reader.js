@@ -1,5 +1,5 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-import ClipboardJS from "clipboard";
+
 import vue from "vue";
 import app from "./app-home.vue";
 import config from "./config.js";
@@ -22,30 +22,40 @@ document.getElementById("root").innerHTML = `<div id=${initloadingid}>
 
 </span></div>
 `;
+window.addEventListener(
+    "load",
 
-((ClipboardJS) => {
-    new ClipboardJS(".btn").on("success", function (e) {
-        if (!e.text) {
-            console.log("复制内容空");
-        } else {
-            //   console.info("Action:", e.action);
-            console.info("Text:", e.text);
-        }
+    () => {
+        import("clipboard").then((module) => {
+            const ClipboardJS = module.default;
 
-        e.clearSelection();
-    });
-})(ClipboardJS);
+            ((ClipboardJS) => {
+                new ClipboardJS(".btn").on("success", function (e) {
+                    if (!e.text) {
+                        console.log("复制内容空");
+                    } else {
+                        console.info("Text:", e.text);
+                    }
+
+                    e.clearSelection();
+                });
+            })(ClipboardJS);
+        });
+    },
+
+    { once: true }
+);
+
 vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
 Vue.config.errorHandler = function (err, vm, info) {
     throw err;
 };
-// console.log(App);
+
 let ApphomeVm = new vue({ ...app });
 console.log(ApphomeVm);
 export function mount(el) {
-    // ApphomeVm = new vue({ el: document.getElementById("root"), ...app });
     ApphomeVm.$mount(el.appendChild(document.createElement("div")));
 }
 

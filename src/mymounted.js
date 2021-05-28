@@ -10,6 +10,6 @@ export async function mymounted() {
     await 挂载初始();
     document.getElementById(initloadingid).style.display = "none";
     myonhashchangehandler();
-    // window.dispatchEvent(new Event("hashchange"));
+
     //初始化完成就隐藏侧边栏，屏幕较小的宽度生效
 }
