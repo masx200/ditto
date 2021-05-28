@@ -44,6 +44,20 @@
                     >
                         底部
                     </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="toprevpage"
+                    >
+                        前页
+                    </button>
+                    <button
+                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        type="button"
+                        v-on:click="tonextpage"
+                    >
+                        后页
+                    </button>
                 </div>
             </nav>
         </div>

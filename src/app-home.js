@@ -43,5 +43,7 @@ export default {
         scrolltobottom() {
             scrollTo(0, document.body.scrollHeight);
         },
+        toprevpage() {},
+        tonextpage() {},
     },
 };

@@ -1,7 +1,7 @@
 import { contenthtml } from "./contenthtml.js";
 import { escapemarkedunescape } from "./escapemarkedunescape";
 import hljs from "./highlight.min.js";
-import { hide_errors, stop_loading, } from "./ditto";
+import { hide_errors, stop_loading } from "./ditto";
 import $ from "jquery";
 export async function compile_into_dom(data, mdurl) {
     console.log(mdurl);
