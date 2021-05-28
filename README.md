@@ -30,24 +30,10 @@ Lightweight Markdown Documentation System based on ditto
 
 受到 `ditto` 的启发,魔改而成
 
+https://github.com/chutsu/ditto
+
 <hr></hr>
 
 [目录](summary.md)
 
 <hr></hr>
-
-# ditto
-
-https://github.com/chutsu/ditto
-
-`ditto` inspired by [flatdoc](http://ricostacruz.com/flatdoc/) is a markdown code
-documentation system, capable of producing documentation similar to
-[Three.js][2] and [Backbone.js][3], check out live demo [here][1]. It is
-designed for people who use Github Pages to host their code documentation, but
-you can also host it yourself.
-
-You want to use ditto because
-
--   Docs are in markdown
--   No build process needed (markdown files are rendered on the browser)
--   Deployable via GitHub Pages

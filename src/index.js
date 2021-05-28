@@ -5,6 +5,6 @@ Object.assign(config, {
     index: "README.md",
 
     summary: "summary.md",
-    baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader@3.2.0/",
+    baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader@latest/",
 });
 mount(document.getElementById("root"));
