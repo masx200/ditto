@@ -20,18 +20,25 @@ export async function init_sidebar_section() {
         ApphomeVm.muluhtml = await escapemarkedunescape(data);
         await new Promise((r) => {
             requestAnimationFrame(() => {
-                $(ApphomeVm.$refs.我的侧边栏).css(
+                $(
+                    ApphomeVm.$refs
+                        .Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644
+                ).css(
                     "top",
                     $(
                         "#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
                     ).height()
                 );
-                $(ApphomeVm.$refs.我的侧边栏.querySelectorAll("ul")).addClass(
-                    "navbar-nav"
-                );
-                $(ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")).addClass(
-                    `mui-btn mui-btn-primary mui-btn-outlined`
-                );
+                $(
+                    ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+                        "ul"
+                    )
+                ).addClass("navbar-nav");
+                $(
+                    ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+                        "a"
+                    )
+                ).addClass(`mui-btn mui-btn-primary mui-btn-outlined`);
                 内容调整左边偏移().then(() => r());
             });
         });
@@ -44,7 +51,9 @@ export async function init_sidebar_section() {
                     ).height()
                 );
                 var links = Array.from(
-                    ApphomeVm.$refs.我的侧边栏.querySelectorAll("a")
+                    ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+                        "a"
+                    )
                 );
                 var urls = links.map((a) => {
                     var ahref = a.getAttribute("href");

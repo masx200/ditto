@@ -17,10 +17,13 @@ export default {
         },
         muluhtml: {
             get() {
-                return this.$refs.目录内容.innerHTML;
+                return this.$refs
+                    .Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
+                    .innerHTML;
             },
             set(c) {
-                this.$refs.目录内容.innerHTML = c;
+                this.$refs.Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.innerHTML =
+                    c;
             },
         },
     },

@@ -81,14 +81,14 @@
 
         <div class="container-fluid">
             <div
-                ref="我的侧边栏"
+                ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
                 id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
                 class="el-container"
                 style="border: 1px solid white; position: fixed"
                 v-show="xianshicebianlan"
             >
                 <aside
-                    ref="目录内容"
+                    ref="Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517"
                     id="mynewsidelan-c887e2d697f11af869981691c9830ebd892"
                     class="el-aside"
                     style="background-color: white"
@@ -116,7 +116,7 @@
                     ></h5>
                     <div
                         id="content-aa867a1d8c5dfbf2abbff8bc2af55a88a36"
-                        ref="markdown内容"
+                        ref="markdowncontent_2e4c728cac441a0c48939881c2c714361a0"
                     ></div>
                 </div>
             </div>
