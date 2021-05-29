@@ -23,7 +23,9 @@ export async function 挂载初始() {
     ApphomeVm.mytitle = doctitle;
     $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
         "padding-top",
-        $("#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95").height()
+        Number(
+            $("#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95").height()
+        )
     );
 
     window.addEventListener("hashchange", Adjustthedistance);
