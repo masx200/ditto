@@ -4,7 +4,7 @@
         "registry": "https://registry.npmjs.com/"
     },
     "name": "@masx200/markdown-reader",
-    "version": "3.2.3",
+    "version": "3.2.4",
     "main": "./src/export.js",
     "types": "./src/export.d.ts",
     "scripts": {
@@ -15,14 +15,14 @@
     },
     "devDependencies": {
         "@masx200/webpack-react-vue-spa-awesome-config": "3.0.8",
-        "prettier": "2.3.0",
-        "terser": "^5.7.0",
-        "terser-webpack-plugin": "^5.1.2",
-        "typescript": "^4.2.4",
-        "tslib": "^2.2.0",
         "@types/highlight.js": "^10.1.0",
         "@types/jquery": "^3.5.5",
         "@types/marked": "^2.0.3",
+        "prettier": "2.3.0",
+        "terser": "^5.7.0",
+        "terser-webpack-plugin": "^5.1.2",
+        "tslib": "^2.2.0",
+        "typescript": "^4.2.4",
         "webpack": "^5.37.1"
     },
     "dependencies": {
