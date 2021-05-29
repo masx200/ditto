@@ -1,13 +1,10 @@
 import config from "./config.js";
-//import { mymounted } from "./mymounted.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { tonextpage, toprevpage } from "./toprevpage.js";
 export default {
     mounted() {
         (async () => {
             var module = await import("./mymounted.js");
-
-            //console.log(module);
             var mymounted = module.mymounted;
             mymounted();
         })();
@@ -17,20 +14,12 @@ export default {
             return "#" + config.index;
         },
         muluhtml: {
-            /**
-             * @returns {string}
-             */
             get() {
-                // @ts-ignore
                 return this.$refs
                     .Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
                     .innerHTML;
             },
-            /**
-             * @param {string} c
-             */
             set(c) {
-                // @ts-ignore
                 this.$refs.Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.innerHTML =
                     c;
             },
@@ -40,13 +29,11 @@ export default {
         mytitle: "",
         showerror: false,
         errorcontent: "",
-
         urltext: "",
         xianshicebianlan: true,
     }),
     methods: {
         togglecebian() {
-            // @ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;
             内容调整左边偏移();
         },

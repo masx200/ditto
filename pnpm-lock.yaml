@@ -3,6 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@masx200/webpack-react-vue-spa-awesome-config': 3.0.8
   '@types/jquery': ^3.5.5
+  '@types/marked': ^2.0.3
   clipboard: ^2.0.8
   highlight.js: ^10.7.2
   jquery: ^3.6.0
@@ -16,6 +17,7 @@ specifiers:
 
 dependencies:
   '@types/jquery': 3.5.5
+  '@types/marked': 2.0.3
   clipboard: 2.0.8
   highlight.js: 10.7.2
   jquery: 3.6.0
@@ -2330,6 +2332,10 @@ packages:
   /@types/json-schema/7.0.7:
     resolution: {integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==}
     dev: true
+
+  /@types/marked/2.0.3:
+    resolution: {integrity: sha512-lbhSN1rht/tQ+dSWxawCzGgTfxe9DB31iLgiT1ZVT5lshpam/nyOA1m3tKHRoNPctB2ukSL22JZI5Fr+WI/zYg==}
+    dev: false
 
   /@types/mini-css-extract-plugin/1.4.3_webpack-cli@4.7.0:
     resolution: {integrity: sha512-jyOSVaF4ie2jUGr1uohqeyDrp7ktRthdFxDKzTgbPZtl0QI5geEopW7UKD/DEfn0XgV1KEq/RnZlUmnrEAWbmg==}

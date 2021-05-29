@@ -1,5 +1,4 @@
 import { ApphomeVm } from "./mark-down-reader.js";
-
 const contenthtml = {
     get() {
         return ApphomeVm.$refs

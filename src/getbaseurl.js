@@ -1,5 +1,4 @@
 import config from "./config.js";
-
 export function getbaseurl() {
     return config.baseurl;
 }

@@ -2,15 +2,15 @@
 
 https://github.com/masx200/markdown-reader
 
-新版:使用 Vue 重构,取代之前用 JQuery
+使用 typescript 编写
+
+新版:使用 Vue 重构
 
 Lightweight Markdown Documentation System based on ditto
 
 轻量级 markdown 文档系统的纯前端实现
 
-文档处于 markdown 状态
-
-无需构建过程（在浏览器上呈现 markdown 文件）
+文档处于 markdown 状态,无需构建过程（在浏览器上呈现 markdown 文件）
 
 预先加载 目录 当中的 markdwon 文件到 预加载,来提升加载速度
 

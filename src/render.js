@@ -9,7 +9,7 @@ export async function 内容调整左边偏移() {
                         .offsetWidth -
                     $(
                         "#contentcontainer-9ce8d13b9be97b46e89aeea8f242169cfa1"
-                    ).offset().left;
+                    )[0].offsetLeft;
                 左边偏移量 = Math.max(左边偏移量, 20);
                 $("#contentcontainer-9ce8d13b9be97b46e89aeea8f242169cfa1").css({
                     "padding-left": 左边偏移量 + 20,

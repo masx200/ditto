@@ -2,14 +2,12 @@ export { precheckfetchajaxmarkdown };
 async function precheckfetchajaxmarkdown(u) {
     const r = await fetch(u, {
         credentials: "omit",
-
         method: "HEAD",
         mode: "cors",
     });
-
     if (!r.ok) {
         throw new Error("fetch failed:" + "status:" + r.status + "\n" + u);
-    } else if (!r.headers.get("content-type").startsWith("text/markdown")) {
+    } else if (!r.headers.get("content-type")?.startsWith("text/markdown")) {
         throw new Error(
             "fetch failed:" +
                 "content-type:" +

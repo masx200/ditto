@@ -10,7 +10,6 @@ function findindexexmenulist() {
 }
 export function toprevpage() {
     var currentpageindex = findindexexmenulist();
-
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {
         console.error("没有在菜单列表中找到当前页面");
         return;
