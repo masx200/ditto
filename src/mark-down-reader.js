@@ -60,6 +60,8 @@ let ApphomeVm = new vue({ ...app });
  * @param {Element } el
  */
 export function mount(el) {
+    const searchobj = Object.fromEntries(new URL(location.href).searchParams);
+    console.log(searchobj);
     config.baseurl = String(new URL(config.baseurl, location.href));
     console.log(config);
     //document.getElementById("root").
