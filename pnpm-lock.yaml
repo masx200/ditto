@@ -18,21 +18,21 @@ specifiers:
   webpack: ^5.37.1
 
 dependencies:
-  '@types/highlight.js': 10.1.0
-  '@types/jquery': 3.5.5
-  '@types/marked': 2.0.3
   clipboard: 2.0.8
   highlight.js: 10.7.2
   jquery: 3.6.0
   marked: 2.0.6
-  tslib: 2.2.0
   vue: 2.6.12
 
 devDependencies:
   '@masx200/webpack-react-vue-spa-awesome-config': 3.0.8
+  '@types/highlight.js': 10.1.0
+  '@types/jquery': 3.5.5
+  '@types/marked': 2.0.3
   prettier: 2.3.0
   terser: 5.7.0
   terser-webpack-plugin: 5.1.2_webpack@5.37.1
+  tslib: 2.2.0
   typescript: 4.2.4
   webpack: 5.37.1
 
@@ -2312,7 +2312,7 @@ packages:
     deprecated: This is a stub types definition. highlight.js provides its own type definitions, so you do not need this installed.
     dependencies:
       highlight.js: 10.7.2
-    dev: false
+    dev: true
 
   /@types/html-minifier-terser/5.1.1:
     resolution: {integrity: sha512-giAlZwstKbmvMk1OO7WXSj4OZ0keXAcl2TQq4LWHiiPH2ByaH7WeUzng+Qej8UPxxv+8lRTuouo0iaNDBuzIBA==}
@@ -2338,7 +2338,7 @@ packages:
     resolution: {integrity: sha512-6RXU9Xzpc6vxNrS6FPPapN1SxSHgQ336WC6Jj/N8q30OiaBZ00l1GBgeP7usjVZPivSkGUfL1z/WW6TX989M+w==}
     dependencies:
       '@types/sizzle': 2.3.3
-    dev: false
+    dev: true
 
   /@types/json-schema/7.0.7:
     resolution: {integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==}
@@ -2346,7 +2346,7 @@ packages:
 
   /@types/marked/2.0.3:
     resolution: {integrity: sha512-lbhSN1rht/tQ+dSWxawCzGgTfxe9DB31iLgiT1ZVT5lshpam/nyOA1m3tKHRoNPctB2ukSL22JZI5Fr+WI/zYg==}
-    dev: false
+    dev: true
 
   /@types/mini-css-extract-plugin/1.4.3_webpack-cli@4.7.0:
     resolution: {integrity: sha512-jyOSVaF4ie2jUGr1uohqeyDrp7ktRthdFxDKzTgbPZtl0QI5geEopW7UKD/DEfn0XgV1KEq/RnZlUmnrEAWbmg==}
@@ -2408,7 +2408,7 @@ packages:
 
   /@types/sizzle/2.3.3:
     resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
-    dev: false
+    dev: true
 
   /@types/source-list-map/0.1.2:
     resolution: {integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==}
@@ -4906,7 +4906,6 @@ packages:
 
   /highlight.js/10.7.2:
     resolution: {integrity: sha512-oFLl873u4usRM9K63j4ME9u3etNF0PLiJhSQ8rdfuL51Wn3zkD6drf9ZW0dOzjnZI22YYG24z30JcmfCZjMgYg==}
-    dev: false
 
   /hosted-git-info/2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -8667,6 +8666,7 @@ packages:
 
   /tslib/2.2.0:
     resolution: {integrity: sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==}
+    dev: true
 
   /tunnel-agent/0.6.0:
     resolution: {integrity: sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=}
