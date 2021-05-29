@@ -1,6 +1,7 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 
 import vue from "vue";
+// @ts-ignore
 import app from "./app-home.vue";
 import config from "./config.js";
 import "./ditto.css";
@@ -44,12 +45,20 @@ window.addEventListener(
 vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
-Vue.config.errorHandler = function (err, vm, info) {
+Vue.config.errorHandler = function (
+    /** @type {Error} */ err,
+    /** @type {vue} */ vm,
+    /** @type {string} */ info
+) {
+    console.error(err, vm, info);
     throw err;
 };
 
 let ApphomeVm = new vue({ ...app });
 //console.log(ApphomeVm);
+/**
+ * @param {Element } el
+ */
 export function mount(el) {
     config.baseurl = String(new URL(config.baseurl, location.href));
     console.log(config);

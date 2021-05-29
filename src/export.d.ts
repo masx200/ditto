@@ -8,6 +8,7 @@ interface Markdownreader {
     };
     mount: (el: any) => void;
 }
-declare const markdownreader: Markdownreader;
-export default markdownreader;
+declare const config: Markdownreader["config"];
+declare const mount: Markdownreader["mount"];
+export { config, mount };
 export { Markdownreader };
