@@ -1,10 +1,5 @@
 {
-    "include": [
-        "*.js",
-        "*.ts",
-        "src/*.js",
-        "src/*.ts"
-    ],
+    "include": ["*.js", "*.ts", "src/*.js", "src/*.ts"],
     "compilerOptions": {
         "pretty": true,
         "removeComments": true,
