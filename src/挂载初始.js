@@ -19,6 +19,7 @@ export async function 挂载初始() {
     ditto.index = config.index;
 
     document.title = doctitle + " " + subtitle;
+    // @ts-ignore
     ApphomeVm.mytitle = doctitle;
     $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
         "padding-top",
