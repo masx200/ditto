@@ -17,12 +17,20 @@ export default {
             return "#" + config.index;
         },
         muluhtml: {
+            /**
+             * @returns {string}
+             */
             get() {
+                // @ts-ignore
                 return this.$refs
                     .Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
                     .innerHTML;
             },
+            /**
+             * @param {string} c
+             */
             set(c) {
+                // @ts-ignore
                 this.$refs.Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.innerHTML =
                     c;
             },
@@ -38,6 +46,7 @@ export default {
     }),
     methods: {
         togglecebian() {
+            // @ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;
             内容调整左边偏移();
         },
