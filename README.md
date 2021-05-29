@@ -30,6 +30,8 @@ Lightweight Markdown Documentation System based on ditto
 
 删除不好用的 `mathjax`
 
+使用`clipboard`给代码添加复制功能
+
 受到 `ditto` 的启发,魔改而成
 
 https://github.com/chutsu/ditto
