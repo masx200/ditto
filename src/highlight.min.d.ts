@@ -1,2 +1,2 @@
-import hljs from "highlight.js";
+declare const hljs: {};
 export default hljs;

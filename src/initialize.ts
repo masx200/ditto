@@ -10,5 +10,6 @@ export async function initialize() {
     menulist.push(urlclearhash(getabsoluteindex()));
     await init_sidebar_section();
     await routerpageget();
+    //@ts-ignore
     hljs.highlightAll();
 }

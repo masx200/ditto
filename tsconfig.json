@@ -10,7 +10,7 @@
         "checkJs": true,
         "charset": "utf-8",
         "strict": true,
-        "target": "ESNEXT",
+        "target": "esnext",
         "module": "ESNEXT",
         "importHelpers": true,
         "noImplicitAny": true,
