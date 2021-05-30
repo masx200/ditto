@@ -4,7 +4,7 @@ https://github.com/masx200/markdown-reader
 
 使用 `typescript` 编写
 
-新版:使用 `Vue` 重构
+新版:使用 `Vue` 重构，下一步计划完全删除jQuery
 
 Lightweight Markdown Documentation System based on ditto
 
@@ -26,7 +26,7 @@ Lightweight Markdown Documentation System based on ditto
 
 添加 md 文件互相引用的处理，添加 md 文件引用图片的处理，
 
-根据目录的 md 文件生成侧边栏，添加翻页按钮
+根据目录的 md 文件生成侧边栏，添加前后翻页按钮
 
 删除不好用的 `mathjax`
 
