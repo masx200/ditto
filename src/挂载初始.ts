@@ -13,14 +13,14 @@ export async function 挂载初始() {
     Object.assign(ditto, config);
     //console.log(ditto);
 
-    var doctitle = config.doctitle;
+    var maintitle = config.maintitle;
     var subtitle = config.subtitle;
 
-    ditto.index = config.index;
+   
 
-    document.title = doctitle + " " + subtitle;
+    document.title = maintitle + " " + subtitle;
     // @ts-ignore
-    ApphomeVm.mytitle = doctitle;
+    ApphomeVm.mytitle = maintitle;
     $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
         "padding-top",
         Number(
