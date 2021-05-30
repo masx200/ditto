@@ -16,8 +16,6 @@ export async function 挂载初始() {
     var maintitle = config.maintitle;
     var subtitle = config.subtitle;
 
-   
-
     document.title = maintitle + " " + subtitle;
     // @ts-ignore
     ApphomeVm.mytitle = maintitle;

@@ -1,5 +1,5 @@
 export default {
-    mainitle: "markdown-reader",
+    maintitle: "markdown reader",
     subtitle: "Lightweight Markdown Documentation System",
     homepage: "README.md",
     catalogue: "summary.md",

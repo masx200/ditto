@@ -1,5 +1,5 @@
 declare const _default: {
-     mainitle: string;
+    maintitle: string;
     subtitle: string;
     homepage: string;
     catalogue: string;

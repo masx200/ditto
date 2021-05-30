@@ -15,7 +15,7 @@ export default {
     },
     computed: {
         indexhref() {
-            return "#" + config.index;
+            return "#" + config.homepage;
         },
         muluhtml: {
             /**
