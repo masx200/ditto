@@ -1,6 +1,6 @@
 import { config, mount } from "./export.js";
 Object.assign(config, {
-    mainitle: "Markdown Reader",
+    maintitle: "Markdown Reader",
     subtitle: "Lightweight Markdown Documentation System",
     homepage: "README.md",
     catalogue: "summary.md",
