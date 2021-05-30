@@ -1,8 +1,8 @@
 declare const _default: {
-    doctitle: string;
+     mainitle: string;
     subtitle: string;
-    index: string;
-    summary: string;
+    homepage: string;
+    catalogue: string;
     baseurl: string;
 };
 export default _default;
