@@ -1,10 +1,10 @@
 import { initialize } from "./initialize.js";
 export declare const cachemarkdown: Map<any, any>;
 declare var ditto: {
-    doctitle: string;
+    mainitle: string;
     subtitle: string;
-    index: string;
-    summary: string;
+    home: string;
+    catalogue: string;
     baseurl: string;
     run: typeof initialize;
 };
