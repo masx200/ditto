@@ -4,7 +4,7 @@
         "registry": "https://registry.npmjs.com/"
     },
     "name": "@masx200/markdown-reader",
-    "version": "3.2.4",
+    "version": "3.3.0",
     "main": "./src/export.js",
     "types": "./src/export.d.ts",
     "scripts": {
