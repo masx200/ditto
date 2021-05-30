@@ -3,7 +3,7 @@ export declare const cachemarkdown: Map<any, any>;
 declare var ditto: {
     mainitle: string;
     subtitle: string;
-    home: string;
+    homepage: string;
     catalogue: string;
     baseurl: string;
     run: typeof initialize;
