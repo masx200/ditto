@@ -1,7 +1,7 @@
 export default {
-    doctitle: "markdown-reader",
+    mainitle: "markdown-reader",
     subtitle: "Lightweight Markdown Documentation System",
-    index: "README.md",
-    summary: "summary.md",
+    homepage: "README.md",
+    catalogue: "summary.md",
     baseurl: location.href,
 };
