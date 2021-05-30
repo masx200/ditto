@@ -4,6 +4,8 @@ https://github.com/masx200/markdown-reader
 
 使用 `typescript` 编写
 
+使用自定义hash路由模式，来跳转markdown页面
+
 新版:使用 `Vue` 重构，下一步计划完全删除jQuery
 
 Lightweight Markdown Documentation System based on ditto
