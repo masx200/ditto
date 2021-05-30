@@ -8,7 +8,7 @@ https://github.com/masx200/markdown-reader
 
 新版:使用 `Vue` 重构，下一步计划完全删除jQuery
 
-Lightweight Markdown Documentation System based on ditto
+Lightweight Markdown Documentation System 
 
 轻量级 `markdown` 文档系统的纯前端实现
 
