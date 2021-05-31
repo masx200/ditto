@@ -4,11 +4,11 @@ https://github.com/masx200/markdown-reader
 
 使用 `typescript` 编写
 
-使用自定义hash路由模式，来跳转markdown页面
+使用自定义 hash 路由模式，来跳转 markdown 页面
 
-新版:使用 `Vue` 重构，下一步计划完全删除jQuery
+新版:使用 `Vue` 重构，下一步计划完全删除 jQuery
 
-Lightweight Markdown Documentation System 
+Lightweight Markdown Documentation System
 
 轻量级 `markdown` 文档系统的纯前端实现
 
@@ -40,8 +40,6 @@ Lightweight Markdown Documentation System
 
 https://github.com/chutsu/ditto
 
-
-
 [目录](summary.md)
 
 <hr></hr>
@@ -54,7 +52,6 @@ https://github.com/chutsu/ditto
 pnpm install
 ```
 
-
 开发运行
 
 ```
@@ -63,7 +60,6 @@ yarn tsc
 
 yarn start
 ```
-
 
 打包构建
 
@@ -81,9 +77,8 @@ https://github.com/masx200/markdown-reader/blob/master/src/index.ts
 
 `subtitle`:文档副标题
 
-`homepage`:文档首页的markdown文件
+`homepage`:文档首页的 markdown 文件
 
-`catalogue`:文档目录的markdown文件
+`catalogue`:文档目录的 markdown 文件
 
-`baseurl`:文档所在的基础URL路径，必须是绝对路径，如果文档在同一个目录下，可设置为`location.href`
-
+`baseurl`:文档所在的基础 URL 路径，必须是绝对路径，如果文档在同一个目录下，可设置为`location.href`
