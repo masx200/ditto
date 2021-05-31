@@ -34,11 +34,13 @@ Lightweight Markdown Documentation System
 
 使用`clipboard`给`markdown`中的代码添加复制功能
 
+<hr></hr>
+
 受到 `ditto` 的启发,魔改而成
 
 https://github.com/chutsu/ditto
 
-<hr></hr>
+
 
 <!-- [目录](summary.md) -->
 
