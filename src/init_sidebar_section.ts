@@ -20,8 +20,10 @@ export async function init_sidebar_section() {
     try {
         show_loading();
         const data = await fetchajaxgettext(path);
+        const markedhtml = await escapemarkedunescape(data);
+        Reflect.set(ApphomeVm, "muluhtml", markedhtml);
         // @ts-ignore
-        ApphomeVm.muluhtml = await escapemarkedunescape(data);
+        // ApphomeVm.muluhtml = await escapemarkedunescape(data);
         await /** @type {Promise<void>} */ new Promise<void>((r) => {
             requestAnimationFrame(() => {
                 $(
@@ -97,13 +99,15 @@ export async function init_sidebar_section() {
                         menulist.push(path);
                         //
                     });
+                Reflect.set(ApphomeVm, "showerror", false);
                 // @ts-ignore
-                ApphomeVm.showerror = false;
+                // ApphomeVm.showerror = false;
                 r();
             });
         });
+        var currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
         // @ts-ignore
-        var currentcontenthtml = ApphomeVm.muluhtml;
+        // var currentcontenthtml = ApphomeVm.muluhtml;
         if (!cachemarkdown.get(path)) {
             //console.log([path, currentcontenthtml]);
             cachemarkdown.set(path, currentcontenthtml);
@@ -126,10 +130,12 @@ export async function init_sidebar_section() {
 
         console.error("Opps! can't find the sidebar file to display!");
         console.warn("load failed " + path);
+        Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
         // @ts-ignore
-        ApphomeVm.errorcontent = "加载失败 " + path;
+        // ApphomeVm.errorcontent = "加载失败 " + path;
+        Reflect.set(ApphomeVm, "showerror", true);
         // @ts-ignore
-        ApphomeVm.showerror = true;
+        // ApphomeVm.showerror = true;
         throw e_4;
     }
 }

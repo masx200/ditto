@@ -12,7 +12,7 @@ export async function 挂载初始() {
     var maintitle = config.maintitle;
     var subtitle = config.subtitle;
     document.title = maintitle + " " + subtitle;
-    ApphomeVm.mytitle = maintitle;
+    Reflect.set(ApphomeVm, "mytitle", maintitle);
     $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
         "padding-top",
         Number(

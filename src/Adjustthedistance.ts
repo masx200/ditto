@@ -25,8 +25,9 @@ export async function Adjustthedistance() {
                 )
             );
             if (window.innerWidth < 550) {
+                Reflect.set(ApphomeVm, "xianshicebianlan", false);
                 //@ts-ignore
-                ApphomeVm.xianshicebianlan = false;
+                // ApphomeVm.xianshicebianlan = false;
             }
             r();
         });

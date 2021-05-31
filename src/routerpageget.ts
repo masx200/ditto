@@ -35,12 +35,15 @@ export async function routerpageget() {
 
     //console.log(path);
     // @ts-ignore
-    if (path !== ApphomeVm.urltext) {
+    //
+    if (path !== Reflect.get(ApphomeVm, "urltext")) {
+        // if (path !== ApphomeVm.urltext) {
         const marktext = cachemarkdown.get(path);
         //console.log(cachemarkdown);
         if (marktext) {
+            Reflect.set(ApphomeVm, "urltext", path);
             // @ts-ignore
-            ApphomeVm.urltext = path;
+            // ApphomeVm.urltext = path;
 
             contenthtml.set(marktext);
             stop_loading();
@@ -49,8 +52,9 @@ export async function routerpageget() {
             show_loading();
             try {
                 const data = await fetchajaxgettext(path);
+                Reflect.set(ApphomeVm, "urltext", path);
                 // @ts-ignore
-                ApphomeVm.urltext = path;
+                // ApphomeVm.urltext = path;
                 $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
                     "padding-top",
                     Number(
@@ -92,8 +96,9 @@ export async function routerpageget() {
                                     // ?
                                     new URL(
                                         ahref,
+                                        Reflect.get(ApphomeVm, "urltext")
                                         // @ts-ignore
-                                        ApphomeVm.urltext
+                                        // ApphomeVm.urltext
                                     );
                                 // : ahref;
                                 b.hash = "#" + realmdpath;
@@ -107,8 +112,8 @@ export async function routerpageget() {
                             }
                         });
                         // @ts-ignore
-                        ApphomeVm.urltext = path;
-
+                        // ApphomeVm.urltext = path;
+                        Reflect.set(ApphomeVm, "urltext", path);
                         var currentcontenthtml = contenthtml.get();
                         //切换页面太快导致问题缓存出错,原因在于vue把他缓存了
                         if (!cachemarkdown.get(path)) {
@@ -126,8 +131,9 @@ export async function routerpageget() {
                 return;
             } catch (e_1) {
                 console.error(e_1);
+                Reflect.set(ApphomeVm, "urltext", "加载失败 " + path);
                 // @ts-ignore
-                ApphomeVm.urltext = "加载失败 " + path;
+                // ApphomeVm.urltext = "加载失败 " + path;
 
                 console.error("Opps! ... File not found!\n5秒后返回主页");
                 // show_error("Opps! ... File not found!\n5秒后返回主页");

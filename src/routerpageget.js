@@ -21,10 +21,10 @@ export async function routerpageget() {
         path = new URL(path, baseurl).toString();
     }
     path = urlclearhash(path);
-    if (path !== ApphomeVm.urltext) {
+    if (path !== Reflect.get(ApphomeVm, "urltext")) {
         const marktext = cachemarkdown.get(path);
         if (marktext) {
-            ApphomeVm.urltext = path;
+            Reflect.set(ApphomeVm, "urltext", path);
             contenthtml.set(marktext);
             stop_loading();
             return;
@@ -32,7 +32,7 @@ export async function routerpageget() {
             show_loading();
             try {
                 const data = await fetchajaxgettext(path);
-                ApphomeVm.urltext = path;
+                Reflect.set(ApphomeVm, "urltext", path);
                 $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
                     "padding-top",
                     Number(
@@ -64,7 +64,7 @@ export async function routerpageget() {
                             if (ahref?.endsWith(".md")) {
                                 var realmdpath = new URL(
                                     ahref,
-                                    ApphomeVm.urltext
+                                    Reflect.get(ApphomeVm, "urltext")
                                 );
                                 b.hash = "#" + realmdpath;
                                 a.href = b.href;
@@ -73,7 +73,7 @@ export async function routerpageget() {
                                 );
                             }
                         });
-                        ApphomeVm.urltext = path;
+                        Reflect.set(ApphomeVm, "urltext", path);
                         var currentcontenthtml = contenthtml.get();
                         if (!cachemarkdown.get(path)) {
                             cachemarkdown.set(path, currentcontenthtml);
@@ -89,7 +89,7 @@ export async function routerpageget() {
                 return;
             } catch (e_1) {
                 console.error(e_1);
-                ApphomeVm.urltext = "加载失败 " + path;
+                Reflect.set(ApphomeVm, "urltext", "加载失败 " + path);
                 console.error("Opps! ... File not found!\n5秒后返回主页");
                 stop_loading();
                 console.warn("load failed " + path);

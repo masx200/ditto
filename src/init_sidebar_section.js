@@ -17,7 +17,8 @@ export async function init_sidebar_section() {
     try {
         show_loading();
         const data = await fetchajaxgettext(path);
-        ApphomeVm.muluhtml = await escapemarkedunescape(data);
+        const markedhtml = await escapemarkedunescape(data);
+        Reflect.set(ApphomeVm, "muluhtml", markedhtml);
         await new Promise((r) => {
             requestAnimationFrame(() => {
                 $(
@@ -82,11 +83,11 @@ export async function init_sidebar_section() {
                         path = urlclearhash(path);
                         menulist.push(path);
                     });
-                ApphomeVm.showerror = false;
+                Reflect.set(ApphomeVm, "showerror", false);
                 r();
             });
         });
-        var currentcontenthtml = ApphomeVm.muluhtml;
+        var currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
         if (!cachemarkdown.get(path)) {
             cachemarkdown.set(path, currentcontenthtml);
         }
@@ -106,8 +107,8 @@ export async function init_sidebar_section() {
         stop_loading();
         console.error("Opps! can't find the sidebar file to display!");
         console.warn("load failed " + path);
-        ApphomeVm.errorcontent = "加载失败 " + path;
-        ApphomeVm.showerror = true;
+        Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
+        Reflect.set(ApphomeVm, "showerror", true);
         throw e_4;
     }
 }

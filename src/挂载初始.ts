@@ -18,8 +18,10 @@ export async function 挂载初始() {
     var subtitle = config.subtitle;
 
     document.title = maintitle + " " + subtitle;
+    Reflect.set(ApphomeVm, "mytitle", maintitle);
     // @ts-ignore
-    ApphomeVm.mytitle = maintitle;
+
+    // ApphomeVm.mytitle = maintitle;
     $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
         "padding-top",
         Number(
