@@ -42,7 +42,7 @@ https://github.com/chutsu/ditto
 
 
 
-<!-- [目录](summary.md) -->
+[目录](summary.md)
 
 <hr></hr>
 
@@ -70,3 +70,18 @@ yarn start
 ```
 yarn build
 ```
+
+## 自定义配置
+
+https://github.com/masx200/markdown-reader/blob/master/src/index.ts
+
+`maintitle`:文档主要标题
+
+`subtitle`:文档副标题
+
+`homepage`:文档首页的markdown文件
+
+`catalogue`:文档目录的markdown文件
+
+`baseurl`:文档所在的基础URL路径，必须是绝对路径，如果文档在同一个目录下，可设置为`location.href`
+
