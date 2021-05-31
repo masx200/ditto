@@ -128,6 +128,7 @@ export async function routerpageget() {
                 });
                 window.scrollTo(0, 0);
                 stop_loading();
+                Reflect.set(ApphomeVm, "showsrc", true);
                 return;
             } catch (e_1) {
                 console.error(e_1);
@@ -143,6 +144,7 @@ export async function routerpageget() {
                 requestAnimationFrame(() => {
                     location.hash = "";
                 });
+                Reflect.set(ApphomeVm, "showsrc", true);
                 throw e_1;
             }
         }

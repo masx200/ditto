@@ -38,10 +38,10 @@ export default {
         },
     },
     data: () => ({
-        mytitle: "",
+        mytitle: "Markdown Reader",
         showerror: false,
         errorcontent: "",
-
+        showsrc: false,
         urltext: "",
         xianshicebianlan: true,
         showload: true,

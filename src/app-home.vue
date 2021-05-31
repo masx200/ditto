@@ -169,6 +169,7 @@
                         class
                         id="markdownurlsrc-63228f01b0737ac6a8b1c08af92dec0eb11"
                         v-text="urltext"
+                        v-show="showsrc"
                     ></h5>
                     <h5
                         class

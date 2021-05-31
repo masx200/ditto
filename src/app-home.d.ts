@@ -12,6 +12,7 @@ declare const _default: {
         mytitle: string;
         showerror: boolean;
         errorcontent: string;
+        showsrc: boolean;
         urltext: string;
         xianshicebianlan: boolean;
         showload: boolean;
