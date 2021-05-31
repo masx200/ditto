@@ -179,11 +179,6 @@
                     ></div>
                 </div>
             </div>
-            <div id="hide-99277faba965e89bc98bd5920f3abc1c5a0"></div>
-
-            <div>
-                <h1 id="error-1a347cb1a67e183f2bbfdc8df58888f3076"></h1>
-            </div>
         </div>
     </div>
 </template>

@@ -5,7 +5,7 @@ export const cachemarkdown = new Map();
 ("use strict");
 var loading_interval;
 var loading_id = $("#loading-36bec0d286ad9ab9ca8c1d923b0095c1c06");
-var error_id = $("#error-1a347cb1a67e183f2bbfdc8df58888f3076");
+
 var ditto = {
     run: initialize,
     ...config,

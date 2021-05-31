@@ -6,20 +6,14 @@ import { initialize } from "./initialize.js";
 export const cachemarkdown = new Map();
 ("use strict");
 
-var loading_interval: NodeJS.Timeout;
+var loading_interval: number;
 var loading_id = $("#loading-36bec0d286ad9ab9ca8c1d923b0095c1c06");
-var error_id = $("#error-1a347cb1a67e183f2bbfdc8df58888f3076");
+
 var ditto = {
     run: initialize,
     ...config,
 };
-// export function show_error(err_msg) {
-//     error_id.html(err_msg);
-//     error_id.show();
-// }
-export function hide_errors() {
-    error_id.hide();
-}
+
 export function show_loading() {
     loading_id.show();
     loading_interval = setInterval(function () {

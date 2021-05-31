@@ -265,18 +265,7 @@ body {
 }
 
 #loading-36bec0d286ad9ab9ca8c1d923b0095c1c06,
-#error-1a347cb1a67e183f2bbfdc8df58888f3076 {
-    display: none;
-    position: fixed;
-
-    /* height: 17px; */
-    top: 45%;
-
-    /* margin-left: 560px; */
-
-    /* font-size: 14px; */
-    font-weight: bold;
-}
+/*  */
 
 input[type="search"] {
     display: block;
@@ -330,8 +319,4 @@ input[type="search"] {
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 .youtube_video {
     margin-top: 20px;
-}
-
-#hide-99277faba965e89bc98bd5920f3abc1c5a0 {
-    display: none;
 }
