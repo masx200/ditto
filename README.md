@@ -40,6 +40,28 @@ https://github.com/chutsu/ditto
 
 <hr></hr>
 
-[目录](summary.md)
+<!-- [目录](summary.md) -->
 
 <hr></hr>
+
+## 使用方法
+
+安装模块
+
+```
+pnpm install
+```
+
+
+开发运行
+
+```
+yarn start
+```
+
+
+打包构建
+
+```
+yarn build
+```
