@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { cachemarkdown, stop_loading } from "./ditto.js";
+import { cachemarkdown, stop_loading, show_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
 import fetchajaxgettext from "./fetchajaxgettext.js";
 import { getabsolutesummary } from "./getbaseurl.js";
@@ -15,6 +15,7 @@ export async function init_sidebar_section() {
     path = urlclearhash(path);
     menulist.push(path);
     try {
+        show_loading();
         const data = await fetchajaxgettext(path);
         ApphomeVm.muluhtml = await escapemarkedunescape(data);
         await new Promise((r) => {

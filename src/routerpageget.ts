@@ -25,7 +25,6 @@ export async function routerpageget() {
         location.hash === "" || location.hash === "#"
             ? getabsoluteindex()
             : location.hash.replace("#", "");
-    show_loading();
 
     path = path.endsWith(".md") ? path : path + ".md";
     if (isrelativepath(path)) {
@@ -42,10 +41,12 @@ export async function routerpageget() {
         if (marktext) {
             // @ts-ignore
             ApphomeVm.urltext = path;
-            stop_loading();
+
             contenthtml.set(marktext);
+            stop_loading();
             return;
         } else {
+            show_loading();
             try {
                 const data = await fetchajaxgettext(path);
                 // @ts-ignore
@@ -68,9 +69,9 @@ export async function routerpageget() {
                                         </button>`);
                         });
                         await 内容调整左边偏移();
-                        requestAnimationFrame(() => {
-                            stop_loading();
-                        });
+                        // requestAnimationFrame(() => {
+
+                        // });
 
                         //处理md文件相互引用的问题
                         // @ts-ignore
@@ -119,6 +120,7 @@ export async function routerpageget() {
                     });
                 });
                 window.scrollTo(0, 0);
+                stop_loading();
                 return;
             } catch (e_1) {
                 console.error(e_1);

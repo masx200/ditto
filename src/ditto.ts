@@ -23,7 +23,7 @@ export function show_loading() {
 export function stop_loading() {
     // clearInterval(loading_interval);
     loading_id.hide();
-    $("#loadingparent-b80f303d89182a8e58b02981c0822deb975").hide();
+    // $("#loadingparent-b80f303d89182a8e58b02981c0822deb975").hide();
 }
 
 export default ditto;
