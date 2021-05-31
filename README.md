@@ -71,6 +71,8 @@ yarn start
 yarn build
 ```
 
+打包之后的文件存放在`dist`目录下，可直接部署到云服务器上
+
 ## 自定义配置
 
 https://github.com/masx200/markdown-reader/blob/master/src/index.ts
