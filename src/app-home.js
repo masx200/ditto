@@ -1,7 +1,12 @@
 import config from "./config.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { tonextpage, toprevpage } from "./toprevpage.js";
-export default {
+import { defineComponent } from "@vue/composition-api";
+export default defineComponent({
+    setup(props, { attrs, slots, emit }) {
+        console.log({ props, attrs, slots, emit });
+        return {};
+    },
     mounted() {
         (async () => {
             var module = await import("./mymounted.js");
@@ -48,4 +53,4 @@ export default {
         toprevpage: toprevpage,
         tonextpage: tonextpage,
     },
-};
+});
