@@ -45,7 +45,7 @@ export function mount(el) {
         value && (config[key] = value);
     });
     config.baseurl = String(new URL(config.baseurl, location.href));
-    console.log(config);
+    console.log("config", config);
     el.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">

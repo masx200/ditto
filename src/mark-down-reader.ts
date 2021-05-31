@@ -70,7 +70,7 @@ export function mount(el: Element) {
         value && (config[key] = value);
     });
     config.baseurl = String(new URL(config.baseurl, location.href));
-    console.log(config);
+    console.log("config", config);
     //document.getElementById("root").
     el.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
