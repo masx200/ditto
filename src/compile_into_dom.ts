@@ -1,13 +1,9 @@
 import $ from "jquery";
 import { contenthtml } from "./contenthtml.js";
-import { hide_errors, stop_loading } from "./ditto.js";
+import { stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
 import hljs from "./highlight.min.js";
 export async function compile_into_dom(data: string, mdurl: string | URL) {
-    //console.log(mdurl);
-
-    hide_errors();
-
     data = await escapemarkedunescape(data);
 
     //修改img的路径为相对md文件的路径

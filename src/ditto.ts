@@ -6,7 +6,7 @@ import { initialize } from "./initialize.js";
 export const cachemarkdown = new Map();
 ("use strict");
 
-var loading_interval: number;
+var loading_interval: NodeJS.Timeout;
 var loading_id = $("#loading-36bec0d286ad9ab9ca8c1d923b0095c1c06");
 
 var ditto = {

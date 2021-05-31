@@ -5,14 +5,10 @@ export const cachemarkdown = new Map();
 ("use strict");
 var loading_interval;
 var loading_id = $("#loading-36bec0d286ad9ab9ca8c1d923b0095c1c06");
-
 var ditto = {
     run: initialize,
     ...config,
 };
-export function hide_errors() {
-    error_id.hide();
-}
 export function show_loading() {
     loading_id.show();
     loading_interval = setInterval(function () {
