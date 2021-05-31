@@ -29,12 +29,11 @@ export default defineComponent({
         },
         muluhtml: {
             get() {
-                return this.$refs
-                    .Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
-                    .innerHTML;
+                return Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
+                    .value.innerHTML;
             },
             set(c) {
-                this.$refs.Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.innerHTML =
+                Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.value.innerHTML =
                     c;
             },
         },
@@ -63,3 +62,4 @@ export default defineComponent({
         tonextpage: tonextpage,
     },
 });
+//# sourceMappingURL=app-home.js.map

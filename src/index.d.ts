@@ -1,1 +1,2 @@
-export {};
+import "./error-alert.js";
+import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";

@@ -1,6 +1,5 @@
-import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-import VueCompositionAPI from "@vue/composition-api";
-import vue from "vue";
+//import VueCompositionAPI from "@vue/composition-api";
+import Vue from "vue";
 // @ts-ignore
 import app from "./app-home.vue";
 import config from "./config.js";
@@ -12,8 +11,8 @@ import "./index.css";
 import "./polyfill.NodeList.forEach.js";
 import "./我的侧边栏.css";
 import "./样式.css";
-const Vue = vue;
-Vue.use(VueCompositionAPI);
+//const Vue = vue;
+
 console.log(app);
 
 ("use strict");
@@ -43,19 +42,19 @@ window.addEventListener(
     { once: true }
 );
 
-vue.config.devtools = true;
+Vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
 Vue.config.errorHandler = function (
     /** @type {Error} */ err: Error,
-    /** @type {vue} */ vm: vue,
+    /** @type {vue} */ vm: Vue,
     /** @type {string} */ info: string
 ) {
     console.error(err, vm, info);
     throw err;
 };
 // @ts-ignore
-const ApphomeVm: Vue = new vue({ ...app });
+const ApphomeVm: Vue = new Vue({ ...app });
 console.log(ApphomeVm);
 /**
  * @param {Element } el

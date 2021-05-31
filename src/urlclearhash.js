@@ -4,3 +4,4 @@ export function urlclearhash(path) {
     path = tmpurl.href;
     return path.split("#")[0];
 }
+//# sourceMappingURL=urlclearhash.js.map

@@ -10,3 +10,4 @@ const contenthtml = {
     },
 };
 export { contenthtml };
+//# sourceMappingURL=contenthtml.js.map

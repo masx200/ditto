@@ -1,6 +1,4 @@
-import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-import VueCompositionAPI from "@vue/composition-api";
-import vue from "vue";
+import Vue from "vue";
 import app from "./app-home.vue";
 import config from "./config.js";
 import "./ditto.css";
@@ -10,8 +8,6 @@ import "./index.css";
 import "./polyfill.NodeList.forEach.js";
 import "./我的侧边栏.css";
 import "./样式.css";
-const Vue = vue;
-Vue.use(VueCompositionAPI);
 console.log(app);
 ("use strict");
 export const initloadingid = "first-" + guid();
@@ -27,14 +23,14 @@ window.addEventListener(
     },
     { once: true }
 );
-vue.config.devtools = true;
+Vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
 Vue.config.errorHandler = function (err, vm, info) {
     console.error(err, vm, info);
     throw err;
 };
-const ApphomeVm = new vue({ ...app });
+const ApphomeVm = new Vue({ ...app });
 console.log(ApphomeVm);
 export function mount(el) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);
@@ -55,3 +51,4 @@ export function mount(el) {
 }
 export { ApphomeVm };
 export { config };
+//# sourceMappingURL=mark-down-reader.js.map

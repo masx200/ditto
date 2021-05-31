@@ -13,3 +13,4 @@ function fn2(e) {
     const { reason } = e;
     alert([String(e), String(reason), reason?.stack].join("\n"));
 }
+//# sourceMappingURL=error-alert.js.map

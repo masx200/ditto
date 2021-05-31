@@ -11,3 +11,4 @@ export async function initialize() {
     await routerpageget();
     hljs.highlightAll();
 }
+//# sourceMappingURL=initialize.js.map

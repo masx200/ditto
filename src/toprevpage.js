@@ -34,3 +34,4 @@ export function tonextpage() {
     }
     location.hash = menulist[pageindextogo];
 }
+//# sourceMappingURL=toprevpage.js.map

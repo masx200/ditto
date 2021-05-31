@@ -1,4 +1,4 @@
-import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
+import Vue from "vue";
 import config from "./config.js";
 import "./ditto.css";
 import "./error-alert.js";

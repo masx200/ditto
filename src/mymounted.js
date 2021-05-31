@@ -17,3 +17,4 @@ export async function mymounted() {
     initloadele && (initloadele.style.display = "none");
     await Adjustthedistance();
 }
+//# sourceMappingURL=mymounted.js.map

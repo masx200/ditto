@@ -37,16 +37,15 @@ export default defineComponent({
              */
             get(): string {
                 // @ts-ignore
-                return this.$refs
-                    .Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
-                    .innerHTML;
+                return Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
+                    .value.innerHTML;
             },
             /**
              * @param {string} c
              */
             set(c: string) {
                 // @ts-ignore
-                this.$refs.Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.innerHTML =
+                Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.value.innerHTML =
                     c;
             },
         },

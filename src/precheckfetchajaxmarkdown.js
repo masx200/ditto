@@ -19,3 +19,4 @@ async function precheckfetchajaxmarkdown(u) {
         return r;
     }
 }
+//# sourceMappingURL=precheckfetchajaxmarkdown.js.map

@@ -15,3 +15,4 @@ const fetchajaxgettext = async function (u) {
     }
 };
 export default fetchajaxgettext;
+//# sourceMappingURL=fetchajaxgettext.js.map
