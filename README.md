@@ -58,6 +58,9 @@ pnpm install
 开发运行
 
 ```
+
+yarn tsc
+
 yarn start
 ```
 
