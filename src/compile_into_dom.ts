@@ -1,4 +1,4 @@
-import $ from "jquery";
+// import $ from "jquery";
 import { contenthtml } from "./contenthtml.js";
 import { stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
@@ -34,7 +34,9 @@ export async function compile_into_dom(data: string, mdurl: string | URL) {
         requestAnimationFrame(() => {
             stop_loading();
 
-            Array.from($("pre code")).forEach(function (block) {
+            Array.from(document.querySelectorAll("pre code")).forEach(function (
+                block
+            ) {
                 //@ts-ignore
                 hljs.highlightElement(block);
                 /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0

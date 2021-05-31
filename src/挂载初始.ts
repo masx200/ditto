@@ -2,6 +2,7 @@
 import $ from "jquery";
 import { Adjustthedistance } from "./Adjustthedistance.js";
 import config from "./config.js";
+import { initialize } from "./initialize.js";
 // import ditto from "./ditto";
 import { ApphomeVm } from "./mark-down-reader.js";
 import { 内容调整左边偏移 } from "./render.js";
@@ -30,5 +31,6 @@ export async function 挂载初始() {
     window.addEventListener("hashchange", 内容调整左边偏移);
     window.addEventListener("resize", Adjustthedistance);
     window.addEventListener("resize", 内容调整左边偏移);
-    return ditto.run();
+    // return ditto.run();
+    return initialize();
 }

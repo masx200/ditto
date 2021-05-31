@@ -44,6 +44,7 @@ export default {
 
         urltext: "",
         xianshicebianlan: true,
+        showload: true,
     }),
     methods: {
         togglecebian() {

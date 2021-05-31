@@ -56,13 +56,13 @@ Vue.config.errorHandler = function (
 };
 // @ts-ignore
 const ApphomeVm: Vue = new vue({ ...app });
-//console.log(ApphomeVm);
+console.log(ApphomeVm);
 /**
  * @param {Element } el
  */
 export function mount(el: Element) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);
-    console.log(searchobj);
+    console.log("search", searchobj);
 
     Object.keys(config).forEach((key) => {
         let value = searchobj[key];

@@ -14,6 +14,7 @@ declare const _default: {
         errorcontent: string;
         urltext: string;
         xianshicebianlan: boolean;
+        showload: boolean;
     };
     methods: {
         togglecebian(): void;

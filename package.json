@@ -11,7 +11,8 @@
         "start": "webpack-react-vue-spa-awesome-config start",
         "build": "tsc && webpack-react-vue-spa-awesome-config build   ",
         "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.ts */*.html */**/*.js */*.css */*.md */*.json */*.vue */*.js",
-        "tsc": "tsc"
+        "tsc": "tsc ",
+        "watch": "tsc  --watch"
     },
     "devDependencies": {
         "@masx200/webpack-react-vue-spa-awesome-config": "3.0.8",

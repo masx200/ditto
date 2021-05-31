@@ -156,7 +156,10 @@
         </div>
         <div id="mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3" class="container">
             <div id="loadingparent-b80f303d89182a8e58b02981c0822deb975">
-                <div id="loading-36bec0d286ad9ab9ca8c1d923b0095c1c06">
+                <div
+                    id="loading-36bec0d286ad9ab9ca8c1d923b0095c1c06"
+                    v-show="showload"
+                >
                     <h1>Loading ...</h1>
                 </div>
             </div>

@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { contenthtml } from "./contenthtml.js";
 import { stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
@@ -22,7 +21,9 @@ export async function compile_into_dom(data, mdurl) {
     return new Promise((r) => {
         requestAnimationFrame(() => {
             stop_loading();
-            Array.from($("pre code")).forEach(function (block) {
+            Array.from(document.querySelectorAll("pre code")).forEach(function (
+                block
+            ) {
                 hljs.highlightElement(block);
             });
             r();

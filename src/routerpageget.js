@@ -44,7 +44,9 @@ export async function routerpageget() {
                 await compile_into_dom(data, path);
                 await new Promise((r) => {
                     requestAnimationFrame(async () => {
-                        Array.from($("code.hljs")).forEach((e) => {
+                        Array.from(
+                            document.querySelectorAll("code.hljs")
+                        ).forEach((e) => {
                             var codecontenguid = "clip" + guid();
                             $(e).attr("id", codecontenguid)
                                 .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制

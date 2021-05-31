@@ -31,6 +31,7 @@ export default {
         errorcontent: "",
         urltext: "",
         xianshicebianlan: true,
+        showload: true,
     }),
     methods: {
         togglecebian() {
