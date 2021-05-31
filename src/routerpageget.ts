@@ -1,20 +1,15 @@
 import $ from "jquery";
 import { compile_into_dom } from "./compile_into_dom.js";
 import { contenthtml } from "./contenthtml.js";
+import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
 import fetchajaxgettext from "./fetchajaxgettext.js";
 import { getabsoluteindex, getbaseurl } from "./getbaseurl.js";
 import { guid } from "./guid.js";
 import { isrelativepath } from "./isrelativepath.js";
 import { ApphomeVm, initloadingid } from "./mark-down-reader.js";
+import { markdowncontent_2e4c728cac441a0c48939881c2c714361a0 } from "./refele.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { urlclearhash } from "./urlclearhash.js";
-import {
-    show_loading,
-    cachemarkdown,
-    stop_loading,
-    // $,
-    // show_error,
-} from "./ditto.js";
 
 export async function routerpageget() {
     const baseurl = getbaseurl();
@@ -83,7 +78,7 @@ export async function routerpageget() {
                         // @ts-ignore
                         var links: HTMLAnchorElement[] = Array.from(
                             // @ts-ignore
-                            ApphomeVm.$refs.markdowncontent_2e4c728cac441a0c48939881c2c714361a0.querySelectorAll(
+                            markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.querySelectorAll(
                                 "a"
                             )
                         );

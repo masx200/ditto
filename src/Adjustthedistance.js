@@ -1,6 +1,7 @@
 "use strict";
 import $ from "jquery";
 import { ApphomeVm } from "./mark-down-reader.js";
+import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.js";
 export async function Adjustthedistance() {
     return new Promise((r) => {
         requestAnimationFrame(() => {
@@ -12,9 +13,7 @@ export async function Adjustthedistance() {
                     ).height()
                 )
             );
-            $(
-                ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644
-            ).css(
+            $(Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value).css(
                 "top",
                 Number(
                     $(

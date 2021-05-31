@@ -1,5 +1,4 @@
-import { ApphomeVm } from "./mark-down-reader.js";
-
+import { markdowncontent_2e4c728cac441a0c48939881c2c714361a0 } from "./refele.js";
 const contenthtml = {
     /*
     
@@ -8,16 +7,12 @@ const contenthtml = {
         return (
             //@ts-ignore
             //@ts-ignore
-            (
-                ApphomeVm.$refs
-                    .markdowncontent_2e4c728cac441a0c48939881c2c714361a0 as Element
-            ).innerHTML
+            markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.innerHTML
         );
     },
     set(c: string) {
         //@ts-ignore
-        ApphomeVm.$refs.markdowncontent_2e4c728cac441a0c48939881c2c714361a0.innerHTML =
-            c;
+        markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.innerHTML = c;
     },
 };
 export { contenthtml };

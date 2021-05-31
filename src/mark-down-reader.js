@@ -1,13 +1,10 @@
 import Vue from "vue";
 import app from "./app-home.vue";
 import config from "./config.js";
-import "./ditto.css";
 import "./error-alert.js";
 import { guid } from "./guid.js";
-import "./index.css";
 import "./polyfill.NodeList.forEach.js";
-import "./我的侧边栏.css";
-import "./样式.css";
+import "./styles.js";
 console.log(app);
 ("use strict");
 export const initloadingid = "first-" + guid();

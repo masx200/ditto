@@ -3,16 +3,13 @@ import Vue from "vue";
 // @ts-ignore
 import app from "./app-home.vue";
 import config from "./config.js";
-import "./ditto.css";
+
 import "./error-alert.js";
 import { guid } from "./guid.js";
-//import "./hidewidthless500.css";
-import "./index.css";
-import "./polyfill.NodeList.forEach.js";
-import "./我的侧边栏.css";
-import "./样式.css";
-//const Vue = vue;
 
+import "./polyfill.NodeList.forEach.js";
+
+import "./styles.js";
 console.log(app);
 
 ("use strict");

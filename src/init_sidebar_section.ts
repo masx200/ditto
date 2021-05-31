@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { cachemarkdown, stop_loading, show_loading } from "./ditto.js";
+import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
 import fetchajaxgettext from "./fetchajaxgettext.js";
 import { getabsolutesummary } from "./getbaseurl.js";
@@ -7,6 +7,7 @@ import { isrelativepath } from "./isrelativepath.js";
 import { ApphomeVm } from "./mark-down-reader.js";
 import { menulist } from "./menulist.js";
 import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.js";
+import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.js";
 import { 内容调整左边偏移 } from "./render.js";
 import { urlclearhash } from "./urlclearhash.js";
 export async function init_sidebar_section() {
@@ -26,10 +27,7 @@ export async function init_sidebar_section() {
         // ApphomeVm.muluhtml = await escapemarkedunescape(data);
         await /** @type {Promise<void>} */ new Promise<void>((r) => {
             requestAnimationFrame(() => {
-                $(
-                    ApphomeVm.$refs
-                        .Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644
-                ).css(
+                $(Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value).css(
                     "top",
                     Number(
                         $(
@@ -39,13 +37,13 @@ export async function init_sidebar_section() {
                 );
                 $(
                     // @ts-ignore
-                    ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
                         "ul"
                     )
                 ).addClass("navbar-nav");
                 $(
                     // @ts-ignore
-                    ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
                         "a"
                     )
                 ).addClass(`mui-btn mui-btn-primary mui-btn-outlined`);
@@ -64,7 +62,7 @@ export async function init_sidebar_section() {
                 );
                 var links: HTMLAnchorElement[] = Array.from(
                     // @ts-ignore
-                    ApphomeVm.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
                         "a"
                     )
                 );
