@@ -1,4 +1,5 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
+import VueCompositionAPI from "@vue/composition-api";
 import vue from "vue";
 // @ts-ignore
 import app from "./app-home.vue";
@@ -11,10 +12,9 @@ import "./index.css";
 import "./polyfill.NodeList.forEach.js";
 import "./我的侧边栏.css";
 import "./样式.css";
-
-console.log(app);
-
 const Vue = vue;
+Vue.use(VueCompositionAPI);
+console.log(app);
 
 ("use strict");
 export const initloadingid = "first-" + guid();
@@ -30,11 +30,11 @@ window.addEventListener(
 
         // ((ClipboardJS) => {
         new ClipboardJS(".btn").on("success", function (e: ClipboardJS.Event) {
-            if (!e.text) {
-                //console.log("复制内容空");
-            } else {
-                console.info("Text:", e.text);
-            }
+            // if (!e.text) {
+            //     //console.log("复制内容空");
+            // } else {
+            console.info("Text:", e.text);
+            // }
 
             e.clearSelection();
         });
@@ -66,8 +66,9 @@ export function mount(el: Element) {
 
     Object.keys(config).forEach((key) => {
         let value = searchobj[key];
+        value && Reflect.set(config, key, value);
         // @ts-ignore
-        value && (config[key] = value);
+        //
     });
     config.baseurl = String(new URL(config.baseurl, location.href));
     console.log("config", config);
