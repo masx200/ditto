@@ -55,8 +55,8 @@ export const routerpagegethandler = debounce(async function () {
                         Array.from(
                             document.querySelectorAll("code.hljs")
                         ).forEach((e) => {
-                            var codecontenguid = "clip" + guid();
-                            var codecontenguid = "clip" + guid();
+                            const codecontenguid = "clip" + guid();
+                            // var codecontenguid = "clip" + guid();
                             e.setAttribute("id", codecontenguid);
 
                             e.insertAdjacentHTML(
