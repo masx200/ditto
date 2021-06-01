@@ -41,6 +41,7 @@ export const routerpagegethandler = debounce(async function () {
 
             contenthtml.set(marktext);
             stop_loading();
+            Reflect.set(ApphomeVm, "showsrc", true);
             return;
         } else {
             show_loading();
