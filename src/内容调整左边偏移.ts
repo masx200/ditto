@@ -7,7 +7,7 @@ import {
 } from "./refele";
 
 export function 内容调整左边偏移() {
-    debounce(() => {
+    return debounce(() => {
         return new Promise<void>((r) => {
             requestAnimationFrame(() => {
                 //宽屏时把内容部分右移

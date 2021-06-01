@@ -1,10 +1,12 @@
 function debounce(fn, delay = 0) {
     var timer;
-    return (...args) => {
+    return function (...args) {
         clearTimeout(timer);
-        timer = setTimeout(function () {
-            fn(...args);
-        }, delay);
+        return new Promise((r) => {
+            timer = setTimeout(function () {
+                r(Reflect.apply(fn, null, args));
+            }, delay);
+        });
     };
 }
 export { debounce };
