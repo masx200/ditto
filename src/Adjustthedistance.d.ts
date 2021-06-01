@@ -1,1 +1,1 @@
-export declare function Adjustthedistance(): Promise<any>;
+export declare const Adjustthedistance: (...args: any[]) => Promise<any>;

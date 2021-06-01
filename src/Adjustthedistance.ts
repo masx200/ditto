@@ -5,18 +5,16 @@ import {
     mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
 } from "./refele.js";
-export function Adjustthedistance() {
-    return debounce(() => {
-        return new Promise<void>((r) => {
-            requestAnimationFrame(() => {
-                调整侧边栏和导航栏的距离();
-                调整主体部分和导航栏的距离();
+export const Adjustthedistance = debounce(() => {
+    return new Promise<void>((r) => {
+        requestAnimationFrame(() => {
+            调整侧边栏和导航栏的距离();
+            调整主体部分和导航栏的距离();
 
-                r();
-            });
+            r();
         });
-    })();
-}
+    });
+});
 
 function 调整侧边栏和导航栏的距离() {
     var height =

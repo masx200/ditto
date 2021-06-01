@@ -1,1 +1,1 @@
-export declare function 内容调整左边偏移(): Promise<any>;
+export declare const 内容调整左边偏移: (...args: any[]) => Promise<any>;

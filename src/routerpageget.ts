@@ -9,10 +9,8 @@ import { isrelativepath } from "./isrelativepath.js";
 import { ApphomeVm, initloadingid } from "./mark-down-reader.js";
 import { markdowncontent_2e4c728cac441a0c48939881c2c714361a0 } from "./refele.js";
 import { urlclearhash } from "./urlclearhash.js";
-export function routerpagegethandler() {
-    return debounce(routerpageget)();
-}
-export async function routerpageget() {
+
+export const routerpagegethandler = debounce(async function () {
     const baseurl = getbaseurl();
 
     window.scrollTo(0, 0);
@@ -143,4 +141,4 @@ export async function routerpageget() {
             }
         }
     }
-}
+});
