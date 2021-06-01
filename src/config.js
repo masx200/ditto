@@ -5,4 +5,3 @@ export default {
     catalogue: "summary.md",
     baseurl: location.href,
 };
-//# sourceMappingURL=config.js.map

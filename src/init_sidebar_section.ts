@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
 import fetchajaxgettext from "./fetchajaxgettext.js";
@@ -8,7 +7,6 @@ import { ApphomeVm } from "./mark-down-reader.js";
 import { menulist } from "./menulist.js";
 import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.js";
 import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.js";
-import { 内容调整左边偏移 } from "./render.js";
 import { urlclearhash } from "./urlclearhash.js";
 export async function init_sidebar_section() {
     // const baseurl = getbaseurl();
@@ -27,39 +25,28 @@ export async function init_sidebar_section() {
         // ApphomeVm.muluhtml = await escapemarkedunescape(data);
         await /** @type {Promise<void>} */ new Promise<void>((r) => {
             requestAnimationFrame(() => {
-                $(Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value).css(
-                    "top",
-                    Number(
-                        $(
-                            "#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
-                        ).height()
-                    )
-                );
-                $(
+                Array.from(
                     // @ts-ignore
                     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
                         "ul"
-                    )
-                ).addClass("navbar-nav");
-                $(
+                    ) as Element[]
+                ).forEach((e: Element) => e.classList.add("navbar-nav"));
+                Array.from(
                     // @ts-ignore
                     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
                         "a"
+                    ) as Element[]
+                ).forEach((e: Element) =>
+                    e.classList.add(
+                        ..."mui-btn mui-btn-primary mui-btn-outlined".split(" ")
                     )
-                ).addClass(`mui-btn mui-btn-primary mui-btn-outlined`);
-                内容调整左边偏移().then(() => r());
+                );
+                r();
+                // 内容调整左边偏移().then(() => r());
             });
         });
         await /** @type {Promise<void>} */ new Promise<void>((r, j) => {
             requestAnimationFrame(() => {
-                $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
-                    "padding-top",
-                    Number(
-                        $(
-                            "#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
-                        ).height()
-                    )
-                );
                 var links: HTMLAnchorElement[] = Array.from(
                     // @ts-ignore
                     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(

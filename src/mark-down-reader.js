@@ -1,25 +1,17 @@
 import Vue from "vue";
+import { Adjustthedistance, 窄屏隐藏侧边栏 } from "./Adjustthedistance";
 import app from "./app-home.vue";
 import config from "./config.js";
 import "./error-alert.js";
 import { guid } from "./guid.js";
 import "./polyfill.NodeList.forEach.js";
-import "./styles.js";
+import { routerpageget } from "./routerpageget.js";
+import { 内容调整左边偏移 } from "./内容调整左边偏移";
+window.addEventListener("resize", Adjustthedistance);
+window.addEventListener("resize", 内容调整左边偏移);
 console.log(app);
 ("use strict");
 export const initloadingid = "first-" + guid();
-window.addEventListener(
-    "load",
-    async () => {
-        var module = await import("clipboard");
-        const ClipboardJS = module.default;
-        new ClipboardJS(".btn").on("success", function (e) {
-            console.info("Text:", e.text);
-            e.clearSelection();
-        });
-    },
-    { once: true }
-);
 Vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
@@ -48,4 +40,5 @@ export function mount(el) {
 }
 export { ApphomeVm };
 export { config };
-//# sourceMappingURL=mark-down-reader.js.map
+window.addEventListener("hashchange", routerpageget);
+window.addEventListener("hashchange", 窄屏隐藏侧边栏);

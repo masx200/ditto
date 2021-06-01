@@ -1,4 +1,3 @@
-// import $ from "jquery";
 import { contenthtml } from "./contenthtml.js";
 import { stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";

@@ -12,4 +12,3 @@ export function stop_loading() {
     Reflect.set(ApphomeVm, "showload", false);
 }
 export default ditto;
-//# sourceMappingURL=ditto.js.map

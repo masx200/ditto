@@ -1,7 +1,9 @@
-import "./error-alert.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
+import "./error-alert.js";
+import "./styles.js";
+
 Vue.use(VueCompositionAPI);
 
 (async () => {
@@ -19,3 +21,21 @@ Vue.use(VueCompositionAPI);
     var rootele = document.getElementById("root");
     rootele && mount(rootele);
 })();
+window.addEventListener("load", loadclipboard, { once: true });
+async function loadclipboard() {
+    var module = await import("clipboard");
+
+    //console.log(module);
+    const ClipboardJS = module.default;
+
+    // ((ClipboardJS) => {
+    new ClipboardJS(".btn").on("success", function (e: ClipboardJS.Event) {
+        // if (!e.text) {
+        //     //console.log("复制内容空");
+        // } else {
+        console.info("Text:", e.text);
+        // }
+
+        e.clearSelection();
+    });
+}

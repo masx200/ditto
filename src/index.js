@@ -1,7 +1,8 @@
-import "./error-alert.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
+import "./error-alert.js";
+import "./styles.js";
 Vue.use(VueCompositionAPI);
 (async () => {
     const module = await import("./export.js");
@@ -16,4 +17,12 @@ Vue.use(VueCompositionAPI);
     var rootele = document.getElementById("root");
     rootele && mount(rootele);
 })();
-//# sourceMappingURL=index.js.map
+window.addEventListener("load", loadclipboard, { once: true });
+async function loadclipboard() {
+    var module = await import("clipboard");
+    const ClipboardJS = module.default;
+    new ClipboardJS(".btn").on("success", function (e) {
+        console.info("Text:", e.text);
+        e.clearSelection();
+    });
+}

@@ -5,10 +5,8 @@ import { menulist } from "./menulist.js";
 import { getabsoluteindex } from "./getbaseurl.js";
 import { urlclearhash } from "./urlclearhash.js";
 export async function initialize() {
-    window.addEventListener("hashchange", routerpageget);
     menulist.push(urlclearhash(getabsoluteindex()));
     await init_sidebar_section();
     await routerpageget();
     hljs.highlightAll();
 }
-//# sourceMappingURL=initialize.js.map

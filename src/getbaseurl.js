@@ -8,4 +8,3 @@ export function getabsoluteindex() {
 export function getabsolutesummary() {
     return String(new URL(config.catalogue, config.baseurl));
 }
-//# sourceMappingURL=getbaseurl.js.map

@@ -1,4 +1,3 @@
-import $ from "jquery";
 import { compile_into_dom } from "./compile_into_dom.js";
 import { contenthtml } from "./contenthtml.js";
 import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
@@ -8,7 +7,6 @@ import { guid } from "./guid.js";
 import { isrelativepath } from "./isrelativepath.js";
 import { ApphomeVm, initloadingid } from "./mark-down-reader.js";
 import { markdowncontent_2e4c728cac441a0c48939881c2c714361a0 } from "./refele.js";
-import { 内容调整左边偏移 } from "./render.js";
 import { urlclearhash } from "./urlclearhash.js";
 export async function routerpageget() {
     const baseurl = getbaseurl();
@@ -34,14 +32,6 @@ export async function routerpageget() {
             try {
                 const data = await fetchajaxgettext(path);
                 Reflect.set(ApphomeVm, "urltext", path);
-                $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
-                    "padding-top",
-                    Number(
-                        $(
-                            "#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
-                        ).height()
-                    )
-                );
                 await compile_into_dom(data, path);
                 await new Promise((r) => {
                     requestAnimationFrame(async () => {
@@ -49,11 +39,14 @@ export async function routerpageget() {
                             document.querySelectorAll("code.hljs")
                         ).forEach((e) => {
                             var codecontenguid = "clip" + guid();
-                            $(e).attr("id", codecontenguid)
-                                .after(`<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
-                                        </button>`);
+                            var codecontenguid = "clip" + guid();
+                            e.setAttribute("id", codecontenguid);
+                            e.insertAdjacentHTML(
+                                "afterend",
+                                `<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+                                        </button>`
+                            );
                         });
-                        await 内容调整左边偏移();
                         var links = Array.from(
                             markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.querySelectorAll(
                                 "a"
@@ -69,8 +62,10 @@ export async function routerpageget() {
                                 );
                                 b.hash = "#" + realmdpath;
                                 a.href = b.href;
-                                $(a).addClass(
-                                    `mui-btn mui-btn-primary mui-btn-outlined`
+                                a.classList.add(
+                                    ..."mui-btn mui-btn-primary mui-btn-outlined".split(
+                                        " "
+                                    )
                                 );
                             }
                         });
@@ -104,4 +99,3 @@ export async function routerpageget() {
         }
     }
 }
-//# sourceMappingURL=routerpageget.js.map

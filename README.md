@@ -4,9 +4,11 @@ https://github.com/masx200/markdown-reader
 
 使用 `typescript` 编写
 
-使用自定义 hash 路由模式，来跳转 markdown 页面
+使用自定义 `hash` 路由模式，来跳转 markdown 页面
 
-新版:使用 `Vue` 重构，下一步计划完全删除 jQuery
+新版:使用 `Vue` 重构，加上`@vue/composition-api`
+
+现在已经完全删除 `jQuery`的使用
 
 Lightweight Markdown Documentation System
 
@@ -81,4 +83,6 @@ https://github.com/masx200/markdown-reader/blob/master/src/index.ts
 
 `catalogue`:文档目录的 markdown 文件
 
-`baseurl`:文档所在的基础 URL 路径，必须是绝对路径，如果文档在同一个目录下，可设置为`location.href`
+`baseurl`:文档所在的基础 URL 路径，必须是绝对路径，
+
+如果文档在同一个目录下，可设置为`location.href`

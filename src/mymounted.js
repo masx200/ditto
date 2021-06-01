@@ -1,20 +1,23 @@
-import $ from "jquery";
 import { initloadingid } from "./mark-down-reader.js";
-import { Adjustthedistance } from "./Adjustthedistance.js";
-import { 内容调整左边偏移 } from "./render.js";
+import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.js";
 import { 挂载初始 } from "./挂载初始.js";
 export async function mymounted() {
-    await Adjustthedistance();
-    $("#mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3").css(
-        "padding-top",
-        Number(
-            $("#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95").height()
-        )
-    );
-    await 内容调整左边偏移();
     await 挂载初始();
     var initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
-    await Adjustthedistance();
+    window.dispatchEvent(new Event("hashchange"));
+    window.dispatchEvent(new Event("resize"));
+    监视侧边栏变化触发事件();
 }
-//# sourceMappingURL=mymounted.js.map
+function 监视侧边栏变化触发事件() {
+    const mo = new MutationObserver((mutations) => {
+        console.log(mutations);
+        window.dispatchEvent(new Event("resize"));
+    });
+    mo.observe(Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value, {
+        attributeOldValue: true,
+        subtree: true,
+        childList: true,
+        attributes: true,
+    });
+}

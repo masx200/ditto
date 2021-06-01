@@ -1,4 +1,3 @@
-// import $ from "jquery";
 // import appHome from "./app-home.js";
 // import Vue from "vue";
 import config from "./config.js";

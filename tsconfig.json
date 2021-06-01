@@ -1,6 +1,8 @@
 {
     "include": ["*.js", "*.ts", "src/*.js", "src/*.ts"],
     "compilerOptions": {
+        "sourceMap": false,
+        "inlineSourceMap": false,
         "pretty": true,
         "removeComments": true,
         "moduleResolution": "node",
@@ -22,7 +24,6 @@
         "noFallthroughCasesInSwitch": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "forceConsistentCasingInFileNames": true,
-        "sourceMap": true
+        "forceConsistentCasingInFileNames": true
     }
 }

@@ -3,18 +3,16 @@ lockfileVersion: 5.3
 specifiers:
   '@masx200/webpack-react-vue-spa-awesome-config': 3.0.8
   '@types/highlight.js': ^10.1.0
-  '@types/jquery': ^3.5.5
   '@types/marked': ^2.0.3
   '@vue/composition-api': ^1.0.0-rc.10
   clipboard: ^2.0.8
   highlight.js: ^10.7.2
-  jquery: ^3.6.0
   marked: ^2.0.6
   prettier: 2.3.0
   terser: ^5.7.0
   terser-webpack-plugin: ^5.1.2
   tslib: ^2.2.0
-  typescript: ^4.2.4
+  typescript: ^4.3.2
   vue: ^2.6.12
   webpack: ^5.37.1
 
@@ -22,20 +20,18 @@ dependencies:
   '@vue/composition-api': 1.0.0-rc.10_vue@2.6.12
   clipboard: 2.0.8
   highlight.js: 10.7.2
-  jquery: 3.6.0
   marked: 2.0.6
   vue: 2.6.12
 
 devDependencies:
   '@masx200/webpack-react-vue-spa-awesome-config': 3.0.8
   '@types/highlight.js': 10.1.0
-  '@types/jquery': 3.5.5
   '@types/marked': 2.0.3
   prettier: 2.3.0
   terser: 5.7.0
   terser-webpack-plugin: 5.1.2_webpack@5.37.1
   tslib: 2.2.0
-  typescript: 4.2.4
+  typescript: 4.3.2
   webpack: 5.37.1
 
 packages:
@@ -2336,12 +2332,6 @@ packages:
       '@types/webpack': 4.41.29
     dev: true
 
-  /@types/jquery/3.5.5:
-    resolution: {integrity: sha512-6RXU9Xzpc6vxNrS6FPPapN1SxSHgQ336WC6Jj/N8q30OiaBZ00l1GBgeP7usjVZPivSkGUfL1z/WW6TX989M+w==}
-    dependencies:
-      '@types/sizzle': 2.3.3
-    dev: true
-
   /@types/json-schema/7.0.7:
     resolution: {integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==}
     dev: true
@@ -2406,10 +2396,6 @@ packages:
 
   /@types/scheduler/0.16.1:
     resolution: {integrity: sha512-EaCxbanVeyxDRTQBkdLb3Bvl/HK7PBK6UJjsSixB0iHKoWxE5uu2Q/DgtpOhPIojN0Zl1whvOd7PoHs2P0s5eA==}
-    dev: true
-
-  /@types/sizzle/2.3.3:
-    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
     dev: true
 
   /@types/source-list-map/0.1.2:
@@ -5518,10 +5504,6 @@ packages:
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
-
-  /jquery/3.6.0:
-    resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
-    dev: false
 
   /js-base64/2.6.4:
     resolution: {integrity: sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==}
@@ -8701,8 +8683,8 @@ packages:
       mime-types: 2.1.30
     dev: true
 
-  /typescript/4.2.4:
-    resolution: {integrity: sha512-V+evlYHZnQkaz8TRBuxTA92yZBPotr5H+WhQ7bD3hZUndx5tGOa1fuCgeSjxAzM1RiN5IzvadIXTVefuuwZCRg==}
+  /typescript/4.3.2:
+    resolution: {integrity: sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
