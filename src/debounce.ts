@@ -5,12 +5,15 @@
  *
  * @return {Function}     返回一个“去弹跳”了的函数
  */
-function debounce(fn: Function, delay: number = 0): Function {
+function debounce(
+    fn: (...arg: any[]) => any,
+    delay: number = 0
+): (...arg: any[]) => any {
     // 定时器，用来 setTimeout
     var timer: ReturnType<typeof setTimeout>;
 
     // 返回一个函数，这个函数会在一个时间区间结束后的 delay 毫秒时执行 fn 函数
-    return function (...args: any[]) {
+    return function (...args: any[]): any {
         // 保存函数调用时的上下文和参数，传递给 fn
         // var context = this;
         // var args = arguments;

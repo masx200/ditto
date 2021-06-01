@@ -1,5 +1,5 @@
 declare function debounce(
-    fn: Function,
+    fn: (...arg: any[]) => any,
     delay?: number
-): (...args: any[]) => Promise<any>;
+): (...arg: any[]) => any;
 export { debounce };

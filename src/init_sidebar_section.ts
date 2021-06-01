@@ -6,7 +6,6 @@ import { isrelativepath } from "./isrelativepath.js";
 import { ApphomeVm } from "./mark-down-reader.js";
 import { menulist } from "./menulist.js";
 import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.js";
-import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.js";
 import { urlclearhash } from "./urlclearhash.js";
 export async function init_sidebar_section() {
     // const baseurl = getbaseurl();
@@ -20,77 +19,83 @@ export async function init_sidebar_section() {
         show_loading();
         const data = await fetchajaxgettext(path);
         const markedhtml = await escapemarkedunescape(data);
-        Reflect.set(ApphomeVm, "muluhtml", markedhtml);
+
+        const tmpcontainer = document.createElement("div");
+        // Reflect.set(ApphomeVm, "muluhtml", markedhtml);
         // @ts-ignore
         // ApphomeVm.muluhtml = await escapemarkedunescape(data);
-        await /** @type {Promise<void>} */ new Promise<void>((r) => {
-            requestAnimationFrame(() => {
-                Array.from(
-                    // @ts-ignore
-                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
-                        "ul"
-                    ) as Element[]
-                ).forEach((e: Element) => e.classList.add("navbar-nav"));
-                Array.from(
-                    // @ts-ignore
-                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
-                        "a"
-                    ) as Element[]
-                ).forEach((e: Element) =>
-                    e.classList.add(
-                        ..."mui-btn mui-btn-primary mui-btn-outlined".split(" ")
+        tmpcontainer.innerHTML = markedhtml;
+        // await /** @type {Promise<void>} */ new Promise<void>((r) => {
+        //     requestAnimationFrame(() => {
+        Array.from(
+            // @ts-ignore
+            // Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.
+            tmpcontainer.querySelectorAll("ul")
+            // as Element[]
+        ).forEach((e: Element) => e.classList.add("navbar-nav"));
+        Array.from(
+            // @ts-ignore
+            // Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value
+            tmpcontainer.querySelectorAll("a")
+            //  as Element[]
+        ).forEach((e: Element) =>
+            e.classList.add(
+                ..."mui-btn mui-btn-primary mui-btn-outlined".split(" ")
+            )
+        );
+        //         r();
+        //         // 内容调整左边偏移().then(() => r());
+        //     });
+        // });
+        // await /** @type {Promise<void>} */ new Promise<void>((r, j) => {
+        //     requestAnimationFrame(() => {
+        var links: HTMLAnchorElement[] = Array.from(
+            // @ts-ignore
+            // Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value
+            tmpcontainer.querySelectorAll("a")
+        );
+        var urls = links.map((a) => {
+            var ahref = a.getAttribute("href");
+            var b = new URL(location.href);
+
+            if (ahref?.endsWith(".md")) {
+                var realmdpath = isrelativepath(ahref)
+                    ? new URL(ahref, summaryfile)
+                    : ahref;
+                b.hash = "#" + realmdpath;
+
+                a.href = b.href;
+                //console.log(a.href);
+            }
+            return b;
+        });
+        urls.map((e) => e.hash)
+            .filter((e_1) => e_1.startsWith("#"))
+            .map((e_2) => e_2.slice(1))
+            .forEach((e_3) => {
+                //console.log(e_3);
+                //不管相对路径还是绝对路径都行
+                var path = String(
+                    new URL(
+                        e_3.endsWith(".md") ? e_3 : e_3 + ".md",
+                        summaryfile
                     )
                 );
-                r();
-                // 内容调整左边偏移().then(() => r());
+                path = urlclearhash(path);
+
+                //
+                menulist.push(path);
+                //
             });
-        });
-        await /** @type {Promise<void>} */ new Promise<void>((r, j) => {
-            requestAnimationFrame(() => {
-                var links: HTMLAnchorElement[] = Array.from(
-                    // @ts-ignore
-                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value.querySelectorAll(
-                        "a"
-                    )
-                );
-                var urls = links.map((a) => {
-                    var ahref = a.getAttribute("href");
-                    var b = new URL(location.href);
-
-                    if (ahref?.endsWith(".md")) {
-                        var realmdpath = isrelativepath(ahref)
-                            ? new URL(ahref, summaryfile)
-                            : ahref;
-                        b.hash = "#" + realmdpath;
-
-                        a.href = b.href;
-                        //console.log(a.href);
-                    }
-                    return b;
-                });
-                urls.map((e) => e.hash)
-                    .filter((e_1) => e_1.startsWith("#"))
-                    .map((e_2) => e_2.slice(1))
-                    .forEach((e_3) => {
-                        //console.log(e_3);
-                        //不管相对路径还是绝对路径都行
-                        var path = new URL(
-                            e_3.endsWith(".md") ? e_3 : e_3 + ".md",
-                            summaryfile
-                        ).toString();
-                        path = urlclearhash(path);
-
-                        //
-                        menulist.push(path);
-                        //
-                    });
-                Reflect.set(ApphomeVm, "showerror", false);
-                // @ts-ignore
-                // ApphomeVm.showerror = false;
-                r();
-            });
-        });
-        var currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
+        Reflect.set(ApphomeVm, "showerror", false);
+        // @ts-ignore
+        // ApphomeVm.showerror = false;
+        //         r();
+        //     });
+        // });
+        console.log(tmpcontainer);
+        Reflect.set(ApphomeVm, "muluhtml", tmpcontainer.innerHTML);
+        const currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
         // @ts-ignore
         // var currentcontenthtml = ApphomeVm.muluhtml;
         if (!cachemarkdown.get(path)) {
@@ -108,6 +113,7 @@ export async function init_sidebar_section() {
         menulist.forEach((path) => {
             precheckfetchajaxmarkdown(path);
         });
+
         return;
     } catch (e_4) {
         console.error(e_4);
