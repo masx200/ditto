@@ -5,10 +5,7 @@
  *
  * @return {Function}     返回一个“去弹跳”了的函数
  */
-function debounce(
-    fn: Function,
-    delay: number = 0
-): (...args: any[]) => Promise<any> {
+function debounce(fn: Function, delay: number = 0): Function {
     // 定时器，用来 setTimeout
     var timer: ReturnType<typeof setTimeout>;
 
@@ -23,12 +20,11 @@ function debounce(
 
         // 当返回的函数被最后一次调用后（也就是用户停止了某个连续的操作），
         // 再过 delay 毫秒就执行 fn
-        return new Promise<any>((r) => {
-            timer = setTimeout(function () {
-                // fn.apply(nu, args);
-                r(Reflect.apply(fn, null, args));
-            }, delay);
-        });
+
+        timer = setTimeout(function () {
+            // fn.apply(nu, args);
+            Reflect.apply(fn, null, args);
+        }, delay);
     };
 }
 export { debounce };
