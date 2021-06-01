@@ -1,8 +1,10 @@
-import { contenthtml } from "./contenthtml.js";
-import { stop_loading } from "./ditto.js";
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
 import hljs from "./highlight.min.js";
-export async function compile_into_dom(data: string, mdurl: string | URL) {
+export async function compile_into_dom(
+    data: string,
+    mdurl: string | URL
+    // tmpcontainer: HTMLElement
+) {
     data = await escapemarkedunescape(data);
 
     //修改img的路径为相对md文件的路径
@@ -27,22 +29,22 @@ export async function compile_into_dom(data: string, mdurl: string | URL) {
             e.src = imgrealurl;
         }
     });
-    contenthtml.set(tmpdoc.body.innerHTML);
+    // contenthtml.set(tmpdoc.body.innerHTML);
 
-    return new Promise<void>((r) => {
-        requestAnimationFrame(() => {
-            stop_loading();
+    // return new Promise<void>((r) => {
+    //     requestAnimationFrame(() => {
+    // stop_loading();
 
-            Array.from(document.querySelectorAll("pre code")).forEach(function (
-                block
-            ) {
-                //@ts-ignore
-                hljs.highlightElement(block);
-                /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0
+    Array.from(tmpdoc.body.querySelectorAll("pre code")).forEach(function (
+        block
+    ) {
+        //@ts-ignore
+        hljs.highlightElement(block);
+        /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0
  Deprecated as of 10.7.0. Please use highlightElement now. */
-            });
-
-            r();
-        });
     });
+    return tmpdoc.body.innerHTML;
+    //     r();
+    // });
+    // });
 }

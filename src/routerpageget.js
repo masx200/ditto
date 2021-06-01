@@ -7,7 +7,6 @@ import { getabsoluteindex, getbaseurl } from "./getbaseurl.js";
 import { guid } from "./guid.js";
 import { isrelativepath } from "./isrelativepath.js";
 import { ApphomeVm, initloadingid } from "./mark-down-reader.js";
-import { markdowncontent_2e4c728cac441a0c48939881c2c714361a0 } from "./refele.js";
 import { urlclearhash } from "./urlclearhash.js";
 export const routerpagegethandler = debounce(async function () {
     const baseurl = getbaseurl();
@@ -22,9 +21,9 @@ export const routerpagegethandler = debounce(async function () {
     }
     path = urlclearhash(path);
     if (path !== Reflect.get(ApphomeVm, "urltext")) {
+        Reflect.set(ApphomeVm, "urltext", path);
         const marktext = cachemarkdown.get(path);
         if (marktext) {
-            Reflect.set(ApphomeVm, "urltext", path);
             contenthtml.set(marktext);
             stop_loading();
             Reflect.set(ApphomeVm, "showsrc", true);
@@ -33,54 +32,45 @@ export const routerpagegethandler = debounce(async function () {
             show_loading();
             try {
                 const data = await fetchajaxgettext(path);
-                Reflect.set(ApphomeVm, "urltext", path);
-                await compile_into_dom(data, path);
-                await new Promise((r) => {
-                    requestAnimationFrame(async () => {
-                        Array.from(
-                            document.querySelectorAll("code.hljs")
-                        ).forEach((e) => {
-                            const codecontenguid = "clip" + guid();
-                            e.setAttribute("id", codecontenguid);
-                            e.insertAdjacentHTML(
-                                "afterend",
-                                `<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+                const tmpcontainer = document.createElement("div");
+                tmpcontainer.innerHTML = await compile_into_dom(data, path);
+                Array.from(tmpcontainer.querySelectorAll("code.hljs")).forEach(
+                    (e) => {
+                        const codecontenguid = "clip" + guid();
+                        e.setAttribute("id", codecontenguid);
+                        e.insertAdjacentHTML(
+                            "afterend",
+                            `<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
                                         </button>`
-                            );
-                        });
-                        var links = Array.from(
-                            markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.querySelectorAll(
-                                "a"
+                        );
+                    }
+                );
+                const links = Array.from(tmpcontainer.querySelectorAll("a"));
+                links.forEach((a) => {
+                    var ahref = a.getAttribute("href");
+                    var b = new URL(location.href);
+                    if (ahref?.endsWith(".md")) {
+                        var realmdpath = new URL(
+                            ahref,
+                            Reflect.get(ApphomeVm, "urltext")
+                        );
+                        b.hash = "#" + realmdpath;
+                        a.href = b.href;
+                        a.classList.add(
+                            ..."mui-btn mui-btn-primary mui-btn-outlined".split(
+                                " "
                             )
                         );
-                        links.forEach((a) => {
-                            var ahref = a.getAttribute("href");
-                            var b = new URL(location.href);
-                            if (ahref?.endsWith(".md")) {
-                                var realmdpath = new URL(
-                                    ahref,
-                                    Reflect.get(ApphomeVm, "urltext")
-                                );
-                                b.hash = "#" + realmdpath;
-                                a.href = b.href;
-                                a.classList.add(
-                                    ..."mui-btn mui-btn-primary mui-btn-outlined".split(
-                                        " "
-                                    )
-                                );
-                            }
-                        });
-                        Reflect.set(ApphomeVm, "urltext", path);
-                        var currentcontenthtml = contenthtml.get();
-                        if (!cachemarkdown.get(path)) {
-                            cachemarkdown.set(path, currentcontenthtml);
-                        }
-                        let initloadele =
-                            document.getElementById(initloadingid);
-                        initloadele && (initloadele.style.display = "none");
-                        r();
-                    });
+                    }
                 });
+                console.log(tmpcontainer);
+                contenthtml.set(tmpcontainer.innerHTML);
+                const currentcontenthtml = contenthtml.get();
+                if (!cachemarkdown.get(path)) {
+                    cachemarkdown.set(path, currentcontenthtml);
+                }
+                let initloadele = document.getElementById(initloadingid);
+                initloadele && (initloadele.style.display = "none");
                 window.scrollTo(0, 0);
                 stop_loading();
                 Reflect.set(ApphomeVm, "showsrc", true);
