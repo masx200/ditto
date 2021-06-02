@@ -66,6 +66,8 @@ yarn start
 打包构建
 
 ```
+yarn tsc
+
 yarn build
 ```
 
