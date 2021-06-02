@@ -40,16 +40,11 @@ export default defineComponent({
             return "#" + config.homepage;
         },
         muluhtml: {
-            /**
-             * @returns {string}
-             */
             get(): string {
                 return Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
                     .value.innerHTML;
             },
-            /**
-             * @param {string} c
-             */
+
             set(c: string) {
                 Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.value.innerHTML =
                     c;

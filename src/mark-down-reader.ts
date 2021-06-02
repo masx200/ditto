@@ -27,9 +27,7 @@ Vue.config.errorHandler = function (err: Error, vm: Vue, info: string) {
 
 const ApphomeVm: Vue = new Vue({ ...app });
 console.log(ApphomeVm);
-/**
- * @param {Element } el
- */
+
 export function mount(el: Element) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);
     console.log("search", searchobj);

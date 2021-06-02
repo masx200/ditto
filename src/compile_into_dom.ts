@@ -25,8 +25,6 @@ export async function compile_into_dom(data: string, mdurl: string | URL) {
         block
     ) {
         hljs.highlightElement(block);
-        /* Deprecated as of 10.7.0. highlightBlock will be removed entirely in v12.0
- Deprecated as of 10.7.0. Please use highlightElement now. */
     });
     return tmpdoc.body.innerHTML;
 }
