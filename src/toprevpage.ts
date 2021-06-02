@@ -3,7 +3,7 @@ import { menulist } from "./menulist.js";
 function findindexexmenulist() {
     console.log(menulist);
 
-    var currentpageurl = ApphomeVm.urltext;
+    var currentpageurl = Reflect.get(ApphomeVm, "urltext");
     console.log(currentpageurl);
     var currentpageindex = menulist.findIndex((a) => a === currentpageurl);
     console.log(currentpageindex);

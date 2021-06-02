@@ -22,7 +22,7 @@ export async function compile_into_dom(data: string, mdurl: string | URL) {
     });
 
     Array.from(tmpdoc.body.querySelectorAll("pre code")).forEach(function (
-        block
+        block: Element
     ) {
         hljs.highlightElement(block);
     });

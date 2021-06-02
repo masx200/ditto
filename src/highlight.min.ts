@@ -1,3 +1,4 @@
+//@ts-nocheck
 import c from "highlight.js/lib/languages/c.js";
 
 import css from "highlight.js/lib/languages/css";
@@ -9,8 +10,8 @@ import python from "highlight.js/lib/languages/python.js";
 import shell from "highlight.js/lib/languages/shell";
 import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
-import hljsobj from "./js/highlight.min.js";
-const hljs = hljsobj;
+import hljs from "./js/highlight.min.js";
+
 export default hljs;
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("typescript", typescript);

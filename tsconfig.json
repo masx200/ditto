@@ -1,5 +1,5 @@
 {
-    "include": ["*.js", "*.ts", "src/*.js", "src/*.ts"],
+    "include": ["*.ts", "src/*.ts"],
     "compilerOptions": {
         "sourceMap": false,
         "inlineSourceMap": false,
@@ -8,8 +8,8 @@
         "moduleResolution": "node",
         "resolveJsonModule": false,
         "declaration": true,
-        "allowJs": true,
-        "checkJs": true,
+        "allowJs": false,
+        "checkJs": false,
         "charset": "utf-8",
         "strict": true,
         "target": "esnext",

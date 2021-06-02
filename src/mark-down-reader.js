@@ -20,7 +20,7 @@ Vue.config.errorHandler = function (err, vm, info) {
     console.error(err, vm, info);
     throw err;
 };
-const ApphomeVm = new Vue({ ...app });
+const ApphomeVm = new Vue(app);
 console.log(ApphomeVm);
 export function mount(el) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);

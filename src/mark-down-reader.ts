@@ -25,7 +25,7 @@ Vue.config.errorHandler = function (err: Error, vm: Vue, info: string) {
     throw err;
 };
 
-const ApphomeVm: Vue = new Vue({ ...app });
+const ApphomeVm: Vue = new Vue(app);
 console.log(ApphomeVm);
 
 export function mount(el: Element) {
