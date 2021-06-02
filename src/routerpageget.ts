@@ -13,7 +13,7 @@ export const routerpagegethandler = debounce(async function () {
     const baseurl = getbaseurl();
 
     window.scrollTo(0, 0);
-    //ie浏览器中可能为"#"
+
     var path =
         location.hash === "" || location.hash === "#"
             ? getabsoluteindex()
@@ -26,19 +26,12 @@ export const routerpagegethandler = debounce(async function () {
 
     path = urlclearhash(path);
 
-    //console.log(path);
-    // @ts-ignore
-    //
     if (path !== Reflect.get(ApphomeVm, "urltext")) {
         Reflect.set(ApphomeVm, "urltext", path);
-        // if (path !== ApphomeVm.urltext) {
-        const marktext = cachemarkdown.get(path);
-        //console.log(cachemarkdown);
-        if (marktext) {
-            // Reflect.set(ApphomeVm, "urltext", path);
-            // @ts-ignore
-            // ApphomeVm.urltext = path;
 
+        const marktext = cachemarkdown.get(path);
+
+        if (marktext) {
             contenthtml.set(marktext);
             stop_loading();
             Reflect.set(ApphomeVm, "showsrc", true);
@@ -47,12 +40,11 @@ export const routerpagegethandler = debounce(async function () {
             show_loading();
             try {
                 const data = await fetchajaxgettext(path);
-                // Reflect.set(ApphomeVm, "urltext", path);
+
                 const tmpcontainer = document.createElement("div");
 
                 tmpcontainer.innerHTML = await compile_into_dom(data, path);
-                // await new Promise<void>((r) => {
-                //     requestAnimationFrame(async () => {
+
                 Array.from(tmpcontainer.querySelectorAll("code.hljs")).forEach(
                     (e) => {
                         const codecontenguid = "clip" + guid();
@@ -66,37 +58,23 @@ export const routerpagegethandler = debounce(async function () {
                         );
                     }
                 );
-                // await 内容调整左边偏移();
-                // requestAnimationFrame(() => {
 
-                // });
-
-                //处理md文件相互引用的问题
-                // @ts-ignore
                 const links: HTMLAnchorElement[] = Array.from(
-                    // @ts-ignore
-                    // markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.
                     tmpcontainer.querySelectorAll("a")
                 );
                 links.forEach((a) => {
                     var ahref = a.getAttribute("href");
                     var b = new URL(location.href);
                     if (ahref?.endsWith(".md")) {
-                        var realmdpath =
-                            // isrelativepath(ahref)
-                            // ?
-                            new URL(
-                                ahref,
-                                Reflect.get(ApphomeVm, "urltext")
-                                // @ts-ignore
-                                // ApphomeVm.urltext
-                            );
-                        // : ahref;
+                        var realmdpath = new URL(
+                            ahref,
+                            Reflect.get(ApphomeVm, "urltext")
+                        );
+
                         b.hash = "#" + realmdpath;
 
                         a.href = b.href;
-                        //console.log(a.href);
-                        //变成按钮的形状
+
                         a.classList.add(
                             ..."mui-btn mui-btn-primary mui-btn-outlined".split(
                                 " "
@@ -104,22 +82,17 @@ export const routerpagegethandler = debounce(async function () {
                         );
                     }
                 });
-                // @ts-ignore
-                // ApphomeVm.urltext = path;
-                // Reflect.set(ApphomeVm, "urltext", path);
+
                 console.log(tmpcontainer);
                 contenthtml.set(tmpcontainer.innerHTML);
                 const currentcontenthtml = contenthtml.get();
-                //切换页面太快导致问题缓存出错,原因在于vue把他缓存了
+
                 if (!cachemarkdown.get(path)) {
-                    //console.log([path, currentcontenthtml]);
                     cachemarkdown.set(path, currentcontenthtml);
                 }
                 let initloadele = document.getElementById(initloadingid);
                 initloadele && (initloadele.style.display = "none");
-                //         r();
-                //     });
-                // });
+
                 window.scrollTo(0, 0);
                 stop_loading();
                 Reflect.set(ApphomeVm, "showsrc", true);
@@ -127,11 +100,9 @@ export const routerpagegethandler = debounce(async function () {
             } catch (e_1) {
                 console.error(e_1);
                 Reflect.set(ApphomeVm, "urltext", "加载失败 " + path);
-                // @ts-ignore
-                // ApphomeVm.urltext = "加载失败 " + path;
 
                 console.error("Opps! ... File not found!\n5秒后返回主页");
-                // show_error("Opps! ... File not found!\n5秒后返回主页");
+
                 stop_loading();
 
                 console.warn("load failed " + path);

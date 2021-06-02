@@ -1,7 +1,6 @@
-//import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
 import { Adjustthedistance } from "./Adjustthedistance";
-// @ts-ignore
+
 import app from "./app-home.vue";
 import config from "./config.js";
 import "./error-alert.js";
@@ -21,15 +20,11 @@ export const initloadingid = "first-" + guid();
 Vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
-Vue.config.errorHandler = function (
-    /** @type {Error} */ err: Error,
-    /** @type {vue} */ vm: Vue,
-    /** @type {string} */ info: string
-) {
+Vue.config.errorHandler = function (err: Error, vm: Vue, info: string) {
     console.error(err, vm, info);
     throw err;
 };
-// @ts-ignore
+
 const ApphomeVm: Vue = new Vue({ ...app });
 console.log(ApphomeVm);
 /**
@@ -42,12 +37,10 @@ export function mount(el: Element) {
     Object.keys(config).forEach((key) => {
         let value = searchobj[key];
         value && Reflect.set(config, key, value);
-        // @ts-ignore
-        //
     });
     config.baseurl = String(new URL(config.baseurl, location.href));
     console.log("config", config);
-    //document.getElementById("root").
+
     el.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">

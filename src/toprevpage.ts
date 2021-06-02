@@ -2,7 +2,7 @@ import { ApphomeVm } from "./mark-down-reader.js";
 import { menulist } from "./menulist.js";
 function findindexexmenulist() {
     console.log(menulist);
-    // @ts-ignore
+
     var currentpageurl = ApphomeVm.urltext;
     console.log(currentpageurl);
     var currentpageindex = menulist.findIndex((a) => a === currentpageurl);

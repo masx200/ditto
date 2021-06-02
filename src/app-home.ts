@@ -1,4 +1,3 @@
-//import { mymounted } from "./mymounted.js";
 import { defineComponent, onMounted } from "@vue/composition-api";
 import config from "./config.js";
 import {
@@ -32,7 +31,6 @@ export default defineComponent({
         (async () => {
             var module = await import("./mymounted.js");
 
-            //console.log(module);
             var mymounted = module.mymounted;
             mymounted();
         })();
@@ -46,7 +44,6 @@ export default defineComponent({
              * @returns {string}
              */
             get(): string {
-                // @ts-ignore
                 return Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
                     .value.innerHTML;
             },
@@ -54,7 +51,6 @@ export default defineComponent({
              * @param {string} c
              */
             set(c: string) {
-                // @ts-ignore
                 Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.value.innerHTML =
                     c;
             },
@@ -71,11 +67,7 @@ export default defineComponent({
     }),
     methods: {
         togglecebian() {
-            // @ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;
-            //使用MutationObserver监听元素的变化
-            // 内容调整左边偏移();
-            // Adjustthedistance();
         },
         scrolltotop() {
             scrollTo(0, 0);

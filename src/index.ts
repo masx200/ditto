@@ -9,7 +9,7 @@ Vue.use(VueCompositionAPI);
 (async () => {
     const module = await import("./export.js");
     const { config, mount } = module;
-    //import { config, mount } from "./export.js";
+
     Object.assign(config, {
         maintitle: "Markdown Reader",
         subtitle: "Lightweight Markdown Documentation System",
@@ -25,16 +25,10 @@ window.addEventListener("load", loadclipboard, { once: true });
 async function loadclipboard() {
     var module = await import("clipboard");
 
-    //console.log(module);
     const ClipboardJS = module.default;
 
-    // ((ClipboardJS) => {
     new ClipboardJS(".btn").on("success", function (e: ClipboardJS.Event) {
-        // if (!e.text) {
-        //     //console.log("复制内容空");
-        // } else {
         console.info("Text:", e.text);
-        // }
 
         e.clearSelection();
     });

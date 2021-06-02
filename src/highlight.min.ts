@@ -1,8 +1,5 @@
-// @ts-ignore
-//@ts-nocheck
 import c from "highlight.js/lib/languages/c.js";
-//highlight.js
-//10.2.0
+
 import css from "highlight.js/lib/languages/css";
 import java from "highlight.js/lib/languages/java.js";
 import javascript from "highlight.js/lib/languages/javascript";

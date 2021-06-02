@@ -5,11 +5,9 @@ import { menulist } from "./menulist.js";
 import { getabsoluteindex } from "./getbaseurl.js";
 import { urlclearhash } from "./urlclearhash.js";
 export async function initialize() {
-    //Deprecated as of 10.6.0. initHighlightingOnLoad() is deprecated.  Use highlightAll() instead.
-
     menulist.push(urlclearhash(getabsoluteindex()));
     await init_sidebar_section();
     await routerpagegethandler();
-    //@ts-ignore
+
     hljs.highlightAll();
 }
