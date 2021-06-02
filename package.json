@@ -1,10 +1,10 @@
-{   "version": "3.3.4",
+{
+    "version": "3.3.4",
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.com/"
     },
     "name": "@masx200/markdown-reader",
-    
     "main": "./src/export.js",
     "types": "./src/export.d.ts",
     "scripts": {
