@@ -10,7 +10,8 @@ import python from "highlight.js/lib/languages/python";
 import shell from "highlight.js/lib/languages/shell";
 import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
-import hljs from "./js/highlight.min.js";
+//@ts-ignore
+import hljs from "@highlightjs/cdn-assets/highlight.min.js";
 
 export default hljs;
 hljs.registerLanguage("javascript", javascript);
