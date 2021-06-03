@@ -1,4 +1,5 @@
-import { compile_into_dom } from "./compile_into_dom.js";
+//@ts-ignore
+import { compile_into_dom } from "./compile_into_dom.ts";
 import { contenthtml } from "./contenthtml.js";
 import { debounce } from "./debounce.js";
 import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";

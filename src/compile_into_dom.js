@@ -1,5 +1,5 @@
 import { escapemarkedunescape } from "./escapemarkedunescape.js";
-import hljs from "./highlight.min.js";
+import hljs from "./highlight.min.ts";
 export async function compile_into_dom(data, mdurl) {
     data = await escapemarkedunescape(data);
     const tmpdoc = document.implementation.createHTMLDocument("title");

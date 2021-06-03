@@ -5,7 +5,7 @@ import config from "./config.js";
 import "./error-alert.js";
 import { guid } from "./guid.js";
 import "./polyfill.NodeList.forEach.js";
-import { routerpagegethandler } from "./routerpageget.js";
+import { routerpagegethandler } from "./routerpageget.ts";
 import { 内容调整左边偏移 } from "./内容调整左边偏移";
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏";
 window.addEventListener("resize", Adjustthedistance);

@@ -1,6 +1,8 @@
-import hljs from "./highlight.min.js";
+//@ts-ignore
+import hljs from "./highlight.min.ts";
 import { init_sidebar_section } from "./init_sidebar_section.js";
-import { routerpagegethandler } from "./routerpageget.js";
+//@ts-ignore
+import { routerpagegethandler } from "./routerpageget.ts";
 import { menulist } from "./menulist.js";
 import { getabsoluteindex } from "./getbaseurl.js";
 import { urlclearhash } from "./urlclearhash.js";
