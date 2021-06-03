@@ -1,7 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.0
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.1
   '@types/highlight.js': ^10.1.0
   '@types/marked': ^2.0.3
   '@vue/composition-api': ^1.0.0-rc.10
@@ -24,7 +24,7 @@ dependencies:
   vue: 2.6.12
 
 devDependencies:
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.0
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.1
   '@types/highlight.js': 10.1.0
   '@types/marked': 2.0.3
   prettier: 2.3.0
@@ -2151,8 +2151,8 @@ packages:
       '@hapi/hoek': 8.5.1
     dev: true
 
-  /@masx200/webpack-react-vue-spa-awesome-config/3.1.0:
-    resolution: {integrity: sha512-DOqvz235FmLT4DhoS/TJd9l3ZtRceeFBmA84Q9GYtQeaCKhBFgIC1DwbQdoxyynyqHkzNMKIm1sEHj8tIkQ/YA==}
+  /@masx200/webpack-react-vue-spa-awesome-config/3.1.1:
+    resolution: {integrity: sha512-YePuRGhNOVlFiE1G/oGs/VeAuan9LxMVHpwB2RvgPPyWnfS3wvQPV/gABPExMT1rPankrHno+r623y/NPnbt7Q==}
     hasBin: true
     dependencies:
       '@babel/core': 7.14.3
