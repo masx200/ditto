@@ -11,7 +11,7 @@ import shell from "highlight.js/lib/languages/shell";
 import typescript from "highlight.js/lib/languages/typescript";
 import xml from "highlight.js/lib/languages/xml";
 //@ts-ignore
-import hljs from "../node_modules/@highlightjs/cdn-assets/highlight.min.js";
+import hljs from "@highlightjs/cdn-assets/highlight.min.js";
 
 export default hljs;
 hljs.registerLanguage("javascript", javascript);

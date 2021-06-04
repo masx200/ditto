@@ -1,13 +1,13 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@highlightjs/cdn-assets': ^11.0.0
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.2
+  '@highlightjs/cdn-assets': ^11.0.1
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.2.0
   '@types/highlight.js': ^10.1.0
   '@types/marked': ^2.0.3
   '@vue/composition-api': ^1.0.0-rc.10
   clipboard: ^2.0.8
-  highlight.js: ^11.0.0
+  highlight.js: ^11.0.1
   marked: ^2.0.7
   prettier: 2.3.0
   terser: ^5.7.0
@@ -18,15 +18,15 @@ specifiers:
   webpack: ^5.38.1
 
 dependencies:
-  '@highlightjs/cdn-assets': 11.0.0
+  '@highlightjs/cdn-assets': 11.0.1
   '@vue/composition-api': 1.0.0-rc.10_vue@2.6.13
   clipboard: 2.0.8
-  highlight.js: 11.0.0
+  highlight.js: 11.0.1
   marked: 2.0.7
   vue: 2.6.13
 
 devDependencies:
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.1.2
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.2.0
   '@types/highlight.js': 10.1.0
   '@types/marked': 2.0.3
   prettier: 2.3.0
@@ -2113,13 +2113,13 @@ packages:
       '@hapi/hoek': 8.5.1
     dev: true
 
-  /@highlightjs/cdn-assets/11.0.0:
-    resolution: {integrity: sha512-ZQ2iM7oPoUnMDRPyW4wjaWGgLy72bp54rEJ1NdJHzpRIJo4jX9Qe6Nz37bZ3+lRJjFTAH1WXVbEhIkXnCBWRmQ==}
+  /@highlightjs/cdn-assets/11.0.1:
+    resolution: {integrity: sha512-v7Qd4TRbsUZib2UkRhrMjGlKIuTxE+XlrpSDijWHYKwdPlWezTi0F+d0/xiNquc6qgeN/pZiyHIq/jXNHqnEhQ==}
     engines: {node: '>=12.0.0'}
     dev: false
 
-  /@masx200/webpack-react-vue-spa-awesome-config/3.1.2:
-    resolution: {integrity: sha512-RA0UiAi74udQTISzFHNxINVLtmX2CDqhYmmycYSgp/8LtXMRs2NN6ifJjXhe8dp4MTUaFVbMJ+OIZteH7gIjqw==}
+  /@masx200/webpack-react-vue-spa-awesome-config/3.2.0:
+    resolution: {integrity: sha512-sdFXn1tfOBTNJkU0fsfh6TfTOc0/uwPzzCSs0S/86aTQuh4NX6edIXpfJ2Kps7gGgdNOf5DnBDDfn0yF4tegFg==}
     hasBin: true
     dependencies:
       '@babel/core': 7.14.3
@@ -2131,7 +2131,7 @@ packages:
       '@babel/runtime': 7.14.0
       '@types/html-webpack-plugin': 3.2.5
       '@types/mini-css-extract-plugin': 1.4.3_webpack-cli@4.7.0
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       '@types/optimize-css-assets-webpack-plugin': 5.0.3
       '@types/react': 17.0.9
       '@types/terser-webpack-plugin': 5.0.3_webpack-cli@4.7.0
@@ -2217,7 +2217,7 @@ packages:
       fastq: 1.11.0
     dev: true
 
-  /@rollup/plugin-babel/5.3.0_@babel+core@7.14.3+rollup@2.50.5:
+  /@rollup/plugin-babel/5.3.0_@babel+core@7.14.3+rollup@2.50.6:
     resolution: {integrity: sha512-9uIC8HZOnVLrLHxayq/PTzw+uS25E14KPUBh5ktF+18Mjo5yK0ToMMx6epY0uEgkjwJw0aBW4x2horYXh8juWw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
@@ -2230,36 +2230,36 @@ packages:
     dependencies:
       '@babel/core': 7.14.3
       '@babel/helper-module-imports': 7.13.12
-      '@rollup/pluginutils': 3.1.0_rollup@2.50.5
-      rollup: 2.50.5
+      '@rollup/pluginutils': 3.1.0_rollup@2.50.6
+      rollup: 2.50.6
     dev: true
 
-  /@rollup/plugin-node-resolve/11.2.1_rollup@2.50.5:
+  /@rollup/plugin-node-resolve/11.2.1_rollup@2.50.6:
     resolution: {integrity: sha512-yc2n43jcqVyGE2sqV5/YCmocy9ArjVAP/BeXyTtADTBBX6V0e5UMqwO8CdQ0kzjb6zu5P1qMzsScCMRvE9OlVg==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.50.5
+      '@rollup/pluginutils': 3.1.0_rollup@2.50.6
       '@types/resolve': 1.17.1
       builtin-modules: 3.2.0
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.20.0
-      rollup: 2.50.5
+      rollup: 2.50.6
     dev: true
 
-  /@rollup/plugin-replace/2.4.2_rollup@2.50.5:
+  /@rollup/plugin-replace/2.4.2_rollup@2.50.6:
     resolution: {integrity: sha512-IGcu+cydlUMZ5En85jxHH4qj2hta/11BHq95iHEyb2sbgiN0eCdzvUcHw5gt9pBL5lTi4JDYJ1acCoMGpTvEZg==}
     peerDependencies:
       rollup: ^1.20.0 || ^2.0.0
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.50.5
+      '@rollup/pluginutils': 3.1.0_rollup@2.50.6
       magic-string: 0.25.7
-      rollup: 2.50.5
+      rollup: 2.50.6
     dev: true
 
-  /@rollup/pluginutils/3.1.0_rollup@2.50.5:
+  /@rollup/pluginutils/3.1.0_rollup@2.50.6:
     resolution: {integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==}
     engines: {node: '>= 8.0.0'}
     peerDependencies:
@@ -2268,7 +2268,7 @@ packages:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.3.0
-      rollup: 2.50.5
+      rollup: 2.50.6
     dev: true
 
   /@surma/rollup-plugin-off-main-thread/1.4.2:
@@ -2281,7 +2281,7 @@ packages:
   /@types/clean-css/4.2.4:
     resolution: {integrity: sha512-x8xEbfTtcv5uyQDrBXKg9Beo5QhTPqO4vM0uq4iU27/nhyRRWNEMKHjxvAb0WDvp2Mnt4Sw0jKmIi5yQF/k2Ag==}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       source-map: 0.6.1
     dev: true
 
@@ -2311,14 +2311,14 @@ packages:
     resolution: {integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==}
     dependencies:
       '@types/minimatch': 3.0.4
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
     dev: true
 
   /@types/highlight.js/10.1.0:
     resolution: {integrity: sha512-77hF2dGBsOgnvZll1vymYiNUtqJ8cJfXPD6GG/2M0aLRc29PkvB7Au6sIDjIEFcSICBhCh2+Pyq6WSRS7LUm6A==}
     deprecated: This is a stub types definition. highlight.js provides its own type definitions, so you do not need this installed.
     dependencies:
-      highlight.js: 11.0.0
+      highlight.js: 11.0.1
     dev: true
 
   /@types/html-minifier-terser/5.1.1:
@@ -2352,7 +2352,7 @@ packages:
   /@types/mini-css-extract-plugin/1.4.3_webpack-cli@4.7.0:
     resolution: {integrity: sha512-jyOSVaF4ie2jUGr1uohqeyDrp7ktRthdFxDKzTgbPZtl0QI5geEopW7UKD/DEfn0XgV1KEq/RnZlUmnrEAWbmg==}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       tapable: 2.2.0
       webpack: 5.38.1_webpack-cli@4.7.0
     transitivePeerDependencies:
@@ -2363,8 +2363,8 @@ packages:
     resolution: {integrity: sha512-1z8k4wzFnNjVK/tlxvrWuK5WMt6mydWWP7+zvH5eFep4oj+UkrfiJTRtjCeBXNpwaA/FYqqtb4/QS4ianFpIRA==}
     dev: true
 
-  /@types/node/15.9.0:
-    resolution: {integrity: sha512-AR1Vq1Ei1GaA5FjKL5PBqblTZsL5M+monvGSZwe6sSIdGiuu7Xr/pNwWJY+0ZQuN8AapD/XMB5IzBAyYRFbocA==}
+  /@types/node/15.12.0:
+    resolution: {integrity: sha512-+aHJvoCsVhO2ZCuT4o5JtcPrCPyDE3+1nvbDprYes+pPkEsbjH7AGUCNtjMOXS0fqH14t+B7yLzaqSz92FPWyw==}
     dev: true
 
   /@types/optimize-css-assets-webpack-plugin/5.0.3:
@@ -2400,7 +2400,7 @@ packages:
   /@types/resolve/1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
     dev: true
 
   /@types/scheduler/0.16.1:
@@ -2433,7 +2433,7 @@ packages:
   /@types/webpack-sources/2.1.0:
     resolution: {integrity: sha512-LXn/oYIpBeucgP1EIJbKQ2/4ZmpvRl+dlrFdX7+94SKRUV3Evy3FsfMZY318vGhkWUS5MPhtOM3w1/hCOAOXcg==}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: true
@@ -2441,7 +2441,7 @@ packages:
   /@types/webpack/4.41.29:
     resolution: {integrity: sha512-6pLaORaVNZxiB3FSHbyBiWM7QdazAWda1zvAq4SbZObZqHSDbWLi62iFdblVea6SK9eyBIVp5yHhKt/yNQdR7Q==}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       '@types/tapable': 1.0.7
       '@types/uglify-js': 3.13.0
       '@types/webpack-sources': 2.1.0
@@ -2452,7 +2452,7 @@ packages:
   /@types/webpack/5.28.0_webpack-cli@4.7.0:
     resolution: {integrity: sha512-8cP0CzcxUiFuA9xGJkfeVpqmWTk9nx6CWwamRGCj95ph1SmlRRk9KlCZ6avhCbZd4L68LvYT6l1kpdEnQXrF8w==}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       tapable: 2.2.0
       webpack: 5.38.1_webpack-cli@4.7.0
     transitivePeerDependencies:
@@ -3146,7 +3146,7 @@ packages:
     dependencies:
       caniuse-lite: 1.0.30001233
       colorette: 1.2.2
-      electron-to-chromium: 1.3.744
+      electron-to-chromium: 1.3.747
       escalade: 3.1.1
       node-releases: 1.1.72
     dev: true
@@ -4120,8 +4120,8 @@ packages:
     requiresBuild: true
     dev: true
 
-  /electron-to-chromium/1.3.744:
-    resolution: {integrity: sha512-o/vep/PvSXg+7buwCbVJXHY3zbjYVmFPwnMMnchESXgAzrfcasvbX/hQZHCFGG7YdZgdtwt1KTMyK9CyBxPbLA==}
+  /electron-to-chromium/1.3.747:
+    resolution: {integrity: sha512-+K1vnBc08GNYxCWwdRe9o3Ml30DhsNyK/qIl/NE1Dic+qCy9ZREcqGNiV4jiLiAdALK1DUG3pakJHGkJUd9QQw==}
     dev: true
 
   /emoji-regex/7.0.3:
@@ -4921,8 +4921,8 @@ packages:
     resolution: {integrity: sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==}
     dev: true
 
-  /highlight.js/11.0.0:
-    resolution: {integrity: sha512-ByaTMfsSuoqerTwemOgpIhfULEIaK52JJYhky/sK7/Yqc0+t7Uh5DHay9vIC94YXSupnQ1Vqfc9VXrYP4eXW3Q==}
+  /highlight.js/11.0.1:
+    resolution: {integrity: sha512-EqYpWyTF2s8nMfttfBA2yLKPNoZCO33pLS4MnbXQ4hECf1TKujCt1Kq7QAdrio7roL4+CqsfjqwYj4tYgq0pJQ==}
     engines: {node: '>=12.0.0'}
 
   /hosted-git-info/2.8.9:
@@ -5521,7 +5521,7 @@ packages:
     resolution: {integrity: sha512-KWYVV1c4i+jbMpaBC+U++4Va0cp8OisU185o73T1vo99hqi7w8tSJfUXYswwqqrjzwxa6KpRK54WhPvwf5w6PQ==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       merge-stream: 2.0.0
       supports-color: 7.2.0
     dev: true
@@ -5530,7 +5530,7 @@ packages:
     resolution: {integrity: sha512-EoBdilOTTyOgmHXtw/cPc+ZrCA0KJMrkXzkrPGNwLmnvvlN1nj7MPrxpT7m+otSv2e1TLaVffzDnE/LB14zJMg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 15.9.0
+      '@types/node': 15.12.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -7875,20 +7875,20 @@ packages:
       glob: 7.1.7
     dev: true
 
-  /rollup-plugin-terser/7.0.2_rollup@2.50.5:
+  /rollup-plugin-terser/7.0.2_rollup@2.50.6:
     resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
     peerDependencies:
       rollup: ^2.0.0
     dependencies:
       '@babel/code-frame': 7.12.13
       jest-worker: 26.6.2
-      rollup: 2.50.5
+      rollup: 2.50.6
       serialize-javascript: 4.0.0
       terser: 5.7.0
     dev: true
 
-  /rollup/2.50.5:
-    resolution: {integrity: sha512-Ztz4NurU2LbS3Jn5rlhnYv35z6pkjBUmYKr94fOBIKINKRO6kug9NTFHArT7jqwMP2kqEZ39jJuEtkk91NBltQ==}
+  /rollup/2.50.6:
+    resolution: {integrity: sha512-6c5CJPLVgo0iNaZWWliNu1Kl43tjP9LZcp6D/tkf2eLH2a9/WeHxg9vfTFl8QV/2SOyaJX37CEm9XuGM0rviUg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -9295,9 +9295,9 @@ packages:
       '@babel/preset-env': 7.14.4_@babel+core@7.14.3
       '@babel/runtime': 7.14.0
       '@hapi/joi': 16.1.8
-      '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.3+rollup@2.50.5
-      '@rollup/plugin-node-resolve': 11.2.1_rollup@2.50.5
-      '@rollup/plugin-replace': 2.4.2_rollup@2.50.5
+      '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.3+rollup@2.50.6
+      '@rollup/plugin-node-resolve': 11.2.1_rollup@2.50.6
+      '@rollup/plugin-replace': 2.4.2_rollup@2.50.6
       '@surma/rollup-plugin-off-main-thread': 1.4.2
       common-tags: 1.8.0
       fast-json-stable-stringify: 2.1.0
@@ -9305,8 +9305,8 @@ packages:
       glob: 7.1.7
       lodash: 4.17.21
       pretty-bytes: 5.6.0
-      rollup: 2.50.5
-      rollup-plugin-terser: 7.0.2_rollup@2.50.5
+      rollup: 2.50.6
+      rollup-plugin-terser: 7.0.2_rollup@2.50.6
       source-map: 0.8.0-beta.0
       source-map-url: 0.4.1
       stringify-object: 3.3.0
