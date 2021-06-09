@@ -51,28 +51,28 @@
                     "
                 >
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="scrolltotop"
                     >
                         顶部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="scrolltobottom"
                     >
                         底部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="toprevpage"
                     >
                         前页
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="tonextpage"
                     >
@@ -80,7 +80,7 @@
                     </button>
                 </div>
                 <div
-                    id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
+                    id="nav-3fa9878ebc0dbb05688f058e3bcafc57386 "
                     style="
                         display: flex;
                         width: 100%;
@@ -108,28 +108,28 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="scrolltotop"
                     >
                         顶部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="scrolltobottom"
                     >
                         底部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="toprevpage"
                     >
                         前页
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
+                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
                         type="button"
                         v-on:click="tonextpage"
                     >
