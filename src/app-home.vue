@@ -51,28 +51,40 @@
                     "
                 >
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="scrolltotop"
                     >
                         顶部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="scrolltobottom"
                     >
                         底部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="toprevpage"
                     >
                         前页
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="tonextpage"
                     >
@@ -108,28 +120,40 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="scrolltotop"
                     >
                         顶部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="scrolltobottom"
                     >
                         底部
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="toprevpage"
                     >
                         前页
                     </button>
                     <button
-                        class="mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8"
+                        class="
+                            mui-btn mui-btn-primary mui-btn-outlined
+                            mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
+                        "
                         type="button"
                         v-on:click="tonextpage"
                     >

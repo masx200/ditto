@@ -77,14 +77,14 @@ export const routerpagegethandler = debounce(async function () {
                         a.href = b.href;
 
                         a.classList.add(
-                            ..."mui-btn mui-btn-primary mui-btn-outlined".split(
+                            ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
                                 " "
                             )
                         );
                     }
                 });
 
-                console.log(tmpcontainer);
+                //console.log(tmpcontainer);
                 contenthtml.set(tmpcontainer.innerHTML);
                 const currentcontenthtml = contenthtml.get();
 
