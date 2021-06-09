@@ -9,6 +9,9 @@ import { guid } from "./guid.ts"; //@ts-ignore
 import { isrelativepath } from "./isrelativepath.ts"; //@ts-ignore
 import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts"; //@ts-ignore
+
+import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
+
 function resolvemdpathfromhash() {
     const baseurl = getbaseurl();
 
@@ -126,4 +129,7 @@ function loaddone() {
     window.scrollTo(0, 0);
     stop_loading();
     Reflect.set(ApphomeVm, "showsrc", true);
+
+    setnextpagelink();
+    setprevpagelink();
 }
