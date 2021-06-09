@@ -7,13 +7,13 @@ import { initialize } from "./initialize.ts";
 import { ApphomeVm } from "./mark-down-reader.ts";
 
 export async function 挂载初始() {
-   // var module = await import(
-        //@ts-ignore
+    // var module = await import(
+    //@ts-ignore
     //    "./ditto.ts"
-   // );
+    // );
 
     //var ditto = module.default;
-   // Object.assign(ditto, config);
+    // Object.assign(ditto, config);
 
     var maintitle = config.maintitle;
 

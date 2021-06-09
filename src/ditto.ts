@@ -3,7 +3,7 @@ import config from "./config.ts";
 //@ts-ignore
 import { ApphomeVm } from "./mark-down-reader.ts";
 
-export const cachemarkdown = new Map<string,string>();
+export const cachemarkdown = new Map<string, string>();
 ("use strict");
 
 //var ditto = {
@@ -19,4 +19,4 @@ export function stop_loading() {
 
 //export default ditto;
 
-export const cachetitle = new Map<string,string>();
+export const cachetitle = new Map<string, string>();
