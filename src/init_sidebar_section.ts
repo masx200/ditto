@@ -31,6 +31,9 @@ export async function init_sidebar_section() {
 
         tmpcontainer.innerHTML = markedhtml;
 
+        const cataloguelinkhtml = `<a href="${summaryfile}" class="mui-btn mui-btn-primary mui-btn-outlined">目录</a>`;
+
+        tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
         Array.from(tmpcontainer.querySelectorAll("ul")).forEach((e: Element) =>
             e.classList.add("navbar-nav")
         );
