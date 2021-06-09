@@ -11,7 +11,7 @@ Vue.use(VueCompositionAPI);
     const config = (await import("./config.ts")).default;
     Object.assign(config, {
         maintitle: "Markdown Reader",
-        subtitle: "Lightweight Markdown Documentation System",
+
         homepage: "README.md",
 
         catalogue: "summary.md",

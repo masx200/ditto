@@ -7,8 +7,7 @@ export async function 挂载初始() {
     var ditto = module.default;
     Object.assign(ditto, config);
     var maintitle = config.maintitle;
-    var subtitle = config.subtitle;
-    document.title = maintitle + " " + subtitle;
+    document.title = maintitle;
     Reflect.set(ApphomeVm, "mytitle", maintitle);
     return initialize();
 }

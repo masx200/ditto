@@ -79,8 +79,6 @@ https://github.com/masx200/markdown-reader/blob/master/src/index.ts
 
 `maintitle`:文档主要标题
 
-`subtitle`:文档副标题
-
 `homepage`:文档首页的 markdown 文件
 
 `catalogue`:文档目录的 markdown 文件
