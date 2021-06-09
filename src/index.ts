@@ -7,11 +7,7 @@ import "./styles.ts";
 Vue.use(VueCompositionAPI);
 
 (async () => {
-    const module = await import(
-        //@ts-ignore
-        "./export.ts"
-    );
-    const { mount } = module; //@ts-ignore
+    //@ts-ignore
     const config = (await import("./config.ts")).default;
     Object.assign(config, {
         maintitle: "Markdown Reader",
@@ -21,7 +17,13 @@ Vue.use(VueCompositionAPI);
         catalogue: "summary.md",
         baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader/",
     });
+    console.log(config);
     var rootele = document.getElementById("root");
+    const module = await import(
+        //@ts-ignore
+        "./export.ts"
+    );
+    const { mount } = module; //@ts-ignore
     rootele && mount(rootele);
 })();
 window.addEventListener("load", loadclipboard, { once: true });
