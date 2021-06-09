@@ -11,7 +11,7 @@ export async function init_sidebar_section() {
     const summaryfile = getabsolutesummary();
     var path = summaryfile;
     path = urlclearhash(path);
-    menulist.push(path);
+    menulist.unshift(path);
     try {
         show_loading();
         const data = await fetchajaxgettext(path);
