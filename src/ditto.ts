@@ -18,3 +18,5 @@ export function stop_loading() {
 }
 
 //export default ditto;
+
+export const cachetitle = new Map<string,string>();
