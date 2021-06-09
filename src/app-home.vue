@@ -70,26 +70,24 @@
                     >
                         底部
                     </button>
-                    <button
+                    <a
                         class="
                             mui-btn mui-btn-primary mui-btn-outlined
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
-                        type="button"
                         v-on:click="toprevpage"
                     >
                         前页
-                    </button>
-                    <button
+                    </a>
+                    <a
                         class="
                             mui-btn mui-btn-primary mui-btn-outlined
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
-                        type="button"
                         v-on:click="tonextpage"
                     >
                         后页
-                    </button>
+                    </a>
                 </div>
                 <div
                     id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
@@ -139,26 +137,24 @@
                     >
                         底部
                     </button>
-                    <button
+                    <a
                         class="
                             mui-btn mui-btn-primary mui-btn-outlined
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
-                        type="button"
                         v-on:click="toprevpage"
                     >
                         前页
-                    </button>
-                    <button
+                    </a>
+                    <a
                         class="
                             mui-btn mui-btn-primary mui-btn-outlined
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
-                        type="button"
                         v-on:click="tonextpage"
                     >
                         后页
-                    </button>
+                    </a>
                 </div>
             </nav>
         </div>

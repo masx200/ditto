@@ -12,7 +12,12 @@ function findindexexmenulist() {
     console.log(currentpageindex);
     return currentpageindex;
 }
-export function toprevpage() {
+export function toprevpage(e) {
+    if (e.target.href) {
+        return;
+    }
+    e.preventDefault();
+
     var currentpageindex = findindexexmenulist();
 
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {
@@ -26,7 +31,12 @@ export function toprevpage() {
     }
     location.hash = menulist[pageindextogo];
 }
-export function tonextpage() {
+export function tonextpage(e) {
+    if (e.target.href) {
+        return;
+    }
+    e.preventDefault();
+
     var currentpageindex = findindexexmenulist();
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {
         console.error("没有在菜单列表中找到当前页面");
