@@ -1,13 +1,16 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import VueCompositionAPI from "@vue/composition-api";
 import Vue from "vue";
-import "./error-alert.js";
-import "./styles.js";
+import "./error-alert.ts";
+import "./styles.ts";
 
 Vue.use(VueCompositionAPI);
 
 (async () => {
-    const module = await import("./export.js");
+    const module = await import(
+        //@ts-ignore
+        "./export.ts"
+    );
     const { config, mount } = module;
 
     Object.assign(config, {

@@ -1,5 +1,7 @@
-import { escape_html } from "./escape_html.js";
-import { unescape_html } from "./unescape_html.js";
+//@ts-ignore
+import { escape_html } from "./escape_html.ts";
+//@ts-ignore
+import { unescape_html } from "./unescape_html.ts";
 
 export async function escapemarkedunescape(data: string) {
     var module = await import("marked");

@@ -1,4 +1,5 @@
-import { escapemarkedunescape } from "./escapemarkedunescape.js";
+//@ts-ignore
+import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 //@ts-ignore
 import hljs from "./highlight.min.ts";
 export async function compile_into_dom(data: string, mdurl: string | URL) {

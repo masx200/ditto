@@ -1,5 +1,6 @@
 import { defineComponent, onMounted } from "@vue/composition-api";
-import config from "./config.js";
+//@ts-ignore
+import config from "./config.ts";
 import {
     contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
     Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517,
@@ -7,8 +8,10 @@ import {
     mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3,
     mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
-} from "./refele.js";
-import { tonextpage, toprevpage } from "./toprevpage.js";
+    //@ts-ignore
+} from "./refele.ts";
+//@ts-ignore
+import { tonextpage, toprevpage } from "./toprevpage.ts";
 
 export default defineComponent({
     setup(props, { attrs, slots, emit }) {
@@ -29,7 +32,8 @@ export default defineComponent({
     },
     mounted() {
         (async () => {
-            var module = await import("./mymounted.js");
+            //@ts-ignore
+            var module = await import("./mymounted.ts");
 
             var mymounted = module.mymounted;
             mymounted();

@@ -1,4 +1,5 @@
-import config from "./config.js";
+//@ts-ignore
+import config from "./config.ts";
 
 export function getbaseurl() {
     return config.baseurl;

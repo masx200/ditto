@@ -1,10 +1,12 @@
 "use strict";
-import { debounce } from "./debounce";
+//@ts-ignore
+import { debounce } from "./debounce.ts";
 import {
     mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3,
     mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
-} from "./refele.js";
+    //@ts-ignore
+} from "./refele.ts";
 export const Adjustthedistance = debounce(() => {
     return new Promise<void>((r) => {
         requestAnimationFrame(() => {

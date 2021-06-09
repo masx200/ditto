@@ -1,15 +1,22 @@
 import Vue from "vue";
-import { Adjustthedistance } from "./Adjustthedistance";
+//@ts-ignore
+import { Adjustthedistance } from "./Adjustthedistance.ts";
 
 import app from "./app-home.vue";
-import config from "./config.js";
-import "./error-alert.js";
-import { guid } from "./guid.js";
-import "./polyfill.NodeList.forEach.js";
+//@ts-ignore
+import config from "./config.ts";
+//@ts-ignore
+import "./error-alert.ts";
+//@ts-ignore
+import { guid } from "./guid.ts";
+//@ts-ignore
+import "./polyfill.NodeList.forEach.ts";
 //@ts-ignore
 import { routerpagegethandler } from "./routerpageget.ts";
-import { 内容调整左边偏移 } from "./内容调整左边偏移";
-import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏";
+//@ts-ignore
+import { 内容调整左边偏移 } from "./内容调整左边偏移.ts";
+//@ts-ignore
+import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
 
 window.addEventListener("resize", Adjustthedistance);
 window.addEventListener("resize", 内容调整左边偏移);

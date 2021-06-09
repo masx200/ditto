@@ -1,10 +1,12 @@
 "use strict";
-
-import { debounce } from "./debounce";
+//@ts-ignore
+import { debounce } from "./debounce.ts";
+//@ts-ignore
 import {
     contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
     Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
-} from "./refele";
+    //@ts-ignore
+} from "./refele.ts";
 export const 内容调整左边偏移 = debounce(() => {
     return new Promise<void>((r) => {
         requestAnimationFrame(() => {

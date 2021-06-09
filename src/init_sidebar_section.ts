@@ -1,12 +1,21 @@
-import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
-import { escapemarkedunescape } from "./escapemarkedunescape.js";
-import fetchajaxgettext from "./fetchajaxgettext.js";
-import { getabsolutesummary } from "./getbaseurl.js";
-import { isrelativepath } from "./isrelativepath.js";
-import { ApphomeVm } from "./mark-down-reader.js";
-import { menulist } from "./menulist.js";
-import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.js";
-import { urlclearhash } from "./urlclearhash.js";
+//@ts-ignore
+import { cachemarkdown, show_loading, stop_loading } from "./ditto.ts";
+//@ts-ignore
+import { escapemarkedunescape } from "./escapemarkedunescape.ts";
+//@ts-ignore
+import fetchajaxgettext from "./fetchajaxgettext.ts";
+//@ts-ignore
+import { getabsolutesummary } from "./getbaseurl.ts";
+//@ts-ignore
+import { isrelativepath } from "./isrelativepath.ts";
+//@ts-ignore
+import { ApphomeVm } from "./mark-down-reader.ts";
+//@ts-ignore
+import { menulist } from "./menulist.ts";
+//@ts-ignore
+import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.ts";
+//@ts-ignore
+import { urlclearhash } from "./urlclearhash.ts";
 export async function init_sidebar_section() {
     const summaryfile = getabsolutesummary();
 
@@ -79,7 +88,7 @@ export async function init_sidebar_section() {
         });
         Object.freeze(menulist);
         console.log("menulist", menulist);
-        menulist.forEach((path) => {
+        menulist.forEach((path: string) => {
             precheckfetchajaxmarkdown(path);
         });
 

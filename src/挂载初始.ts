@@ -1,12 +1,16 @@
 "use strict";
-
-import config from "./config.js";
-import { initialize } from "./initialize.js";
-
-import { ApphomeVm } from "./mark-down-reader.js";
+//@ts-ignore
+import config from "./config.ts";
+//@ts-ignore
+import { initialize } from "./initialize.ts";
+//@ts-ignore
+import { ApphomeVm } from "./mark-down-reader.ts";
 
 export async function 挂载初始() {
-    var module = await import("./ditto.js");
+    var module = await import(
+        //@ts-ignore
+        "./ditto.ts"
+    );
 
     var ditto = module.default;
     Object.assign(ditto, config);

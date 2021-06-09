@@ -1,11 +1,12 @@
-import { ApphomeVm } from "./mark-down-reader.js";
-import { menulist } from "./menulist.js";
+//@ts-ignore
+import { ApphomeVm } from "./mark-down-reader.ts"; //@ts-ignore
+import { menulist } from "./menulist.ts";
 function findindexexmenulist() {
     console.log(menulist);
 
     var currentpageurl = Reflect.get(ApphomeVm, "urltext");
     console.log(currentpageurl);
-    var currentpageindex = menulist.findIndex((a) => a === currentpageurl);
+    var currentpageindex = menulist.findIndex((a: string) => a === currentpageurl);
     console.log(currentpageindex);
     return currentpageindex;
 }

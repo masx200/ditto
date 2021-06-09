@@ -1,6 +1,7 @@
-import config from "./config.js";
-
-import { ApphomeVm } from "./mark-down-reader.js";
+//@ts-ignore
+import config from "./config.ts";
+//@ts-ignore
+import { ApphomeVm } from "./mark-down-reader.ts";
 
 export const cachemarkdown = new Map();
 ("use strict");
