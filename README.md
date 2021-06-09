@@ -58,7 +58,7 @@ pnpm install
 
 ```
 
-yarn tsc
+
 
 yarn start
 ```
@@ -66,7 +66,7 @@ yarn start
 打包构建
 
 ```
-yarn tsc
+
 
 yarn build
 ```
@@ -75,7 +75,7 @@ yarn build
 
 ## 自定义配置
 
-https://github.com/masx200/markdown-reader/blob/master/src/index.ts
+https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 
 `maintitle`:文档主要标题
 
@@ -85,4 +85,4 @@ https://github.com/masx200/markdown-reader/blob/master/src/index.ts
 
 `baseurl`:文档所在的基础 URL 路径，必须是绝对路径，
 
-如果文档在同一个目录下，可设置为`location.href`
+如果文档在同一个目录下，可设置`baseurl`为`location.href`

@@ -9,14 +9,7 @@ Vue.use(VueCompositionAPI);
 (async () => {
     //@ts-ignore
     const config = (await import("./config.ts")).default;
-    Object.assign(config, {
-        maintitle: "Markdown Reader",
 
-        homepage: "README.md",
-
-        catalogue: "summary.md",
-        baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader/",
-    });
     console.log(config);
     var rootele = document.getElementById("root");
     const module = await import(
