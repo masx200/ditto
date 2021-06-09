@@ -3,5 +3,5 @@ export default {
     subtitle: "Lightweight Markdown Documentation System",
     homepage: "README.md",
     catalogue: "summary.md",
-    baseurl: location.href,
+    baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader/",
 };
