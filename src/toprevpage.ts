@@ -6,7 +6,9 @@ function findindexexmenulist() {
 
     var currentpageurl = Reflect.get(ApphomeVm, "urltext");
     console.log(currentpageurl);
-    var currentpageindex = menulist.findIndex((a: string) => a === currentpageurl);
+    var currentpageindex = menulist.findIndex(
+        (a: string) => a === currentpageurl
+    );
     console.log(currentpageindex);
     return currentpageindex;
 }

@@ -57,7 +57,6 @@ export function mount(el: Element) {
 }
 
 export { ApphomeVm };
-export { config };
 
 window.addEventListener("hashchange", routerpagegethandler);
 window.addEventListener("hashchange", 窄屏隐藏侧边栏);

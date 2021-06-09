@@ -11,8 +11,8 @@ Vue.use(VueCompositionAPI);
         //@ts-ignore
         "./export.ts"
     );
-    const { config, mount } = module;
-
+    const { mount } = module; //@ts-ignore
+    const config = (await import("./config.ts")).default;
     Object.assign(config, {
         maintitle: "Markdown Reader",
         subtitle: "Lightweight Markdown Documentation System",
