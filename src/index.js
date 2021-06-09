@@ -1,29 +1,58 @@
-import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-import VueCompositionAPI from "@vue/composition-api";
-import Vue from "vue";
-import "./error-alert.ts";
-import "./styles.ts";
-Vue.use(VueCompositionAPI);
-(async () => {
-    const config = (await import("./config.ts")).default;
-    Object.assign(config, {
-        maintitle: "Markdown Reader",
-        homepage: "README.md",
-        catalogue: "summary.md",
-        baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader/",
-    });
-    console.log(config);
-    var rootele = document.getElementById("root");
-    const module = await import("./export.ts");
-    const { mount } = module;
-    rootele && mount(rootele);
-})();
-window.addEventListener("load", loadclipboard, { once: true });
-async function loadclipboard() {
-    var module = await import("clipboard");
-    const ClipboardJS = module.default;
-    new ClipboardJS(".btn").on("success", function (e) {
-        console.info("Text:", e.text);
-        e.clearSelection();
-    });
+import "./index.css";
+alert("hello world");
+/*import "../registerserviceworker.js";
+
+ import React from "react";
+import { render } from "react-dom";
+
+function App() {
+  return <div>hello world</div>;
 }
+
+render(<App />, document.getElementById("root"));
+ 
+
+import Vue from "vue/dist/vue.esm.browser";
+const App = Vue.extend({
+  template: `
+    <div>
+    {{msg}}
+    </div>
+    
+    `,
+
+  name: "App",
+  data() {
+    return {
+      msg: "Welcome to Your Vue.js App"
+    };
+  },
+  methods: {},
+  mounted() {}
+});
+
+new Vue({
+  el: "#root",
+  // router,
+  components: {
+    App
+  },
+  template: "<App/>",
+  data() {
+    return {};
+  }
+});
+ 
+var msg="htmlWelcome to Your Vue.js App"
+ function h(type, props, ...children) {
+  return { type, props, children };
+}
+console.log(html`
+  <a href="/">Hello!</a>
+  <App />
+  <div>hello world</div>
+  <div>
+    {{msg}}
+  </div>
+`);
+ */

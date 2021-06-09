@@ -1,4 +1,4 @@
-<script src="./app-home.js"></script>
+<script src="./app-home.ts"></script>
 <template>
     <div>
         <div
