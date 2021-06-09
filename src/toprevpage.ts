@@ -12,7 +12,7 @@ function findindexexmenulist() {
     console.log(currentpageindex);
     return currentpageindex;
 }
-export function toprevpage(e) {
+/*export function toprevpage(e) {
     if (e.target.getAttribute("href")) {
         return;
     }
@@ -48,7 +48,7 @@ export function tonextpage(e) {
         return;
     }
     location.hash = menulist[pageindextogo];
-}
+}*/
 export function setnextpagelink() {
     var currentpageindex = findindexexmenulist();
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {

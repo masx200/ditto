@@ -12,7 +12,7 @@ import {
     //@ts-ignore
 } from "./refele.ts";
 //@ts-ignore
-import { tonextpage, toprevpage } from "./toprevpage.ts";
+//import { tonextpage, toprevpage } from "./toprevpage.ts";
 const disabledalinkhref = "javascript:;";
 export default defineComponent({
     setup(props, { attrs, slots, emit }) {
@@ -81,7 +81,7 @@ export default defineComponent({
         scrolltobottom() {
             scrollTo(0, document.body.scrollHeight);
         },
-        toprevpage: toprevpage,
-        tonextpage: tonextpage,
+        // toprevpage: toprevpage,
+        //    tonextpage: tonextpage,
     },
 });
