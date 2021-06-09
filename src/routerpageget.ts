@@ -9,11 +9,8 @@ import { guid } from "./guid.ts"; //@ts-ignore
 import { isrelativepath } from "./isrelativepath.ts"; //@ts-ignore
 import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts"; //@ts-ignore
-
-export const routerpagegethandler = debounce(async function () {
+function resolvemdpathfromhash() {
     const baseurl = getbaseurl();
-
-    window.scrollTo(0, 0);
 
     var path =
         location.hash === "" || location.hash === "#"
@@ -26,16 +23,21 @@ export const routerpagegethandler = debounce(async function () {
     }
 
     path = urlclearhash(path);
-
+    return path;
+}
+export const routerpagegethandler = debounce(async function () {
+    window.scrollTo(0, 0);
+    show_loading();
+    const path = resolvemdpathfromhash();
     if (path !== Reflect.get(ApphomeVm, "urltext")) {
-        Reflect.set(ApphomeVm, "urltext", path);
-
         const marktext = cachemarkdown.get(path);
 
         if (marktext) {
             contenthtml.set(marktext);
+            Reflect.set(ApphomeVm, "urltext", path);
             stop_loading();
             Reflect.set(ApphomeVm, "showsrc", true);
+            loaddone();
             return;
         } else {
             show_loading();
@@ -67,10 +69,7 @@ export const routerpagegethandler = debounce(async function () {
                     var ahref = a.getAttribute("href");
                     var b = new URL(location.href);
                     if (ahref?.endsWith(".md")) {
-                        var realmdpath = new URL(
-                            ahref,
-                            Reflect.get(ApphomeVm, "urltext")
-                        );
+                        var realmdpath = new URL(ahref, path);
 
                         b.hash = "#" + realmdpath;
 
@@ -85,11 +84,9 @@ export const routerpagegethandler = debounce(async function () {
                 });
 
                 //console.log(tmpcontainer);
-                contenthtml.set(tmpcontainer.innerHTML);
-                const currentcontenthtml = contenthtml.get();
 
                 if (!cachemarkdown.get(path)) {
-                    cachemarkdown.set(path, currentcontenthtml);
+                    cachemarkdown.set(path, tmpcontainer.innerHTML);
                 }
                 let initloadele = document.getElementById(initloadingid);
                 initloadele && (initloadele.style.display = "none");
@@ -97,6 +94,12 @@ export const routerpagegethandler = debounce(async function () {
                 window.scrollTo(0, 0);
                 stop_loading();
                 Reflect.set(ApphomeVm, "showsrc", true);
+                if (path == resolvemdpathfromhash()) {
+                    contenthtml.set(tmpcontainer.innerHTML);
+                    Reflect.set(ApphomeVm, "urltext", path);
+                }
+
+                loaddone();
                 return;
             } catch (e_1) {
                 console.error(e_1);
@@ -116,3 +119,11 @@ export const routerpagegethandler = debounce(async function () {
         }
     }
 });
+function loaddone() {
+    let initloadele = document.getElementById(initloadingid);
+    initloadele && (initloadele.style.display = "none");
+
+    window.scrollTo(0, 0);
+    stop_loading();
+    Reflect.set(ApphomeVm, "showsrc", true);
+}

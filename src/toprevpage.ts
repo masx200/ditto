@@ -13,7 +13,7 @@ function findindexexmenulist() {
     return currentpageindex;
 }
 export function toprevpage(e) {
-    if (e.target.href) {
+    if (e.target.getAttribute("href")) {
         return;
     }
     e.preventDefault();
@@ -32,7 +32,7 @@ export function toprevpage(e) {
     location.hash = menulist[pageindextogo];
 }
 export function tonextpage(e) {
-    if (e.target.href) {
+    if (e.target.getAttribute("href")) {
         return;
     }
     e.preventDefault();

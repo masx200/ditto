@@ -26,9 +26,9 @@ export default defineComponent({
             markdowncontent_2e4c728cac441a0c48939881c2c714361a0,
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
         };
-        onMounted(() => {
-            console.log(allret);
-        });
+        // onMounted(() => {
+        //        console.log(allret);
+        //      });
         return allret;
     },
     mounted() {
@@ -61,6 +61,8 @@ export default defineComponent({
         },
     },
     data: () => ({
+        nextpagelink: "",
+        prevpagelink: "",
         mytitle: "Markdown Reader",
         showerror: false,
         errorcontent: "",

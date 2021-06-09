@@ -76,6 +76,7 @@
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
                         v-on:click="toprevpage"
+                        :href="prevpagelink"
                     >
                         前页
                     </a>
@@ -85,6 +86,7 @@
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
                         v-on:click="tonextpage"
+                        :href="nextpagelink"
                     >
                         后页
                     </a>
@@ -143,6 +145,7 @@
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
                         v-on:click="toprevpage"
+                        :href="prevpagelink"
                     >
                         前页
                     </a>
@@ -152,6 +155,7 @@
                             mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
                         "
                         v-on:click="tonextpage"
+                        :href="nextpagelink"
                     >
                         后页
                     </a>
