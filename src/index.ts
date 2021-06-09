@@ -16,7 +16,7 @@ Vue.use(VueCompositionAPI);
         homepage: "README.md",
 
         catalogue: "summary.md",
-        baseurl: "https://masx200.github.io/markdown-reader/",
+        baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader/",
     });
     var rootele = document.getElementById("root");
     rootele && mount(rootele);
