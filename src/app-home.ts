@@ -13,7 +13,7 @@ import {
 } from "./refele.ts";
 //@ts-ignore
 import { tonextpage, toprevpage } from "./toprevpage.ts";
-
+const disabledalinkhref = "javascript:;";
 export default defineComponent({
     setup(props, { attrs, slots, emit }) {
         console.log({ props, attrs, slots, emit });
@@ -61,8 +61,8 @@ export default defineComponent({
         },
     },
     data: () => ({
-        nextpagelink: "",
-        prevpagelink: "",
+        nextpagelink: disabledalinkhref,
+        prevpagelink: disabledalinkhref,
         mytitle: "Markdown Reader",
         showerror: false,
         errorcontent: "",
