@@ -1,13 +1,13 @@
 import { compile_into_dom } from "./compile_into_dom.ts";
-import { contenthtml } from "./contenthtml.js";
-import { debounce } from "./debounce.js";
-import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
-import fetchajaxgettext from "./fetchajaxgettext.js";
-import { getabsoluteindex, getbaseurl } from "./getbaseurl.js";
-import { guid } from "./guid.js";
-import { isrelativepath } from "./isrelativepath.js";
-import { ApphomeVm, initloadingid } from "./mark-down-reader.js";
-import { urlclearhash } from "./urlclearhash.js";
+import { contenthtml } from "./contenthtml.ts";
+import { debounce } from "./debounce.ts";
+import { cachemarkdown, show_loading, stop_loading } from "./ditto.ts";
+import fetchajaxgettext from "./fetchajaxgettext.ts";
+import { getabsoluteindex, getbaseurl } from "./getbaseurl.ts";
+import { guid } from "./guid.ts";
+import { isrelativepath } from "./isrelativepath.ts";
+import { ApphomeVm, initloadingid } from "./mark-down-reader.ts";
+import { urlclearhash } from "./urlclearhash.ts";
 export const routerpagegethandler = debounce(async function () {
     const baseurl = getbaseurl();
     window.scrollTo(0, 0);

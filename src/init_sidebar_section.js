@@ -1,14 +1,15 @@
-import { cachemarkdown, show_loading, stop_loading } from "./ditto.js";
-import { escapemarkedunescape } from "./escapemarkedunescape.js";
-import fetchajaxgettext from "./fetchajaxgettext.js";
-import { getabsolutesummary } from "./getbaseurl.js";
-import { isrelativepath } from "./isrelativepath.js";
-import { ApphomeVm } from "./mark-down-reader.js";
-import { menulist } from "./menulist.js";
-import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.js";
-import { urlclearhash } from "./urlclearhash.js";
+import { cachemarkdown, show_loading, stop_loading } from "./ditto.ts";
+import { escapemarkedunescape } from "./escapemarkedunescape.ts";
+import fetchajaxgettext from "./fetchajaxgettext.ts";
+import { getabsolutesummary } from "./getbaseurl.ts";
+import { isrelativepath } from "./isrelativepath.ts";
+import { ApphomeVm } from "./mark-down-reader.ts";
+import { menulist } from "./menulist.ts";
+import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.ts";
+import { urlclearhash } from "./urlclearhash.ts";
 export async function init_sidebar_section() {
     const summaryfile = getabsolutesummary();
+    // alert(summaryfile);
     var path = summaryfile;
     path = urlclearhash(path);
     menulist.push(path);

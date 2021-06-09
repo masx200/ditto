@@ -1,6 +1,6 @@
-import { initloadingid } from "./mark-down-reader.js";
-import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.js";
-import { 挂载初始 } from "./挂载初始.js";
+import { initloadingid } from "./mark-down-reader.ts";
+import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.ts";
+import { 挂载初始 } from "./挂载初始.ts";
 export async function mymounted() {
     await 挂载初始();
     var initloadele = document.getElementById(initloadingid);

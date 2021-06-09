@@ -1,5 +1,5 @@
-import config from "./config.js";
-import { ApphomeVm } from "./mark-down-reader.js";
+import config from "./config.ts";
+import { ApphomeVm } from "./mark-down-reader.ts";
 export const cachemarkdown = new Map();
 ("use strict");
 var ditto = {

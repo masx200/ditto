@@ -18,7 +18,7 @@ import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.ts";
 import { urlclearhash } from "./urlclearhash.ts";
 export async function init_sidebar_section() {
     const summaryfile = getabsolutesummary();
-
+    // alert(summaryfile);
     var path = summaryfile;
     path = urlclearhash(path);
     menulist.push(path);

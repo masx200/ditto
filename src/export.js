@@ -1,2 +1,2 @@
-import { config, mount } from "./mark-down-reader.js";
-export { config, mount };
+import { mount } from "./mark-down-reader.ts";
+export { mount };

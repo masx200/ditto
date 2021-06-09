@@ -1,1 +1,1 @@
-export declare const routerpagegethandler: (...arg: any[]) => any;
+export declare const routerpagegethandler: any;

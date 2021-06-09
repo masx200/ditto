@@ -1,13 +1,13 @@
 import Vue from "vue";
-import { Adjustthedistance } from "./Adjustthedistance";
+import { Adjustthedistance } from "./Adjustthedistance.ts";
 import app from "./app-home.vue";
-import config from "./config.js";
-import "./error-alert.js";
-import { guid } from "./guid.js";
-import "./polyfill.NodeList.forEach.js";
+import config from "./config.ts";
+import "./error-alert.ts";
+import { guid } from "./guid.ts";
+import "./polyfill.NodeList.forEach.ts";
 import { routerpagegethandler } from "./routerpageget.ts";
-import { 内容调整左边偏移 } from "./内容调整左边偏移";
-import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏";
+import { 内容调整左边偏移 } from "./内容调整左边偏移.ts";
+import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
 window.addEventListener("resize", Adjustthedistance);
 window.addEventListener("resize", 内容调整左边偏移);
 console.log(app);
@@ -40,6 +40,5 @@ export function mount(el) {
     ApphomeVm.$mount(el.appendChild(document.createElement("div")));
 }
 export { ApphomeVm };
-export { config };
 window.addEventListener("hashchange", routerpagegethandler);
 window.addEventListener("hashchange", 窄屏隐藏侧边栏);

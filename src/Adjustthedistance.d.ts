@@ -1,1 +1,1 @@
-export declare const Adjustthedistance: (...arg: any[]) => any;
+export declare const Adjustthedistance: any;

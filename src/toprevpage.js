@@ -1,5 +1,5 @@
-import { ApphomeVm } from "./mark-down-reader.js";
-import { menulist } from "./menulist.js";
+import { ApphomeVm } from "./mark-down-reader.ts";
+import { menulist } from "./menulist.ts";
 function findindexexmenulist() {
     console.log(menulist);
     var currentpageurl = Reflect.get(ApphomeVm, "urltext");
