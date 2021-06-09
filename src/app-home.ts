@@ -1,6 +1,7 @@
 import { defineComponent, onMounted } from "@vue/composition-api";
 //@ts-ignore
-import config from "./config.ts";
+import config from "./config.ts"; //@ts-ignore
+import { getabsoluteindex } from "./getbaseurl.ts";
 import {
     contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
     Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517,
@@ -41,7 +42,11 @@ export default defineComponent({
     },
     computed: {
         indexhref() {
-            return "#" + config.homepage;
+            return String(
+                Object.assign(new URL(location.href), {
+                    hash: getabsoluteindex(),
+                })
+            );
         },
         muluhtml: {
             get(): string {
