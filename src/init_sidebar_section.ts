@@ -68,7 +68,7 @@ export async function init_sidebar_section() {
                 menulist.push(path);
                 let mdtitle = a.innerText;
 
-                if (!cachetitle.get(path)) {
+                if (mdtitle&&!cachetitle.get(path)) {
                     cachetitle.set(path, mdtitle);
                 }
                 b.hash = "#" + path;
