@@ -41,7 +41,7 @@ code {
     font-weight: 400;
     color: #007aff;
 }
-.active {
+a.active {
     border-style: solid;
     border-width: medium;
     border-color: #646cff;
