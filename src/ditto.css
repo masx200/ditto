@@ -197,7 +197,7 @@ body {
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li {
     text-indent: -5px; /* to compensate for the padding for the dash */
-    font-size: 13px;
+    /* font-size: 13px; */
 }
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li.link {
