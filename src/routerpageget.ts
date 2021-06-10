@@ -4,37 +4,21 @@ import { contenthtml } from "./contenthtml.ts"; //@ts-ignore
 import { debounce } from "./debounce.ts"; //@ts-ignore
 import {
     cachemarkdown,
+    cachetitle,
     show_loading,
     stop_loading,
-    cachetitle,
     //@ts-ignore
 } from "./ditto.ts"; //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts"; //@ts-ignore
-import { getabsoluteindex, getbaseurl } from "./getbaseurl.ts"; //@ts-ignore
 import { guid } from "./guid.ts"; //@ts-ignore
-import { isrelativepath } from "./isrelativepath.ts"; //@ts-ignore
-import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
-import { urlclearhash } from "./urlclearhash.ts"; //@ts-ignore
-
-import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
-import config from "./config.ts";
-function resolvemdpathfromhash() {
-    const baseurl = getbaseurl();
+import { loaddone } from "./loaddone.ts";
+//@ts-ignore
+import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
+//@ts-ignore
+//@ts-ignore
+import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
 
-    var path =
-        location.hash === "" || location.hash === "#"
-            ? getabsoluteindex()
-            : location.hash.replace("#", "");
-
-    path = path.endsWith(".md") ? path : path + ".md";
-    if (isrelativepath(path)) {
-        path = new URL(path, baseurl).toString();
-    }
-
-    path = urlclearhash(path);
-    return path;
-}
 export const routerpagegethandler = debounce(async function () {
     window.scrollTo(0, 0);
     show_loading();
@@ -142,19 +126,3 @@ export const routerpagegethandler = debounce(async function () {
         }
     }
 });
-function loaddone() {
-    let initloadele = document.getElementById(initloadingid);
-    initloadele && (initloadele.style.display = "none");
-
-    window.scrollTo(0, 0);
-    stop_loading();
-    Reflect.set(ApphomeVm, "showsrc", true);
-    let path = Reflect.get(ApphomeVm, "urltext");
-    let mdtitle = cachetitle.get(path);
-
-    setnextpagelink();
-    setprevpagelink();
-    document.title = mdtitle
-        ? mdtitle + " - " + config.maintitle
-        : config.maintitle;
-}

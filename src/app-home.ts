@@ -1,6 +1,5 @@
-import { defineComponent, onMounted } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 //@ts-ignore
-import config from "./config.ts"; //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
 import {
     contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
