@@ -30,11 +30,15 @@ Lightweight Markdown Documentation System
 
 添加 md 文件互相引用的处理，添加 md 文件引用图片的处理，
 
-根据目录的 md 文件生成侧边栏，添加前后翻页按钮
+根据目录的 md 文件生成侧边栏，
+
+添加前后翻页按钮,并设置翻页链接
 
 删除不好用的 `mathjax`
 
 使用`clipboard`给`markdown`中的代码添加复制功能
+
+加载完 markdown 文件后给当前页的链接添加活跃样式
 
 <hr></hr>
 
@@ -57,17 +61,12 @@ pnpm install
 开发运行
 
 ```
-
-
-
 yarn start
 ```
 
 打包构建
 
 ```
-
-
 yarn build
 ```
 
