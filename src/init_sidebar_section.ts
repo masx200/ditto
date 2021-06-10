@@ -1,5 +1,10 @@
 //@ts-ignore
-import { cachemarkdown, show_loading, stop_loading } from "./ditto.ts";
+import {
+    cachemarkdown,
+    cachetitle,
+    show_loading,
+    stop_loading,
+} from "./ditto.ts";
 //@ts-ignore
 import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 //@ts-ignore
@@ -48,7 +53,7 @@ export async function init_sidebar_section() {
         var links: HTMLAnchorElement[] = Array.from(
             tmpcontainer.querySelectorAll("a")
         );
-        var urls = links.map((a) => {
+        links.forEach((a) => {
             var ahref = a.getAttribute("href");
             var b = new URL(location.href);
 
@@ -56,26 +61,22 @@ export async function init_sidebar_section() {
                 var realmdpath = isrelativepath(ahref)
                     ? new URL(ahref, summaryfile)
                     : ahref;
-                b.hash = "#" + realmdpath;
+
+                let path = urlclearhash(realmdpath);
+
+                path = path.endsWith(".md") ? path : path + ".md";
+                menulist.push(path);
+                let mdtitle = a.innerText;
+
+                if (!cachetitle.get(path)) {
+                    cachetitle.set(path, mdtitle);
+                }
+                b.hash = "#" + path;
 
                 a.href = b.href;
             }
-            return b;
         });
-        urls.map((e) => e.hash)
-            .filter((e_1) => e_1.startsWith("#"))
-            .map((e_2) => e_2.slice(1))
-            .forEach((e_3) => {
-                var path = String(
-                    new URL(
-                        e_3.endsWith(".md") ? e_3 : e_3 + ".md",
-                        summaryfile
-                    )
-                );
-                path = urlclearhash(path);
 
-                menulist.push(path);
-            });
         Reflect.set(ApphomeVm, "showerror", false);
 
         console.log(tmpcontainer);
