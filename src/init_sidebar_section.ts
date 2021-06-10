@@ -80,7 +80,7 @@ export async function init_sidebar_section() {
 
         Reflect.set(ApphomeVm, "showerror", false);
 
-        console.log(tmpcontainer);
+        // console.log(tmpcontainer);
         Reflect.set(ApphomeVm, "muluhtml", tmpcontainer.innerHTML);
         const currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
 
