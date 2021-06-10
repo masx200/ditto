@@ -41,3 +41,10 @@ code {
     font-weight: 400;
     color: #007aff;
 }
+.active {
+    border-style: solid;
+    border-width: medium;
+    border-color: #646cff;
+    font-weight: 600;
+    color: #646cff;
+}
