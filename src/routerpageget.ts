@@ -2,7 +2,12 @@
 import { compile_into_dom } from "./compile_into_dom.ts"; //@ts-ignore
 import { contenthtml } from "./contenthtml.ts"; //@ts-ignore
 import { debounce } from "./debounce.ts"; //@ts-ignore
-import { cachemarkdown, show_loading, stop_loading } from "./ditto.ts"; //@ts-ignore
+import {
+    cachemarkdown,
+    show_loading,
+    stop_loading,
+    cachetitle,
+} from "./ditto.ts"; //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts"; //@ts-ignore
 import { getabsoluteindex, getbaseurl } from "./getbaseurl.ts"; //@ts-ignore
 import { guid } from "./guid.ts"; //@ts-ignore
@@ -11,7 +16,7 @@ import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts"; //@ts-ignore
 
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
-
+import config from "./config.ts";
 function resolvemdpathfromhash() {
     const baseurl = getbaseurl();
 
@@ -129,7 +134,10 @@ function loaddone() {
     window.scrollTo(0, 0);
     stop_loading();
     Reflect.set(ApphomeVm, "showsrc", true);
+    let path = Reflect.get(ApphomeVm, "urltext");
+    let mdtitle = cachetitle.get(path) || "无标题";
 
     setnextpagelink();
     setprevpagelink();
+    document.title = mdtitle + " - " + config.maintitle;
 }
