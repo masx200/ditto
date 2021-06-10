@@ -25,12 +25,13 @@ export function loaddone() {
     document.title = mdtitle
         ? mdtitle + " - " + config.maintitle
         : config.maintitle;
-
-    Array.from(document.querySelectorAll("a")).forEach((e) => {
-        if (e.hash === "#" + path) {
-            e.classList.add("active");
-        } else {
-            e.classList.remove("active");
-        }
+    requestAnimationFrame(() => {
+        Array.from(document.querySelectorAll("a")).forEach((e) => {
+            if (e.hash === "#" + path) {
+                e.classList.add("active");
+            } else {
+                e.classList.remove("active");
+            }
+        });
     });
 }
