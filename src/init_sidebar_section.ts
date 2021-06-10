@@ -4,6 +4,7 @@ import {
     cachetitle,
     show_loading,
     stop_loading,
+    //@ts-ignore
 } from "./ditto.ts";
 //@ts-ignore
 import { escapemarkedunescape } from "./escapemarkedunescape.ts";
