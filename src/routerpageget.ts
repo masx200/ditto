@@ -108,7 +108,20 @@ export const routerpagegethandler = debounce(async function () {
                     contenthtml.set(tmpcontainer.innerHTML);
                     Reflect.set(ApphomeVm, "urltext", path);
                 }
+                let mdtitle = (() => {
+                    let selectors = ["h1", "h2", "h3", "h4", "h5", "h6"];
+                    for (let sel of selectors) {
+                        //@ts-ignore
+                        let title = tmpcontainer.querySelector(sel)?.innerText;
+                        if (title) {
+                            return title;
+                        }
+                    }
+                })();
 
+                if (mdtitle && !cachetitle.get(path)) {
+                    cachetitle.set(path, mdtitle);
+                }
                 loaddone();
                 return;
             } catch (e_1) {
