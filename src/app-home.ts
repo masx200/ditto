@@ -23,7 +23,7 @@ export default defineComponent({
         console.log({ props, attrs, slots, emit });
         const widescreen = ref(true);
         const narrowscreen = computed(() => {
-            !widescreen.value;
+            return !widescreen.value;
         });
         onMounted(() => {
             window.addEventListener("resize", () => {
