@@ -1,4 +1,9 @@
-import { defineComponent } from "@vue/composition-api";
+import {
+    defineComponent,
+    ref,
+    computed,
+    onMounted,
+} from "@vue/composition-api";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
 import {
@@ -16,8 +21,20 @@ const disabledalinkhref = "javascript:;";
 export default defineComponent({
     setup(props, { attrs, slots, emit }) {
         console.log({ props, attrs, slots, emit });
-
+        const widescreen = ref(true);
+        const narrowscreen = computed(() => {
+            !widescreen.value;
+        });
+        onMounted(() => {
+            window.addEventListener("resize", () => {
+                requestAnimationFrame(() => {
+                    widescreen.value = document.body.clientHeight > 500;
+                });
+            });
+        });
         const allret = {
+            widescreen,
+            narrowscreen,
             contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
             mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
             mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3,

@@ -12,6 +12,7 @@
                 style="padding-right: 0; padding-left: 0"
             >
                 <div
+                    v-show="narrowscreen"
                     id="nav-6fc6d0bc9128ba5f98a1e493cb2adf11550"
                     style="
                         display: flex;
@@ -41,6 +42,7 @@
                     </button>
                 </div>
                 <div
+                    v-show="narrowscreen"
                     id="nav-7e7dd758bdb27a9c889a4eaa0fce55cf2d7"
                     style="
                         display: flex;
@@ -90,6 +92,7 @@
                     </a>
                 </div>
                 <div
+                    v-show="widescreen"
                     id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
                     style="
                         display: flex;
