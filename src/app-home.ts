@@ -28,7 +28,7 @@ export default defineComponent({
         onMounted(() => {
             window.addEventListener("resize", () => {
                 requestAnimationFrame(() => {
-                    widescreen.value = document.body.clientHeight > 500;
+                    widescreen.value = document.body.clientWidth > 500;
                 });
             });
         });
