@@ -23,6 +23,8 @@ import { menulist } from "./menulist.ts";
 //@ts-ignore
 import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.ts";
 //@ts-ignore
+import { removesomevalidelements } from "./removesomevalidelements.ts";
+//@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
 export async function init_sidebar_section() {
     const summaryfile = getabsolutesummary();
@@ -55,14 +57,7 @@ export async function init_sidebar_section() {
 
         tmpcontainer.innerHTML = tmpdoc.body.innerHTML;
         //删除当中的style标签和link标签和script标签
-        Array.from([
-            ...tmpcontainer.querySelectorAll("link"),
-            ...tmpcontainer.querySelectorAll("style"),
-            ...tmpcontainer.querySelectorAll("script"),
-            ...tmpcontainer.querySelectorAll("title"),
-        ]).forEach((e) => {
-            e.remove();
-        });
+        removesomevalidelements(tmpcontainer);
 
         Array.from(tmpcontainer.querySelectorAll("pre code")).forEach(function (
             block: Element

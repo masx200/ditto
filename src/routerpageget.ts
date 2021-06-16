@@ -1,7 +1,10 @@
 //@ts-ignore
-import { compile_into_dom } from "./compile_into_dom.ts"; //@ts-ignore
-import { contenthtml } from "./contenthtml.ts"; //@ts-ignore
-import { debounce } from "./debounce.ts"; //@ts-ignore
+import { compile_into_dom } from "./compile_into_dom.ts";
+//@ts-ignore
+import { contenthtml } from "./contenthtml.ts";
+//@ts-ignore
+import { debounce } from "./debounce.ts";
+//@ts-ignore
 import {
     cachemarkdown,
     cachetitle,
@@ -9,12 +12,15 @@ import {
     stop_loading,
     //@ts-ignore
 } from "./ditto.ts"; //@ts-ignore
-import fetchajaxgettext from "./fetchajaxgettext.ts"; //@ts-ignore
+import fetchajaxgettext from "./fetchajaxgettext.ts";
+//@ts-ignore
 import { guid } from "./guid.ts"; //@ts-ignore
 //@ts-ignore
 import { loaddone } from "./loaddone.ts";
 //@ts-ignore
-import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
+import { ApphomeVm, initloadingid } from "./mark-down-reader.ts";
+//@ts-ignore
+import { removesomevalidelements } from "./removesomevalidelements.ts";
 //@ts-ignore
 //@ts-ignore
 import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
@@ -44,14 +50,7 @@ export const routerpagegethandler = debounce(async function () {
                 tmpcontainer.innerHTML = await compile_into_dom(data, path);
                 //删除当中的style标签和link标签和script标签
 
-                Array.from([
-                    ...tmpcontainer.querySelectorAll("link"),
-                    ...tmpcontainer.querySelectorAll("style"),
-                    ...tmpcontainer.querySelectorAll("script"),
-                    ...tmpcontainer.querySelectorAll("title"),
-                ]).forEach((e) => {
-                    e.remove();
-                });
+                removesomevalidelements(tmpcontainer);
                 Array.from(tmpcontainer.querySelectorAll("code.hljs")).forEach(
                     (e) => {
                         const codecontenguid = "clip" + guid();
