@@ -26,7 +26,7 @@ async function loadclipboard() {
     const ClipboardJS = module.default;
 
     new ClipboardJS(".btn").on("success", function (e: ClipboardJS.Event) {
-        console.info("Text:", e.text);
+        // console.info("Text:", e.text);
 
         e.clearSelection();
     });
