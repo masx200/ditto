@@ -36,5 +36,6 @@ export function loaddone() {
             }
         });
         hljs.highlightAll();
+        stop_loading();
     });
 }
