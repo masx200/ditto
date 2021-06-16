@@ -54,19 +54,19 @@ https://github.com/chutsu/ditto
 
 安装模块
 
-```
+```shell
 pnpm install
 ```
 
 开发运行
 
-```
+```shell
 yarn start
 ```
 
 打包构建
 
-```
+```shell
 yarn build
 ```
 
