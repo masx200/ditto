@@ -13,6 +13,8 @@ import fetchajaxgettext from "./fetchajaxgettext.ts";
 //@ts-ignore
 import { getabsolutesummary } from "./getbaseurl.ts";
 //@ts-ignore
+import hljs from "./highlight.min.ts";
+//@ts-ignore
 import { isrelativepath } from "./isrelativepath.ts";
 //@ts-ignore
 import { ApphomeVm } from "./mark-down-reader.ts";
@@ -43,6 +45,12 @@ export async function init_sidebar_section() {
             ...tmpcontainer.querySelectorAll("script"),
         ]).forEach((e) => {
             e.remove();
+        });
+
+        Array.from(tmpcontainer.querySelectorAll("pre code")).forEach(function (
+            block: Element
+        ) {
+            hljs.highlightElement(block);
         });
         const cataloguelinkhtml = `<a href="${summaryfile}" class="mui-btn mui-btn-primary mui-btn-outlined">目录</a>`;
 
