@@ -20,6 +20,7 @@ import { ApphomeVm, initloadingid } from "./mark-down-reader.ts"; //@ts-ignore
 import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
 
 export const routerpagegethandler = debounce(async function () {
+    // console.log(cachemarkdown);
     window.scrollTo(0, 0);
     show_loading();
     const path = resolvemdpathfromhash();
