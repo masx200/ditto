@@ -15,7 +15,7 @@ export async function mymounted() {
 }
 function 监视侧边栏变化触发事件() {
     const mo = new MutationObserver((mutations) => {
-        console.log(mutations);
+        // console.log(mutations);
         window.dispatchEvent(new Event("resize"));
     });
     mo.observe(Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value, {

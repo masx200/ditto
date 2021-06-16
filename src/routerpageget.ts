@@ -112,7 +112,7 @@ export const routerpagegethandler = debounce(async function () {
                 console.error(e_1);
                 Reflect.set(ApphomeVm, "urltext", "加载失败 " + path);
 
-                console.error("Opps! ... File not found!\n5秒后返回主页");
+                // console.error("Opps! ... File not found!\n5秒后返回主页");
 
                 stop_loading();
 

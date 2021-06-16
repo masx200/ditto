@@ -20,7 +20,7 @@ import {
 const disabledalinkhref = "javascript:;";
 export default defineComponent({
     setup(props, { attrs, slots, emit }) {
-        console.log({ props, attrs, slots, emit });
+        // console.log({ props, attrs, slots, emit });
         const widescreen = ref(true);
         const narrowscreen = computed(() => {
             return !widescreen.value;

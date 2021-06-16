@@ -10,7 +10,7 @@ Vue.use(VueCompositionAPI);
     //@ts-ignore
     const config = (await import("./config.ts")).default;
 
-    console.log(config);
+    // console.log(config);
     var rootele = document.getElementById("root");
     const module = await import(
         //@ts-ignore

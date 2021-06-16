@@ -9,6 +9,8 @@ import { ApphomeVm, initloadingid } from "./mark-down-reader.ts";
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
 import config from "./config.ts";
+//@ts-ignore
+import hljs from "./highlight.min.ts";
 
 export function loaddone() {
     let initloadele = document.getElementById(initloadingid);
@@ -33,5 +35,6 @@ export function loaddone() {
                 e.classList.remove("active");
             }
         });
+        hljs.highlightAll();
     });
 }

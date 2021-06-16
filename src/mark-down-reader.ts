@@ -20,7 +20,7 @@ import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
 
 window.addEventListener("resize", Adjustthedistance);
 window.addEventListener("resize", 内容调整左边偏移);
-console.log(app);
+// console.log(app);
 
 ("use strict");
 export const initloadingid = "first-" + guid();
@@ -34,18 +34,18 @@ Vue.config.errorHandler = function (err: Error, vm: Vue, info: string) {
 };
 
 const ApphomeVm: Vue = new Vue(app);
-console.log(ApphomeVm);
+// console.log(ApphomeVm);
 
 export function mount(el: Element) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);
-    console.log("search", searchobj);
+    // console.log("search", searchobj);
 
     Object.keys(config).forEach((key) => {
         let value = searchobj[key];
         value && Reflect.set(config, key, value);
     });
     config.baseurl = String(new URL(config.baseurl, location.href));
-    console.log("config", config);
+    // console.log("config", config);
 
     el.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>

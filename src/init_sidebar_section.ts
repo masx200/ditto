@@ -94,7 +94,7 @@ export async function init_sidebar_section() {
             menulist.push(url);
         });
         Object.freeze(menulist);
-        console.log("menulist", menulist);
+        // console.log("menulist", menulist);
         menulist.forEach((path: string) => {
             precheckfetchajaxmarkdown(path);
         });
@@ -104,7 +104,7 @@ export async function init_sidebar_section() {
         console.error(e_4);
         stop_loading();
 
-        console.error("Opps! can't find the sidebar file to display!");
+        // console.error("Opps! can't find the sidebar file to display!");
         console.warn("load failed " + path);
         Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
 
