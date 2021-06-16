@@ -48,6 +48,7 @@ export const routerpagegethandler = debounce(async function () {
                     ...tmpcontainer.querySelectorAll("link"),
                     ...tmpcontainer.querySelectorAll("style"),
                     ...tmpcontainer.querySelectorAll("script"),
+                    ...tmpcontainer.querySelectorAll("title"),
                 ]).forEach((e) => {
                     e.remove();
                 });
