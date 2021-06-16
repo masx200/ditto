@@ -41,7 +41,15 @@ export const routerpagegethandler = debounce(async function () {
                 const tmpcontainer = document.createElement("div");
 
                 tmpcontainer.innerHTML = await compile_into_dom(data, path);
+                //删除当中的style标签和link标签和script标签
 
+                Array.from([
+                    ...tmpcontainer.querySelectorAll("link"),
+                    ...tmpcontainer.querySelectorAll("style"),
+                    ...tmpcontainer.querySelectorAll("script"),
+                ]).forEach((e) => {
+                    e.remove();
+                });
                 Array.from(tmpcontainer.querySelectorAll("code.hljs")).forEach(
                     (e) => {
                         const codecontenguid = "clip" + guid();

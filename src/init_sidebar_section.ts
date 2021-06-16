@@ -36,7 +36,14 @@ export async function init_sidebar_section() {
         const tmpcontainer = document.createElement("div");
 
         tmpcontainer.innerHTML = markedhtml;
-
+        //删除当中的style标签和link标签和script标签
+        Array.from([
+            ...tmpcontainer.querySelectorAll("link"),
+            ...tmpcontainer.querySelectorAll("style"),
+            ...tmpcontainer.querySelectorAll("script"),
+        ]).forEach((e) => {
+            e.remove();
+        });
         const cataloguelinkhtml = `<a href="${summaryfile}" class="mui-btn mui-btn-primary mui-btn-outlined">目录</a>`;
 
         tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
