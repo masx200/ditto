@@ -34,10 +34,26 @@ export async function init_sidebar_section() {
         show_loading();
         const data = await fetchajaxgettext(path);
         const markedhtml = await escapemarkedunescape(data);
+        const tmpdoc = document.implementation.createHTMLDocument("title");
 
+        tmpdoc.body.innerHTML = markedhtml;
+
+        Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
+            var imgsrc = e.getAttribute("src");
+
+            if (
+                imgsrc &&
+                !imgsrc.startsWith("http://") &&
+                !imgsrc.startsWith("https://")
+            ) {
+                var imgrealurl = String(new URL(imgsrc, summaryfile));
+
+                e.src = imgrealurl;
+            }
+        });
         const tmpcontainer = document.createElement("div");
 
-        tmpcontainer.innerHTML = markedhtml;
+        tmpcontainer.innerHTML = tmpdoc.body.innerHTML;
         //删除当中的style标签和link标签和script标签
         Array.from([
             ...tmpcontainer.querySelectorAll("link"),
