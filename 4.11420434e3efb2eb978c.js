@@ -1,0 +1,1 @@
+(Function("return this")().webpackChunk_masx200_markdown_reader=Function("return this")().webpackChunk_masx200_markdown_reader||[]).push([[4],{8:function(e,r,a){"use strict";a.r(r),r.default={maintitle:"markdown reader",homepage:"README.md",catalogue:"summary.md",baseurl:String(new URL("linkfiles/",location.href))}}}]);

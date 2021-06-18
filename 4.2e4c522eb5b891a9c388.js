@@ -1,1 +1,0 @@
-(Function("return this")().webpackChunk_masx200_markdown_reader=Function("return this")().webpackChunk_masx200_markdown_reader||[]).push([[4],{8:function(e,r,a){"use strict";a.r(r),r.default={maintitle:"markdown reader",homepage:"README.md",catalogue:"summary.md",baseurl:"https://cdn.jsdelivr.net/gh/masx200/markdown-reader/"}}}]);
