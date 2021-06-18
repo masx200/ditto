@@ -1,5 +1,6 @@
 {
-    "version": "3.4.1",
+    "type": "commonjs",
+    "version": "3.5.0",
     "publishConfig": {
         "access": "public",
         "registry": "https://registry.npmjs.com/"
@@ -8,8 +9,11 @@
     "main": "./src/export.js",
     "types": "./src/export.d.ts",
     "scripts": {
-        "start": "webpack-react-vue-spa-awesome-config start --port=11111",
-        "build": " webpack-react-vue-spa-awesome-config build   ",
+        "build": "npm run prod &&npm run linkfiles",
+        "start": "npm run linkfiles &&npm run dev",
+        "linkfiles": "node utils/linkfiles.js",
+        "dev": "webpack-react-vue-spa-awesome-config start --port=11111",
+        "prod": " webpack-react-vue-spa-awesome-config build   ",
         "format": "prettier --write *.html *.js *.css *.md *.json *.vue */*.ts *.ts */*/*.ts */*.html */**/*.js */*.css */*.md */*.json */*.vue */*.js"
     },
     "devDependencies": {
@@ -42,5 +46,8 @@
     "bugs": {
         "url": "https://github.com/masx200/markdown-reader/issues"
     },
-    "homepage": "https://github.com/masx200/markdown-reader#readme"
+    "homepage": "https://github.com/masx200/markdown-reader#readme",
+    "dependencies": {
+        "fs-extra": "^10.0.0"
+    }
 }
