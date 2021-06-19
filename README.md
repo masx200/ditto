@@ -58,16 +58,28 @@ https://github.com/chutsu/ditto
 pnpm install
 ```
 
-开发运行
+链接文件并开发运行
 
 ```shell
 yarn start
 ```
 
-打包构建
+仅开发运行不链接文件
+
+```shell
+yarn dev
+```
+
+打包构建并复制文件
 
 ```shell
 yarn build
+```
+
+仅构建打包不复制文件
+
+```shell
+yarn prod
 ```
 
 打包之后的文件存放在`dist`目录下，可直接部署到云服务器上
