@@ -49,7 +49,7 @@
     },
     "homepage": "https://github.com/masx200/markdown-reader#readme",
     "dependencies": {
-        "@masx200/mini-cli-args-parser": "^1.0.2",
+        "@masx200/mini-cli-args-parser": "1.0.4",
         "fs-extra": "^10.0.0"
     }
 }
