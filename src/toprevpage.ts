@@ -28,7 +28,16 @@ export function setnextpagelink() {
         // console.error("已经到达菜单列表的起始处或结尾处");
         return;
     }
-    Reflect.set(ApphomeVm, "nextpagelink", "#" + menulist[pageindextogo]);
+    let hashtogo = menulist[pageindextogo];
+    Reflect.set(
+        ApphomeVm,
+        "nextpagelink",
+        String(
+            Object.assign(new URL(location.href), {
+                hash: hashtogo,
+            })
+        )
+    );
 }
 export function setprevpagelink() {
     Reflect.set(ApphomeVm, "prevpagelink", disabledalinkhref);
@@ -42,5 +51,15 @@ export function setprevpagelink() {
         // console.error("已经到达菜单列表的起始处或结尾处");
         return;
     }
-    Reflect.set(ApphomeVm, "prevpagelink", "#" + menulist[pageindextogo]);
+    let hashtogo = menulist[pageindextogo];
+
+    Reflect.set(
+        ApphomeVm,
+        "prevpagelink",
+        String(
+            Object.assign(new URL(location.href), {
+                hash: hashtogo,
+            })
+        )
+    );
 }
