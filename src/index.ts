@@ -8,7 +8,7 @@ Vue.use(VueCompositionAPI);
 
 (async () => {
     //@ts-ignore
-    const config = (await import("./config.ts")).default;
+    //const config = (await import("./config.ts")).default;
 
     // console.log(config);
     var rootele =
