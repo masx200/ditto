@@ -18,21 +18,24 @@ import {
     //@ts-ignore
 } from "./refele.ts";
 //@ts-ignore
-//import { tonextpage, toprevpage } from "./toprevpage.ts";
+import { debounce } from "./debounce.ts";
 const disabledalinkhref = "javascript:;";
 export default defineComponent({
     setup() {
-        // console.log({ props, attrs, slots, emit });
         const widescreen = ref(true);
         const narrowscreen = computed(() => {
             return !widescreen.value;
         });
         onMounted(() => {
-            window.addEventListener("resize", () => {
-                requestAnimationFrame(() => {
-                    widescreen.value = document.body.clientWidth > 500;
-                });
-            });
+            window.addEventListener(
+                "resize",
+
+                debounce(() => {
+                    requestAnimationFrame(() => {
+                        widescreen.value = document.body.clientWidth > 500;
+                    });
+                })
+            );
         });
         const allret = {
             widescreen,
@@ -45,7 +48,6 @@ export default defineComponent({
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
         };
         onMounted(() => {
-            console.log(this);
             (async () => {
                 //@ts-ignore
                 var module = await import("./mymounted.ts");
@@ -54,21 +56,23 @@ export default defineComponent({
                 mymounted();
             })();
         });
-        
+
         return allret;
     },
+    mounted() {
+        console.log(this);
 
+        this.indexhref = getindexhref();
+
+        this.mytitle = getmytitle();
+    },
     data: () => ({
-        indexhref: String(
-            Object.assign(new URL(location.href), {
-                hash: getabsoluteindex(),
-            })
-        ),
+        indexhref: getindexhref(),
         contenthtml: "",
         muluhtml: "",
         nextpagelink: disabledalinkhref,
         prevpagelink: disabledalinkhref,
-        mytitle: config.maintitle,
+        mytitle: getmytitle(),
         showerror: false,
         errorcontent: "",
         showsrc: false,
@@ -86,7 +90,16 @@ export default defineComponent({
         scrolltobottom() {
             scrollTo(0, document.body.scrollHeight);
         },
-        // toprevpage: toprevpage,
-        //    tonextpage: tonextpage,
     },
 });
+function getindexhref() {
+    return String(
+        Object.assign(new URL(location.href), {
+            hash: getabsoluteindex(),
+        })
+    );
+}
+
+function getmytitle() {
+    return config.maintitle;
+}
