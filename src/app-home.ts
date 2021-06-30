@@ -5,6 +5,8 @@ import {
     onMounted,
 } from "@vue/composition-api";
 //@ts-ignore
+import config from "./config.ts";
+//@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
 import {
     contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
@@ -55,21 +57,18 @@ export default defineComponent({
             mymounted();
         })();
     },
-    computed: {
-        indexhref() {
-            return String(
-                Object.assign(new URL(location.href), {
-                    hash: getabsoluteindex(),
-                })
-            );
-        },
-    },
+    computed: {},
     data: () => ({
+        indexhref: String(
+            Object.assign(new URL(location.href), {
+                hash: getabsoluteindex(),
+            })
+        ),
         contenthtml: "",
         muluhtml: "",
         nextpagelink: disabledalinkhref,
         prevpagelink: disabledalinkhref,
-        mytitle: "Markdown Reader",
+        mytitle: config.maintitle,
         showerror: false,
         errorcontent: "",
         showsrc: false,

@@ -18,7 +18,7 @@ export async function 挂载初始() {
     var maintitle = config.maintitle;
 
     document.title = maintitle;
-    Reflect.set(ApphomeVm, "mytitle", maintitle);
+    // Reflect.set(ApphomeVm, "mytitle", maintitle);
 
     return initialize();
 }
