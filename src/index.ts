@@ -11,7 +11,11 @@ Vue.use(VueCompositionAPI);
     const config = (await import("./config.ts")).default;
 
     // console.log(config);
-    var rootele = document.getElementById("root");
+    var rootele =
+        document.getElementById("root") ||
+        document.body.appendChild(document.createElement("div"));
+
+    Object.assign(rootele, { id: "root" });
     const module = await import(
         //@ts-ignore
         "./export.ts"

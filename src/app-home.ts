@@ -19,7 +19,7 @@ import {
 //import { tonextpage, toprevpage } from "./toprevpage.ts";
 const disabledalinkhref = "javascript:;";
 export default defineComponent({
-    setup(props, { attrs, slots, emit }) {
+    setup() {
         // console.log({ props, attrs, slots, emit });
         const widescreen = ref(true);
         const narrowscreen = computed(() => {
@@ -42,12 +42,11 @@ export default defineComponent({
             markdowncontent_2e4c728cac441a0c48939881c2c714361a0,
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
         };
-        // onMounted(() => {
-        //        console.log(allret);
-        //      });
+
         return allret;
     },
     mounted() {
+        console.log(this);
         (async () => {
             //@ts-ignore
             var module = await import("./mymounted.ts");
@@ -64,19 +63,10 @@ export default defineComponent({
                 })
             );
         },
-        muluhtml: {
-            get(): string {
-                return Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517
-                    .value.innerHTML;
-            },
-
-            set(c: string) {
-                Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517.value.innerHTML =
-                    c;
-            },
-        },
     },
     data: () => ({
+        contenthtml: "",
+        muluhtml: "",
         nextpagelink: disabledalinkhref,
         prevpagelink: disabledalinkhref,
         mytitle: "Markdown Reader",

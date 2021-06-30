@@ -46,14 +46,26 @@ export function mount(el: Element) {
     });
     config.baseurl = String(new URL(config.baseurl, location.href));
     // console.log("config", config);
-
-    el.innerHTML = `<div id=${initloadingid}>
+    if (!document.getElementById("app")) {
+        el.innerHTML = `<div id=${initloadingid}>
 <h1>loading</h1>
 <span class="mui-spinner mui-spinner-custom">
 
 </span></div>
 `;
-    ApphomeVm.$mount(el.appendChild(document.createElement("div")));
+    }
+
+    let elementroot =
+        document.getElementById("app") ||
+        el.appendChild(document.createElement("div"));
+    Object.assign(elementroot, {
+        id: "app",
+    });
+    ApphomeVm.$mount(elementroot);
+
+    Object.assign(ApphomeVm.$el, {
+        id: "app",
+    });
 }
 
 export { ApphomeVm };

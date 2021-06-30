@@ -171,6 +171,7 @@
                 v-show="xianshicebianlan"
             >
                 <aside
+                    v-html="muluhtml"
                     ref="Directorycontent_4dd4b8ef845d1a0de9b7e29b0e9bd1be517"
                     id="mynewsidelan-c887e2d697f11af869981691c9830ebd892"
                     class="el-aside"
@@ -188,7 +189,17 @@
                     id="loading-36bec0d286ad9ab9ca8c1d923b0095c1c06"
                     v-show="showload"
                 >
-                    <h1>Loading ...</h1>
+                    <h1
+                        style="
+                            font-size: 50px;
+                            background-color: white;
+                            border-radius: 10px;
+                            border: black 3px solid;
+                            padding: 5px;
+                        "
+                    >
+                        Loading...
+                    </h1>
                 </div>
             </div>
             <div>
@@ -212,6 +223,7 @@
                     <div
                         id="content-aa867a1d8c5dfbf2abbff8bc2af55a88a36"
                         ref="markdowncontent_2e4c728cac441a0c48939881c2c714361a0"
+                        v-html="contenthtml"
                     ></div>
                 </div>
             </div>

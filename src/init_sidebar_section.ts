@@ -109,8 +109,8 @@ export async function init_sidebar_section() {
 
         // console.log(tmpcontainer);
         Reflect.set(ApphomeVm, "muluhtml", tmpcontainer.innerHTML);
-        const currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
-
+        // const currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
+        const currentcontenthtml = tmpcontainer.innerHTML;
         if (!cachemarkdown.get(path)) {
             cachemarkdown.set(path, currentcontenthtml);
         }

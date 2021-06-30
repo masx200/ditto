@@ -14,7 +14,7 @@ export async function mymounted() {
     监视侧边栏变化触发事件();
 }
 function 监视侧边栏变化触发事件() {
-    const mo = new MutationObserver((mutations) => {
+    const mo = new MutationObserver(() => {
         // console.log(mutations);
         window.dispatchEvent(new Event("resize"));
     });

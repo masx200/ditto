@@ -3,7 +3,7 @@ const filelist = ["docs", "summary.md", "README.md"];
 const fsextra = require("fs-extra");
 
 const fs = require("fs");
-const fsPromises =fs.promises;
+const fsPromises = fs.promises;
 // require("fs/promises");
 
 const path = require("path");
