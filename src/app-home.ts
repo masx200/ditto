@@ -44,20 +44,20 @@ export default defineComponent({
             markdowncontent_2e4c728cac441a0c48939881c2c714361a0,
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
         };
+        onMounted(() => {
+            console.log(this);
+            (async () => {
+                //@ts-ignore
+                var module = await import("./mymounted.ts");
 
+                var mymounted = module.mymounted;
+                mymounted();
+            })();
+        });
+        
         return allret;
     },
-    mounted() {
-        console.log(this);
-        (async () => {
-            //@ts-ignore
-            var module = await import("./mymounted.ts");
 
-            var mymounted = module.mymounted;
-            mymounted();
-        })();
-    },
-    computed: {},
     data: () => ({
         indexhref: String(
             Object.assign(new URL(location.href), {
