@@ -10,7 +10,7 @@ import { menulist } from "./menulist.ts";
 import { getabsoluteindex } from "./getbaseurl.ts";
 
 export async function initialize() {
-   // menulist.push(urlclearhash(getabsoluteindex()));
+    // menulist.push(urlclearhash(getabsoluteindex()));
     await init_sidebar_section();
     await routerpagegethandler();
 

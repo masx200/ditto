@@ -65,7 +65,7 @@ export async function init_sidebar_section() {
             hljs.highlightElement(block);
         });
         const homefile = getabsoluteindex();
-menulist.unshift(homefile);
+        menulist.unshift(homefile);
         const linkanddescriptions = [
             { u: summaryfile, d: "目录" },
             { u: homefile, d: "主页" },
@@ -114,39 +114,28 @@ menulist.unshift(homefile);
             }
         });
 
-//删除重复的链接
+        //删除重复的链接
 
+        new Set(
+            Array.from(tmpcontainer.querySelectorAll("a")).map((a) => a.href)
+        ).forEach((href) => {
+            tmpcontainer
+                .querySelectorAll(`a[href="${href}"]`)
+                .forEach((e, i) => {
+                    if (i > 0) {
+                        let parent = e.parentNode;
 
-new Set(Array.from(
-            tmpcontainer.querySelectorAll("a")
-        ).map(a=>a.href)).forEach(href=>{
+                        e.remove();
+                        if (parent && !parent.childNodes.length) {
+                            let remove = Reflect.get(parent, "remove");
 
-tmpcontainer.querySelectorAll(`a[href="${href}"]`).forEach((e,i)=>{
-if(i>0){
-let parent=e.parentNode
-
-e.remove()
-if(parent&&!parent.childNodes.length){
-
-let remove= Reflect.get(parent,"remove")
-
-
-if("function"=== typeof remove){
-Reflect.apply(remove,parent,[])
-
-}
-
-
-
-}
-}
-
-})
-
-
-
-}
-);
+                            if ("function" === typeof remove) {
+                                Reflect.apply(remove, parent, []);
+                            }
+                        }
+                    }
+                });
+        });
         Reflect.set(ApphomeVm, "showerror", false);
 
         // console.log(tmpcontainer);
