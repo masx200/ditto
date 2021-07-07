@@ -126,7 +126,7 @@ if(i>0){
 let parent=e.parentNode
 
 e.remove()
-if(!parent.childNodes.length){
+if(parent&&!parent.childNodes.length){
 
 parent.remove()
 }
