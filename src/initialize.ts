@@ -8,8 +8,7 @@ import { routerpagegethandler } from "./routerpageget.ts";
 import { menulist } from "./menulist.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
-//@ts-ignore
-import { urlclearhash } from "./urlclearhash.ts";
+
 export async function initialize() {
    // menulist.push(urlclearhash(getabsoluteindex()));
     await init_sidebar_section();
