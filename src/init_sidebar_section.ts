@@ -114,6 +114,22 @@ menulist.unshift(homefile);
             }
         });
 
+//删除重复的链接
+
+
+new Set(Array.from(
+            tmpcontainer.querySelectorAll("a")
+        ).map(a=>a.href)).forEach(href=>{
+
+tmpcontainer.querySelectorAll(`a[href="${href}"]`).forEach((e,i)=>{
+if(i>0){e.remove()}
+
+})
+
+
+
+}
+);
         Reflect.set(ApphomeVm, "showerror", false);
 
         // console.log(tmpcontainer);
