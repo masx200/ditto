@@ -65,6 +65,7 @@ export async function init_sidebar_section() {
             hljs.highlightElement(block);
         });
         const homefile = getabsoluteindex();
+menulist.unshift(homefile);
         const linkanddescriptions = [
             { u: summaryfile, d: "目录" },
             { u: homefile, d: "主页" },
