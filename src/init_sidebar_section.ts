@@ -11,7 +11,7 @@ import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts";
 //@ts-ignore
-import { getabsolutesummary } from "./getbaseurl.ts";
+import { getabsolutesummary, getabsoluteindex } from "./getbaseurl.ts";
 //@ts-ignore
 import hljs from "./highlight.min.ts";
 //@ts-ignore
@@ -64,10 +64,16 @@ export async function init_sidebar_section() {
         ) {
             hljs.highlightElement(block);
         });
+        const homefile = getabsoluteindex();
+        const linkanddescriptions = [
+            { u: summaryfile, d: "目录" },
+            { u: homefile, d: "主页" },
+        ];
+        linkanddescriptions.forEach(({ u, d }) => {
+            const cataloguelinkhtml = `<a href="${u}" class="mui-btn mui-btn-primary mui-btn-outlined">${d}</a>`;
 
-        const cataloguelinkhtml = `<a href="${summaryfile}" class="mui-btn mui-btn-primary mui-btn-outlined">${"目录"}</a>`;
-
-        tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
+            tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
+        });
 
         Array.from(tmpcontainer.querySelectorAll("ul")).forEach((e: Element) =>
             e.classList.add("navbar-nav")
