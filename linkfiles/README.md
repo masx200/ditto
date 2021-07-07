@@ -97,3 +97,17 @@ https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 `baseurl`:文档所在的基础 URL 路径，必须是绝对路径，
 
 如果文档在同一个目录下，可设置`baseurl`为`location.href`
+
+## 无需打包的使用方式,使用查询参数直接访问您的文档在线阅读
+
+直接将自定义配置中的几个选项传入到查询参数中即可!
+
+例子:
+
+https://masx200.github.io/markdown-reader/?baseurl=https://masx200.github.io/typescript-book-chinese/&maintitle=%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3TypeScript&catalogue=catalogue.md&homepage=README.md
+
+https://masx200.github.io/markdown-reader/?baseurl=https://masx200.github.io/javascript-tutorial/&homepage=README.md&catalogue=summary.md&maintitle=JavaScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B
+
+https://masx200.github.io/markdown-reader/?maintitle=ECMAScript6%E5%85%A5%E9%97%A8&homepage=README.md&catalogue=SUMMARY.md&baseurl=https://masx200.github.io/es6tutorial/
+
+https://masx200.github.io/markdown-reader/?maintitle=TypeScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B&homepage=README.md&catalogue=SUMMARY.md&baseurl=https://masx200.github.io/typescript-tutorial/
