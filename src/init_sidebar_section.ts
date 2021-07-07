@@ -122,7 +122,15 @@ new Set(Array.from(
         ).map(a=>a.href)).forEach(href=>{
 
 tmpcontainer.querySelectorAll(`a[href="${href}"]`).forEach((e,i)=>{
-if(i>0){e.remove()}
+if(i>0){
+let parent=e.parentNode
+
+e.remove()
+if(!parent.childNodes.length){
+
+parent.remove()
+}
+}
 
 })
 
