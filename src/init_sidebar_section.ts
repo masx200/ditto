@@ -128,7 +128,16 @@ let parent=e.parentNode
 e.remove()
 if(parent&&!parent.childNodes.length){
 
-parent?.remove?.()
+let remove= Reflect.get(parent,"remove")
+
+
+if("function"=== typeof remove){
+Reflect.apply(remove,parent,[])
+
+}
+
+
+
 }
 }
 
