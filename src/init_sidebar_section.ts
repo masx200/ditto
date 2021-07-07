@@ -71,7 +71,7 @@ menulist.unshift(homefile);
             { u: homefile, d: "主页" },
         ];
         linkanddescriptions.forEach(({ u, d }) => {
-            const cataloguelinkhtml = `<a href="${u}" class="mui-btn mui-btn-primary mui-btn-outlined">${d}</a>`;
+            const cataloguelinkhtml = `<a href="${u}" class="mui-btn mui-btn-primary mui-btn-outlined">${d}</a><br/>`;
 
             tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
         });
