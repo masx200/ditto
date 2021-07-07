@@ -98,7 +98,7 @@ https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 
 如果文档在同一个目录下，可设置`baseurl`为`location.href`
 
-如果 `homepage`和`catalogue`都是绝对路径,那么`baseurl`将不生效.
+如果 `homepage`和`catalogue`都是绝对路径,那么`baseurl`无论是什么都没关系.
 
 ## 无需打包的使用方式,使用查询参数直接访问您的文档在线阅读
 
