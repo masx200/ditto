@@ -104,7 +104,7 @@ https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 
 例子:
 
-https://masx200.github.io/markdown-reader/?baseurl=https://masx200.github.io/typescript-book-chinese/&maintitle=%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3TypeScript&catalogue=catalogue.md&homepage=README.md
+https://masx200.github.io/markdown-reader/?baseurl=https://masx200.github.io/typescript-book-chinese/&catalogue=catalogue.md&homepage=README.md&maintitle=%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3TypeScript
 
 https://masx200.github.io/markdown-reader/?baseurl=https://masx200.github.io/javascript-tutorial/&homepage=README.md&catalogue=summary.md&maintitle=JavaScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B
 
