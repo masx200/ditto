@@ -90,13 +90,15 @@ https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 
 `maintitle`:文档主要标题
 
-`homepage`:文档首页的 markdown 文件
+`homepage`:文档首页的 markdown 文件,也可以是个绝对路径
 
-`catalogue`:文档目录的 markdown 文件
+`catalogue`:文档目录的 markdown 文件,也可以是个绝对路径
 
 `baseurl`:文档所在的基础 URL 路径，必须是绝对路径，
 
 如果文档在同一个目录下，可设置`baseurl`为`location.href`
+
+如果 `homepage`和`catalogue`都是绝对路径,那么`baseurl`将不生效.
 
 ## 无需打包的使用方式,使用查询参数直接访问您的文档在线阅读
 
