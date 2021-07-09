@@ -136,7 +136,7 @@ export const routerpagegethandler = debounce(async function () {
                 //         location.hash = "";
                 //     }, 5000);
                 // });
-                Reflect.set(ApphomeVm, "showsrc", true);
+                Reflect.set(ApphomeVm, "showsrc", false);
                 throw e_1;
             }
         }
