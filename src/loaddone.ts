@@ -11,7 +11,8 @@ import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 import config from "./config.ts";
 //@ts-ignore
 import hljs from "./highlight.min.ts";
-
+//@ts-ignore
+import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
 export function loaddone() {
     let initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
@@ -39,4 +40,5 @@ export function loaddone() {
         stop_loading();
     });
     Reflect.set(ApphomeVm, "showerror", false);
+窄屏隐藏侧边栏()
 }
