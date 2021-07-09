@@ -179,7 +179,7 @@ export async function init_sidebar_section() {
         Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
 
         Reflect.set(ApphomeVm, "showerror", true);
-
+        Reflect.set(ApphomeVm, "showsrc", false);
         throw e_4;
     }
 }
