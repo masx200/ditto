@@ -102,15 +102,27 @@ export async function init_sidebar_section() {
                 let path = urlclearhash(realmdpath);
 
                 path = path.endsWith(".md") ? path : path + ".md";
-                menulist.push(path);
+
+                let tmppath = path;
+                if (!new URL(tmppath).pathname.endsWith(".md")) {
+                    return;
+                }
+                menulist.push(tmppath);
                 let mdtitle = a.innerText;
 
-                if (mdtitle && !cachetitle.get(path)) {
-                    cachetitle.set(path, mdtitle);
+                if (mdtitle && !cachetitle.get(tmppath)) {
+                    cachetitle.set(tmppath, mdtitle);
                 }
-                b.hash = "#" + path;
+
+                b.hash = "#" + tmppath;
 
                 a.href = b.href;
+                // a.dataset.href = tmppath;
+                a.classList.add(
+                    ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
+                        " "
+                    )
+                );
             }
         });
 

@@ -23,7 +23,8 @@ import { ApphomeVm, initloadingid } from "./mark-down-reader.ts";
 import { removesomevalidelements } from "./removesomevalidelements.ts";
 //@ts-ignore
 //@ts-ignore
-import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
+import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts"; //@ts-ignore
+import { urlclearhash } from "./urlclearhash.ts";
 
 export const routerpagegethandler = debounce(async function () {
     // console.log(cachemarkdown);
@@ -72,12 +73,15 @@ export const routerpagegethandler = debounce(async function () {
                     var ahref = a.getAttribute("href");
                     var b = new URL(location.href);
                     if (ahref?.endsWith(".md")) {
-                        var realmdpath = new URL(ahref, path);
-
-                        b.hash = "#" + realmdpath;
+                        var realmdpath = String(new URL(ahref, path));
+                        let tmppath = urlclearhash(realmdpath);
+                        if (!new URL(tmppath).pathname.endsWith(".md")) {
+                            return;
+                        }
+                        b.hash = "#" + tmppath;
 
                         a.href = b.href;
-
+                        // a.dataset.href = tmppath;
                         a.classList.add(
                             ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
                                 " "
@@ -116,19 +120,22 @@ export const routerpagegethandler = debounce(async function () {
                     cachetitle.set(path, mdtitle);
                 }
                 loaddone();
+                Reflect.set(ApphomeVm, "showerror", false);
                 return;
             } catch (e_1) {
                 console.error(e_1);
-                Reflect.set(ApphomeVm, "urltext", "加载失败 " + path);
+                Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
 
                 // console.error("Opps! ... File not found!\n5秒后返回主页");
 
                 stop_loading();
-
+                Reflect.set(ApphomeVm, "showerror", true);
                 console.warn("load failed " + path);
-                requestAnimationFrame(() => {
-                    location.hash = "";
-                });
+                // requestAnimationFrame(() => {
+                //     setTimeout(() => {
+                //         location.hash = "";
+                //     }, 5000);
+                // });
                 Reflect.set(ApphomeVm, "showsrc", true);
                 throw e_1;
             }
