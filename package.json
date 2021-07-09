@@ -8,8 +8,8 @@
     "main": "./src/export.js",
     "types": "./src/export.d.ts",
     "scripts": {
-        "build": "npm run prod &&npm run copyfiles",
-        "start": "npm run linkfiles &&npm run dev",
+        "build": "npm run prod",
+        "start": "npm run dev",
         "linkfiles": "node utils/linkfiles.js --type=link",
         "copyfiles": "node utils/linkfiles.js --type=copy",
         "dev": "webpack-react-vue-spa-awesome-config start --port=11111",
