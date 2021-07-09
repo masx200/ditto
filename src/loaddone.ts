@@ -38,4 +38,5 @@ export function loaddone() {
         hljs.highlightAll();
         stop_loading();
     });
+    Reflect.set(ApphomeVm, "showerror", false);
 }
