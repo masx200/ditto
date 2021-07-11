@@ -1,6 +1,5 @@
 import Vue from "vue";
 //@ts-ignore
-import { Adjustthedistance } from "./Adjustthedistance.ts";
 
 import app from "./app-home.vue";
 //@ts-ignore
@@ -12,14 +11,8 @@ import { guid } from "./guid.ts";
 //@ts-ignore
 import "./polyfill.NodeList.forEach.ts";
 //@ts-ignore
-import { routerpagegethandler } from "./routerpageget.ts";
 //@ts-ignore
-import { 内容调整左边偏移 } from "./内容调整左边偏移.ts";
 //@ts-ignore
-import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
-
-window.addEventListener("resize", Adjustthedistance);
-window.addEventListener("resize", 内容调整左边偏移);
 // console.log(app);
 
 ("use strict");
@@ -69,6 +62,3 @@ export function mount(el: Element) {
 }
 
 export { ApphomeVm };
-
-window.addEventListener("hashchange", routerpagegethandler);
-window.addEventListener("hashchange", 窄屏隐藏侧边栏);

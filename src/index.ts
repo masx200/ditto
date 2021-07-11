@@ -1,10 +1,9 @@
-import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-import VueCompositionAPI from "@vue/composition-api";
-import Vue from "vue";
 import "./error-alert.ts";
-import "./styles.ts";
+import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 
-Vue.use(VueCompositionAPI);
+import "./addEventListener.ts";
+
+import "./styles.ts";
 
 (async () => {
     //@ts-ignore

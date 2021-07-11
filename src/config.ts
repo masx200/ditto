@@ -3,5 +3,5 @@ export default {
 
     homepage: "README.md",
     catalogue: "summary.md",
-    baseurl: String(new URL("linkfiles/", location.href)),
+    baseurl: "https://cdn.jsdelivr.net/gh/masx200/markdown-reader@master/",
 };

@@ -1,9 +1,5 @@
-import {
-    defineComponent,
-    ref,
-    computed,
-    onMounted,
-} from "@vue/composition-api";
+//@ts-ignore
+import { defineComponent, ref, computed, onMounted } from "./compositionvue.ts";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
@@ -82,6 +78,7 @@ export default defineComponent({
     }),
     methods: {
         togglecebian() {
+            //@ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;
         },
         scrolltotop() {
