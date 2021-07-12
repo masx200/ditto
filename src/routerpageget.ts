@@ -131,11 +131,11 @@ export const routerpagegethandler = debounce(async function () {
                 stop_loading();
                 Reflect.set(ApphomeVm, "showerror", true);
                 console.warn("load failed " + path);
-                // requestAnimationFrame(() => {
-                //     setTimeout(() => {
-                //         location.hash = "";
-                //     }, 5000);
-                // });
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        location.hash = "";
+                    }, 5000);
+                });
                 Reflect.set(ApphomeVm, "showsrc", false);
                 throw e_1;
             }
