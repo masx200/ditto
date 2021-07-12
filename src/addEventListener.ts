@@ -12,7 +12,7 @@ window.addEventListener(
 
     () => {
         window.addEventListener("hashchange", routerpagegethandler);
-      //  window.addEventListener("resize", 窄屏隐藏侧边栏);
+        //  window.addEventListener("resize", 窄屏隐藏侧边栏);
 
         window.addEventListener("resize", Adjustthedistance);
         window.addEventListener("resize", 内容调整左边偏移);

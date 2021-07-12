@@ -40,5 +40,5 @@ export function loaddone() {
         stop_loading();
     });
     Reflect.set(ApphomeVm, "showerror", false);
-窄屏隐藏侧边栏()
+    窄屏隐藏侧边栏();
 }
