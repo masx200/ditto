@@ -142,5 +142,6 @@ export const routerpagegethandler = debounce(async function () {
         }
     } else {
         stop_loading();
+        loaddone();
     }
 });
