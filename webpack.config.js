@@ -1,4 +1,7 @@
-const webpackconfig = require("@masx200/webpack-react-vue-spa-awesome-config");
+const webpackconfig = Object.assign(
+    {},
+    require("@masx200/webpack-react-vue-spa-awesome-config")
+);
 
 if ("production" === process.env.NODE_ENV) {
     webpackconfig.entry = [
