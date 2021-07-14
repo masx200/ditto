@@ -37,7 +37,9 @@ export async function init_sidebar_section() {
     try {
         show_loading();
         const data = await fetchajaxgettext(path);
-        const markedhtml = await escapemarkedunescape(data);
+        const markedhtml = await escapemarkedunescape(data,
+{baseUrl:path}
+);
         const tmpdoc = document.implementation.createHTMLDocument("title");
 
         tmpdoc.body.innerHTML = markedhtml;
