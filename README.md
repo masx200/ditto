@@ -88,7 +88,9 @@ https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 
 如果 `homepage`和`catalogue`都是绝对路径,那么`baseurl`无论是什么都没关系.
 
-## 无需打包的使用方式,使用查询参数直接访问您的文档在线阅读
+## 无需打包的使用方式
+
+使用查询参数直接访问您的文档在线阅读
 
 直接将自定义配置中的几个选项传入到查询参数中即可!
 
