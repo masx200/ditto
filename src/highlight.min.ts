@@ -18,6 +18,7 @@ hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("json", json);
 hljs.registerLanguage("xml", xml);
+hljs.registerLanguage("vue", xml);
 hljs.registerLanguage("css", css);
 hljs.registerLanguage("powershell", powershell);
 
