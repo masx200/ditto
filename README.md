@@ -42,7 +42,7 @@ Lightweight Markdown Documentation System
 
 <hr></hr>
 
-受到 `ditto` 的启发,魔改而成
+受到 `ditto` 的启发
 
 https://github.com/chutsu/ditto
 
