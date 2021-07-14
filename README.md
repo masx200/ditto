@@ -40,11 +40,7 @@ Lightweight Markdown Documentation System
 
 加载完 markdown 文件后给当前页的链接添加活跃样式
 
-
-
 [目录](summary.md)
-
-
 
 ## 使用方法
 

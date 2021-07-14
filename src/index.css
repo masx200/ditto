@@ -3,10 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-* {
-    font-family: "Microsoft Yahei,PingFangSC-Regular,arial, verdana, sans-serif";
-}
-
 code {
     overflow: auto;
 }
@@ -27,6 +23,7 @@ code {
 * {
     font-family: "Microsoft Yahei", Helvetica, Tahoma, Arial, "PingFang SC",
         "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei", "WenQuanYi Micro Hei",
+        sans-serif, Microsoft Yahei, PingFangSC-Regular, arial, verdana,
         sans-serif !important;
 }
 .mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 {

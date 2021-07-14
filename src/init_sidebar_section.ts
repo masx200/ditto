@@ -1,6 +1,8 @@
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 //@ts-ignore
+import { changeimgsrc } from "./changeimgsrc.ts";
+//@ts-ignore
 import {
     cachemarkdown,
     cachetitle,
@@ -37,26 +39,12 @@ export async function init_sidebar_section() {
     try {
         show_loading();
         const data = await fetchajaxgettext(path);
-        const markedhtml = await escapemarkedunescape(data,
-{baseUrl:path}
-);
+        const markedhtml = await escapemarkedunescape(data, { baseUrl: path });
         const tmpdoc = document.implementation.createHTMLDocument("title");
 
         tmpdoc.body.innerHTML = markedhtml;
 
-        Array.from(tmpdoc.body.querySelectorAll("img")).forEach((e) => {
-            var imgsrc = e.getAttribute("src");
-
-            if (
-                imgsrc &&
-                !imgsrc.startsWith("http://") &&
-                !imgsrc.startsWith("https://")
-            ) {
-                var imgrealurl = String(new URL(imgsrc, summaryfile));
-
-                e.src = imgrealurl;
-            }
-        });
+        changeimgsrc(tmpdoc, summaryfile);
         const tmpcontainer = document.createElement("div");
 
         tmpcontainer.innerHTML = tmpdoc.body.innerHTML;

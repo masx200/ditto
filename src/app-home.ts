@@ -1,6 +1,6 @@
 //@ts-ignore
 import { defineComponent } from "@vue/composition-api";
- //@ts-ignore
+//@ts-ignore
 import { appvm } from "./appvm.ts"; //@ts-ignore
 import { computed, onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
