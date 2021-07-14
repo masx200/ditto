@@ -54,8 +54,8 @@ td {
 }
 
 .anchor {
-    float: left;
-    line-height: 1;
+    /* float: left; */
+    line-height: 100%;
     vertical-align: middle;
 }
 h2 {
@@ -79,7 +79,7 @@ h3,
 h4,
 h5,
 h6 {
-    text-align: left !important;
+    text-align: center !important;
 }
 h1 {
     font-size: 2.4em;
