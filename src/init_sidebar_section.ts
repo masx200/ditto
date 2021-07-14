@@ -142,11 +142,11 @@ export async function init_sidebar_section() {
                 });
         });
         Reflect.set(appvm, "showerror", false);
-
-        // console.log(tmpcontainer);
-        Reflect.set(appvm, "muluhtml", tmpcontainer.innerHTML);
-
         const currentcontenthtml = tmpcontainer.innerHTML;
+        // console.log(tmpcontainer);
+        Reflect.set(appvm, "muluhtml", currentcontenthtml);
+
+        console.log(currentcontenthtml);
         if (!cachemarkdown.get(path)) {
             cachemarkdown.set(path, currentcontenthtml);
         }
