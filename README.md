@@ -80,6 +80,8 @@ https://github.com/masx200/markdown-reader/blob/master/src/config.ts
 
 如果 `homepage`和`catalogue`都是绝对路径,那么`baseurl`无论是什么都没关系.
 
+目录中的链接都基于目录的路径解析
+
 ## 无需打包的使用方式
 
 使用查询参数直接访问您的文档在线阅读
