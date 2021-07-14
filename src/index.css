@@ -52,3 +52,35 @@ td {
     border-color: #ccc;
     padding: 6px 13px;
 }
+
+.anchor {
+    float: left;
+    line-height: 1;
+    vertical-align: middle;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1.1em;
+}
+h6 {
+    font-size: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: left !important;
+}
+h1 {
+    font-size: 2.4em;
+}
