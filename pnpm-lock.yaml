@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/plugin-proposal-class-properties': ^7.14.5
   '@highlightjs/cdn-assets': ^11.0.1
-  '@masx200/ie11-usual-ployfills': ^1.0.2
+  '@masx200/ie11-usual-ployfills': ^1.0.3
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.6
   '@types/lodash': ^4.14.171
   '@types/marked': ^2.0.3
@@ -25,7 +25,7 @@ specifiers:
 devDependencies:
   '@babel/plugin-proposal-class-properties': 7.14.5
   '@highlightjs/cdn-assets': 11.0.1
-  '@masx200/ie11-usual-ployfills': 1.0.2
+  '@masx200/ie11-usual-ployfills': 1.0.3
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.6
   '@types/lodash': 4.14.171
   '@types/marked': 2.0.3
@@ -2297,8 +2297,8 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: true
 
-  /@masx200/ie11-usual-ployfills/1.0.2:
-    resolution: {integrity: sha512-7qPz6VHTsJjU1n44aAL+G2aTkABJ9W++7doxHYW+H09t4RqkdGINKVI7i2KO+9O38BmzIEGuvmzmP38EL2uNug==}
+  /@masx200/ie11-usual-ployfills/1.0.3:
+    resolution: {integrity: sha512-cFyajGladoworeTFgBY1bZK1HYLlQpeALwNH+0YGAKgAGNgQxAonqiuYht10rBqPVXz8MhKPAMLmzO3hP+ORuw==}
     dev: true
 
   /@masx200/webpack-react-vue-spa-awesome-config/3.3.6:
