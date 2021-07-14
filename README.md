@@ -40,15 +40,11 @@ Lightweight Markdown Documentation System
 
 加载完 markdown 文件后给当前页的链接添加活跃样式
 
-<hr></hr>
 
-受到 `ditto` 的启发
-
-https://github.com/chutsu/ditto
 
 [目录](summary.md)
 
-<hr></hr>
+
 
 ## 使用方法
 
@@ -103,3 +99,9 @@ https://masx200.github.io/markdown-reader/?baseurl=https://masx200.github.io/jav
 https://masx200.github.io/markdown-reader/?maintitle=ECMAScript6%E5%85%A5%E9%97%A8&homepage=README.md&catalogue=SUMMARY.md&baseurl=https://masx200.github.io/es6tutorial/
 
 https://masx200.github.io/markdown-reader/?maintitle=TypeScript%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B&homepage=README.md&catalogue=SUMMARY.md&baseurl=https://masx200.github.io/typescript-tutorial/
+
+# 受到启发
+
+受到 `ditto` 的启发
+
+https://github.com/chutsu/ditto
