@@ -35,7 +35,7 @@ export default defineComponent({
 
                 debounce(() => {
                     requestAnimationFrame(() => {
-                        widescreen.value = document.body.clientWidth > 500;
+                        widescreen.value = document.body.clientWidth > 550;
                     });
                 })
             );
