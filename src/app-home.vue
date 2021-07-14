@@ -1,6 +1,6 @@
 <script src="./app-home.ts"></script>
 <template>
-    <div>
+    <div id="app">
         <div
             ref="mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95"
             id="mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
