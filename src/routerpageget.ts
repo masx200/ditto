@@ -101,9 +101,10 @@ async function loadpage() {
                 });
 
                 //console.log(tmpcontainer);
-
+                const currentmdhtml = tmpcontainer.innerHTML;
+                console.log(currentmdhtml);
                 if (!cachemarkdown.get(path)) {
-                    cachemarkdown.set(path, tmpcontainer.innerHTML);
+                    cachemarkdown.set(path, currentmdhtml);
                 }
                 let initloadele = document.getElementById(initloadingid);
                 initloadele && (initloadele.style.display = "none");
@@ -112,7 +113,7 @@ async function loadpage() {
                 stop_loading();
                 Reflect.set(appvm, "showsrc", true);
                 if (path == resolvemdpathfromhash()) {
-                    contenthtml.set(tmpcontainer.innerHTML);
+                    contenthtml.set(currentmdhtml);
                     Reflect.set(appvm, "urltext", path);
                 }
                 let mdtitle = (() => {
