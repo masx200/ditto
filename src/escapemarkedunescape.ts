@@ -2,8 +2,11 @@
 import { escape_html } from "./escape_html.ts";
 //@ts-ignore
 import { unescape_html } from "./unescape_html.ts";
-
-export async function escapemarkedunescape(data: string, opts = {}) {
+import type marked from "marked";
+export async function escapemarkedunescape(
+    data: string,
+    opts: marked.MarkedOptions = {}
+) {
     var module = await import("marked");
 
     var marked = module.default;

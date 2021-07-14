@@ -14,9 +14,10 @@ import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
 import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
+import NavHomebutton from "./NavHomebutton.vue";
 
 export default defineComponent({
-    components: { Toggledisplayofsidebar },
+    components: { Toggledisplayofsidebar, NavHomebutton },
     setup() {
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
         const markdowncontent_2e4c728cac441a0c48939881c2c714361a0 = ref();

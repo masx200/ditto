@@ -25,17 +25,10 @@
                     <Toggledisplayofsidebar
                         :onclick="togglecebian"
                     ></Toggledisplayofsidebar>
-
-                    <a
-                        class="
-                            navbar-brand navbar-brand
-                            mui-btn mui-btn-primary mui-btn-outlined
-                        "
-                        v-bind:href="indexhref"
-                        v-text="mytitle"
-                        style="margin: 0; top: 0px"
-                        >Markdown Reader</a
-                    >
+                    <NavHomebutton
+                        :href="indexhref"
+                        :title="mytitle"
+                    ></NavHomebutton>
                 </div>
                 <div
                     v-if="narrowscreen"
@@ -102,17 +95,10 @@
                         :onclick="togglecebian"
                     ></Toggledisplayofsidebar>
 
-                    <a
-                        class="
-                            navbar-brand navbar-brand
-                            mui-btn mui-btn-primary mui-btn-outlined
-                        "
-                        v-bind:href="indexhref"
-                        v-text="mytitle"
-                        style="margin: 0; top: 0px"
-                        >Markdown Reader</a
-                    >
-
+                    <NavHomebutton
+                        :href="indexhref"
+                        :title="mytitle"
+                    ></NavHomebutton>
                     <button
                         class="
                             mui-btn mui-btn-primary mui-btn-outlined
