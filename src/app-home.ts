@@ -1,17 +1,22 @@
 //@ts-ignore
+import { defineComponent } from "@vue/composition-api";
+ //@ts-ignore
 import { appvm } from "./appvm.ts"; //@ts-ignore
-import { computed, defineComponent, onMounted, ref } from "./compositionvue.ts";
+import { computed, onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
 import { debounce } from "./debounce.ts";
 //@ts-ignore
+import { disabledalinkhref } from "./disabledalinkhref.ts";
+//@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
+import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 
-const disabledalinkhref = "javascript:;";
 export default defineComponent({
+    components: { Toggledisplayofsidebar },
     setup() {
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
         const markdowncontent_2e4c728cac441a0c48939881c2c714361a0 = ref();

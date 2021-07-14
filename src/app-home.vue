@@ -22,14 +22,10 @@
                         align-items: stretch;
                     "
                 >
-                    <button
-                        style="display: inline-block"
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
-                        type="button"
-                        v-on:click="togglecebian"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <Toggledisplayofsidebar
+                        :onclick="togglecebian"
+                    ></Toggledisplayofsidebar>
+
                     <a
                         class="
                             navbar-brand navbar-brand
@@ -102,14 +98,10 @@
                         align-items: stretch;
                     "
                 >
-                    <button
-                        style="display: inline-block"
-                        class="mui-btn mui-btn-primary mui-btn-outlined"
-                        type="button"
-                        v-on:click="togglecebian"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <Toggledisplayofsidebar
+                        :onclick="togglecebian"
+                    ></Toggledisplayofsidebar>
+
                     <a
                         class="
                             navbar-brand navbar-brand

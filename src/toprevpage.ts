@@ -1,5 +1,7 @@
 //@ts-ignore//@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
+import { disabledalinkhref } from "./disabledalinkhref.ts";
+//@ts-ignore
 import { menulist } from "./menulist.ts";
 function findindexexmenulist() {
     const appvm = getappvm();
@@ -13,8 +15,6 @@ function findindexexmenulist() {
     // console.log(currentpageindex);
     return currentpageindex;
 }
-
-const disabledalinkhref = "javascript:;";
 
 export function setnextpagelink() {
     const appvm = getappvm();
