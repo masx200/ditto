@@ -1,2 +1,2 @@
 export const eventtarget = new EventTarget();
-console.log(eventtarget);
+// console.log(eventtarget);

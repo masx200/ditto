@@ -45,7 +45,7 @@ const ApphomeVm: Vue = new Vue({
         return h(app);
     },
 });
-// console.log(ApphomeVm);
+console.log(ApphomeVm);
 
 export function mount(el: Element) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);
