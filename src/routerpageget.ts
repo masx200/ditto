@@ -1,4 +1,7 @@
 //@ts-ignore
+//@ts-ignore
+//@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { compile_into_dom } from "./compile_into_dom.ts";
 //@ts-ignore
 import { contenthtml } from "./contenthtml.ts";
@@ -12,34 +15,41 @@ import {
     stop_loading,
     //@ts-ignore
 } from "./ditto.ts"; //@ts-ignore
+//@ts-ignore
+import { eventtarget } from "./eventtarget.ts"; //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts";
 //@ts-ignore
 import { guid } from "./guid.ts"; //@ts-ignore
 //@ts-ignore
-import { loaddone } from "./loaddone.ts";
 //@ts-ignore
-import { ApphomeVm, initloadingid } from "./mark-down-reader.ts";
+import { initloadingid } from "./mark-down-reader.ts";
 //@ts-ignore
 import { removesomevalidelements } from "./removesomevalidelements.ts";
 //@ts-ignore
 //@ts-ignore
 import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts"; //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
-
-export const routerpagegethandler = debounce(async function () {
+//@ts-ignore
+export const routerpagegethandler = debounce(async () => {
+    return loadpage().then(() => {
+        eventtarget.dispatchEvent(new Event("load"));
+    });
+});
+async function loadpage() {
+    const appvm = getappvm();
     // console.log(cachemarkdown);
     window.scrollTo(0, 0);
     show_loading();
     const path = resolvemdpathfromhash();
-    if (path !== Reflect.get(ApphomeVm, "urltext")) {
+    if (path !== Reflect.get(appvm, "urltext")) {
         const marktext = cachemarkdown.get(path);
 
         if (marktext) {
             contenthtml.set(marktext);
-            Reflect.set(ApphomeVm, "urltext", path);
+            Reflect.set(appvm, "urltext", path);
             stop_loading();
-            Reflect.set(ApphomeVm, "showsrc", true);
-            loaddone();
+            Reflect.set(appvm, "showsrc", true);
+
             return;
         } else {
             show_loading();
@@ -100,10 +110,10 @@ export const routerpagegethandler = debounce(async function () {
 
                 window.scrollTo(0, 0);
                 stop_loading();
-                Reflect.set(ApphomeVm, "showsrc", true);
+                Reflect.set(appvm, "showsrc", true);
                 if (path == resolvemdpathfromhash()) {
                     contenthtml.set(tmpcontainer.innerHTML);
-                    Reflect.set(ApphomeVm, "urltext", path);
+                    Reflect.set(appvm, "urltext", path);
                 }
                 let mdtitle = (() => {
                     let selectors = ["h1", "h2", "h3", "h4", "h5", "h6"];
@@ -119,29 +129,29 @@ export const routerpagegethandler = debounce(async function () {
                 if (mdtitle && !cachetitle.get(path)) {
                     cachetitle.set(path, mdtitle);
                 }
-                loaddone();
-                Reflect.set(ApphomeVm, "showerror", false);
+
+                Reflect.set(appvm, "showerror", false);
                 return;
             } catch (e_1) {
                 console.error(e_1);
-                Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
+                Reflect.set(appvm, "errorcontent", "加载失败 " + path);
 
                 // console.error("Opps! ... File not found!\n5秒后返回主页");
 
                 stop_loading();
-                Reflect.set(ApphomeVm, "showerror", true);
+                Reflect.set(appvm, "showerror", true);
                 console.warn("load failed " + path);
                 requestAnimationFrame(() => {
                     setTimeout(() => {
                         location.hash = "";
                     }, 5000);
                 });
-                Reflect.set(ApphomeVm, "showsrc", false);
+                Reflect.set(appvm, "showsrc", false);
                 throw e_1;
             }
         }
     } else {
         stop_loading();
-        loaddone();
+        return;
     }
-});
+}

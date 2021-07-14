@@ -2,10 +2,12 @@
 //@ts-ignore
 import { debounce } from "./debounce.ts";
 //@ts-ignore
-import { ApphomeVm } from "./mark-down-reader.ts";
 
+//@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore
 export const 窄屏隐藏侧边栏 = debounce(() => {
+    const appvm = getappvm();
     if (window.innerWidth < 550) {
-        Reflect.set(ApphomeVm, "xianshicebianlan", false);
+        Reflect.set(appvm, "xianshicebianlan", false);
     }
 });

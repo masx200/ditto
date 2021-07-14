@@ -1,13 +1,9 @@
-//@ts-ignore
-import { ApphomeVm } from "./mark-down-reader.ts";
 const contenthtml = {
-    // get(): string {
-    //     return markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value
-    //         .innerHTML;
-    // },
     set(c: string) {
-        Reflect.set(ApphomeVm, "contenthtml", c);
-        // markdowncontent_2e4c728cac441a0c48939881c2c714361a0.value.innerHTML = c;
+        const appvm = getappvm();
+        Reflect.set(appvm, "contenthtml", c);
     },
 };
 export { contenthtml };
+//@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore

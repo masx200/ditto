@@ -5,5 +5,5 @@ export * from "vue";
 //@ts-ignore
 export * from "@vue/composition-api";
 export { Vue, VueCompositionAPI };
-import { defineComponent } from "@vue/composition-api";
-export { defineComponent };
+import { defineComponent, defineAsyncComponent } from "@vue/composition-api";
+export { defineComponent, defineAsyncComponent };

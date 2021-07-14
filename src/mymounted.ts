@@ -1,7 +1,11 @@
 //@ts-ignore
+import { Adjustthedistance } from "./Adjustthedistance.ts";
+//@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { initloadingid } from "./mark-down-reader.ts";
 //@ts-ignore
-import { Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 } from "./refele.ts";
+import { 内容调整左边偏移 } from "./内容调整左边偏移.ts";
+//@ts-ignore
 //@ts-ignore
 import { 挂载初始 } from "./挂载初始.ts";
 export async function mymounted() {
@@ -15,10 +19,11 @@ export async function mymounted() {
 }
 function 监视侧边栏变化触发事件() {
     const mo = new MutationObserver(() => {
-        // console.log(mutations);
-        window.dispatchEvent(new Event("resize"));
+        Adjustthedistance();
+        内容调整左边偏移();
     });
-    mo.observe(Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value, {
+    const appvm = getappvm();
+    mo.observe(appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644, {
         attributeOldValue: true,
         subtree: true,
         childList: true,

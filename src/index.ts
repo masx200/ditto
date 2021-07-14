@@ -4,12 +4,8 @@ import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import "./addEventListener.ts";
 
 import "./styles.ts";
-
+import "./loaddone.ts";
 (async () => {
-    //@ts-ignore
-    //const config = (await import("./config.ts")).default;
-
-    // console.log(config);
     var rootele =
         document.getElementById("root") ||
         document.body.appendChild(document.createElement("div"));

@@ -1,4 +1,6 @@
 //@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore
+//@ts-ignore
 import {
     cachemarkdown,
     cachetitle,
@@ -11,13 +13,11 @@ import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts";
 //@ts-ignore
-import { getabsolutesummary, getabsoluteindex } from "./getbaseurl.ts";
+import { getabsoluteindex, getabsolutesummary } from "./getbaseurl.ts";
 //@ts-ignore
-import hljs from "./highlight.min.ts";
+// import hljs from "./highlight.min.ts";
 //@ts-ignore
 import { isrelativepath } from "./isrelativepath.ts";
-//@ts-ignore
-import { ApphomeVm } from "./mark-down-reader.ts";
 //@ts-ignore
 import { menulist } from "./menulist.ts";
 //@ts-ignore
@@ -26,7 +26,9 @@ import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.ts";
 import { removesomevalidelements } from "./removesomevalidelements.ts";
 //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
+
 export async function init_sidebar_section() {
+    const appvm = getappvm();
     const summaryfile = getabsolutesummary();
     // alert(summaryfile);
     var path = summaryfile;
@@ -58,7 +60,8 @@ export async function init_sidebar_section() {
         tmpcontainer.innerHTML = tmpdoc.body.innerHTML;
         //删除当中的style标签和link标签和script标签
         removesomevalidelements(tmpcontainer);
-
+        //@ts-ignore
+        const hljs = (await import("./highlight.min.ts")).default;
         Array.from(tmpcontainer.querySelectorAll("pre code")).forEach(function (
             block: Element
         ) {
@@ -148,11 +151,11 @@ export async function init_sidebar_section() {
                     }
                 });
         });
-        Reflect.set(ApphomeVm, "showerror", false);
+        Reflect.set(appvm, "showerror", false);
 
         // console.log(tmpcontainer);
-        Reflect.set(ApphomeVm, "muluhtml", tmpcontainer.innerHTML);
-        // const currentcontenthtml = Reflect.get(ApphomeVm, "muluhtml");
+        Reflect.set(appvm, "muluhtml", tmpcontainer.innerHTML);
+
         const currentcontenthtml = tmpcontainer.innerHTML;
         if (!cachemarkdown.get(path)) {
             cachemarkdown.set(path, currentcontenthtml);
@@ -163,7 +166,7 @@ export async function init_sidebar_section() {
         tmpmenuset.forEach((url) => {
             menulist.push(url);
         });
-        Object.freeze(menulist);
+        // Object.freeze(menulist);
         // console.log("menulist", menulist);
         menulist.forEach((path: string) => {
             precheckfetchajaxmarkdown(path);
@@ -176,10 +179,10 @@ export async function init_sidebar_section() {
 
         // console.error("Opps! can't find the sidebar file to display!");
         // console.warn("load failed " + path);
-        Reflect.set(ApphomeVm, "errorcontent", "加载失败 " + path);
+        Reflect.set(appvm, "errorcontent", "加载失败 " + path);
 
-        Reflect.set(ApphomeVm, "showerror", true);
-        Reflect.set(ApphomeVm, "showsrc", false);
+        Reflect.set(appvm, "showerror", true);
+        Reflect.set(appvm, "showsrc", false);
         throw e_4;
     }
 }

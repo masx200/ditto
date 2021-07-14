@@ -1,25 +1,24 @@
-"use strict";
+//@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore
 //@ts-ignore
 import { debounce } from "./debounce.ts";
+("use strict");
 //@ts-ignore
-import {
-    contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
-    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
-    //@ts-ignore
-} from "./refele.ts";
+
 export const 内容调整左边偏移 = debounce(() => {
+    const appvm = getappvm();
     return new Promise<void>((r) => {
         requestAnimationFrame(() => {
             if (window.innerWidth > 550) {
                 var width =
-                    Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value
+                    appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644
                         .offsetWidth + "px";
 
-                contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1.value.style[
+                appvm.contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1.style[
                     "padding-left"
                 ] = width;
             } else {
-                contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1.value.style[
+                appvm.contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1.style[
                     "padding-left"
                 ] = 0;
             }

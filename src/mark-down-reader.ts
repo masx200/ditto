@@ -1,15 +1,29 @@
+//@ts-ignore
 import Vue from "vue";
 //@ts-ignore
-
-import app from "./app-home.vue";
+import { defineAsyncComponent } from "./compositionvue.ts";
+// import app from "./app-home.vue";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
 import "./error-alert.ts";
 //@ts-ignore
 import { guid } from "./guid.ts";
+import Loding from "./loading.vue";
 //@ts-ignore
 import "./polyfill.NodeList.forEach.ts";
+// console.log(Loding)
+//@ts-ignore
+const app = defineAsyncComponent({
+    loadingComponent: Loding,
+    loader: () => import("./app-home.vue"),
+    timeout: 0,
+    onError(error: Error) {
+        console.error(error);
+        throw error;
+    },
+});
+// console.log(app);
 //@ts-ignore
 //@ts-ignore
 //@ts-ignore
@@ -21,12 +35,16 @@ export const initloadingid = "first-" + guid();
 Vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
-Vue.config.errorHandler = function (err: Error, vm: Vue, info: string) {
-    console.error(err, vm, info);
+Vue.config.errorHandler = function (err: Error) {
+    console.error(err);
     throw err;
 };
 
-const ApphomeVm: Vue = new Vue(app);
+const ApphomeVm: Vue = new Vue({
+    render(h) {
+        return h(app);
+    },
+});
 // console.log(ApphomeVm);
 
 export function mount(el: Element) {
@@ -61,4 +79,4 @@ export function mount(el: Element) {
     });
 }
 
-export { ApphomeVm };
+// export { ApphomeVm };

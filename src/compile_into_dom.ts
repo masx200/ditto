@@ -1,7 +1,7 @@
 //@ts-ignore
 import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 //@ts-ignore
-import hljs from "./highlight.min.ts";
+// import hljs from "./highlight.min.ts";
 export async function compile_into_dom(data: string, mdurl: string | URL) {
     data = await escapemarkedunescape(data);
 
@@ -22,7 +22,8 @@ export async function compile_into_dom(data: string, mdurl: string | URL) {
             e.src = imgrealurl;
         }
     });
-
+    //@ts-ignore
+    const hljs = (await import("./highlight.min.ts")).default;
     Array.from(tmpdoc.body.querySelectorAll("pre code")).forEach(function (
         block: Element
     ) {

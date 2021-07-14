@@ -1,10 +1,11 @@
-//@ts-ignore
-import { ApphomeVm } from "./mark-down-reader.ts"; //@ts-ignore
+//@ts-ignore//@ts-ignore
+import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { menulist } from "./menulist.ts";
 function findindexexmenulist() {
+    const appvm = getappvm();
     // console.log(menulist);
 
-    var currentpageurl = Reflect.get(ApphomeVm, "urltext");
+    var currentpageurl = Reflect.get(appvm, "urltext");
     // console.log(currentpageurl);
     var currentpageindex = menulist.findIndex(
         (a: string) => a === currentpageurl
@@ -16,7 +17,8 @@ function findindexexmenulist() {
 const disabledalinkhref = "javascript:;";
 
 export function setnextpagelink() {
-    Reflect.set(ApphomeVm, "nextpagelink", disabledalinkhref);
+    const appvm = getappvm();
+    Reflect.set(appvm, "nextpagelink", disabledalinkhref);
 
     var currentpageindex = findindexexmenulist();
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {
@@ -30,7 +32,7 @@ export function setnextpagelink() {
     }
     let hashtogo = menulist[pageindextogo];
     Reflect.set(
-        ApphomeVm,
+        appvm,
         "nextpagelink",
         String(
             Object.assign(new URL(location.href), {
@@ -40,7 +42,8 @@ export function setnextpagelink() {
     );
 }
 export function setprevpagelink() {
-    Reflect.set(ApphomeVm, "prevpagelink", disabledalinkhref);
+    const appvm = getappvm();
+    Reflect.set(appvm, "prevpagelink", disabledalinkhref);
     var currentpageindex = findindexexmenulist();
     if (!(currentpageindex >= 0 && currentpageindex <= menulist.length - 1)) {
         // console.error("没有在菜单列表中找到当前页面");
@@ -54,7 +57,7 @@ export function setprevpagelink() {
     let hashtogo = menulist[pageindextogo];
 
     Reflect.set(
-        ApphomeVm,
+        appvm,
         "prevpagelink",
         String(
             Object.assign(new URL(location.href), {
