@@ -3,8 +3,9 @@ lockfileVersion: 5.3
 specifiers:
   '@babel/plugin-proposal-class-properties': ^7.14.5
   '@highlightjs/cdn-assets': ^11.0.1
+  '@masx200/event-emitter-target': ^1.1.9
   '@masx200/ie11-usual-polyfills': ^1.0.4
-  '@masx200/search-hash-params-router': ^1.2.6
+  '@masx200/search-hash-params-router': ^1.2.7
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.6
   '@types/lodash': ^4.14.171
   '@types/marked': ^2.0.3
@@ -26,8 +27,9 @@ specifiers:
 devDependencies:
   '@babel/plugin-proposal-class-properties': 7.14.5
   '@highlightjs/cdn-assets': 11.0.1
+  '@masx200/event-emitter-target': 1.1.9
   '@masx200/ie11-usual-polyfills': 1.0.4
-  '@masx200/search-hash-params-router': 1.2.6
+  '@masx200/search-hash-params-router': 1.2.7
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.6
   '@types/lodash': 4.14.171
   '@types/marked': 2.0.3
@@ -2299,12 +2301,16 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: true
 
+  /@masx200/event-emitter-target/1.1.9:
+    resolution: {integrity: sha512-LzqPTBzpkk59gQXQrLFYD0R9xcbu42DHJBubutIyjY8PYlTy5cq3+qSYl6uLjeHlI+KeM0e9jAFxrUZBFGx4Rw==}
+    dev: true
+
   /@masx200/ie11-usual-polyfills/1.0.4:
     resolution: {integrity: sha512-YP25XM7PXP1lVoEniWOm4szfep7+oQ478MdTCbbrZRMQgj/UaRIYypI6FUf6xUmxG6SZFZzcVzvFuuzS46R2AQ==}
     dev: true
 
-  /@masx200/search-hash-params-router/1.2.6:
-    resolution: {integrity: sha512-9dMYRznv0Sf+vqTfWDPqLzwMda3sa9D4IW/VW9ZiP15vxXd83IB/EqpNqzCiz/GHMposztKiP+Ys/6EbC20UpA==}
+  /@masx200/search-hash-params-router/1.2.7:
+    resolution: {integrity: sha512-YHu+uGZAI1bDb1OMlw+mBuDQy0ALrQNGSXu+V6sPFZAVv1RjG3RFQuxKWcfC+h9MNxizEoVDBmW0tMioM5x9YQ==}
     dev: true
 
   /@masx200/webpack-react-vue-spa-awesome-config/3.3.6:
