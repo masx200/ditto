@@ -1,5 +1,7 @@
 //@ts-ignore
-//@ts-ignore//@ts-ignore
+//@ts-ignore
+import { Adjustthedistance } from "./Adjustthedistance.ts";
+//@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
@@ -28,7 +30,7 @@ async function loaddone() {
     document.title = mdtitle
         ? mdtitle + " - " + config.maintitle
         : config.maintitle;
-    await new Promise<void>((res, rej) => {
+    await new Promise<void>((res) => {
         requestAnimationFrame(async () => {
             Array.from(document.querySelectorAll("a")).forEach((e) => {
                 if (e.hash === "#" + path) {
@@ -50,3 +52,6 @@ async function loaddone() {
     setprevpagelink();
 }
 eventtarget.addEventListener("load", loaddone);
+eventtarget.addEventListener("load", () => {
+    Adjustthedistance();
+}); //@ts-ignore
