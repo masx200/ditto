@@ -5,20 +5,24 @@ import "./error-alert.ts";
 import { eventtarget } from "./eventtarget.ts"; //@ts-ignore
 import "./loaddone.ts";
 import "./styles.ts";
+//@ts-ignore
+import { states } from "./states.ts";
+function start() {
+    (async () => {
+        var rootele =
+            document.getElementById("root") ||
+            document.body.appendChild(document.createElement("div"));
 
-(async () => {
-    var rootele =
-        document.getElementById("root") ||
-        document.body.appendChild(document.createElement("div"));
+        Object.assign(rootele, { id: "root" });
+        const module = await import(
+            //@ts-ignore
+            "./export.ts"
+        );
+        const { mount } = module; //@ts-ignore
+        rootele && mount(rootele);
+    })();
+}
 
-    Object.assign(rootele, { id: "root" });
-    const module = await import(
-        //@ts-ignore
-        "./export.ts"
-    );
-    const { mount } = module; //@ts-ignore
-    rootele && mount(rootele);
-})();
 window.addEventListener("load", loadclipboard, { once: true });
 async function loadclipboard() {
     var module = await import("clipboard");
@@ -35,8 +39,14 @@ window.addEventListener(
     "load",
     () => {
         requestAnimationFrame(() => {
-            eventtarget.dispatchEvent(new Event("load"));
+            //@ts-ignore
+            requestIdleCallback(() => {
+                // eventtarget.dispatchEvent(new Event("load"));
+                // console.log(Date.now());
+                states.firstloaded++;
+            });
         });
     },
     { once: true }
 );
+start();

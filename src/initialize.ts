@@ -12,6 +12,8 @@ import { init_sidebar_section } from "./init_sidebar_section.ts";
 import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
 //@ts-ignore
 import { routerpagegethandler } from "./routerpageget.ts";
+//@ts-ignore
+import { states } from "./states.ts";
 
 export async function initialize() {
     const summaryfile = getabsolutesummary();
@@ -25,7 +27,12 @@ export async function initialize() {
 
     await Vue.nextTick();
     requestAnimationFrame(() => {
-        eventtarget.dispatchEvent(new Event("load"));
+        //@ts-ignore
+        requestIdleCallback(() => {
+            eventtarget.dispatchEvent(new Event("load"));
+            // console.log(Date.now());
+            states.firstloaded++;
+        });
     });
     // //@ts-ignore
     // const hljs = (await import("./highlight.min.ts")).default;

@@ -29,26 +29,37 @@ function scrolltoelementid(id: string) {
             await Vue.nextTick();
 
             requestAnimationFrame(() => {
-                let timer = setInterval(() => {
-                    //@ts-ignore
-                    requestIdleCallback(() => {
-                        console.log(ele.offsetTop);
-                        if (
-                            Array.from(document.querySelectorAll("*")).includes(
-                                ele
-                            )
-                        ) {
-                            ele.scrollIntoView({
-                                inline: "center",
-                                block: "center",
-                            });
-                        }
+                if (states.firstloaded >= 3) {
+                    console.log(ele.offsetTop);
+                    ele.scrollIntoView({
+                        inline: "center",
+                        block: "center",
                     });
-                }, 30);
+                } else {
+                    let timer = setInterval(() => {
+                        //@ts-ignore
+                        requestIdleCallback(() => {
+                            console.log(ele.offsetTop);
+                            if (
+                                Array.from(
+                                    document.querySelectorAll("*")
+                                ).includes(ele)
+                            ) {
+                                states.firstloaded++;
+                                ele.scrollIntoView({
+                                    inline: "center",
+                                    block: "center",
+                                });
+                            }
+                        });
+                    }, 30);
 
-                setTimeout(() => {
-                    clearInterval(timer);
-                }, 200);
+                    setTimeout(() => {
+                        clearInterval(timer);
+                    }, 500);
+                }
             });
         });
 }
+//@ts-ignore
+import { states } from "./states.ts";
