@@ -78,7 +78,7 @@ eventtarget.addEventListener("load", () => {
                 await Vue.nextTick();
                 // console.log(ele.offsetTop);
                 const scrollheight = ele.offsetTop - getnavbarheight();
-                console.log(ele.offsetTop, getnavbarheight());
+                console.log(ele.offsetTop, getnavbarheight(), scrollheight);
                 window.scrollTo(0, scrollheight);
             });
     } else {
