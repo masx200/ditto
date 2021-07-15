@@ -19,7 +19,12 @@ eventtarget.addEventListener("load", () => {
     Adjustthedistance();
 });
 eventtarget.addEventListener("mount", () => {
-    Adjustthedistance();
+    let timer = setInterval(() => {
+        Adjustthedistance();
+    }, 10);
+    setTimeout(() => {
+        clearInterval(timer);
+    }, 500);
 });
 eventtarget.addEventListener("load", anchorscroll);
 eventtarget.addEventListener("load", sidebarscroll);
