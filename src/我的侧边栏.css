@@ -75,7 +75,7 @@ h5#markdownerror-4c6b19f7b26c2b519b8ff480769b5565d6b {
 }
 button.btn.btn-outline-primary.clipbutton {
     /* mui中设置按钮 relative导致按钮前置?*/
-    position: static !important;
+    position: absolute ;
 }
 * {
     transition-property: all;

@@ -62,6 +62,11 @@ async function loadpage() {
                 //删除当中的style标签和link标签和script标签
 
                 removesomevalidelements(tmpcontainer);
+                Array.from(tmpcontainer.querySelectorAll("pre")).forEach(
+                    (e) => {
+                        e.classList.add("position-relative");
+                    }
+                );
                 Array.from(tmpcontainer.querySelectorAll("code.hljs")).forEach(
                     (e) => {
                         const codecontenguid = "clip" + guid();
@@ -70,7 +75,7 @@ async function loadpage() {
 
                         e.insertAdjacentHTML(
                             "afterend",
-                            `<button class="btn btn-outline-primary clipbutton" data-clipboard-target="#${codecontenguid}">复制
+                            `<button class="btn btn-outline-primary clipbutton position-absolute right-0 top-0" data-clipboard-target="#${codecontenguid}">复制
                                         </button>`
                         );
                     }
