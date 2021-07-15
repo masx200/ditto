@@ -18,6 +18,9 @@ eventtarget.addEventListener("load", loaddone);
 eventtarget.addEventListener("load", () => {
     Adjustthedistance();
 });
+eventtarget.addEventListener("mount", () => {
+    Adjustthedistance();
+});
 eventtarget.addEventListener("load", anchorscroll);
 eventtarget.addEventListener("load", sidebarscroll);
 
