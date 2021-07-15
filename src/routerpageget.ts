@@ -120,6 +120,8 @@ function headeraddanchor(tmpcontainer: HTMLElement) {
         console.log(e);
         const id = e.id;
         const href = router.paramshref((o: any) => {
+            console.log(o,{ ...o, id })
+
             return { ...o, id };
         });
         e.insertAdjacentHTML(

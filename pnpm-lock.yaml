@@ -4,7 +4,7 @@ specifiers:
   '@babel/plugin-proposal-class-properties': ^7.14.5
   '@highlightjs/cdn-assets': ^11.0.1
   '@masx200/ie11-usual-polyfills': ^1.0.4
-  '@masx200/search-hash-params-router': ^1.2.4
+  '@masx200/search-hash-params-router': ^1.2.5
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.6
   '@types/lodash': ^4.14.171
   '@types/marked': ^2.0.3
@@ -23,13 +23,11 @@ specifiers:
   webpack: ^5.44.0
   webpack-cli: ^4.7.2
 
-dependencies:
-  '@masx200/search-hash-params-router': 1.2.4
-
 devDependencies:
   '@babel/plugin-proposal-class-properties': 7.14.5
   '@highlightjs/cdn-assets': 11.0.1
   '@masx200/ie11-usual-polyfills': 1.0.4
+  '@masx200/search-hash-params-router': 1.2.5
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.6
   '@types/lodash': 4.14.171
   '@types/marked': 2.0.3
@@ -2305,9 +2303,9 @@ packages:
     resolution: {integrity: sha512-YP25XM7PXP1lVoEniWOm4szfep7+oQ478MdTCbbrZRMQgj/UaRIYypI6FUf6xUmxG6SZFZzcVzvFuuzS46R2AQ==}
     dev: true
 
-  /@masx200/search-hash-params-router/1.2.4:
-    resolution: {integrity: sha512-va8X5SMuWEWyREFTaxpT9+wDESAEWngp/onKFd6iXwl21Ae7xdxFCCRqF46Muqg0LFBMiM+Dti9ddv1YX8ywpw==}
-    dev: false
+  /@masx200/search-hash-params-router/1.2.5:
+    resolution: {integrity: sha512-8i8WGHx7QO5iV6IzyCLMuGTRE2RwiLlUrDeGlO/qRlVDLZjxrO7ymEDIUas2ofSrbZlnE/w0D1tF6n2CbZGg3Q==}
+    dev: true
 
   /@masx200/webpack-react-vue-spa-awesome-config/3.3.6:
     resolution: {integrity: sha512-ZCb1YgOYkp7YyMwvS0lp4KYuyjfh7HjMQ0qV9IfON9r1sG2dD6IwfWEVzpS/PdaEat9fypIHy2i9qZZinWpxNw==}
