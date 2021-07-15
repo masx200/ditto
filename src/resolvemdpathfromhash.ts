@@ -5,7 +5,7 @@ import { isrelativepath } from "./isrelativepath.ts";
 //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
 
-export function resolvemdpathfromhash() {
+export function resolvemdpathfromhash(): string {
     const baseurl = getbaseurl();
 
     var path =

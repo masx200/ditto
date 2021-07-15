@@ -7,7 +7,7 @@ import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 export async function compile_into_dom(data: string, mdurl: string) {
     data = await escapemarkedunescape(data, { baseUrl: mdurl });
 
-    const tmpdoc = document.implementation.createHTMLDocument("title");
+    const tmpdoc = document.implementation.createHTMLDocument("");
 
     tmpdoc.body.innerHTML = data;
     changeimgsrc(tmpdoc, mdurl);

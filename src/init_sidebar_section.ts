@@ -31,7 +31,7 @@ import { urlclearhash } from "./urlclearhash.ts";
 
 export async function init_sidebar_section() {
     const appvm = getappvm();
-    const summaryfile = getabsolutesummary();
+    const summaryfile: string = getabsolutesummary();
     // alert(summaryfile);
     var path = summaryfile;
     path = urlclearhash(path);
@@ -40,7 +40,7 @@ export async function init_sidebar_section() {
         show_loading();
         const data = await fetchajaxgettext(path);
         const markedhtml = await escapemarkedunescape(data, { baseUrl: path });
-        const tmpdoc = document.implementation.createHTMLDocument("title");
+        const tmpdoc = document.implementation.createHTMLDocument("");
 
         tmpdoc.body.innerHTML = markedhtml;
 
@@ -57,90 +57,17 @@ export async function init_sidebar_section() {
         ) {
             hljs.highlightElement(block);
         });
-        const homefile = getabsoluteindex();
+        const homefile: string = getabsoluteindex();
         menulist.unshift(homefile);
-        const linkanddescriptions = [
-            { u: summaryfile, d: "目录" },
-            { u: homefile, d: "主页" },
-        ];
-        linkanddescriptions.forEach(({ u, d }) => {
-            const cataloguelinkhtml = `<a href="${u}" class="mui-btn mui-btn-primary mui-btn-outlined">${d}</a><br/>`;
+        addlinkhomeandsummary(summaryfile, homefile, tmpcontainer);
 
-            tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
-        });
+        addlinkclasslist(tmpcontainer);
 
-        Array.from(tmpcontainer.querySelectorAll("ul")).forEach((e: Element) =>
-            e.classList.add("navbar-nav")
-        );
-        Array.from(tmpcontainer.querySelectorAll("a")).forEach((e: Element) =>
-            e.classList.add(
-                ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
-                    " "
-                )
-            )
-        );
-
-        var links: HTMLAnchorElement[] = Array.from(
-            tmpcontainer.querySelectorAll("a")
-        );
-        links.forEach((a) => {
-            var ahref = a.getAttribute("href");
-            var b = new URL(location.href);
-
-            if (ahref?.endsWith(".md")) {
-                var realmdpath = isrelativepath(ahref)
-                    ? new URL(ahref, summaryfile)
-                    : ahref;
-
-                let path = urlclearhash(realmdpath);
-
-                path = path.endsWith(".md") ? path : path + ".md";
-
-                let tmppath = path;
-                if (!new URL(tmppath).pathname.endsWith(".md")) {
-                    return;
-                }
-                menulist.push(tmppath);
-                let mdtitle = a.innerText;
-
-                if (mdtitle && !cachetitle.get(tmppath)) {
-                    cachetitle.set(tmppath, mdtitle);
-                }
-
-                b.hash = "#" + tmppath;
-
-                a.href = b.href;
-                // a.dataset.href = tmppath;
-                a.classList.add(
-                    ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
-                        " "
-                    )
-                );
-            }
-        });
+        changelinkmd(tmpcontainer, summaryfile);
 
         //删除重复的链接
 
-        new Set(
-            Array.from(tmpcontainer.querySelectorAll("a")).map((a) => a.href)
-        ).forEach((href) => {
-            tmpcontainer
-                .querySelectorAll(`a[href="${href}"]`)
-                .forEach((e, i) => {
-                    if (i > 0) {
-                        let parent = e.parentNode;
-
-                        e.remove();
-                        if (parent && !parent.childNodes.length) {
-                            let remove = Reflect.get(parent, "remove");
-
-                            if ("function" === typeof remove) {
-                                Reflect.apply(remove, parent, []);
-                            }
-                        }
-                    }
-                });
-        });
+        removerepeatlinks(tmpcontainer);
         Reflect.set(appvm, "showerror", false);
         const currentcontenthtml = tmpcontainer.innerHTML;
         // console.log(tmpcontainer);
@@ -175,4 +102,94 @@ export async function init_sidebar_section() {
         Reflect.set(appvm, "showsrc", false);
         throw e_4;
     }
+}
+function addlinkclasslist(tmpcontainer: HTMLElement) {
+    Array.from(tmpcontainer.querySelectorAll("ul")).forEach((e: Element) =>
+        e.classList.add("navbar-nav")
+    );
+    Array.from(tmpcontainer.querySelectorAll("a")).forEach((e: Element) =>
+        e.classList.add(
+            ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
+                " "
+            )
+        )
+    );
+}
+
+function changelinkmd(tmpcontainer: HTMLElement, summaryfile: string) {
+    var links: HTMLAnchorElement[] = Array.from(
+        tmpcontainer.querySelectorAll("a")
+    );
+    links.forEach((a) => {
+        var ahref = a.getAttribute("href");
+        var b = new URL(location.href);
+
+        if (ahref?.endsWith(".md")) {
+            var realmdpath = isrelativepath(ahref)
+                ? new URL(ahref, summaryfile)
+                : ahref;
+
+            let path = urlclearhash(realmdpath);
+
+            path = path.endsWith(".md") ? path : path + ".md";
+
+            let tmppath = path;
+            if (!new URL(tmppath).pathname.endsWith(".md")) {
+                return;
+            }
+            menulist.push(tmppath);
+            let mdtitle = a.innerText;
+
+            if (mdtitle && !cachetitle.get(tmppath)) {
+                cachetitle.set(tmppath, mdtitle);
+            }
+
+            b.hash = "#" + tmppath;
+
+            a.href = b.href;
+            // a.dataset.href = tmppath;
+            a.classList.add(
+                ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
+                    " "
+                )
+            );
+        }
+    });
+}
+
+function addlinkhomeandsummary(
+    summaryfile: string,
+    homefile: string,
+    tmpcontainer: HTMLElement
+) {
+    const linkanddescriptions = [
+        { u: summaryfile, d: "目录" },
+        { u: homefile, d: "主页" },
+    ];
+    linkanddescriptions.forEach(({ u, d }) => {
+        const cataloguelinkhtml = `<a href="${u}" class="mui-btn mui-btn-primary mui-btn-outlined">${d}</a><br/>`;
+
+        tmpcontainer.insertAdjacentHTML("afterbegin", cataloguelinkhtml);
+    });
+}
+
+function removerepeatlinks(tmpcontainer: HTMLElement) {
+    new Set(
+        Array.from(tmpcontainer.querySelectorAll("a")).map((a) => a.href)
+    ).forEach((href) => {
+        tmpcontainer.querySelectorAll(`a[href="${href}"]`).forEach((e, i) => {
+            if (i > 0) {
+                let parent = e.parentNode;
+
+                e.remove();
+                if (parent && !parent.childNodes.length) {
+                    let remove = Reflect.get(parent, "remove");
+
+                    if ("function" === typeof remove) {
+                        Reflect.apply(remove, parent, []);
+                    }
+                }
+            }
+        });
+    });
 }
