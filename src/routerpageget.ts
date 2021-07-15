@@ -1,8 +1,10 @@
 //@ts-ignore
-//@ts-ignore
+
 //@ts-ignore
 //@ts-ignore
 // import anchorimg from "./anchor.svg";
+//@ts-ignore
+import Vue from "vue";
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { compile_into_dom } from "./compile_into_dom.ts";
@@ -32,9 +34,11 @@ import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts"; //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
 //@ts-ignore
 export const routerpagegethandler = debounce(async () => {
-    return loadpage().then(() => {
-        eventtarget.dispatchEvent(new Event("load"));
-    });
+    console.log("loading", location.hash);
+    await loadpage();
+
+    await Vue.nextTick();
+    eventtarget.dispatchEvent(new Event("load"));
 });
 async function loadpage() {
     const appvm = getappvm();

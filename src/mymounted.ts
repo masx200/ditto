@@ -13,7 +13,7 @@ export async function mymounted() {
     var initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
 
-    window.dispatchEvent(new Event("hashchange"));
+    // window.dispatchEvent(new Event("hashchange"));
     window.dispatchEvent(new Event("resize"));
     监视侧边栏变化触发事件();
 }

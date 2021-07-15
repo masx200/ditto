@@ -6,8 +6,19 @@ export function getbaseurl(): string {
     return config.baseurl;
 }
 export function getabsoluteindex(): string {
-    return urlclearhash(String(new URL(config.homepage, config.baseurl)));
+    return addendmd(
+        urlclearhash(String(new URL(config.homepage, config.baseurl)))
+    );
 }
 export function getabsolutesummary(): string {
-    return urlclearhash(String(new URL(config.catalogue, config.baseurl)));
+    return addendmd(
+        urlclearhash(String(new URL(config.catalogue, config.baseurl)))
+    );
+}
+export function addendmd(url: string) {
+    let nu = new URL(url);
+    if (!nu.pathname.endsWith(".md")) {
+        nu.pathname = nu.pathname + ".md";
+    }
+    return String(nu);
 }
