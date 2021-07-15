@@ -28,15 +28,15 @@ async function loaddone() {
     document.title = mdtitle
         ? mdtitle + " - " + config.maintitle
         : config.maintitle;
-    await new Promise<void>((res) => {
-        requestAnimationFrame(async () => {
-            //@ts-ignore
-            const hljs = (await import("./highlight.min.ts")).default;
-            hljs.highlightAll();
-            stop_loading();
-            res();
-        });
-    });
+    // await new Promise<void>((res) => {
+    //     requestAnimationFrame(async () => {
+    //@ts-ignore
+    // const hljs = (await import("./highlight.min.ts")).default;
+    // hljs.highlightAll();
+    stop_loading();
+    //         res();
+    //     });
+    // });
 
     Reflect.set(appvm, "showerror", false);
 

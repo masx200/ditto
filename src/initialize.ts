@@ -20,7 +20,7 @@ export async function initialize() {
         await Promise.all([init_sidebar_section(), routerpagegethandler()]);
     }
 
-    //@ts-ignore
-    const hljs = (await import("./highlight.min.ts")).default;
-    hljs.highlightAll();
+    // //@ts-ignore
+    // const hljs = (await import("./highlight.min.ts")).default;
+    // hljs.highlightAll();
 }
