@@ -7,17 +7,17 @@ import { computed, onMounted, ref } from "./compositionvue.ts";
 import config from "./config.ts";
 //@ts-ignore
 import { debounce } from "./debounce.ts";
+import Disableablelinks from "./Disableable-links.vue";
 //@ts-ignore
 import { disabledalinkhref } from "./disabledalinkhref.ts";
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
-import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 import NavHomebutton from "./NavHomebutton.vue";
-
+import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 export default defineComponent({
-    components: { Toggledisplayofsidebar, NavHomebutton },
+    components: { Toggledisplayofsidebar, NavHomebutton, Disableablelinks },
     setup() {
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
         const markdowncontent_2e4c728cac441a0c48939881c2c714361a0 = ref();

@@ -16,7 +16,10 @@ import { initloadingid } from "./mark-down-reader.ts";
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts"; //@ts-ignore
+
+import Vue from "vue";
 async function loaddone() {
+    await Vue.nextTick();
     const appvm = getappvm();
     let initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
@@ -32,13 +35,7 @@ async function loaddone() {
         : config.maintitle;
     await new Promise<void>((res) => {
         requestAnimationFrame(async () => {
-            Array.from(document.querySelectorAll("a")).forEach((e) => {
-                if (e.hash === "#" + path) {
-                    e.classList.add("active");
-                } else {
-                    e.classList.remove("active");
-                }
-            }); //@ts-ignore
+            //@ts-ignore
             const hljs = (await import("./highlight.min.ts")).default;
             hljs.highlightAll();
             stop_loading();
@@ -48,8 +45,17 @@ async function loaddone() {
 
     Reflect.set(appvm, "showerror", false);
     窄屏隐藏侧边栏();
+    await Vue.nextTick();
     setnextpagelink();
     setprevpagelink();
+    await Vue.nextTick();
+    Array.from(document.querySelectorAll("a")).forEach((e) => {
+        if (e.hash === "#" + path) {
+            e.classList.add("active");
+        } else {
+            e.classList.remove("active");
+        }
+    });
 }
 eventtarget.addEventListener("load", loaddone);
 eventtarget.addEventListener("load", () => {

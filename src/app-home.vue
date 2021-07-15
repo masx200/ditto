@@ -62,24 +62,12 @@
                         >
                             底部
                         </button>
-                        <a
-                            class="
-                                mui-btn mui-btn-primary mui-btn-outlined
-                                mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
-                            "
-                            :href="prevpagelink"
-                        >
+                        <Disableablelinks :href="prevpagelink">
                             前页
-                        </a>
-                        <a
-                            class="
-                                mui-btn mui-btn-primary mui-btn-outlined
-                                mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
-                            "
-                            :href="nextpagelink"
-                        >
+                        </Disableablelinks>
+                        <Disableablelinks :href="nextpagelink">
                             后页
-                        </a>
+                        </Disableablelinks>
                     </div>
                     <div
                         v-if="widescreen"
@@ -120,24 +108,12 @@
                         >
                             底部
                         </button>
-                        <a
-                            class="
-                                mui-btn mui-btn-primary mui-btn-outlined
-                                mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
-                            "
-                            :href="prevpagelink"
-                        >
+                        <Disableablelinks :href="prevpagelink">
                             前页
-                        </a>
-                        <a
-                            class="
-                                mui-btn mui-btn-primary mui-btn-outlined
-                                mybutton-8731e6c5bb5148e49e14cca7cdfa73e8
-                            "
-                            :href="nextpagelink"
-                        >
+                        </Disableablelinks>
+                        <Disableablelinks :href="nextpagelink">
                             后页
-                        </a>
+                        </Disableablelinks>
                     </div>
                 </nav>
             </div>
