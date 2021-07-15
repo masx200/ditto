@@ -30,11 +30,6 @@ export async function initialize() {
         //@ts-ignore
         requestIdleCallback(() => {
             eventtarget.dispatchEvent(new Event("load"));
-            // console.log(Date.now());
-            states.firstloaded++;
         });
     });
-    // //@ts-ignore
-    // const hljs = (await import("./highlight.min.ts")).default;
-    // hljs.highlightAll();
 }

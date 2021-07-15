@@ -29,7 +29,7 @@ function scrolltoelementid(id: string) {
             await Vue.nextTick();
 
             requestAnimationFrame(() => {
-                if (states.firstloaded >= 3) {
+                if (states.firstloaded >= 1) {
                     console.log(ele.offsetTop);
                     ele.scrollIntoView({
                         inline: "center",

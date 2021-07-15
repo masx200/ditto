@@ -35,18 +35,5 @@ async function loadclipboard() {
         e.clearSelection();
     });
 }
-window.addEventListener(
-    "load",
-    () => {
-        requestAnimationFrame(() => {
-            //@ts-ignore
-            requestIdleCallback(() => {
-                // eventtarget.dispatchEvent(new Event("load"));
-                // console.log(Date.now());
-                states.firstloaded++;
-            });
-        });
-    },
-    { once: true }
-);
+
 start();
