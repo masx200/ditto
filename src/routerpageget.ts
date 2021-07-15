@@ -38,7 +38,9 @@ export const routerpagegethandler = debounce(async () => {
     await loadpage();
 
     await Vue.nextTick();
-    eventtarget.dispatchEvent(new Event("load"));
+    requestAnimationFrame(() => {
+        eventtarget.dispatchEvent(new Event("load"));
+    });
 });
 async function loadpage() {
     const appvm = getappvm();

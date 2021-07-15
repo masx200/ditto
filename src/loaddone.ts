@@ -77,11 +77,11 @@ eventtarget.addEventListener("load", () => {
             requestAnimationFrame(async () => {
                 await Vue.nextTick();
                 // console.log(ele.offsetTop);
-                setTimeout(() => {
+                requestAnimationFrame(() => {
                     const scrollheight = ele.offsetTop - getnavbarheight();
                     console.log(ele.offsetTop, getnavbarheight(), scrollheight);
                     window.scrollTo(0, scrollheight);
-                },50);
+                });
             });
     } else {
         window.scrollTo(0, 0);
