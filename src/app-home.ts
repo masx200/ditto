@@ -71,6 +71,7 @@ export default defineComponent({
         this.mytitle = getmytitle();
         appvm.value = this;
         eventtarget.dispatchEvent(new Event("mount"));
+        this.$el.id = "app";
     },
     data: () => ({
         indexhref: getindexhref(),
