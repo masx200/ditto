@@ -3,7 +3,7 @@ import { Adjustthedistance } from "./Adjustthedistance.ts";
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
-import { anchorscroll } from "./loaddone.ts";
+import { anchorscroll } from "./anchorscroll.ts";
 //@ts-ignore
 import { loaddone } from "./loaddone.ts";
 //@ts-ignore
