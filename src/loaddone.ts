@@ -17,8 +17,8 @@ export { loaddone };
 async function loaddone() {
     await Vue.nextTick();
     const appvm = getappvm();
-    let initloadele = document.getElementById(initloadingid);
-    initloadele && (initloadele.style.display = "none");
+    // let initloadele = document.getElementById(initloadingid);
+    // initloadele && (initloadele.style.display = "none");
 
     stop_loading();
     Reflect.set(appvm, "showsrc", true);
