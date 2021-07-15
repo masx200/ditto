@@ -6,6 +6,6 @@ import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
 export function scrolltobottom() {
     const md = resolvemdpathfromhash();
     const id = "bottom";
-    router.transformparams({ md, id });
+    router.setparams({ md, id });
     scrollTo(0, document.body.scrollHeight);
 }

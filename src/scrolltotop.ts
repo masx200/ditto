@@ -1,7 +1,7 @@
 export function scrolltotop() {
     const md = resolvemdpathfromhash();
     const id = "top";
-    router.transformparams({ md, id });
+    router.setparams({ md, id });
     scrollTo(0, 0);
 }
 //@ts-ignore
