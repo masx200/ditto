@@ -19,7 +19,7 @@ specifiers:
   terser: ^5.7.0
   terser-webpack-plugin: ^5.1.4
   tslib: ^2.2.0
-  typescript: ^4.3.2
+  typescript: ^4.3.5
   vue: ^2.6.14
   webpack: ^5.44.0
   webpack-cli: ^4.7.2
@@ -43,7 +43,7 @@ devDependencies:
   terser: 5.7.0
   terser-webpack-plugin: 5.1.4_webpack@5.44.0
   tslib: 2.2.0
-  typescript: 4.3.2
+  typescript: 4.3.5
   vue: 2.6.14
   webpack: 5.44.0_webpack-cli@4.7.2
   webpack-cli: 4.7.2_webpack@5.44.0
@@ -9472,8 +9472,8 @@ packages:
       mime-types: 2.1.31
     dev: true
 
-  /typescript/4.3.2:
-    resolution: {integrity: sha512-zZ4hShnmnoVnAHpVHWpTcxdv7dWP60S2FsydQLV8V5PbS3FifjWFFRiHSWpDJahly88PRyV5teTSLoq4eG7mKw==}
+  /typescript/4.3.5:
+    resolution: {integrity: sha512-DqQgihaQ9cUrskJo9kIyW/+g0Vxsk8cDtZ52a3NGh0YNTfpUSArXSohyUGnvbPazEPLu398C0UxmKSOrPumUzA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true

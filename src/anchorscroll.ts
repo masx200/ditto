@@ -27,22 +27,28 @@ function scrolltoelementid(id: string) {
     ele &&
         requestAnimationFrame(async () => {
             await Vue.nextTick();
-            // console.log(ele.offsetTop);
+
             requestAnimationFrame(() => {
                 let timer = setInterval(() => {
-                    const scrollheight = ele.offsetTop - getnavbarheight();
-                    // console.log(ele.offsetTop, getnavbarheight(), scrollheight);
-
-                    if (
-                        Array.from(document.querySelectorAll("*")).includes(ele)
-                    ) {
-                        window.scrollTo(0, scrollheight);
-                    }
-                }, 10);
+                    //@ts-ignore
+                    requestIdleCallback(() => {
+                        console.log(ele.offsetTop);
+                        if (
+                            Array.from(document.querySelectorAll("*")).includes(
+                                ele
+                            )
+                        ) {
+                            ele.scrollIntoView({
+                                inline: "center",
+                                block: "center",
+                            });
+                        }
+                    });
+                }, 30);
 
                 setTimeout(() => {
                     clearInterval(timer);
-                }, 100);
+                }, 200);
             });
         });
 }

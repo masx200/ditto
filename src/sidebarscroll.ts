@@ -19,7 +19,10 @@ export function sidebarscroll() {
                     // console.log(e.offsetTop);
 
                     // console.log(e);
-                    scrolltoelement(e);
+                    //@ts-ignore
+                    requestIdleCallback(() => {
+                        scrolltoelement(e);
+                    });
                 });
             });
         }

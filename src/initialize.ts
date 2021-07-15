@@ -11,14 +11,14 @@ import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
 import { routerpagegethandler } from "./routerpageget.ts";
 
 export async function initialize() {
-    const summaryfile = getabsolutesummary();
-    const path = resolvemdpathfromhash();
-    if (Object.is(path, summaryfile)) {
-        await init_sidebar_section();
-        await routerpagegethandler();
-    } else {
-        await Promise.all([init_sidebar_section(), routerpagegethandler()]);
-    }
+    // const summaryfile = getabsolutesummary();
+    // const path = resolvemdpathfromhash();
+    // if (Object.is(path, summaryfile)) {
+    await init_sidebar_section();
+    await routerpagegethandler();
+    // } else {
+    //     await Promise.all([init_sidebar_section(), routerpagegethandler()]);
+    // }
 
     // //@ts-ignore
     // const hljs = (await import("./highlight.min.ts")).default;
