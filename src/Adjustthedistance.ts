@@ -16,18 +16,20 @@ export const Adjustthedistance = debounce(() => {
 
 function 调整侧边栏和导航栏的距离() {
     const appvm = getappvm();
-    var height =
-        appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95.clientHeight +
-        "px";
-
-    appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.style.top = height;
+    var height = getnavbarheight();
+    appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.style.top =
+        height + "px";
 }
-function 调整主体部分和导航栏的距离() {
+export function getnavbarheight() {
     const appvm = getappvm();
     var height =
-        appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95.clientHeight +
-        "px";
+        appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95.clientHeight;
+    return height;
+}
 
+function 调整主体部分和导航栏的距离() {
+    const appvm = getappvm();
+    var height = getnavbarheight();
     appvm.mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3.style["margin-top"] =
-        height;
+        height + "px";
 }

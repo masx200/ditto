@@ -1,6 +1,8 @@
 //@ts-ignore
 import Vue from "vue";
 //@ts-ignore
+import { getnavbarheight } from "./Adjustthedistance.ts";
+//@ts-ignore
 import { Adjustthedistance } from "./Adjustthedistance.ts";
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
@@ -74,8 +76,9 @@ eventtarget.addEventListener("load", () => {
         ele &&
             requestAnimationFrame(async () => {
                 await Vue.nextTick();
-                console.log(ele.offsetTop);
-                window.scrollTo(0, ele.offsetTop);
+                // console.log(ele.offsetTop);
+                const scrollheight = ele.offsetTop - getnavbarheight();
+                window.scrollTo(0, scrollheight);
             });
     } else {
         window.scrollTo(0, 0);
