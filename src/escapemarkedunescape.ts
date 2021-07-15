@@ -12,6 +12,6 @@ export async function escapemarkedunescape(
     var marked = module.default;
     data = marked(escape_html(data), opts);
     data = unescape_html(data);
-    console.log(data);
+    // console.log(data);
     return data;
 }

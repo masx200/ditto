@@ -1,7 +1,7 @@
 //@ts-ignore
 import Vue from "vue";
 //@ts-ignore
-import { getnavbarheight } from "./Adjustthedistance.ts";
+import { getnavbarheight } from "./getnavbarheight.ts";
 //@ts-ignore
 import { router } from "./hashrouter.ts";
 export { anchorscroll };
@@ -30,7 +30,7 @@ function scrolltoelementid(id: string) {
             // console.log(ele.offsetTop);
             requestAnimationFrame(() => {
                 const scrollheight = ele.offsetTop - getnavbarheight();
-                console.log(ele.offsetTop, getnavbarheight(), scrollheight);
+                // console.log(ele.offsetTop, getnavbarheight(), scrollheight);
                 window.scrollTo(0, scrollheight);
             });
         });

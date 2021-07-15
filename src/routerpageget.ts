@@ -77,7 +77,7 @@ async function loadpage() {
                 headeraddanchor(tmpcontainer, path);
                 //console.log(tmpcontainer);
                 const currentmdhtml = tmpcontainer.innerHTML;
-                console.log(currentmdhtml);
+                // console.log(currentmdhtml);
                 if (!cachemarkdown.get(path)) {
                     cachemarkdown.set(path, currentmdhtml);
                 }
