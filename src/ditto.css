@@ -16,74 +16,9 @@ body {
     /* font-size: 0.8em; */
 }
 
-#sidebar {
-    /* position: fixed;
-    width: 220px;
-    height: 100%; */
 
-    /* overflow-y: scroll; */
-    overflow: -moz-scrollbars-vertical;
 
-    /* margin-right: 20px; */
-    margin-top: 0;
-    /* padding-left: 25px; */
-    padding-top: 0;
 
-    /* box-shadow: 0 0 40px #CCC;
-    -webkit-box-shadow: 0 0 40px #CCC;
-    -moz-box-shadow: 0 0 40px #CCC; */
-    /* border-right: 1px solid #bbb; */
-}
-
-#sidebar h1 {
-    /* font-size: 25px; */
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-}
-
-#sidebar h1 a:link,
-#sidebar h1 a:visited {
-    color: #333;
-}
-
-/* #sidebar h2 {
-  /* font-size: 15px; */
-/* } */
-
-#sidebar h5 {
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
-#sidebar a:visited,
-#sidebar a:link {
-    color: #4682be;
-    text-decoration: none;
-}
-
-#sidebar ul {
-    list-style-type: none;
-    margin: 0;
-    padding-left: 10px;
-    padding-top: 0;
-}
-
-#sidebar ul li:before {
-    /* a hack to have dashes as a list style */
-    /* content: "-"; */
-    position: relative;
-    left: -5px;
-}
-
-#sidebar ul li {
-    margin-top: 0;
-    margin-bottom: 2px;
-    margin-left: 10px;
-    padding: 0;
-
-    text-indent: -5px; /* to compensate for the padding for the dash */
-    /* font-size: 12px; */
-}
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 {
     /* width: 580px; */
@@ -141,7 +76,7 @@ body {
 }
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 h2 {
-    margin-top: 50px;
+    margin-top: 0;
     margin-bottom: 0px;
 
     padding-top: 20px;
@@ -154,7 +89,7 @@ body {
 }
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 h3 {
-    margin-top: 50px;
+    margin-top: 0;
     margin-bottom: 0px;
 
     padding-top: 20px;
