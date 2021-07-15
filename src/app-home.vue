@@ -118,7 +118,7 @@
                 </nav>
             </div>
         </header>
-        <section>
+        <aside>
             <div class="container-fluid">
                 <div
                     ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
@@ -136,7 +136,7 @@
                     ></div>
                 </div>
             </div>
-        </section>
+        </aside>
         <section>
             <div id="loadingparent-b80f303d89182a8e58b02981c0822deb975">
                 <div
