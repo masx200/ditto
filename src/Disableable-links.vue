@@ -1,7 +1,7 @@
 <template>
     <div>
         <a
-            style="height: 100%; width: 100%;line-height: inherit;"
+            style="height: 100%; width: 100%; line-height: inherit"
             v-if="enabled"
             class="
                 mui-btn mui-btn-primary mui-btn-outlined

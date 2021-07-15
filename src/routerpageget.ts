@@ -23,6 +23,7 @@ import { eventtarget } from "./eventtarget.ts"; //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts";
 //@ts-ignore
 import { guid } from "./guid.ts"; //@ts-ignore
+import { router } from "./hashrouter.ts";
 //@ts-ignore
 import { removesomevalidelements } from "./removesomevalidelements.ts";
 //@ts-ignore
@@ -117,9 +118,13 @@ function headeraddanchor(tmpcontainer: HTMLElement) {
         .flat();
     headereles.forEach((e) => {
         console.log(e);
+        const id = e.id;
+        const href = router.paramshref((o: any) => {
+            return { ...o, id };
+        });
         e.insertAdjacentHTML(
             "afterbegin",
-            `<a class='anchor'><span class='anchor-icon'></a>`
+            `<a class='anchor' href=${href}><span class='anchor-icon'></a>`
         );
     });
 }

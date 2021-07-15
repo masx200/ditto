@@ -29,6 +29,7 @@
     },
     "homepage": "https://github.com/masx200/markdown-reader#readme",
     "devDependencies": {
+        "@masx200/search-hash-params-router": "^1.2.4",
         "@babel/plugin-proposal-class-properties": "^7.14.5",
         "@highlightjs/cdn-assets": "^11.0.1",
         "@masx200/ie11-usual-polyfills": "^1.0.4",
@@ -49,5 +50,6 @@
         "vue": "^2.6.14",
         "webpack": "^5.44.0",
         "webpack-cli": "^4.7.2"
-    }
+    },
+    "dependencies": {}
 }
