@@ -19,7 +19,9 @@ import { initloadingid } from "./mark-down-reader.ts";
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts"; //@ts-ignore
-
+eventtarget.addEventListener("load", () => {
+    窄屏隐藏侧边栏();
+});
 async function loaddone() {
     await Vue.nextTick();
     const appvm = getappvm();
@@ -45,7 +47,7 @@ async function loaddone() {
     });
 
     Reflect.set(appvm, "showerror", false);
-    窄屏隐藏侧边栏();
+
     await Vue.nextTick();
     setnextpagelink();
     setprevpagelink();
@@ -72,6 +74,7 @@ eventtarget.addEventListener("load", () => {
         ele &&
             requestAnimationFrame(async () => {
                 await Vue.nextTick();
+                console.log(ele.offsetTop);
                 window.scrollTo(0, ele.offsetTop);
             });
     } else {

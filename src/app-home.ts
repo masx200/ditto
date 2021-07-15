@@ -31,6 +31,7 @@ export default defineComponent({
             return !widescreen.value;
         });
         onMounted(() => {
+            widescreen.value = document.body.clientWidth > 550;
             window.addEventListener(
                 "resize",
 
