@@ -16,9 +16,9 @@ export function sidebarscroll() {
             requestAnimationFrame(async () => {
                 await Vue.nextTick();
                 requestAnimationFrame(() => {
-                    console.log(e.offsetTop);
+                    // console.log(e.offsetTop);
 
-                    console.log(e);
+                    // console.log(e);
                     scrolltoelement(e);
                 });
             });
@@ -27,6 +27,6 @@ export function sidebarscroll() {
 }
 
 function scrolltoelement(e: HTMLElement) {
-    console.log(e.offsetTop);
+    // console.log(e.offsetTop);
     e.scrollIntoView({ inline: "nearest", block: "nearest" });
 }
