@@ -1,7 +1,8 @@
 //@ts-ignore
 import { defineComponent } from "@vue/composition-api";
 //@ts-ignore
-import { appvm } from "./appvm.ts"; //@ts-ignore
+import { appvm } from "./appvm.ts";
+//@ts-ignore
 import { computed, onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
 import config from "./config.ts";
@@ -15,6 +16,10 @@ import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
 import NavHomebutton from "./NavHomebutton.vue";
+//@ts-ignore
+import { scrolltobottom } from "./scrolltobottom.ts";
+//@ts-ignore
+import { scrolltotop } from "./scrolltotop.ts";
 import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 export default defineComponent({
     components: { Toggledisplayofsidebar, NavHomebutton, Disableablelinks },
@@ -93,12 +98,8 @@ export default defineComponent({
             //@ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;
         },
-        scrolltotop() {
-            scrollTo(0, 0);
-        },
-        scrolltobottom() {
-            scrollTo(0, document.body.scrollHeight);
-        },
+        scrolltotop,
+        scrolltobottom,
     },
 });
 function getindexhref() {

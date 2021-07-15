@@ -1,9 +1,7 @@
 //@ts-ignore
 import Vue from "vue";
 //@ts-ignore
-import { getnavbarheight } from "./Adjustthedistance.ts";
-//@ts-ignore
-import { Adjustthedistance } from "./Adjustthedistance.ts";
+import { Adjustthedistance, getnavbarheight } from "./Adjustthedistance.ts";
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import config from "./config.ts";
@@ -20,10 +18,7 @@ import { initloadingid } from "./mark-down-reader.ts";
 //@ts-ignore
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
-import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts"; //@ts-ignore
-eventtarget.addEventListener("mount", () => {
-    窄屏隐藏侧边栏();
-});
+
 async function loaddone() {
     await Vue.nextTick();
     const appvm = getappvm();
