@@ -43,7 +43,7 @@ export const routerpagegethandler = debounce(async () => {
 async function loadpage() {
     const appvm = getappvm();
     // console.log(cachemarkdown);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     show_loading();
     const path: string = resolvemdpathfromhash();
     if (path !== Reflect.get(appvm, "urltext")) {
@@ -80,7 +80,7 @@ async function loadpage() {
                     cachemarkdown.set(path, currentmdhtml);
                 }
 
-                window.scrollTo(0, 0);
+                // window.scrollTo(0, 0);
                 stop_loading();
                 Reflect.set(appvm, "showsrc", true);
                 if (path == resolvemdpathfromhash()) {

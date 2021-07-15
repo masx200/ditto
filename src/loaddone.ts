@@ -1,4 +1,5 @@
 //@ts-ignore
+import Vue from "vue";
 //@ts-ignore
 import { Adjustthedistance } from "./Adjustthedistance.ts";
 //@ts-ignore
@@ -9,6 +10,8 @@ import { cachetitle, stop_loading } from "./ditto.ts";
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
+import { router } from "./hashrouter.ts";
+//@ts-ignore
 // import hljs from "./highlight.min.ts";
 //@ts-ignore
 import { initloadingid } from "./mark-down-reader.ts";
@@ -17,14 +20,12 @@ import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts"; //@ts-ignore
 
-import Vue from "vue";
 async function loaddone() {
     await Vue.nextTick();
     const appvm = getappvm();
     let initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
 
-    window.scrollTo(0, 0);
     stop_loading();
     Reflect.set(appvm, "showsrc", true);
     let path = Reflect.get(appvm, "urltext");
@@ -60,4 +61,20 @@ async function loaddone() {
 eventtarget.addEventListener("load", loaddone);
 eventtarget.addEventListener("load", () => {
     Adjustthedistance();
+}); //@ts-ignore
+eventtarget.addEventListener("load", () => {
+    const params = router.getparams();
+
+    if (Reflect.has(params, "id")) {
+        const id = Reflect.get(params, "id");
+        const ele = document.getElementById(id);
+
+        ele &&
+            requestAnimationFrame(async () => {
+                await Vue.nextTick();
+                window.scrollTo(0, ele.offsetTop);
+            });
+    } else {
+        window.scrollTo(0, 0);
+    }
 }); //@ts-ignore
