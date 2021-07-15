@@ -18,14 +18,18 @@ eventtarget.addEventListener("load", loaddone);
 eventtarget.addEventListener("load", () => {
     Adjustthedistance();
 });
-eventtarget.addEventListener("mount", () => {
-    let timer = setInterval(() => {
-        Adjustthedistance();
-    }, 30);
-    setTimeout(() => {
-        clearInterval(timer);
-    }, 200);
-});
+eventtarget.addEventListener(
+    "mount",
+    () => {
+        let timer = setInterval(() => {
+            Adjustthedistance();
+        }, 30);
+        setTimeout(() => {
+            clearInterval(timer);
+        }, 200);
+    },
+    { once: true }
+);
 eventtarget.addEventListener("load", anchorscroll);
 eventtarget.addEventListener("load", sidebarscroll);
 
@@ -40,6 +44,10 @@ eventtarget.addEventListener(
     },
     { once: true }
 );
-eventtarget.addEventListener("mount", () => {
-    窄屏隐藏侧边栏();
-});
+eventtarget.addEventListener(
+    "mount",
+    () => {
+        窄屏隐藏侧边栏();
+    },
+    { once: true }
+);

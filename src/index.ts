@@ -1,10 +1,11 @@
-import "./error-alert.ts";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
-
 import "./addEventListener.ts";
-
-import "./styles.ts";
+import "./error-alert.ts";
+//@ts-ignore
+import { eventtarget } from "./eventtarget.ts"; //@ts-ignore
 import "./loaddone.ts";
+import "./styles.ts";
+
 (async () => {
     var rootele =
         document.getElementById("root") ||
@@ -30,3 +31,12 @@ async function loadclipboard() {
         e.clearSelection();
     });
 }
+window.addEventListener(
+    "load",
+    () => {
+        requestAnimationFrame(() => {
+            eventtarget.dispatchEvent(new Event("load"));
+        });
+    },
+    { once: true }
+);
