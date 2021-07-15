@@ -3,11 +3,21 @@ import { Adjustthedistance } from "./Adjustthedistance.ts";
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
+import { anchorscroll } from "./loaddone.ts";
+//@ts-ignore
+import { loaddone } from "./loaddone.ts";
+//@ts-ignore
 import { routerpagegethandler } from "./routerpageget.ts";
 //@ts-ignore
 import { 内容调整左边偏移 } from "./内容调整左边偏移.ts";
 //@ts-ignore
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
+eventtarget.addEventListener("load", loaddone);
+eventtarget.addEventListener("load", () => {
+    Adjustthedistance();
+});
+eventtarget.addEventListener("load", anchorscroll);
+
 eventtarget.addEventListener(
     "mount",
 
