@@ -68,7 +68,7 @@ async function loadpage() {
 
                 changelinkmd(tmpcontainer, path);
 
-                headeraddanchor(tmpcontainer);
+                headeraddanchor(tmpcontainer, path);
                 //console.log(tmpcontainer);
                 const currentmdhtml = tmpcontainer.innerHTML;
                 console.log(currentmdhtml);
@@ -110,20 +110,17 @@ async function loadpage() {
         return;
     }
 }
-function headeraddanchor(tmpcontainer: HTMLElement) {
+function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
     const headerselectors = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
     const headereles = headerselectors
         .map((t) => Array.from(tmpcontainer.querySelectorAll(t)))
         .flat();
     headereles.forEach((e) => {
-        console.log(e);
+        // console.log(router.getparams());
+        // console.log(e);
         const id = e.id;
-        const href = router.paramshref((o: any) => {
-            console.log(o,{ ...o, id })
-
-            return { ...o, id };
-        });
+        const href = router.paramshref({  md: path,id });
         e.insertAdjacentHTML(
             "afterbegin",
             `<a class='anchor' href=${href}><span class='anchor-icon'></a>`
