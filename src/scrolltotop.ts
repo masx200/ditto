@@ -1,6 +1,10 @@
 export function scrolltotop() {
-    router.transformparams((o: any) => ({ ...o, id: "top" }));
+    const md = resolvemdpathfromhash();
+    const id = "top";
+    router.transformparams({ md, id });
     scrollTo(0, 0);
 }
 //@ts-ignore
 import { router } from "./hashrouter.ts";
+//@ts-ignore
+import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts";
