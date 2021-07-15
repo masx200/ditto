@@ -40,6 +40,8 @@ Lightweight Markdown Documentation System
 
 加载完 markdown 文件后给当前页的链接添加活跃样式
 
+给标头元素添加了锚点链接,并且可从`location.hash`中解析要跳转到的元素
+
 [目录](summary.md)
 
 ## 使用方法
