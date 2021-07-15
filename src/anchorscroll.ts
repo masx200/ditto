@@ -29,9 +29,20 @@ function scrolltoelementid(id: string) {
             await Vue.nextTick();
             // console.log(ele.offsetTop);
             requestAnimationFrame(() => {
-                const scrollheight = ele.offsetTop - getnavbarheight();
-                // console.log(ele.offsetTop, getnavbarheight(), scrollheight);
-                window.scrollTo(0, scrollheight);
+                let timer = setInterval(() => {
+                    const scrollheight = ele.offsetTop - getnavbarheight();
+                    // console.log(ele.offsetTop, getnavbarheight(), scrollheight);
+
+                    if (
+                        Array.from(document.querySelectorAll("*")).includes(ele)
+                    ) {
+                        window.scrollTo(0, scrollheight);
+                    }
+                }, 10);
+
+                setTimeout(() => {
+                    clearInterval(timer);
+                }, 100);
             });
         });
 }
