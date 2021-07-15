@@ -28,6 +28,6 @@ export function sidebarscroll() {
 
 function scrolltoelement(e: HTMLElement) {
     console.log(e.offsetTop);
-
-    e.offsetParent?.scrollTo(0, e.offsetTop);
+    //ie不支持Element.scrollTo
+    e.offsetParent?.scrollTo?.(0, e.offsetTop) || e.scrollIntoView();
 }
