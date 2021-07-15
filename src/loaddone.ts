@@ -21,7 +21,7 @@ import { initloadingid } from "./mark-down-reader.ts";
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 //@ts-ignore
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts"; //@ts-ignore
-eventtarget.addEventListener("load", () => {
+eventtarget.addEventListener("mount", () => {
     窄屏隐藏侧边栏();
 });
 async function loaddone() {
