@@ -1,12 +1,10 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import "./addEventListener.ts";
 import "./error-alert.ts";
-//@ts-ignore
-import { eventtarget } from "./eventtarget.ts"; //@ts-ignore
 import "./loaddone.ts";
 import "./styles.ts";
-//@ts-ignore
-import { states } from "./states.ts";
+
+
 function start() {
     (async () => {
         var rootele =
