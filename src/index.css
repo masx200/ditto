@@ -98,6 +98,7 @@ h1 {
     transition-timing-function: ease !important;
     transition-delay: 0s !important;
 }
-.mui-btn {
+.mui-btn,
+.mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 {
     padding: 5px 5px;
 }
