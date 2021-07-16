@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import { defineComponent ,ref} from "@vue/composition-api";
+import { defineComponent ,ref,onUnmounted,onMounted} from "@vue/composition-api";
 
 export default defineComponent({
 setup(){
