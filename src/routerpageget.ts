@@ -132,7 +132,7 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
         // e.insertAdjacentHTML(
         //     "afterbegin",
         var oldhtml = e.innerHTML;
-        e.innerHTML = `<a class='anchor' href=${href}><span class='anchor-icon'></span>${oldhtml}</a>`;
+        e.innerHTML = `<a class='anchor scrollIntoView' href=${href}><span class='anchor-icon'></span>${oldhtml}</a>`;
         // );
     });
 }
