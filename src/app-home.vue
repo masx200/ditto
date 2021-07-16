@@ -15,7 +15,7 @@
                     <div
                         id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
                         style="
-                            flex-wrap: nowrap;
+                            flex-wrap: wrap;
                             display: flex;
                             width: 100%;
                             justify-content: space-between;
@@ -76,8 +76,8 @@
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
             id="mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3"
         >
-            <main style="">
-                <div class="container">
+            <main :style="{ 'margin-left': this.left }">
+                <div class="container" style="padding:0">
                     <div>
                         <div
                             ref="contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1"

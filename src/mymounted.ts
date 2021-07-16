@@ -29,7 +29,10 @@ function 监视侧边栏变化触发事件() {
         attributes: true,
     };
 
-    const nodes = [appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95];
+    const nodes = [
+        appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
+        appvm.getsidebarele(),
+    ];
     nodes.forEach((n) => {
         mo.observe(n, opts);
     });
