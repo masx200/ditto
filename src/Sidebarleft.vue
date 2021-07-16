@@ -42,11 +42,21 @@ return {height}
 });
 
 
-function useinnerhehight(){
 
-onUnmounted(()=>{})
-onMounted(()=>{})
+function useinnerhehight(){
 const height=ref(window.innerHeight)
+const listener=debounce(() => {
+                    requestAnimationFrame(() => {
+                        width.value = window.innerHeight 
+                    });
+                })
+onMounted(()=>{
+window.addEventListener("resize",listener)
+})
+onUnmounted(()=>{
+window.removeEventListener("resize",listener)
+})
+
 
 return height
 }
