@@ -33,7 +33,7 @@ return {height}
     computed: {
         height() {
             return (
-                String(window.innerHeight - this.top.replaceAll("px", "")) +
+                String(this.height - this.top.replaceAll("px", "")) +
                 "px"
             );
         },
