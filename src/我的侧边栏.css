@@ -77,12 +77,7 @@ button.btn.btn-outline-primary.clipbutton {
     /* mui中设置按钮 relative导致按钮前置?*/
     position: absolute;
 }
-* {
-    transition-property: all;
-    transition-duration: 0s !important;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-}
+
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 li {
     text-align: center !important;
 }
