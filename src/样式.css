@@ -7,7 +7,7 @@ pre {
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 p {
     font-size: 1rem;
 }
-@media (min-width: 550px) {
+/* @media (min-width: 550px) {
     #nav-3fa9878ebc0dbb05688f058e3bcafc57386 {
         display: flex !important;
     }
@@ -24,7 +24,7 @@ pre {
     #nav-7e7dd758bdb27a9c889a4eaa0fce55cf2d7 {
         display: flex !important;
     }
-}
+} */
 #mynewsidelan-c887e2d697f11af869981691c9830ebd892 p {
     margin: 0;
 }
