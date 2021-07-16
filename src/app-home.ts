@@ -138,7 +138,18 @@ function getmytitle() {
 }
 function useinnerwidth(){
 const width=ref(window.innerWidth)
-
+const listener=debounce(() => {
+                    requestAnimationFrame(() => {
+                        width.value = window.innerWidth 
+                    });
+                })
+onMounted(()=>{
+window.addEventListener("resize",listener)
+})
+onUnmounted(()=>{
+window.removeEventListener("resize",listener)
+})
+window.addEventListener("resize",listener)
 
 return width
 }
