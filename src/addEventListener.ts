@@ -26,7 +26,7 @@ eventtarget.addEventListener(
         }, 30);
         setTimeout(() => {
             clearInterval(timer);
-        }, 200);
+        }, 100);
     },
     { once: true }
 );

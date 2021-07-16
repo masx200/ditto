@@ -56,7 +56,7 @@ function scrolltoelementid(id: string) {
 
                     setTimeout(() => {
                         clearInterval(timer);
-                    }, 500);
+                    }, 100);
                 }
             });
         });
