@@ -44,7 +44,8 @@ return {height}
 
 function useinnerhehight(){
 
-
+onUnmounted(()=>{})
+onMounted(()=>{})
 const height=ref(window.innerHeight)
 
 return height
