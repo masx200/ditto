@@ -84,15 +84,13 @@ export default defineComponent({
         eventtarget.dispatchEvent(new Event("mount"));
         this.$el.id = "app";
     },
-watch:{widescreen(value){
-
-
-if(value){
-this.xianshicebianlan=true
-
-}
-
-}},
+    watch: {
+        widescreen(value) {
+            if (value) {
+                this.xianshicebianlan = true;
+            }
+        },
+    },
     data: () => ({
         indexhref: getindexhref(),
         contenthtml: "",

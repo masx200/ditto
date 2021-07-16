@@ -23,7 +23,8 @@
                             align-items: stretch;
                         "
                     >
-                        <Toggledisplayofsidebar v-show="narrowscreen"
+                        <Toggledisplayofsidebar
+                            v-show="narrowscreen"
                             :onclick="togglecebian"
                         ></Toggledisplayofsidebar>
 
@@ -65,11 +66,11 @@
             style="
                 display: block;
                 width: 100%;
-               max-width: 100%;
+                max-width: 100%;
                 align-items: center;
                 justify-content: space-between;
                 align-content: stretch;
-               
+
                 margin-top: 62px;
             "
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
