@@ -13,7 +13,8 @@ requestIdleCallback(()=>{
 ele.scrollIntoView({
                         inline: "center",
                         block: "center",
-                    });}
+                    });
+})
 }
 
 },
