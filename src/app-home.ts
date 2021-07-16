@@ -129,7 +129,7 @@ function getindexhref() {
 function getmytitle() {
     return config.maintitle;
 }
-function useinnerwidth(){
+export function useinnerwidth(){
 const width=ref(window.innerWidth)
 const listener=debounce(() => {
                     requestAnimationFrame(() => {
