@@ -51,10 +51,6 @@ eventtarget.addEventListener(
     },
     { once: true }
 );
-eventtarget.addEventListener(
-    "load",
-    () => {
-        窄屏隐藏侧边栏();
-    },
-    
-);
+eventtarget.addEventListener("load", () => {
+    窄屏隐藏侧边栏();
+});

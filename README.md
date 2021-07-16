@@ -65,12 +65,15 @@ yarn build
 ```
 
 打包之后的文件存放在`dist`目录下，可直接部署到云服务器上
+
 ## 目录写法
+
 ```markdown
-- [Documentation 1](docs/document_1.md)
-- [Documentation 2](docs/document_2.md)
-- [Documentation 3](docs/document_3.md)
+-   [Documentation 1](docs/document_1.md)
+-   [Documentation 2](docs/document_2.md)
+-   [Documentation 3](docs/document_3.md)
 ```
+
 ## 自定义配置
 
 https://github.com/masx200/markdown-reader/blob/master/src/config.ts
