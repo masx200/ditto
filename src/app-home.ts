@@ -92,7 +92,7 @@ export default defineComponent({
         },
     },
     data: () => ({
-        left: "350px",
+        left: "265px",
         top: "62px",
         indexhref: getindexhref(),
         contenthtml: "",
