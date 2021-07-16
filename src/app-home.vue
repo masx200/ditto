@@ -65,7 +65,7 @@
             style="
                 display: block;
                 width: 100%;
-               
+               max-width: 100%;
                 align-items: center;
                 justify-content: space-between;
                 align-content: stretch;
