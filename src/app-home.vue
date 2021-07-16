@@ -63,13 +63,13 @@
         </header>
         <div
             style="
-                display: flex;
+                display: block;
                 width: 100%;
-                flex-direction: column;
+               
                 align-items: center;
                 justify-content: space-between;
                 align-content: stretch;
-                flex-wrap: nowrap;
+               
                 margin-top: 62px;
             "
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
