@@ -26,6 +26,10 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
+setup(){
+const height=useinnerhehight()
+return {height}
+},
     computed: {
         height() {
             return (
@@ -36,6 +40,15 @@ export default defineComponent({
     },
     props: ["html", "top"],
 });
+
+
+function useinnerhehight(){
+
+
+const height=ref(window.innerHeight)
+
+return height
+}
 </script>
 
 <style scoped>
