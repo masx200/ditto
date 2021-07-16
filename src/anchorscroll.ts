@@ -1,9 +1,9 @@
 //@ts-ignore
 import Vue from "vue";
 //@ts-ignore
-import { getnavbarheight } from "./getnavbarheight.ts";
-//@ts-ignore
 import { router } from "./hashrouter.ts";
+//@ts-ignore
+import { states } from "./states.ts";
 export { anchorscroll };
 function anchorscroll() {
     const params = router.getparams();
@@ -30,7 +30,7 @@ function scrolltoelementid(id: string) {
 
             requestAnimationFrame(() => {
                 if (states.firstloaded >= 1) {
-                    console.log(ele.offsetTop);
+                    // console.log(ele.offsetTop);
                     ele.scrollIntoView({
                         inline: "center",
                         block: "center",
@@ -61,5 +61,4 @@ function scrolltoelementid(id: string) {
             });
         });
 }
-//@ts-ignore
-import { states } from "./states.ts";
+

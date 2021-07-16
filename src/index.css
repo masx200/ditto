@@ -93,9 +93,8 @@ h1 {
     background-image: url(./anchor.svg);
 }
 * {
-    transition-property: all !important;
+    transition-property: none !important;
     transition-duration: 0s !important;
     transition-timing-function: ease !important;
     transition-delay: 0s !important;
-    transition: all 0 ease 0 !important;
 }
