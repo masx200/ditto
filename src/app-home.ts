@@ -92,6 +92,7 @@ export default defineComponent({
         },
     },
     data: () => ({
+        top: "62px",
         indexhref: getindexhref(),
         contenthtml: "",
         muluhtml: "",
@@ -106,6 +107,10 @@ export default defineComponent({
         showload: true,
     }),
     methods: {
+        getsidebarele() {
+            return this.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.$refs
+                .Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644;
+        },
         togglecebian() {
             //@ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;

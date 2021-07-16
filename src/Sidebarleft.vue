@@ -5,12 +5,12 @@
                 ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
                 id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
                 class="el-container"
-                style="
-                    border: 1px solid white;
-                    position: fixed;
-                    top: 62px;
-                    left: 0;
-                "
+                :style="{
+                    border: '1px solid white',
+                    position: 'fixed',
+                    top: this.top,
+                    left: '0',
+                }"
             >
                 <div
                     v-html="html"
@@ -27,7 +27,7 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-    props: ["html"],
+    props: ["html", "top"],
 });
 </script>
 

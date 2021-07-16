@@ -63,16 +63,16 @@
             </div>
         </header>
         <div
-            style="
-                display: block;
-                width: 100%;
-                max-width: 100%;
-                align-items: center;
-                justify-content: space-between;
-                align-content: stretch;
+            :style="{
+                display: 'block',
+                width: '100%',
+                'max-width': '100%',
+                ' align-items': 'center',
+                ' justify-content': 'space-between',
+                'align-content': 'stretch',
 
-                margin-top: 62px;
-            "
+                'margin-top': this.top,
+            }"
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
             id="mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3"
         >
@@ -126,6 +126,7 @@
             </div>
         </section>
         <Sidebarleft
+            :top="top"
             ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
             :html="muluhtml"
             v-show="xianshicebianlan"
