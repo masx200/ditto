@@ -98,3 +98,6 @@ h1 {
     transition-timing-function: ease !important;
     transition-delay: 0s !important;
 }
+.mui-btn {
+    padding: 5px 5px;
+}
