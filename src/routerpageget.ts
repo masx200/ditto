@@ -129,10 +129,11 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
         // console.log(e);
         const id = e.id;
         const href = router.paramshref({ md: path, id });
-        e.insertAdjacentHTML(
-            "afterbegin",
-            `<a class='anchor' href=${href}><span class='anchor-icon'></a>`
-        );
+        // e.insertAdjacentHTML(
+        //     "afterbegin",
+        var oldhtml = e.innerHTML;
+        e.innerHTML = `<a class='anchor' href=${href}><span class='anchor-icon'></span>${oldhtml}</a>`;
+        // );
     });
 }
 

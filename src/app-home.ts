@@ -21,9 +21,11 @@ import { scrolltobottom } from "./scrolltobottom.ts";
 //@ts-ignore
 import { scrolltotop } from "./scrolltotop.ts";
 import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
+import Articlemarkdown from "./Articlemarkdown.vue";
 import Sidebarleft from "./Sidebarleft.vue";
 export default defineComponent({
     components: {
+        Articlemarkdown,
         Toggledisplayofsidebar,
         NavHomebutton,
         Disableablelinks,
