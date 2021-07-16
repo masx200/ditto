@@ -23,7 +23,7 @@
                             align-items: stretch;
                         "
                     >
-                        <Toggledisplayofsidebar
+                        <Toggledisplayofsidebar v-show="narrowscreen"
                             :onclick="togglecebian"
                         ></Toggledisplayofsidebar>
 
