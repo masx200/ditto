@@ -1,5 +1,5 @@
 //@ts-ignore
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent ,onUnmounted} from "@vue/composition-api";
 //@ts-ignore
 import { appvm } from "./appvm.ts";
 //@ts-ignore
@@ -54,6 +54,7 @@ export default defineComponent({
                 })
             );
         });
+onUnmounted(()=>{})
         const allret = {
             widescreen,
             narrowscreen,
