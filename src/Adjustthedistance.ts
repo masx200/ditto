@@ -19,7 +19,7 @@ export const Adjustthedistance = debounce(() => {
 function 调整主体部分和导航栏的距离() {
     const appvm = getappvm();
     var height = getnavbarheight();
-    console.log(height)
+    // console.log(height)
     appvm.mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3.style["margin-top"] =
         height + "px";
 }

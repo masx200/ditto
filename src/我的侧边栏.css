@@ -19,12 +19,12 @@
 }
 @media (min-width: 550px) {
     #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
-        max-height: 90%;
+        max-height: 100%;
     }
 }
 @media (max-width: 550px) {
     #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
-        max-height: 85%;
+        max-height: 100%;
     }
 }
 #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
@@ -81,18 +81,15 @@ button.btn.btn-outline-primary.clipbutton {
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 li {
     text-align: center !important;
 }
-
-/* @media (min-width: 550px) {
-    /*宽度 大 */
-
-/* #daohanglanhuanhang {
-        display: none;
+@media (min-width: 550px) {
+    .mysidebar {
+        width: fit-content;
+        max-width: fit-content;
     }
 }
 @media (max-width: 550px) {
-    /*宽度 大 */
-
-/* #daohanglanhuanhang {
-        display: block;
-    } */
-/* } */
+    .mysidebar {
+        width: 100%;
+        max-width: 100%;
+    }
+}
