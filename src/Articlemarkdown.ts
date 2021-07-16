@@ -4,6 +4,17 @@ setup(){
 const container=ref()
 return {container}
 },
-    methods: {},
+    methods: {
+onclick(e){
+const ele=e.target
+
+requestIdleCallback(()=>{
+ele.scrollIntoView({
+                        inline: "center",
+                        block: "center",
+                    });}
+}
+
+},
     props: ["html"],
 });
