@@ -1,6 +1,6 @@
 <template>
-    <aside  class="mysidebar">
-        <div class="container-fluid" style="padding:0">
+    <aside class="mysidebar" style="position: fixed;left:0;top:65px">
+        <div class="container-fluid" style="padding: 0">
             <div
                 ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
                 id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
