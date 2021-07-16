@@ -16,7 +16,7 @@ return {height}
     },
     props: ["html", "top"],
 });
-function useinnerhehight(){
+export function useinnerhehight(){
 const height=ref(window.innerHeight)
 const listener=debounce(() => {
                     requestAnimationFrame(() => {
