@@ -14,8 +14,6 @@ import { contenthtml } from "./contenthtml.ts";
 import { debounce } from "./debounce.ts";
 //@ts-ignore
 import {
-    cachemarkdown,
-    cachetitle,
     show_loading,
     stop_loading,
     //@ts-ignore
@@ -31,8 +29,12 @@ import { removesomevalidelements } from "./removesomevalidelements.ts";
 //@ts-ignore
 //@ts-ignore
 import { resolvemdpathfromhash } from "./resolvemdpathfromhash.ts"; //@ts-ignore
+import { states } from "./states";
+//@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
 //@ts-ignore
+
+const { cachemarkdown, cachetitle } = states;
 export const routerpagegethandler = debounce(async () => {
     console.log("loading", location.hash);
     await loadpage();

@@ -1,15 +1,10 @@
+const { cachemarkdown, cachetitle } = states;
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 //@ts-ignore
 import { changeimgsrc } from "./changeimgsrc.ts";
 //@ts-ignore
-import {
-    cachemarkdown,
-    cachetitle,
-    show_loading,
-    stop_loading,
-    //@ts-ignore
-} from "./ditto.ts";
+import { show_loading, stop_loading } from "./ditto";
 //@ts-ignore
 import { escapemarkedunescape } from "./escapemarkedunescape.ts";
 //@ts-ignore
@@ -21,13 +16,14 @@ import { getabsoluteindex, getabsolutesummary } from "./getbaseurl.ts";
 //@ts-ignore
 import { isrelativepath } from "./isrelativepath.ts";
 //@ts-ignore
-import { menulist } from "./menulist.ts";
-//@ts-ignore
 import { precheckfetchajaxmarkdown } from "./precheckfetchajaxmarkdown.ts";
 //@ts-ignore
 import { removesomevalidelements } from "./removesomevalidelements.ts";
+import { states } from "./states";
 //@ts-ignore
 import { urlclearhash } from "./urlclearhash.ts";
+//@ts-ignore
+const { menulist } = states;
 
 export async function init_sidebar_section() {
     const appvm = getappvm();

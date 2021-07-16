@@ -1,8 +1,9 @@
-import "./polyfill.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import "./addEventListener.ts";
 import "./error-alert.ts";
 import "./loaddone.ts";
+import "./polyfill.js";
+import { states } from "./states";
 import "./styles.ts";
 
 function start() {
@@ -35,3 +36,10 @@ async function loadclipboard() {
 }
 
 start();
+window.addEventListener(
+    "load",
+    () => {
+        console.log(states);
+    },
+    { once: true }
+);

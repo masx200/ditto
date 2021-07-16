@@ -1,8 +1,9 @@
 //@ts-ignore//@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { disabledalinkhref } from "./disabledalinkhref.ts";
+import { states } from "./states";
 //@ts-ignore
-import { menulist } from "./menulist.ts";
+const { menulist } = states;
 function findindexexmenulist() {
     const appvm = getappvm();
     // console.log(menulist);

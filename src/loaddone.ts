@@ -4,16 +4,13 @@ import Vue from "vue";
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
-import { cachetitle, stop_loading } from "./ditto.ts";
-//@ts-ignore
-//@ts-ignore
-// import hljs from "./highlight.min.ts";
-//@ts-ignore
-import { initloadingid } from "./mark-down-reader.ts";
+import { stop_loading } from "./ditto.ts";
+import { states } from "./states";
 //@ts-ignore
 import { setnextpagelink, setprevpagelink } from "./toprevpage.ts";
 
 export { loaddone };
+const { cachetitle } = states;
 async function loaddone() {
     await Vue.nextTick();
     const appvm = getappvm();
