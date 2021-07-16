@@ -41,13 +41,13 @@ export default defineComponent({
             return !widescreen.value;
         });
         onMounted(() => {
-            widescreen.value = document.body.clientWidth > 550;
+            widescreen.value = window.innerWidth > 550;
             window.addEventListener(
                 "resize",
 
                 debounce(() => {
                     requestAnimationFrame(() => {
-                        widescreen.value = document.body.clientWidth > 550;
+                        widescreen.value = window.innerWidth > 550;
                     });
                 })
             );

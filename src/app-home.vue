@@ -13,15 +13,9 @@
                     style="padding-right: 0; padding-left: 0"
                 >
                     <div
+                        class="mynavbar"
                         id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
-                        style="
-                            flex-wrap: wrap;
-                            display: flex;
-                            width: 100%;
-                            justify-content: space-between;
-                            flex-direction: row;
-                            align-items: stretch;
-                        "
+                        style=""
                     >
                         <Toggledisplayofsidebar
                             v-show="narrowscreen"
@@ -63,14 +57,8 @@
             </div>
         </header>
         <div
+            class="mybodycontainer"
             :style="{
-                display: 'block',
-                width: '100%',
-                'max-width': '100%',
-                ' align-items': 'center',
-                ' justify-content': 'space-between',
-                'align-content': 'stretch',
-
                 'margin-top': this.top,
             }"
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
@@ -111,17 +99,7 @@
         <section v-show="showload" style="position: fixed">
             <div id="loadingparent-b80f303d89182a8e58b02981c0822deb975">
                 <div id="loading-36bec0d286ad9ab9ca8c1d923b0095c1c06">
-                    <h1
-                        style="
-                            font-size: 50px;
-                            background-color: white;
-                            border-radius: 10px;
-                            border: black 3px solid;
-                            padding: 5px;
-                        "
-                    >
-                        Loading...
-                    </h1>
+                    <h1 class="mybigloading">Loading...</h1>
                 </div>
             </div>
         </section>
@@ -133,3 +111,29 @@
         ></Sidebarleft>
     </div>
 </template>
+<style scoped>
+.mybigloading {
+    font-size: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: black 3px solid;
+    padding: 5px;
+}
+
+.mybodycontainer {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    align-content: stretch;
+}
+.mynavbar {
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: stretch;
+}
+</style>

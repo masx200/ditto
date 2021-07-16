@@ -4,11 +4,9 @@
             <div
                 ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
                 id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
-                class="el-container"
+                class="el-container mysidebarone"
                 :style="{
-                    'padding-bottom': '30px',
-                    border: '1px solid black',
-                    position: 'fixed',
+                    'max-height': this.height,
                     top: this.top,
                     left: '0',
                 }"
@@ -17,7 +15,7 @@
                     v-html="html"
                     id="mynewsidelan-c887e2d697f11af869981691c9830ebd892"
                     class="el-aside"
-                    style="margin-bottom: 30px; background-color: white"
+                    style="margin-bottom: 5px; background-color: white"
                 ></div>
             </div>
         </div>
@@ -28,8 +26,22 @@
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
+    computed: {
+        height() {
+            return (
+                String(window.innerHeight - this.top.replaceAll("px", "")) +
+                "px"
+            );
+        },
+    },
     props: ["html", "top"],
 });
 </script>
 
-<style></style>
+<style scoped>
+.mysidebarone {
+    padding-bottom: 5px;
+    border: 1px solid white;
+    position: fixed;
+}
+</style>
