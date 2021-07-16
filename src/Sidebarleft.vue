@@ -23,6 +23,8 @@
 </template>
 
 <script>
+//@ts-ignore
+import { debounce } from "./debounce.ts";
 import { defineComponent ,ref,onUnmounted,onMounted} from "@vue/composition-api";
 
 export default defineComponent({
