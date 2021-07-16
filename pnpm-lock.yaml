@@ -9,7 +9,7 @@ specifiers:
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.8
   '@types/lodash': ^4.14.171
   '@types/marked': ^2.0.3
-  '@vue/composition-api': ^1.0.0-rc.12
+  '@vue/composition-api': ^1.0.1
   clipboard: ^2.0.8
   fs-extra: ^10.0.0
   highlight.js: ^11.0.1
@@ -33,7 +33,7 @@ dependencies:
   '@masx200/webpack-react-vue-spa-awesome-config': 3.3.8_typescript@4.3.5
   '@types/lodash': 4.14.171
   '@types/marked': 2.0.3
-  '@vue/composition-api': 1.0.0-rc.12_vue@2.6.14
+  '@vue/composition-api': 1.0.1_vue@2.6.14
   clipboard: 2.0.8
   fs-extra: 10.0.0
   highlight.js: 11.0.1
@@ -2746,12 +2746,12 @@ packages:
       prettier: 1.19.1
     dev: false
 
-  /@vue/composition-api/1.0.0-rc.12_vue@2.6.14:
-    resolution: {integrity: sha512-b5CLnxza4hbCZB1FeOgutYHJI24u6DL8Z1edilAJa3apVgC1PNSgIk1maQOYC9DoEO0V1KK9H6mEdkuPMJJw1g==}
+  /@vue/composition-api/1.0.1_vue@2.6.14:
+    resolution: {integrity: sha512-jlJt2ukm1hSTdbviG42VaYwXRalnBbPxiP+2uu620MJSn4MEa8/Y+onqAFjX3ynOgzm5eJC9tpUJnklmrStiaQ==}
     peerDependencies:
       vue: '>= 2.5 < 3'
     dependencies:
-      tslib: 2.2.0
+      tslib: 2.3.0
       vue: 2.6.14
     dev: false
 

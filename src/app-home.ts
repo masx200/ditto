@@ -1,5 +1,5 @@
 //@ts-ignore
-import { defineComponent ,onUnmounted} from "@vue/composition-api";
+import { defineComponent, onUnmounted } from "@vue/composition-api";
 //@ts-ignore
 import { appvm } from "./appvm.ts";
 //@ts-ignore
@@ -24,7 +24,6 @@ import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 import Articlemarkdown from "./Articlemarkdown.vue";
 import Sidebarleft from "./Sidebarleft.vue";
 
-
 export default defineComponent({
     components: {
         Articlemarkdown,
@@ -34,21 +33,17 @@ export default defineComponent({
         Sidebarleft,
     },
     setup() {
-        const markdowncontent_2e4c728cac441a0c48939881c2c714361a0 = ref();
-
         const mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3 = ref();
         const mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95 = ref();
         const contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1 = ref();
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
-const width=       useinnerwidth()
- const widescreen = computed(()=>{
-return width.value>550
-
-})
+        const width = useinnerwidth();
+        const widescreen = computed(() => {
+            return width.value > 550;
+        });
         const narrowscreen = computed(() => {
             return !widescreen.value;
         });
-        
 
         const allret = {
             widescreen,
@@ -57,7 +52,6 @@ return width.value>550
             mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
             mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3,
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
-            markdowncontent_2e4c728cac441a0c48939881c2c714361a0,
         };
         onMounted(() => {
             (async () => {
@@ -129,20 +123,19 @@ function getindexhref() {
 function getmytitle() {
     return config.maintitle;
 }
-export function useinnerwidth(){
-const width=ref(window.innerWidth)
-const listener=debounce(() => {
-                    requestAnimationFrame(() => {
-                        width.value = window.innerWidth 
-                    });
-                })
-onMounted(()=>{
-window.addEventListener("resize",listener)
-})
-onUnmounted(()=>{
-window.removeEventListener("resize",listener)
-})
+export function useinnerwidth() {
+    const width = ref(window.innerWidth);
+    const listener = debounce(() => {
+        requestAnimationFrame(() => {
+            width.value = window.innerWidth;
+        });
+    });
+    onMounted(() => {
+        window.addEventListener("resize", listener);
+    });
+    onUnmounted(() => {
+        window.removeEventListener("resize", listener);
+    });
 
-
-return width
+    return width;
 }

@@ -6,7 +6,7 @@
                 id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
                 class="el-container mysidebarone"
                 :style="{
-                    'max-height': this.height,
+                    'max-height': this.maxheight,
                     top: this.top,
                     left: '0',
                 }"
@@ -22,10 +22,7 @@
     </aside>
 </template>
 
-<script src="./Sidebarleft.ts">
-
-
-</script>
+<script src="./Sidebarleft.ts"></script>
 
 <style scoped>
 .mysidebarone {

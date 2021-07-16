@@ -40,7 +40,6 @@ eventtarget.addEventListener(
         window.addEventListener("hashchange", routerpagegethandler);
 
         window.addEventListener("resize", Adjustthedistance);
-        
     },
     { once: true }
 );
