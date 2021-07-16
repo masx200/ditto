@@ -1,4 +1,5 @@
 import { defineComponent,ref } from "@vue/composition-api";
+import Vue from "vue";
 export default defineComponent({
 setup(){
 const container=ref()
@@ -17,4 +18,12 @@ ele.scrollIntoView({
 
 },
     props: ["html"],
+
+watch:{async html(value){
+
+await Vue.nextTick();
+
+
+
+}}
 });
