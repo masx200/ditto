@@ -1,9 +1,9 @@
+import "./polyfill.js";
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
 import "./addEventListener.ts";
 import "./error-alert.ts";
 import "./loaddone.ts";
 import "./styles.ts";
-
 
 function start() {
     (async () => {
