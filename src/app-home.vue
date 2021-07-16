@@ -77,7 +77,7 @@
             id="mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3"
         >
             <main :style="{ 'margin-left': this.left }">
-                <div class="container" style="padding-left: 10px">
+                <div class="container" style="padding-left: 20px">
                     <div>
                         <div
                             ref="contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1"
