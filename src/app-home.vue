@@ -69,12 +69,12 @@
                 align-items: center;
                 justify-content: space-between;
                 align-content: stretch;
-                flex-wrap: nowrap;
+                flex-wrap: nowrap;margin-top:62px
             "
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
             id="mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3"
         >
-            <main style="max-width: fit-content; width: max-content">
+            <main style="max-width: 100%; width: 100%">
                 <div class="container">
                     <div>
                         <div

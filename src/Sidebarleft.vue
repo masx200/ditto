@@ -1,5 +1,5 @@
 <template>
-    <aside class="mysidebar" style="position: fixed;left:0;top:65px">
+    <aside class="mysidebar" style="position: fixed;left:0;top:62px">
         <div class="container-fluid" style="padding: 0">
             <div
                 ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"

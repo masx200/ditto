@@ -22,4 +22,6 @@ function 调整主体部分和导航栏的距离() {
     // console.log(height)
     appvm.mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3.style["margin-top"] =
         height + "px";
+    appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.style.top =
+        height + "px";
 }
