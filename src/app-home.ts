@@ -73,6 +73,7 @@ export default defineComponent({
 
         return allret;
     },
+
     mounted() {
         console.log(this);
 
@@ -83,6 +84,15 @@ export default defineComponent({
         eventtarget.dispatchEvent(new Event("mount"));
         this.$el.id = "app";
     },
+watch:{widescreen(value){
+
+
+if(value){
+this.xianshicebianlan=true
+
+}
+
+}},
     data: () => ({
         indexhref: getindexhref(),
         contenthtml: "",
