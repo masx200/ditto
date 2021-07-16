@@ -23,6 +23,8 @@ import { scrolltotop } from "./scrolltotop.ts";
 import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 import Articlemarkdown from "./Articlemarkdown.vue";
 import Sidebarleft from "./Sidebarleft.vue";
+
+
 export default defineComponent({
     components: {
         Articlemarkdown,
@@ -133,4 +135,10 @@ function getindexhref() {
 
 function getmytitle() {
     return config.maintitle;
+}
+function useinnerwidth(){
+const width=ref(window.innerWidth)
+
+
+return width
 }
