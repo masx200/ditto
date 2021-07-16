@@ -40,23 +40,16 @@ export default defineComponent({
         const mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95 = ref();
         const contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1 = ref();
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
-        const widescreen = ref(true);
+const width=       useinnerwidth()
+ const widescreen = computed(()=>{
+return width.value>550
+
+})
         const narrowscreen = computed(() => {
             return !widescreen.value;
         });
-        onMounted(() => {
-            widescreen.value = window.innerWidth > 550;
-            window.addEventListener(
-                "resize",
+        
 
-                debounce(() => {
-                    requestAnimationFrame(() => {
-                        widescreen.value = window.innerWidth > 550;
-                    });
-                })
-            );
-        });
-onUnmounted(()=>{})
         const allret = {
             widescreen,
             narrowscreen,
@@ -149,7 +142,7 @@ window.addEventListener("resize",listener)
 onUnmounted(()=>{
 window.removeEventListener("resize",listener)
 })
-window.addEventListener("resize",listener)
+
 
 return width
 }
