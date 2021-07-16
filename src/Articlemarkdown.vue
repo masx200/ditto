@@ -8,11 +8,6 @@
         ></div>
     </article>
 </template>
-<script>
-import { defineComponent } from "@vue/composition-api";
+<script src="./Articlemarkdown.ts">
 
-export default defineComponent({
-    methods: {},
-    props: ["html"],
-});
 </script>
