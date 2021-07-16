@@ -4,7 +4,7 @@ import { Adjustthedistance } from "./Adjustthedistance.ts";
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { initloadingid } from "./mark-down-reader.ts";
 //@ts-ignore
-import { 内容调整左边偏移 } from "./内容调整左边偏移.ts";
+
 //@ts-ignore
 //@ts-ignore
 import { 挂载初始 } from "./挂载初始.ts";
@@ -18,7 +18,7 @@ export async function mymounted() {
 function 监视侧边栏变化触发事件() {
     const mo = new MutationObserver(() => {
         Adjustthedistance();
-        内容调整左边偏移();
+        // 内容调整左边偏移();
     });
     const appvm = getappvm();
     const opts = {
@@ -28,10 +28,7 @@ function 监视侧边栏变化触发事件() {
         attributes: true,
     };
 
-    const nodes = [
-        appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
-        appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
-    ];
+    const nodes = [appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95];
     nodes.forEach((n) => {
         mo.observe(n, opts);
     });

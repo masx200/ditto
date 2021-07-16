@@ -39,7 +39,7 @@ function scrolltoelementid(id: string) {
                     let timer = setInterval(() => {
                         //@ts-ignore
                         requestIdleCallback(() => {
-                            console.log(ele.offsetTop);
+                            // console.log(ele.offsetTop);
                             if (
                                 Array.from(
                                     document.querySelectorAll("*")

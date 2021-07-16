@@ -4,9 +4,13 @@ import { getappvm } from "./appvm.ts"; //@ts-ignore
 
 export function sidebarscroll() {
     const appvm = getappvm();
+    // console.log(
+    //     appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.$refs
+    //         .Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644
+    // );
     let path = Reflect.get(appvm, "urltext");
     const links = Array.from(
-        appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
+        appvm.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.$refs.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.querySelectorAll(
             "a"
         )
     ) as HTMLAnchorElement[];
