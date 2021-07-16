@@ -6,7 +6,8 @@
                 id="cebianlan-720feeaf8ee88a6b9b9399876713ed78af4"
                 class="el-container"
                 :style="{
-                    border: '1px solid white',
+                    'padding-bottom': '30px',
+                    border: '1px solid black',
                     position: 'fixed',
                     top: this.top,
                     left: '0',
@@ -16,7 +17,7 @@
                     v-html="html"
                     id="mynewsidelan-c887e2d697f11af869981691c9830ebd892"
                     class="el-aside"
-                    style="background-color: white"
+                    style="margin-bottom: 30px; background-color: white"
                 ></div>
             </div>
         </div>
