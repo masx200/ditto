@@ -1,3 +1,8 @@
 if ("production" === process.env.NODE_ENV) {
-    require("https://polyfill.io/v3/polyfill.min.js?features=requestIdleCallback");
+    if ("function" !== typeof requestIdleCallback) {
+        importScripts(
+            "https://polyfill.io/v3/polyfill.min.js?features=requestIdleCallback"
+        );
+    }
 }
+import importScripts from "./importscripts.js";

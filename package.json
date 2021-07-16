@@ -30,7 +30,7 @@
     "homepage": "https://github.com/masx200/markdown-reader#readme",
     "devDependencies": {},
     "dependencies": {
-        "remote-webpack-plugin": "^1.0.2",
+        
         "@babel/plugin-proposal-class-properties": "^7.14.5",
         "@highlightjs/cdn-assets": "^11.0.1",
         "@masx200/event-emitter-target": "^1.1.9",
