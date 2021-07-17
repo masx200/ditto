@@ -30,5 +30,8 @@ export function sidebarscroll() {
 
 function scrolltoelement(e: HTMLElement) {
     // console.log(e.offsetTop);
-    e.scrollIntoView({ inline: "nearest", block: "nearest" });
+    e.scrollIntoView({
+behavior:"smooth",
+
+ inline: "nearest", block: "nearest" });
 }
