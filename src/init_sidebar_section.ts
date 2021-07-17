@@ -55,7 +55,8 @@ export async function init_sidebar_section() {
         });
         const homefile: string = getabsoluteindex();
         menulist.unshift(homefile);
-        addlinkhomeandsummary(summaryfile, homefile, tmpcontainer);
+const hometitle=appvm.mytitle
+        addlinkhomeandsummary(summaryfile, homefile, tmpcontainer,hometitle);
 
         addlinkclasslist(tmpcontainer);
 
@@ -156,11 +157,11 @@ function changelinkmd(tmpcontainer: HTMLElement, summaryfile: string) {
 function addlinkhomeandsummary(
     summaryfile: string,
     homefile: string,
-    tmpcontainer: HTMLElement
+    tmpcontainer: HTMLElement,hometitle:string
 ) {
     const linkanddescriptions = [
         { u: summaryfile, d: "目录" },
-        { u: homefile, d: "主页" },
+        { u: homefile, d: hometitle },
     ];
     linkanddescriptions.forEach(({ u, d }) => {
         const cataloguelinkhtml = `<a href="${u}" class="mui-btn mui-btn-primary mui-btn-outlined">${d}</a><br/>`;
