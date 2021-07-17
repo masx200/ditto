@@ -25,10 +25,14 @@
                             :onclick="togglecebian"
                         ></Toggledisplayofsidebar>
 
-                        <NavHomebutton
-                            :href="indexhref"
-                            :title="mytitle"
-                        ></NavHomebutton>
+                        <NavHomebutton :href="indexhref">
+                            <div v-if="widescreen">
+                                {{ mytitle }}
+                            </div>
+                            <div v-if="narrowscreen">
+                                <span class="house-icon" />
+                            </div>
+                        </NavHomebutton>
                         <button
                             class="
                                 mui-btn mui-btn-primary mui-btn-outlined

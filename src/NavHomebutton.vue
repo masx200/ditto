@@ -5,15 +5,15 @@
             mui-btn mui-btn-primary mui-btn-outlined
         "
         v-bind:href="href"
-        v-text="title"
         style="margin: 0; top: 0px"
-        >Markdown Reader</a
     >
+        <slot />
+    </a>
 </template>
 <script>
 import { defineComponent } from "@vue/composition-api";
 
 export default defineComponent({
-    props: ["title", "href"],
+    props: ["href"],
 });
 </script>
