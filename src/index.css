@@ -139,6 +139,7 @@ h1 {
     height: 1em;
     background-image: url("./Arrow left.svg");
 }
+
 .house-icon {
     background-size: 100% 100%;
     content: "";
@@ -146,4 +147,13 @@ h1 {
     width: 1em;
     height: 1em;
     background-image: url(./House.svg);
+}
+
+.clipboard-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(./clipboardcopy.svg);
 }
