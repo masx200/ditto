@@ -57,7 +57,7 @@ export function mount(el: Element) {
     // console.log("config", config);
     if (!document.getElementById("app")) {
         el.innerHTML = `<div id=${initloadingid}>
-<h1>loading</h1>
+<h1 class="mybigloading">loading</h1>
 <span class="mui-spinner mui-spinner-custom">
 
 </span></div>

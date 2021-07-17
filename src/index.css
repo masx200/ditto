@@ -157,3 +157,10 @@ h1 {
     height: 1em;
     background-image: url(./clipboardcopy.svg);
 }
+.mybigloading {
+    font-size: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: black 3px solid;
+    padding: 5px;
+}

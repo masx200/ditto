@@ -41,7 +41,10 @@
                             type="button"
                             v-on:click="scrolltotop"
                         >
-                            顶部
+                            <div v-if="widescreen">顶部</div>
+                            <div v-if="narrowscreen">
+                                <span class="up-icon" />
+                            </div>
                         </button>
                         <button
                             class="
@@ -51,13 +54,22 @@
                             type="button"
                             v-on:click="scrolltobottom"
                         >
-                            底部
+                            <div v-if="widescreen">底部</div>
+                            <div v-if="narrowscreen">
+                                <span class="down-icon" />
+                            </div>
                         </button>
                         <Disableablelinks :href="prevpagelink">
-                            前页
+                            <div v-if="widescreen">前页</div>
+                            <div v-if="narrowscreen">
+                                <span class="left-icon" />
+                            </div>
                         </Disableablelinks>
                         <Disableablelinks :href="nextpagelink">
-                            后页
+                            <div v-if="widescreen">后页</div>
+                            <div v-if="narrowscreen">
+                                <span class="right-icon" />
+                            </div>
                         </Disableablelinks>
                     </div>
                 </nav>
@@ -107,14 +119,6 @@
     </div>
 </template>
 <style scoped>
-.mybigloading {
-    font-size: 50px;
-    background-color: white;
-    border-radius: 10px;
-    border: black 3px solid;
-    padding: 5px;
-}
-
 .mybodycontainer {
     display: block;
     width: 100%;
