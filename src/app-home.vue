@@ -9,7 +9,10 @@
                 style="padding-right: 0; padding-left: 0"
             >
                 <nav
-                    class="navbar navbar-expand-sm bg-light navbar-light"
+                    class="
+                        navbar navbar-expand-sm navbar-light
+                        Translucent-background
+                    "
                     style="padding-right: 0; padding-left: 0"
                 >
                     <div
