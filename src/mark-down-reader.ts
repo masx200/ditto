@@ -1,17 +1,27 @@
 //@ts-ignore
 import Vue from "vue";
+
 //@ts-ignore
 import { defineAsyncComponent } from "./compositionvue.ts";
 // import app from "./app-home.vue";
 //@ts-ignore
 import config from "./config.ts";
+
 //@ts-ignore
 import "./error-alert.ts";
 //@ts-ignore
 import { guid } from "./guid.ts";
-import Loding from "./loading.vue";
+
 //@ts-ignore
 import "./polyfill.NodeList.forEach.ts";
+
+import Loding from "./Smallloading.vue";
+// console.log(app);
+//@ts-ignore
+//@ts-ignore
+//@ts-ignore
+// console.log(app);
+
 // console.log(Loding)
 //@ts-ignore
 const app = defineAsyncComponent({
@@ -23,15 +33,8 @@ const app = defineAsyncComponent({
         throw error;
     },
 });
-// console.log(app);
-//@ts-ignore
-//@ts-ignore
-//@ts-ignore
-// console.log(app);
-
 ("use strict");
 export const initloadingid = "first-" + guid();
-
 Vue.config.devtools = true;
 Vue.config.productionTip = false;
 Vue.config.silent = true;
@@ -39,13 +42,14 @@ Vue.config.errorHandler = function (err: Error) {
     console.error(err);
     throw err;
 };
-
 const ApphomeVm: Vue = new Vue({
+    comments: false,
+    components: {},
     render(h) {
         return h(app);
     },
 });
-console.log(ApphomeVm);
+// console.log(ApphomeVm);
 
 export function mount(el: Element) {
     const searchobj = Object.fromEntries(new URL(location.href).searchParams);

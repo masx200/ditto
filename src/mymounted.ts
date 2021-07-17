@@ -17,7 +17,7 @@ export async function mymounted() {
 }
 function 监视侧边栏变化触发事件() {
     const mo = new MutationObserver((mutations) => {
-        console.log(mutations);
+        // console.log(mutations);
         Adjustthedistance();
         // 内容调整左边偏移();
     });

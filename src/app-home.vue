@@ -90,13 +90,7 @@
                 </div>
             </main>
         </div>
-        <section v-show="showload" style="position: fixed">
-            <div id="loadingparent-b80f303d89182a8e58b02981c0822deb975">
-                <div id="loading-36bec0d286ad9ab9ca8c1d923b0095c1c06">
-                    <h1 class="mybigloading">Loading...</h1>
-                </div>
-            </div>
-        </section>
+        <Bigloading v-show="showload" />
         <Sidebarleft
             :top="top"
             ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"

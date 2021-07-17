@@ -7,31 +7,23 @@ import { computed, onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
-import Disableablelinks from "./Disableable-links.vue";
+
 //@ts-ignore
 import { disabledalinkhref } from "./disabledalinkhref.ts";
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
-import NavHomebutton from "./NavHomebutton.vue";
+
 //@ts-ignore
 import { scrolltobottom } from "./scrolltobottom.ts";
 //@ts-ignore
 import { scrolltotop } from "./scrolltotop.ts";
-import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
-import Articlemarkdown from "./Articlemarkdown.vue";
-import Sidebarleft from "./Sidebarleft.vue";
+
 import { useinnerwidth } from "./useinnerwidth";
 
 export default defineComponent({
-    components: {
-        Articlemarkdown,
-        Toggledisplayofsidebar,
-        NavHomebutton,
-        Disableablelinks,
-        Sidebarleft,
-    },
+    components: {},
     setup() {
         const mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3 = ref();
         const mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95 = ref();
@@ -67,7 +59,7 @@ export default defineComponent({
     },
 
     mounted() {
-        console.log(this);
+        // console.log(this);
 
         this.indexhref = getindexhref();
 

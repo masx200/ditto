@@ -1,9 +1,12 @@
 import "@masx200/webpack-react-vue-spa-awesome-config/registerserviceworker.js";
+import Vue from "vue";
 import "./addEventListener.ts";
+import { components } from "./components";
 import "./error-alert.ts";
 import "./loaddone.ts";
+//@ts-ignore
 import "./polyfill.js";
-import { states } from "./states";
+// import { states } from "./states";
 import "./styles.ts";
 
 function start() {
@@ -39,7 +42,10 @@ start();
 window.addEventListener(
     "load",
     () => {
-        console.log(states);
+        // console.log(states);
     },
     { once: true }
 );
+Object.entries(components).forEach(([key, value]) => {
+    Vue.component(key, value);
+});

@@ -36,7 +36,7 @@ import { urlclearhash } from "./urlclearhash.ts";
 
 const { cachemarkdown, cachetitle } = states;
 export const routerpagegethandler = debounce(async () => {
-    console.log("loading", location.hash);
+    // console.log("loading", location.hash);
     await loadpage();
 
     await Vue.nextTick();
