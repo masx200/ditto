@@ -21,8 +21,6 @@ import { scrolltotop } from "./scrolltotop.ts";
 import { sidebarscroll } from "./sidebarscroll";
 import { useinnerwidth } from "./useinnerwidth";
 
-
-
 export default defineComponent({
     components: {},
     setup() {
@@ -79,7 +77,7 @@ export default defineComponent({
     },
     watch: {
         xianshicebianlan(value) {
-            Adjustthedistance()
+            Adjustthedistance();
             if (value) {
                 sidebarscroll();
             }
