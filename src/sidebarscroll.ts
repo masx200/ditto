@@ -28,7 +28,7 @@ export function sidebarscroll() {
     });
 }
 
-function scrolltoelement(e: HTMLElement) {
+export function scrolltoelement(e: HTMLElement) {
     // console.log(e.offsetTop);
     e.scrollIntoView({
 behavior:"smooth",
