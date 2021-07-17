@@ -33,5 +33,5 @@ export function scrolltoelement(e: HTMLElement) {
     e.scrollIntoView({
 behavior:"smooth",
 
- inline: "nearest", block: "nearest" });
+ inline: "center", block: "center" });
 }
