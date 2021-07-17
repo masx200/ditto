@@ -75,6 +75,7 @@ async function loadpage() {
                 handlecodecopy(tmpcontainer);
 
                 changelinkmd(tmpcontainer, path);
+                resolvetitlesave(tmpcontainer, path);
 
                 headeraddanchor(tmpcontainer, path);
                 //console.log(tmpcontainer);
@@ -91,7 +92,6 @@ async function loadpage() {
                     contenthtml.set(currentmdhtml);
                     Reflect.set(appvm, "urltext", path);
                 }
-                resolvetitlesave(tmpcontainer, path);
 
                 Reflect.set(appvm, "showerror", false);
                 return;

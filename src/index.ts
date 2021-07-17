@@ -10,19 +10,16 @@ import "./polyfill.js";
 import "./styles.ts";
 
 function start() {
-    (async () => {
-        var rootele =
-            document.getElementById("root") ||
-            document.body.appendChild(document.createElement("div"));
+    var rootele =
+        document.getElementById("root") ||
+        document.body.appendChild(document.createElement("div"));
 
-        Object.assign(rootele, { id: "root" });
-        const module = await import(
-            //@ts-ignore
-            "./mark-down-reader.ts"
-        );
-        const { mount } = module; //@ts-ignore
-        rootele && mount(rootele);
-    })();
+    Object.assign(rootele, { id: "root" });
+
+    const { mount } = require("./mark-down-reader");
+
+    rootele && mount(rootele);
+    //  })();
 }
 
 window.addEventListener("load", loadclipboard, { once: true });
@@ -39,13 +36,7 @@ async function loadclipboard() {
 }
 
 start();
-window.addEventListener(
-    "load",
-    () => {
-        // console.log(states);
-    },
-    { once: true }
-);
+
 Object.entries(components).forEach(([key, value]) => {
     Vue.component(key, value);
 });

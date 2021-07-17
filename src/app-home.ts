@@ -20,7 +20,7 @@ import { scrolltobottom } from "./scrolltobottom.ts";
 import { scrolltotop } from "./scrolltotop.ts";
 import { sidebarscroll } from "./sidebarscroll";
 import { useinnerwidth } from "./useinnerwidth";
-
+import Vue from "vue";
 export default defineComponent({
     components: {},
     setup() {
@@ -65,24 +65,27 @@ export default defineComponent({
         return allret;
     },
 
-    mounted() {
+    async mounted() {
         // console.log(this);
 
         this.indexhref = getindexhref();
 
         this.mytitle = getmytitle();
         appvm.value = this;
+        await Vue.nextTick();
         eventtarget.dispatchEvent(new Event("mount"));
         this.$el.id = "app";
     },
     watch: {
-        xianshicebianlan(value) {
+        async xianshicebianlan(value) {
+            await Vue.nextTick();
             Adjustthedistance();
             if (value) {
                 sidebarscroll();
             }
         },
-        largescreen(value) {
+        async largescreen(value) {
+            await Vue.nextTick();
             if (value) {
                 this.xianshicebianlan = true;
             }

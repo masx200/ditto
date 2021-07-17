@@ -5,7 +5,9 @@ import { debounce } from "./debounce.ts";
 //@ts-ignore
 import { getnavbarheight } from "./getnavbarheight.ts";
 ("use strict");
-export const Adjustthedistance = debounce(() => {
+import Vue from "vue";
+export const Adjustthedistance = debounce(async () => {
+    await Vue.nextTick();
     return new Promise<void>((r) => {
         requestAnimationFrame(() => {
             调整主体部分和导航栏的距离();

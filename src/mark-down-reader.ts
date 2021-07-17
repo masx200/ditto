@@ -2,9 +2,6 @@
 import Vue from "vue";
 
 //@ts-ignore
-import { defineAsyncComponent } from "./compositionvue.ts";
-// import app from "./app-home.vue";
-//@ts-ignore
 import config from "./config.ts";
 
 //@ts-ignore
@@ -15,18 +12,7 @@ import { guid } from "./guid.ts";
 //@ts-ignore
 import "./polyfill.NodeList.forEach.ts";
 
-import Loding from "./Smallloading.vue";
-
-//@ts-ignore
-const app = defineAsyncComponent({
-    loadingComponent: Loding,
-    loader: () => import("./app-home.vue"),
-    timeout: 0,
-    onError(error: Error) {
-        console.error(error);
-        throw error;
-    },
-});
+import app from "./app-home.vue";
 ("use strict");
 export const initloadingid = "first-" + guid();
 Vue.config.devtools = true;

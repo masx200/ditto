@@ -4,14 +4,14 @@ import { Adjustthedistance } from "./Adjustthedistance.ts";
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 import { initloadingid } from "./mark-down-reader.ts";
 //@ts-ignore
-
+import Vue from "vue";
 //@ts-ignore
 //@ts-ignore
 import { 挂载初始 } from "./挂载初始.ts";
 export async function mymounted() {
-    监视侧边栏变化触发事件();
-
     await 挂载初始();
+    await Vue.nextTick();
+    监视侧边栏变化触发事件();
     var initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
 }
