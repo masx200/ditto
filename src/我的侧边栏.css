@@ -8,22 +8,22 @@
         width: 100%;
     }
 
-    #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
+    .cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
         width: 100%;
         /* display: none; */
     }
 }
-#cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
+.cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
     overflow: auto;
     /* max-height: 90%; */
 }
 @media (min-width: 550px) {
-    #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
+    .cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
         max-height: 100%;
     }
 }
 @media (max-width: 550px) {
-    #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
+    .cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
         max-height: 100%;
     }
 }
@@ -34,7 +34,7 @@
 @media (min-width: 550px) {
     /*宽度 大 */
 
-    #cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
+    .cebianlan-720feeaf8ee88a6b9b9399876713ed78af4 {
         display: inline-block;
     }
 }
