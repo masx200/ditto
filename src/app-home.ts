@@ -73,8 +73,11 @@ export default defineComponent({
         this.mytitle = getmytitle();
         appvm.value = this;
         await Vue.nextTick();
-        eventtarget.dispatchEvent(new Event("mount"));
+
         this.$el.id = "app";
+        requestAnimationFrame(() => {
+            eventtarget.dispatchEvent(new Event("mount"));
+        });
     },
     watch: {
         async xianshicebianlan(value) {

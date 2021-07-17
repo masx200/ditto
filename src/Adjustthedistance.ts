@@ -21,11 +21,16 @@ function 调整主体部分和导航栏的距离() {
     const appvm = getappvm();
     var height = getnavbarheight();
     appvm.top = height + "px";
-    var width = getsidebarwidth();
-    if (appvm.widescreen) {
-        appvm.left = width + "px";
-    } else {
-        appvm.left = "0";
+
+    try {
+        var width = getsidebarwidth();
+        if (appvm.widescreen) {
+            appvm.left = width + "px";
+        } else {
+            appvm.left = "0";
+        }
+    } catch (e) {
+        console.error(e);
     }
 }
 function getsidebarwidth() {
