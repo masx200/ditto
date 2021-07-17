@@ -18,7 +18,7 @@ function start() {
         Object.assign(rootele, { id: "root" });
         const module = await import(
             //@ts-ignore
-            "./export.ts"
+            "./mark-down-reader.ts"
         );
         const { mount } = module; //@ts-ignore
         rootele && mount(rootele);

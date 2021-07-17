@@ -31,7 +31,7 @@ export default defineComponent({
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
         const width = useinnerwidth();
         const widescreen = computed(() => {
-            return width.value > 500;
+            return width.value > 550;
         });
         const narrowscreen = computed(() => {
             return !widescreen.value;

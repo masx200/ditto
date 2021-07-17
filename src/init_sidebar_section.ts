@@ -55,8 +55,8 @@ export async function init_sidebar_section() {
         });
         const homefile: string = getabsoluteindex();
         menulist.unshift(homefile);
-const hometitle=appvm.mytitle
-        addlinkhomeandsummary(summaryfile, homefile, tmpcontainer,hometitle);
+        const hometitle = appvm.mytitle;
+        addlinkhomeandsummary(summaryfile, homefile, tmpcontainer, hometitle);
 
         addlinkclasslist(tmpcontainer);
 
@@ -157,7 +157,8 @@ function changelinkmd(tmpcontainer: HTMLElement, summaryfile: string) {
 function addlinkhomeandsummary(
     summaryfile: string,
     homefile: string,
-    tmpcontainer: HTMLElement,hometitle:string
+    tmpcontainer: HTMLElement,
+    hometitle: string
 ) {
     const linkanddescriptions = [
         { u: summaryfile, d: "目录" },

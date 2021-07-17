@@ -16,13 +16,7 @@ import { guid } from "./guid.ts";
 import "./polyfill.NodeList.forEach.ts";
 
 import Loding from "./Smallloading.vue";
-// console.log(app);
-//@ts-ignore
-//@ts-ignore
-//@ts-ignore
-// console.log(app);
 
-// console.log(Loding)
 //@ts-ignore
 const app = defineAsyncComponent({
     loadingComponent: Loding,
@@ -82,5 +76,3 @@ export function mount(el: Element) {
         id: "app",
     });
 }
-
-// export { ApphomeVm };

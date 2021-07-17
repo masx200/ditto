@@ -84,14 +84,7 @@ h6 {
 h1 {
     font-size: 2.4em;
 }
-.anchor-icon {
-    background-size: 100% 100%;
-    content: "";
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    background-image: url(./anchor.svg);
-}
+
 * {
     transition-property: none !important;
     transition-duration: 0s !important;
@@ -104,4 +97,53 @@ h1 {
 }
 .Translucent-background {
     background-color: rgba(255, 255, 255, 0.5);
+}
+
+.anchor-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(./anchor.svg);
+}
+.down-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow down.svg");
+}
+.up-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow up.svg");
+}
+.right-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow right.svg");
+}
+.left-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow left.svg");
+}
+.house-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(./House.svg);
 }
