@@ -1,5 +1,6 @@
 //@ts-ignore
 import { defineComponent } from "@vue/composition-api";
+import { Adjustthedistance } from "./Adjustthedistance";
 //@ts-ignore
 import { appvm } from "./appvm.ts";
 //@ts-ignore
@@ -7,20 +8,20 @@ import { computed, onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
-
 //@ts-ignore
 import { disabledalinkhref } from "./disabledalinkhref.ts";
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts";
 //@ts-ignore
 import { getabsoluteindex } from "./getbaseurl.ts";
-
 //@ts-ignore
 import { scrolltobottom } from "./scrolltobottom.ts";
 //@ts-ignore
 import { scrolltotop } from "./scrolltotop.ts";
-
+import { sidebarscroll } from "./sidebarscroll";
 import { useinnerwidth } from "./useinnerwidth";
+
+
 
 export default defineComponent({
     components: {},
@@ -78,6 +79,7 @@ export default defineComponent({
     },
     watch: {
         xianshicebianlan(value) {
+            Adjustthedistance()
             if (value) {
                 sidebarscroll();
             }
@@ -124,7 +126,6 @@ function getindexhref() {
         })
     );
 }
-import { sidebarscroll } from "./sidebarscroll";
 function getmytitle() {
     return config.maintitle;
 }
