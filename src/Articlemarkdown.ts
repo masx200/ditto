@@ -13,6 +13,7 @@ function onclick(e: MouseEvent) {
         if ("function" === typeof scrollIntoView) {
             Reflect.apply(scrollIntoView, ele, [
                 {
+behavior:"smooth",
                     inline: "center",
                     block: "center",
                 },
