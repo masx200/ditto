@@ -1,37 +1,35 @@
 import { defineComponent, ref } from "@vue/composition-api";
 import Vue from "vue";
+
+function onclick(e: MouseEvent) {
+    const ele = e.target;
+    if (!ele) {
+        return;
+    }
+    //@ts-ignore
+    requestIdleCallback(() => {
+        const scrollIntoView = Reflect.get(ele, "scrollIntoView");
+
+        if ("function" === typeof scrollIntoView) {
+            Reflect.apply(scrollIntoView, ele, [
+                {
+                    inline: "center",
+                    block: "center",
+                },
+            ]);
+        }
+    });
+}
 export default defineComponent({
     setup() {
         const container = ref();
         return { container };
     },
-    methods: {
-        onclick(e: MouseEvent) {
-            const ele = e.target;
-            if (!ele) {
-                return;
-            }
-            //@ts-ignore
-            requestIdleCallback(() => {
-                const scrollIntoView = Reflect.get(ele, "scrollIntoView");
-
-                if ("function" === typeof scrollIntoView) {
-                    Reflect.apply(scrollIntoView, ele, [
-                        {
-                            inline: "center",
-                            block: "center",
-                        },
-                    ]);
-                }
-                //  ele?.scrollIntoView();
-            });
-        },
-    },
+    methods: {},
     props: ["html"],
 
     watch: {
         async html(value) {
-            const th = this;
             await Vue.nextTick();
             requestAnimationFrame(() => {
                 const eles = Array.from(
@@ -39,7 +37,7 @@ export default defineComponent({
                 ) as HTMLElement[];
 
                 eles.forEach((e: HTMLElement) => {
-                    e.onclick = th.onclick;
+                    e.onclick = onclick;
                 });
             });
         },
