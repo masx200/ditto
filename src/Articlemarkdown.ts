@@ -1,6 +1,6 @@
 import { defineComponent, ref } from "@vue/composition-api";
 import Vue from "vue";
-
+import{scrolltoelement}from"./sidebarscroll"
 function onclick(e: MouseEvent) {
     const ele = e.target;
     if (!ele) {
@@ -8,17 +8,9 @@ function onclick(e: MouseEvent) {
     }
     //@ts-ignore
     requestIdleCallback(() => {
-        const scrollIntoView = Reflect.get(ele, "scrollIntoView");
 
-        if ("function" === typeof scrollIntoView) {
-            Reflect.apply(scrollIntoView, ele, [
-                {
-behavior:"smooth",
-                    inline: "center",
-                    block: "center",
-                },
-            ]);
-        }
+if(ele instanceof Element){
+        scrolltoelement(ele)}
     });
 }
 export default defineComponent({
