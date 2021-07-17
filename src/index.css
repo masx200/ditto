@@ -164,12 +164,13 @@ h1 {
     border: wihte 3px solid;
     padding: 5px;
 }
-.mysidebar a:not(.active) {
+.mysidebar a:not(.active),
+a.sidebar-link:not(.active) {
     border-left-width: 0;
     border-right-width: 0;
 }
 
-.mysidebar a .active {
+.mysidebar a.active {
     border-right-width: thick;
     border-left-width: thick;
 }

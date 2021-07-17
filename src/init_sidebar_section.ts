@@ -58,13 +58,13 @@ export async function init_sidebar_section() {
         const hometitle = appvm.mytitle;
         addlinkhomeandsummary(summaryfile, homefile, tmpcontainer, hometitle);
 
-        addlinkclasslist(tmpcontainer);
-
         changelinkmd(tmpcontainer, summaryfile);
 
         //删除重复的链接
 
         removerepeatlinks(tmpcontainer);
+        addlinkclasslist(tmpcontainer);
+
         Reflect.set(appvm, "showerror", false);
         const currentcontenthtml = tmpcontainer.innerHTML;
         // console.log(tmpcontainer);
@@ -101,16 +101,14 @@ export async function init_sidebar_section() {
     }
 }
 function addlinkclasslist(tmpcontainer: HTMLElement) {
-    Array.from(tmpcontainer.querySelectorAll("ul")).forEach((e: Element) =>
-        e.classList.add("navbar-nav")
-    );
-    Array.from(tmpcontainer.querySelectorAll("a")).forEach((e: Element) =>
+    Array.from(tmpcontainer.querySelectorAll("a")).forEach((e: Element) => {
         e.classList.add(
             ..."mui-btn mui-btn-primary mui-btn-outlined mybutton-8731e6c5bb5148e49e14cca7cdfa73e8".split(
                 " "
             )
-        )
-    );
+        );
+        e.classList.add("sidebar-link");
+    });
 }
 
 function changelinkmd(tmpcontainer: HTMLElement, summaryfile: string) {
