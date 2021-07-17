@@ -28,3 +28,8 @@ pre {
 #mynewsidelan-c887e2d697f11af869981691c9830ebd892 p {
     margin: 0;
 }
+
+button.btn.btn-outline-primary.clipbutton {
+    /* mui中设置按钮 relative导致按钮前置?*/
+    position: absolute;
+}

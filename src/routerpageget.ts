@@ -191,7 +191,11 @@ function handlecodecopy(tmpcontainer: HTMLElement) {
 
         e.insertAdjacentHTML(
             "afterend",
-            `<button class="btn btn-outline-primary clipbutton position-absolute right-0 top-0" data-clipboard-target="#${codecontenguid}">复制
+            `<button class="btn btn-outline-primary mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 clipbutton position-absolute right-0 top-0" data-clipboard-target="#${codecontenguid}">
+
+
+<span class="clipboard-icon"></span>
+
                                         </button>`
         );
     });

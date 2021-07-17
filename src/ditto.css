@@ -145,34 +145,6 @@ body {
     text-decoration: none;
 }
 
-input[type="search"] {
-    display: block;
-    /* width: 180px; */
-    width: 100%;
-    text-align: left;
-}
-
-.fragments {
-    margin: 0;
-    padding: 10px;
-    /* border: 1px solid #777; */
-    /* border-radius: 5px; */
-}
-
-.fragment {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-
-    /* border: 1px solid #777; */
-    /* border-radius: 5px; */
-}
-
-.search_results .link {
-    margin-top: 35px;
-}
-
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 ul li {
     text-align: left;
 }

@@ -73,10 +73,6 @@ h5#markdownerror-4c6b19f7b26c2b519b8ff480769b5565d6b {
     /* display: block !important; */
     text-align: center !important;
 }
-button.btn.btn-outline-primary.clipbutton {
-    /* mui中设置按钮 relative导致按钮前置?*/
-    position: absolute;
-}
 
 #content-aa867a1d8c5dfbf2abbff8bc2af55a88a36 li {
     text-align: center !important;
