@@ -77,6 +77,11 @@ export default defineComponent({
         this.$el.id = "app";
     },
     watch: {
+        xianshicebianlan(value) {
+            if (value) {
+                sidebarscroll();
+            }
+        },
         largescreen(value) {
             if (value) {
                 this.xianshicebianlan = true;
@@ -119,7 +124,7 @@ function getindexhref() {
         })
     );
 }
-
+import { sidebarscroll } from "./sidebarscroll";
 function getmytitle() {
     return config.maintitle;
 }
