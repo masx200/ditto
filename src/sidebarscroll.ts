@@ -2,30 +2,36 @@ import Vue from "vue";
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
 
-export function sidebarscroll() {
+export async function sidebarscroll() {
     const appvm = getappvm();
 
     let path = Reflect.get(appvm, "urltext");
-    const links = Array.from(
-        appvm.getsidebarele().querySelectorAll("a")
-    ) as HTMLAnchorElement[];
-    // console.log(links)
-    links.forEach((e: HTMLAnchorElement) => {
-        if (e.hash === "#" + path) {
-            requestAnimationFrame(async () => {
-                await Vue.nextTick();
-                requestAnimationFrame(() => {
-                    // console.log(e.offsetTop);
+    await Vue.nextTick();
 
-                    // console.log(e);
-                    //@ts-ignore
-                    requestIdleCallback(() => {
-                        scrolltoelement(e);
+    try {
+        const links = Array.from(
+            appvm.getsidebarele().querySelectorAll("a")
+        ) as HTMLAnchorElement[];
+        // console.log(links)
+        links.forEach((e: HTMLAnchorElement) => {
+            if (e.hash === "#" + path) {
+                requestAnimationFrame(async () => {
+                    await Vue.nextTick();
+                    requestAnimationFrame(() => {
+                        // console.log(e.offsetTop);
+
+                        // console.log(e);
+                        //@ts-ignore
+                        requestIdleCallback(() => {
+                            scrolltoelement(e);
+                        });
                     });
                 });
-            });
-        }
-    });
+            }
+        });
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 export function scrolltoelement(e: Element) {
