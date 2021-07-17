@@ -1,5 +1,7 @@
 import { onUnmounted } from "@vue/composition-api";
+//@ts-ignore
 import { onMounted, ref } from "./compositionvue.ts";
+//@ts-ignore
 import { debounce } from "./debounce.ts";
 
 export function useinnerwidth() {

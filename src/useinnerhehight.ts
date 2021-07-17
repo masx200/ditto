@@ -1,9 +1,6 @@
+//@ts-ignore
 import { debounce } from "./debounce.ts";
-import {
-    ref,
-    onUnmounted,
-    onMounted
-} from "@vue/composition-api";
+import { ref, onUnmounted, onMounted } from "@vue/composition-api";
 
 export function useinnerhehight() {
     const height = ref(window.innerHeight);

@@ -1,7 +1,5 @@
 //@ts-ignore
-import {
-    defineComponent,
-} from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 import { useinnerhehight } from "./useinnerhehight";
 export default defineComponent({
     setup() {
@@ -17,4 +15,3 @@ export default defineComponent({
     },
     props: ["html", "top"],
 });
-

@@ -123,4 +123,3 @@ function getindexhref() {
 function getmytitle() {
     return config.maintitle;
 }
-
