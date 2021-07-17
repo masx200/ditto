@@ -31,13 +31,21 @@ export default defineComponent({
         const Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644 = ref();
         const width = useinnerwidth();
         const widescreen = computed(() => {
-            return width.value > 550;
+            return width.value > 500;
         });
         const narrowscreen = computed(() => {
             return !widescreen.value;
         });
-
+        const largescreen = computed(() => {
+            return width.value > 800;
+        });
+        const middlescreen = computed(() => {
+            return !largescreen.value;
+        });
         const allret = {
+            largescreen,
+            middlescreen,
+            width,
             widescreen,
             narrowscreen,
             contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1,
@@ -69,7 +77,7 @@ export default defineComponent({
         this.$el.id = "app";
     },
     watch: {
-        widescreen(value) {
+        largescreen(value) {
             if (value) {
                 this.xianshicebianlan = true;
             }

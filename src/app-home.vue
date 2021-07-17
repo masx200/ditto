@@ -21,7 +21,7 @@
                         style=""
                     >
                         <Toggledisplayofsidebar
-                            v-show="narrowscreen"
+                            v-show="middlescreen"
                             :onclick="togglecebian"
                         ></Toggledisplayofsidebar>
 
