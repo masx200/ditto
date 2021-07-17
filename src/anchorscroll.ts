@@ -6,8 +6,7 @@ import { router } from "./hashrouter.ts";
 import { states } from "./states.ts";
 export { anchorscroll };
 
-
-import{scrolltoelement}from"./sidebarscroll"
+import { scrolltoelement } from "./sidebarscroll";
 function anchorscroll() {
     const params = router.getparams();
 
@@ -33,8 +32,7 @@ function scrolltoelementid(id: string) {
 
             requestAnimationFrame(() => {
                 if (states.firstloaded >= 1) {
-                   
-scrolltoelement(ele)
+                    scrolltoelement(ele);
                 } else {
                     let timer = setInterval(() => {
                         //@ts-ignore
@@ -46,8 +44,7 @@ scrolltoelement(ele)
                                 ).includes(ele)
                             ) {
                                 states.firstloaded++;
-scrolltoelement(ele)
-                               
+                                scrolltoelement(ele);
                             }
                         });
                     }, 30);

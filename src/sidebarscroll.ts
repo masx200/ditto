@@ -31,7 +31,9 @@ export function sidebarscroll() {
 export function scrolltoelement(e: Element) {
     // console.log(e.offsetTop);
     e.scrollIntoView({
-behavior:"smooth",
+        behavior: "smooth",
 
- inline: "center", block: "center" });
+        inline: "center",
+        block: "center",
+    });
 }
