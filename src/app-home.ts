@@ -1,5 +1,5 @@
 //@ts-ignore
-import { defineComponent, onUnmounted } from "@vue/composition-api";
+import { defineComponent } from "@vue/composition-api";
 //@ts-ignore
 import { appvm } from "./appvm.ts";
 //@ts-ignore
@@ -7,7 +7,6 @@ import { computed, onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
-import { debounce } from "./debounce.ts";
 import Disableablelinks from "./Disableable-links.vue";
 //@ts-ignore
 import { disabledalinkhref } from "./disabledalinkhref.ts";
@@ -23,6 +22,7 @@ import { scrolltotop } from "./scrolltotop.ts";
 import Toggledisplayofsidebar from "./Toggledisplayofsidebar.vue";
 import Articlemarkdown from "./Articlemarkdown.vue";
 import Sidebarleft from "./Sidebarleft.vue";
+import { useinnerwidth } from "./useinnerwidth";
 
 export default defineComponent({
     components: {
@@ -123,19 +123,4 @@ function getindexhref() {
 function getmytitle() {
     return config.maintitle;
 }
-export function useinnerwidth() {
-    const width = ref(window.innerWidth);
-    const listener = debounce(() => {
-        requestAnimationFrame(() => {
-            width.value = window.innerWidth;
-        });
-    });
-    onMounted(() => {
-        window.addEventListener("resize", listener);
-    });
-    onUnmounted(() => {
-        window.removeEventListener("resize", listener);
-    });
 
-    return width;
-}

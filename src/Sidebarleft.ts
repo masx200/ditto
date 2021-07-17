@@ -1,11 +1,8 @@
 //@ts-ignore
-import { debounce } from "./debounce.ts";
 import {
     defineComponent,
-    ref,
-    onUnmounted,
-    onMounted,
 } from "@vue/composition-api";
+import { useinnerhehight } from "./useinnerhehight";
 export default defineComponent({
     setup() {
         const innerheight = useinnerhehight();
@@ -20,18 +17,4 @@ export default defineComponent({
     },
     props: ["html", "top"],
 });
-export function useinnerhehight() {
-    const height = ref(window.innerHeight);
-    const listener = debounce(() => {
-        requestAnimationFrame(() => {
-            height.value = window.innerHeight;
-        });
-    });
-    onMounted(() => {
-        window.addEventListener("resize", listener);
-    });
-    onUnmounted(() => {
-        window.removeEventListener("resize", listener);
-    });
-    return height;
-}
+
