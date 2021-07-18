@@ -20,7 +20,7 @@ Lightweight Markdown Documentation System
 
 预先加载 目录 当中的 `markdwon` 文件到 预加载,来提升加载速度
 
-新版:使用 [`@masx200/webpack-react-vue-spa-awesome-config`](https://www.npmjs.com/package/@masx200/webpack-react-vue-spa-awesome-config) 打包
+新版:使用 [@masx200/webpack-react-vue-spa-awesome-config](https://www.npmjs.com/package/@masx200/webpack-react-vue-spa-awesome-config) 打包
 
 优化界面展示方式,使用 侧边栏 可折叠的导航栏和响应式布局和 cdn 加载依赖包
 
