@@ -171,6 +171,6 @@ a.sidebar-link:not(.active) {
 }
 
 .mysidebar a.active {
-    border-right-width: thick;
-    border-left-width: thick;
+    border-right-width:medium ;
+    border-left-width:medium ;
 }
