@@ -1,0 +1,176 @@
+body,
+html {
+    scroll-behavior: smooth;
+}
+
+code {
+    overflow: auto;
+}
+
+/* #collapsibleNavbar, */
+#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95 {
+    overflow: auto;
+    max-height: 100%;
+}
+
+* {
+    -webkit-user-select: text !important;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text !important;
+}
+
+* {
+    font-family: "Microsoft Yahei", Helvetica, Tahoma, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Heiti SC", "MicrosoftYaHei", "WenQuanYi Micro Hei",
+        sans-serif, Microsoft Yahei, PingFangSC-Regular, arial, verdana,
+        sans-serif !important;
+}
+.mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #007aff;
+}
+a.active {
+    border-style: solid;
+    border-width: medium;
+    border-color: #646cff;
+    font-weight: 600;
+    color: #646cff;
+}
+pre > code {
+    color: #525252 !important;
+}
+table,
+tbody,
+th,
+thead,
+tr,
+td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    padding: 6px 13px;
+}
+
+.anchor {
+    /* float: left; */
+    line-height: 100%;
+    vertical-align: middle;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.5em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1.1em;
+}
+h6 {
+    font-size: 1em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center !important;
+}
+h1 {
+    font-size: 2.4em;
+}
+
+* {
+    transition-property: none !important;
+    transition-duration: 0s !important;
+    transition-timing-function: ease !important;
+    transition-delay: 0s !important;
+}
+.mui-btn,
+.mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 {
+    padding: 5px 5px;
+}
+.Translucent-background {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.anchor-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(./anchor.svg);
+}
+.down-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow down.svg");
+}
+.up-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow up.svg");
+}
+.right-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow right.svg");
+}
+.left-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url("./Arrow left.svg");
+}
+
+.house-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(./House.svg);
+}
+
+.clipboard-icon {
+    background-size: 100% 100%;
+    content: "";
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url(./clipboardcopy.svg);
+}
+.mybigloading {
+    font-size: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: wihte 3px solid;
+    padding: 5px;
+}
+.mysidebar a:not(.active),
+a.sidebar-link:not(.active) {
+    border-left-width: 0;
+    border-right-width: 0;
+}
+
+.mysidebar a.active {
+    border-right-width:medium ;
+    border-left-width:medium ;
+}
