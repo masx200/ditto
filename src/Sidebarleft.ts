@@ -1,10 +1,17 @@
 //@ts-ignore
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, ref, watch } from "@vue/composition-api";
 import { useinnerhehight } from "./useinnerhehight";
 export default defineComponent({
-    setup() {
+    setup(props) {
         const innerheight = useinnerhehight();
-        return { innerheight };
+
+        const sidebar = ref();
+
+        watch(
+            () => sidebar.value,
+            (value) => props.innerref(value)
+        );
+        return { sidebar, innerheight };
     },
     computed: {
         maxheight(): string {
