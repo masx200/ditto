@@ -13,5 +13,5 @@ export default defineComponent({
             return String(innerheight - top.replaceAll("px", "")) + "px";
         },
     },
-    props: ["html", "top"],
+    props: ["html", "top", "innerref"],
 });

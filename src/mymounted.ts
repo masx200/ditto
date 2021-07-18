@@ -11,11 +11,11 @@ import { 挂载初始 } from "./挂载初始.ts";
 export async function mymounted() {
     await 挂载初始();
     await Vue.nextTick();
-    监视侧边栏变化触发事件();
+    await 监视侧边栏变化触发事件();
     var initloadele = document.getElementById(initloadingid);
     initloadele && (initloadele.style.display = "none");
 }
-function 监视侧边栏变化触发事件() {
+async function 监视侧边栏变化触发事件() {
     const mo = new MutationObserver((mutations) => {
         // console.log(mutations);
         Adjustthedistance();
@@ -31,7 +31,7 @@ function 监视侧边栏变化触发事件() {
     try {
         const nodes = [
             appvm.mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
-            appvm.getsidebarele(),
+            await appvm.getsidebarele(),
         ];
         nodes.forEach((n) => {
             mo.observe(n, opts);

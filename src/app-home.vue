@@ -112,7 +112,7 @@
         <Bigloading v-show="showload" />
         <Sidebarleft
             :top="top"
-            ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
+            :innerref="sidebarinnerref"
             :html="muluhtml"
             v-show="xianshicebianlan"
         ></Sidebarleft>

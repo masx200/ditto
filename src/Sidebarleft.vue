@@ -2,7 +2,7 @@
     <aside class="mysidebar" style="position: fixed; left: 0">
         <div class="container-fluid" style="padding: 0">
             <div
-                ref="Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644"
+                :ref="innerref"
                 class="
                     el-container
                     mysidebarone

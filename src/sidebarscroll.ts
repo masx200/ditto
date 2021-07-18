@@ -10,7 +10,7 @@ export async function sidebarscroll() {
 
     try {
         const links = Array.from(
-            appvm.getsidebarele().querySelectorAll("a")
+            (await appvm.getsidebarele()).querySelectorAll("a")
         ) as HTMLAnchorElement[];
         // console.log(links)
         links.forEach((e: HTMLAnchorElement) => {

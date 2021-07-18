@@ -9,9 +9,6 @@ import "./error-alert.ts";
 //@ts-ignore
 import { guid } from "./guid.ts";
 
-//@ts-ignore
-import "./polyfill.NodeList.forEach.ts";
-
 import app from "./app-home.vue";
 ("use strict");
 export const initloadingid = "first-" + guid();

@@ -1,5 +1,5 @@
 //@ts-ignore
-import { defineComponent } from "@vue/composition-api";
+import { defineComponent, reactive, toRefs, watch } from "@vue/composition-api";
 import { Adjustthedistance } from "./Adjustthedistance";
 //@ts-ignore
 import { appvm } from "./appvm.ts";
@@ -22,7 +22,6 @@ import { sidebarscroll } from "./sidebarscroll";
 import { useinnerwidth } from "./useinnerwidth";
 import Vue from "vue";
 export default defineComponent({
-    components: {},
     setup() {
         const mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3 = ref();
         const mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95 = ref();
@@ -41,7 +40,49 @@ export default defineComponent({
         const middlescreen = computed(() => {
             return !largescreen.value;
         });
+
+        const data = reactive({
+            left: "265px",
+            top: "62px",
+            indexhref: getindexhref(),
+            contenthtml: "",
+            muluhtml: "",
+            nextpagelink: disabledalinkhref,
+            prevpagelink: disabledalinkhref,
+            mytitle: getmytitle(),
+            showerror: false,
+            errorcontent: "",
+            showsrc: false,
+            urltext: "",
+            xianshicebianlan: true,
+            showload: true,
+        });
+        async function getsidebarele(): Promise<HTMLElement> {
+            let ele = Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value;
+            if (ele) {
+                return ele;
+            } else {
+                return new Promise((res) => {
+                    let stop = watch(
+                        () =>
+                            Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value,
+                        (value) => {
+                            if (value) {
+                                res(value);
+                                stop();
+                            }
+                        }
+                    );
+                });
+            }
+        }
+        function sidebarinnerref(e: HTMLElement) {
+            alert(e);
+            Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value = e;
+        }
         const allret = {
+            sidebarinnerref,
+            getsidebarele,
             largescreen,
             middlescreen,
             width,
@@ -51,6 +92,7 @@ export default defineComponent({
             mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95,
             mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3,
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644,
+            ...toRefs(data),
         };
         onMounted(() => {
             (async () => {
@@ -94,27 +136,8 @@ export default defineComponent({
             }
         },
     },
-    data: () => ({
-        left: "265px",
-        top: "62px",
-        indexhref: getindexhref(),
-        contenthtml: "",
-        muluhtml: "",
-        nextpagelink: disabledalinkhref,
-        prevpagelink: disabledalinkhref,
-        mytitle: getmytitle(),
-        showerror: false,
-        errorcontent: "",
-        showsrc: false,
-        urltext: "",
-        xianshicebianlan: true,
-        showload: true,
-    }),
+
     methods: {
-        getsidebarele() {
-            return this.Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.$refs
-                .Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644;
-        },
         togglecebian() {
             //@ts-ignore
             this.xianshicebianlan = !this.xianshicebianlan;

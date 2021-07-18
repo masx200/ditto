@@ -9,21 +9,21 @@ import Vue from "vue";
 export const Adjustthedistance = debounce(async () => {
     await Vue.nextTick();
     return new Promise<void>((r) => {
-        requestAnimationFrame(() => {
-            调整主体部分和导航栏的距离();
+        requestAnimationFrame(async () => {
+            await 调整主体部分和导航栏的距离();
 
             r();
         });
     });
 });
 
-function 调整主体部分和导航栏的距离() {
+async function 调整主体部分和导航栏的距离() {
     const appvm = getappvm();
     var height = getnavbarheight();
     appvm.top = height + "px";
 
     try {
-        var width = getsidebarwidth();
+        var width = await getsidebarwidth();
         if (appvm.widescreen) {
             appvm.left = width + "px";
         } else {
@@ -33,8 +33,8 @@ function 调整主体部分和导航栏的距离() {
         console.error(e);
     }
 }
-function getsidebarwidth() {
+async function getsidebarwidth() {
     const appvm = getappvm();
-    var width = appvm.getsidebarele().clientWidth;
+    var width = (await appvm.getsidebarele()).clientWidth;
     return width;
 }

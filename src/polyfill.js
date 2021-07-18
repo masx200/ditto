@@ -6,3 +6,6 @@ if ("production" === process.env.NODE_ENV) {
     }
 }
 import importScripts from "./importscripts.js";
+
+//@ts-ignore
+import "./polyfill.NodeList.forEach.ts";
