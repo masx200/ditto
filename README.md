@@ -20,7 +20,7 @@ Lightweight Markdown Documentation System
 
 预先加载 目录 当中的 `markdwon` 文件到 预加载,来提升加载速度
 
-新版:使用 `@masx200/webpack-react-vue-spa-awesome-config` 打包
+新版:使用 [`@masx200/webpack-react-vue-spa-awesome-config`](https://www.npmjs.com/package/@masx200/webpack-react-vue-spa-awesome-config) 打包
 
 优化界面展示方式,使用 侧边栏 可折叠的导航栏和响应式布局和 cdn 加载依赖包
 
@@ -28,7 +28,7 @@ Lightweight Markdown Documentation System
 
 使用了固定在顶部的导航栏,给导航栏设置最大高度 100%,并自动显示滚动条
 
-添加 md 文件互相引用的处理，添加 md 文件引用图片的处理，
+添加 md 文件互相引用的处理，添加 md 文件引用图片的处理，可以使用相对路径引入图片
 
 根据目录的 md 文件生成侧边栏，
 
@@ -38,7 +38,7 @@ Lightweight Markdown Documentation System
 
 使用`clipboard`给`markdown`中的代码添加复制功能
 
-加载完 markdown 文件后给当前页的链接添加活跃样式
+加载完 `markdown` 文件后给当前页的链接添加活跃样式
 
 给标头元素添加了锚点链接,并且可从`location.hash`中解析要跳转到的元素
 
