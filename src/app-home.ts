@@ -58,10 +58,12 @@ export default defineComponent({
             showload: true,
         });
         async function getsidebarele(): Promise<HTMLElement> {
+            //子组件可能还没挂载完成
             let ele = Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value;
             if (ele) {
                 return ele;
             } else {
+                console.time("子组件挂载");
                 return new Promise((res) => {
                     let stop = watch(
                         () =>
@@ -70,6 +72,7 @@ export default defineComponent({
                             if (value) {
                                 res(value);
                                 stop();
+                                console.timeEnd("子组件挂载");
                             }
                         }
                     );
