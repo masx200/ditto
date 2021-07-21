@@ -162,7 +162,7 @@ function addsubheaders(tmpcontainer: HTMLElement, path: string) {
             const { href, tag, text } = o;
             return `<a href="${href}" class="subheader${tag}">${text}</a>`;
         })
-        .join("\n");
+        .join("<br/>\n");
     console.log(subheaderhtml);
 
     cachesubheaders.set(path, subheaderhtml);
