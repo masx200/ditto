@@ -14,6 +14,7 @@ import { routerpagegethandler } from "./routerpageget.ts";
 import { 窄屏隐藏侧边栏 } from "./窄屏隐藏侧边栏.ts";
 //@ts-ignore
 import { sidebarscroll } from "./sidebarscroll.ts";
+import { setsidebarrighthtml } from "./setsidebarrighthtml";
 eventtarget.addEventListener("load", loaddone);
 eventtarget.addEventListener("load", () => {
     Adjustthedistance();
@@ -53,3 +54,4 @@ eventtarget.addEventListener(
 eventtarget.addEventListener("load", () => {
     窄屏隐藏侧边栏();
 });
+eventtarget.addEventListener("load", setsidebarrighthtml);

@@ -174,3 +174,10 @@ a.sidebar-link:not(.active) {
     border-right-width: medium;
     border-left-width: medium;
 }
+.sidebar-sub-header {
+    padding: 5px 5px;
+    border: 1px solid #007aff;
+    display: inline-block;
+    border-radius: 3px;
+    overflow: auto;
+}

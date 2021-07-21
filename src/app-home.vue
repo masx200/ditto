@@ -116,6 +116,11 @@
             :html="muluhtml"
             v-show="xianshicebianlan"
         ></Sidebarleft>
+        <Sidebarright
+            :top="top"
+            :html="sidebarrighthtml"
+            v-show="xianshicebianlan"
+        ></Sidebarright>
     </div>
 </template>
 <style scoped>

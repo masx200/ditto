@@ -4,7 +4,7 @@ import { onMounted, ref } from "./compositionvue.ts";
 //@ts-ignore
 import { debounce } from "./debounce.ts";
 
-export function useinnerwidth() {
+export function useinnerwidth(): { value: number } {
     const width = ref(window.innerWidth);
     const listener = debounce(() => {
         requestAnimationFrame(() => {

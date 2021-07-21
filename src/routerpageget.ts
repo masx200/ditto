@@ -139,9 +139,11 @@ function addsubheaders(tmpcontainer: HTMLElement, path: string) {
     }
     const headerselectors = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
-    const headereles: HTMLElement[] = headerselectors
-        .map((t) => Array.from(tmpcontainer.querySelectorAll(t)))
-        .flat() as HTMLElement[];
+    const headereles: HTMLElement[] = Array.from(
+        tmpcontainer.querySelectorAll("*")
+    ).filter((e) =>
+        headerselectors.includes(e.tagName.toLowerCase())
+    ) as HTMLElement[];
     const subheaders = headereles.map((e) => {
         // console.log(router.getparams());
         // console.log(e);
@@ -153,20 +155,20 @@ function addsubheaders(tmpcontainer: HTMLElement, path: string) {
         const text = e.innerText;
         return { tag, text, href };
     });
-    console.log(subheaders);
+    // console.log(subheaders);
     if (subheaders.length === 0) {
         return;
     }
     const subheaderhtml = subheaders
         .map((o) => {
             const { href, tag, text } = o;
-            return `<a href="${href}" class="subheader${tag}">${text}</a>`;
+            return `<a href="${href}" class="sidebar-sub-header subheader${tag}">${text}</a>`;
         })
         .join("<br/>\n");
-    console.log(subheaderhtml);
+    // console.log(subheaderhtml);
 
     cachesubheaders.set(path, subheaderhtml);
-    console.log(cachesubheaders);
+    // console.log(cachesubheaders);
 }
 
 function changelinkmd(tmpcontainer: HTMLElement, path: string) {

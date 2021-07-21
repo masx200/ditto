@@ -35,8 +35,8 @@ async function loadclipboard() {
     });
 }
 
-start();
-
 Object.entries(components).forEach(([key, value]) => {
     Vue.component(key, value);
 });
+
+start();

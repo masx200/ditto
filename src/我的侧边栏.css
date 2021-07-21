@@ -4,7 +4,7 @@
 @media (max-width: 550px) {
     /* 宽度小 */
 
-    #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
+    .mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
         width: 100%;
     }
 
@@ -27,7 +27,7 @@
         max-height: 100%;
     }
 }
-#mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
+.mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
     overflow: auto;
 }
 
@@ -41,14 +41,14 @@
 @media (min-width: 550px) {
     /*宽度 大 */
 
-    #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
+    .mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
         width: fit-content;
     }
 }
 @media (min-width: 992px) {
     /*宽度 大 */
 
-    #mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
+    .mynewsidelan-c887e2d697f11af869981691c9830ebd892 {
         width: fit-content;
     }
 }

@@ -16,8 +16,10 @@
             >
                 <div
                     v-html="html"
-                    id="mynewsidelan-c887e2d697f11af869981691c9830ebd892"
-                    class="el-aside"
+                    class="
+                        el-aside
+                        mynewsidelan-c887e2d697f11af869981691c9830ebd892
+                    "
                     style="margin-bottom: 5px; background-color: white"
                 ></div>
             </div>

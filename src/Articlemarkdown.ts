@@ -25,6 +25,9 @@ export default defineComponent({
         async html(value) {
             await Vue.nextTick();
             requestAnimationFrame(() => {
+                if (!this.container) {
+                    return;
+                }
                 const eles = Array.from(
                     this.container.getElementsByClassName("scrollIntoView")
                 ) as HTMLElement[];

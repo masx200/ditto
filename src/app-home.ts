@@ -42,6 +42,7 @@ export default defineComponent({
         });
 
         const data = reactive({
+            sidebarrighthtml: "",
             left: "265px",
             top: "62px",
             indexhref: getindexhref(),
