@@ -4,7 +4,7 @@ import { Adjustthedistance } from "./Adjustthedistance";
 //@ts-ignore
 import { appvm } from "./appvm.ts";
 //@ts-ignore
-import { computed, onMounted, ref } from "./compositionvue.ts";
+import { computed, onMounted, ref } from "@vue/composition-api";
 //@ts-ignore
 import config from "./config.ts";
 //@ts-ignore
