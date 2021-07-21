@@ -134,6 +134,9 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
 }
 
 function addsubheaders(tmpcontainer: HTMLElement, path: string) {
+    if (cachesubheaders.get(path)) {
+        return;
+    }
     const headerselectors = ["h1", "h2", "h3", "h4", "h5", "h6"];
 
     const headereles: HTMLElement[] = headerselectors
@@ -151,7 +154,9 @@ function addsubheaders(tmpcontainer: HTMLElement, path: string) {
         return { tag, text, href };
     });
     console.log(subheaders);
-
+    if (subheaders.length === 0) {
+        return;
+    }
     const subheaderhtml = subheaders
         .map((o) => {
             const { href, tag, text } = o;
@@ -159,6 +164,7 @@ function addsubheaders(tmpcontainer: HTMLElement, path: string) {
         })
         .join("\n");
     console.log(subheaderhtml);
+
     cachesubheaders.set(path, subheaderhtml);
     console.log(cachesubheaders);
 }
