@@ -32,7 +32,7 @@
         "@masx200/event-emitter-target": "^1.1.9",
         "@masx200/ie11-usual-polyfills": "^1.0.4",
         "@masx200/search-hash-params-router": "^1.4.0",
-        "@masx200/webpack-react-vue-spa-awesome-config": "3.4.2",
+        "@masx200/webpack-react-vue-spa-awesome-config": "^3.4.3",
         "@types/lodash": "^4.14.171",
         "@types/marked": "^2.0.4",
         "@vue/composition-api": "^1.0.3",
