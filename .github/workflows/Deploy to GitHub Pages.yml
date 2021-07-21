@@ -27,7 +27,7 @@ jobs:
             - run: pnpm install
             - run: npm run build
             - run: cp *.md ./dist/ -v
-            - run: cp docs ./dist/ -v
+            - run: cp docs ./dist/ -vr
             - name: Deploy to GitHub Pages
               uses: JamesIves/github-pages-deploy-action@4.1.4
               with:
