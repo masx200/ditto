@@ -80,7 +80,7 @@ export default defineComponent({
             }
         }
         function sidebarinnerref(e: HTMLElement) {
-            console.log(e);
+            // console.log(e);
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value = e;
         }
         const allret = {

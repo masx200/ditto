@@ -13,11 +13,7 @@ import { contenthtml } from "./contenthtml.ts";
 //@ts-ignore
 import { debounce } from "./debounce.ts";
 //@ts-ignore
-import {
-    show_loading,
-    stop_loading,
-    //@ts-ignore
-} from "./ditto.ts"; //@ts-ignore
+import { show_loading, stop_loading } from "./ditto"; //@ts-ignore
 //@ts-ignore
 import { eventtarget } from "./eventtarget.ts"; //@ts-ignore
 import fetchajaxgettext from "./fetchajaxgettext.ts";
@@ -34,7 +30,7 @@ import { states } from "./states";
 import { urlclearhash } from "./urlclearhash.ts";
 //@ts-ignore
 
-const { cachemarkdown, cachetitle } = states;
+const { cachemarkdown, cachetitle, cachesubheaders } = states;
 export const routerpagegethandler = debounce(async () => {
     // console.log("loading", location.hash);
     await loadpage();
@@ -76,7 +72,7 @@ async function loadpage() {
 
                 changelinkmd(tmpcontainer, path);
                 resolvetitlesave(tmpcontainer, path);
-
+                addsubheaders(tmpcontainer, path);
                 headeraddanchor(tmpcontainer, path);
                 //console.log(tmpcontainer);
                 const currentmdhtml = tmpcontainer.innerHTML;
@@ -137,6 +133,36 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
     });
 }
 
+function addsubheaders(tmpcontainer: HTMLElement, path: string) {
+    const headerselectors = ["h1", "h2", "h3", "h4", "h5", "h6"];
+
+    const headereles: HTMLElement[] = headerselectors
+        .map((t) => Array.from(tmpcontainer.querySelectorAll(t)))
+        .flat() as HTMLElement[];
+    const subheaders = headereles.map((e) => {
+        // console.log(router.getparams());
+        // console.log(e);
+        const id = e.id;
+        const href = router.paramshref({ md: path, id });
+        // e.insertAdjacentHTML(
+        //     "afterbegin",
+        const tag = e.tagName;
+        const text = e.innerText;
+        return { tag, text, href };
+    });
+    console.log(subheaders);
+
+    const subheaderhtml = subheaders
+        .map((o) => {
+            const { href, tag, text } = o;
+            return `<a href="${href}" class="subheader${tag}">${text}</a>`;
+        })
+        .join("\n");
+    console.log(subheaderhtml);
+    cachesubheaders.set(path, subheaderhtml);
+    console.log(cachesubheaders);
+}
+
 function changelinkmd(tmpcontainer: HTMLElement, path: string) {
     const links: HTMLAnchorElement[] = Array.from(
         tmpcontainer.querySelectorAll("a")
@@ -192,10 +218,7 @@ function handlecodecopy(tmpcontainer: HTMLElement) {
         e.insertAdjacentHTML(
             "afterend",
             `<button class="btn btn-outline-primary mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 clipbutton position-absolute right-0 top-0" data-clipboard-target="#${codecontenguid}">
-
-
 <span class="clipboard-icon"></span>
-
                                         </button>`
         );
     });
