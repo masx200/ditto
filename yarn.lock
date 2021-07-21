@@ -921,7 +921,7 @@
     "@babel/helper-create-regexp-features-plugin" "^7.14.5"
     "@babel/helper-plugin-utils" "^7.14.5"
 
-"@babel/preset-env@7.12.1":
+"@babel/preset-env@7.12.1", "@babel/preset-env@npm:@babel/preset-env@7.12.1":
   version "7.12.1"
   resolved "https://registry.nlark.com/@babel/preset-env/download/@babel/preset-env-7.12.1.tgz?cache=0&sync_timestamp=1626804302510&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fpreset-env%2Fdownload%2F%40babel%2Fpreset-env-7.12.1.tgz#9c7e5ca82a19efc865384bb4989148d2ee5d7ac2"
   integrity sha1-nH5cqCoZ78hlOEu0mJFI0u5desI=
@@ -993,7 +993,7 @@
     core-js-compat "^3.6.2"
     semver "^5.5.0"
 
-"@babel/preset-env@^7.11.0", "@babel/preset-env@^7.14.7":
+"@babel/preset-env@^7.11.0":
   version "7.14.8"
   resolved "https://registry.nlark.com/@babel/preset-env/download/@babel/preset-env-7.14.8.tgz?cache=0&sync_timestamp=1626804302510&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fpreset-env%2Fdownload%2F%40babel%2Fpreset-env-7.14.8.tgz#254942f5ca80ccabcfbb2a9f524c74bca574005b"
   integrity sha1-JUlC9cqAzKvPuyqfUkx0vKV0AFs=
@@ -1125,14 +1125,14 @@
     "@babel/helper-validator-option" "^7.14.5"
     "@babel/plugin-transform-typescript" "^7.14.5"
 
-"@babel/runtime@7.12.1":
+"@babel/runtime@7.12.1", "@babel/runtime@npm:@babel/runtime@7.12.1":
   version "7.12.1"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.12.1.tgz#b4116a6b6711d010b2dad3b7b6e43bf1b9954740"
   integrity sha1-tBFqa2cR0BCy2tO3tuQ78bmVR0A=
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.11.2", "@babel/runtime@^7.14.0", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.11.2", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.14.8"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.8.tgz#7119a56f421018852694290b9f9148097391b446"
   integrity sha1-cRmlb0IQGIUmlCkLn5FICXORtEY=
@@ -1244,20 +1244,20 @@
   resolved "https://registry.nlark.com/@masx200/search-hash-params-router/download/@masx200/search-hash-params-router-1.4.0.tgz#bb15ed734bc73ea061ad86b4487dada7752a6f44"
   integrity sha1-uxXtc0vHPqBhrYa0SH2tp3Uqb0Q=
 
-"@masx200/webpack-react-vue-spa-awesome-config@^3.4.3":
-  version "3.4.3"
-  resolved "https://registry.nlark.com/@masx200/webpack-react-vue-spa-awesome-config/download/@masx200/webpack-react-vue-spa-awesome-config-3.4.3.tgz#9e4d58c3848b80373f72c9f7bcbcec790e005a8a"
-  integrity sha1-nk1Yw4SLgDc/csn3vLzseQ4AWoo=
+"@masx200/webpack-react-vue-spa-awesome-config@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.nlark.com/@masx200/webpack-react-vue-spa-awesome-config/download/@masx200/webpack-react-vue-spa-awesome-config-3.5.0.tgz#a590f885c7acdb35b0b9f345755c7600555fc4e6"
+  integrity sha1-pZD4hces2zWwufNFdVx2AFVfxOY=
   dependencies:
     "@babel/core" "^7.14.6"
     "@babel/plugin-proposal-class-properties" "^7.14.5"
     "@babel/plugin-proposal-decorators" "^7.14.5"
     "@babel/plugin-proposal-private-methods" "^7.14.5"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
-    "@babel/preset-env" "^7.14.7"
+    "@babel/preset-env" "npm:@babel/preset-env@7.12.1"
     "@babel/preset-react" "^7.13.13"
     "@babel/preset-typescript" "^7.14.5"
-    "@babel/runtime" "^7.14.0"
+    "@babel/runtime" "npm:@babel/runtime@7.12.1"
     "@next/react-refresh-utils" "^11.0.1"
     "@types/html-webpack-plugin" "^3.2.5"
     "@types/mini-css-extract-plugin" "^1.4.3"
