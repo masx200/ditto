@@ -7,10 +7,12 @@ specifiers:
   '@masx200/ie11-usual-polyfills': ^1.0.4
   '@masx200/search-hash-params-router': ^1.4.0
   '@masx200/webpack-react-vue-spa-awesome-config': ^3.5.0
+  '@types/escape-html': ^1.0.1
   '@types/lodash': ^4.14.171
   '@types/marked': ^2.0.4
   '@vue/composition-api': ^1.0.3
   clipboard: ^2.0.8
+  escape-html: ^1.0.3
   fs-extra: ^10.0.0
   highlight.js: ^11.1.0
   lodash: ^4.17.21
@@ -31,10 +33,12 @@ dependencies:
   '@masx200/ie11-usual-polyfills': 1.0.4
   '@masx200/search-hash-params-router': 1.4.0_ffa7f42f000b52c913a8ab5dcdf6c1bd
   '@masx200/webpack-react-vue-spa-awesome-config': 3.5.0_typescript@4.3.5+vue@2.6.14
+  '@types/escape-html': 1.0.1
   '@types/lodash': 4.14.171
   '@types/marked': 2.0.4
   '@vue/composition-api': 1.0.3_vue@2.6.14
   clipboard: 2.0.8
+  escape-html: 1.0.3
   fs-extra: 10.0.0
   highlight.js: 11.1.0
   lodash: 4.17.21
@@ -2491,6 +2495,10 @@ packages:
     dependencies:
       '@types/node': 15.14.2
       source-map: 0.6.1
+    dev: false
+
+  /@types/escape-html/1.0.1:
+    resolution: {integrity: sha512-4mI1FuUUZiuT95fSVqvZxp/ssQK9zsa86S43h9x3zPOSU9BBJ+BfDkXwuaU7BfsD+e7U0/cUUfJFk3iW2M4okA==}
     dev: false
 
   /@types/eslint-scope/3.7.1:

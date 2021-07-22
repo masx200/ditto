@@ -119,7 +119,7 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
 
     const headereles = headerselectors
         .map((t) => Array.from(tmpcontainer.querySelectorAll(t)))
-        .flat();
+        .flat() as HTMLElement[];;
     headereles.forEach((e) => {
         // console.log(router.getparams());
         // console.log(e);
@@ -127,8 +127,10 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
         const href = router.paramshref({ md: path, id });
         // e.insertAdjacentHTML(
         //     "afterbegin",
-        var oldhtml = e.innerHTML;
-        e.innerHTML = `<a class='anchor scrollIntoView' href=${href}><span class='anchor-icon'></span>${oldhtml}</a>`;
+        var oldhtml = e.innerText;
+        e.innerHTML = `<a class='anchor scrollIntoView' href=${href}><span class='anchor-icon'></span>${escapeHtml(
+            oldhtml
+        )}</a>`;
         // );
     });
 }
@@ -162,7 +164,9 @@ function addsubheaders(tmpcontainer: HTMLElement, path: string) {
     const subheaderhtml = subheaders
         .map((o) => {
             const { href, tag, text } = o;
-            return `<a href="${href}" class="sidebar-sub-header subheader${tag}">${text}</a>`;
+            return `<a href="${href}" class="sidebar-sub-header subheader${tag}">${escapeHtml(
+                text
+            )}</a>`;
         })
         .join("<br/>\n");
     // console.log(subheaderhtml);
@@ -231,3 +235,5 @@ function handlecodecopy(tmpcontainer: HTMLElement) {
         );
     });
 }
+
+import escapeHtml from "escape-html";
