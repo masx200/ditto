@@ -31,7 +31,7 @@
 
 <style scoped>
 .mysidebarone {
-    max-width: 450px;
+    max-width: 400px;
     padding-bottom: 5px;
     border: 1px solid white;
     position: fixed;

@@ -38,8 +38,9 @@ export default defineComponent({
             attributes: true,
         };
         watch(
-            () => sidebarright.value,
-            (sidebarele) => {
+            [() => sidebarright.value, () => innerwidth.value],
+            ([sidebarele, innerwidth]) => {
+                console.log(sidebarele, innerwidth);
                 if (sidebarele) {
                     // console.log(sidebarele);
                     var eleclientwidth = sidebarele.clientWidth;
@@ -56,7 +57,7 @@ export default defineComponent({
             [() => clientwidth.value, () => innerwidth.value],
             ([clientwidth, innerwidth]) => {
                 if (clientwidth) {
-                    // console.log(clientwidth, innerwidth);
+                    console.log(clientwidth, innerwidth);
 
                     if (!clientwidth) {
                         return;

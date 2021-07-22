@@ -21,6 +21,7 @@ import { scrolltotop } from "./scrolltotop.ts";
 import { sidebarscroll } from "./sidebarscroll";
 import { useinnerwidth } from "./useinnerwidth";
 import Vue from "vue";
+import { scrolltoactiveelements } from "./scrolltoactiveelements";
 export default defineComponent({
     setup() {
         const mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3 = ref();
@@ -57,7 +58,24 @@ export default defineComponent({
             urltext: "",
             xianshicebianlan: true,
             showload: true,
+            showsidebarright: true,
         });
+        watch(
+            () => data.showsidebarright,
+            (showsidebarright) => {
+                if (showsidebarright) {
+                    scrolltoactiveelements();
+                }
+            }
+        );
+        watch(
+            () => data.xianshicebianlan,
+            (xianshicebianlan) => {
+                if (xianshicebianlan) {
+                    scrolltoactiveelements();
+                }
+            }
+        );
         async function getsidebarele(): Promise<HTMLElement> {
             //子组件可能还没挂载完成
             let ele = Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value;
@@ -85,6 +103,13 @@ export default defineComponent({
             Mysidebar_c41e47b3b3bbc85fdbb7dbba7d3a0743644.value = e;
         }
         const allret = {
+            togglesidebarright() {
+                data.showsidebarright = !data.showsidebarright;
+            },
+            togglecebian() {
+                //@ts-ignore
+                data.xianshicebianlan = !data.xianshicebianlan;
+            },
             sidebarinnerref,
             getsidebarele,
             largescreen,
@@ -137,15 +162,12 @@ export default defineComponent({
             await Vue.nextTick();
             if (value) {
                 this.xianshicebianlan = true;
+                this.showsidebarright = true;
             }
         },
     },
 
     methods: {
-        togglecebian() {
-            //@ts-ignore
-            this.xianshicebianlan = !this.xianshicebianlan;
-        },
         scrolltotop,
         scrolltobottom,
     },

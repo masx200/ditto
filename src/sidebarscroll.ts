@@ -1,6 +1,7 @@
 import Vue from "vue";
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
+import { scrolltoelement } from "./scrolltoelement";
 
 export async function sidebarscroll() {
     const appvm = getappvm();
@@ -32,14 +33,4 @@ export async function sidebarscroll() {
     } catch (e) {
         console.error(e);
     }
-}
-
-export function scrolltoelement(e: Element) {
-    // console.log(e.offsetTop);
-    e.scrollIntoView({
-        behavior: "smooth",
-
-        inline: "center",
-        block: "center",
-    });
 }

@@ -6,7 +6,7 @@ import { router } from "./hashrouter.ts";
 import { states } from "./states.ts";
 export { anchorscroll };
 
-import { scrolltoelement } from "./sidebarscroll";
+import { scrolltoelement } from "./scrolltoelement";
 function anchorscroll() {
     const params = router.getparams();
 

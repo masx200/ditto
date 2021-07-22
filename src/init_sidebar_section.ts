@@ -47,7 +47,7 @@ export async function init_sidebar_section() {
         //删除当中的style标签和link标签和script标签
         removesomevalidelements(tmpcontainer);
         //@ts-ignore
-        const hljs = (await import("./highlight.min.ts")).default;
+        const hljs = (await import("./highlight.min.js")).default;
         Array.from(tmpcontainer.querySelectorAll("pre code")).forEach(function (
             block: Element
         ) {

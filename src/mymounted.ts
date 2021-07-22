@@ -13,7 +13,10 @@ export async function mymounted() {
     await Vue.nextTick();
     await 监视侧边栏变化触发事件();
     var initloadele = document.getElementById(initloadingid);
-    initloadele && (initloadele.style.display = "none");
+    if (initloadele) {
+        initloadele.style.display = "none";
+        initloadele?.remove();
+    }
 }
 async function 监视侧边栏变化触发事件() {
     const mo = new MutationObserver((mutations) => {

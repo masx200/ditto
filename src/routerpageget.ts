@@ -4,6 +4,7 @@
 //@ts-ignore
 // import anchorimg from "./anchor.svg";
 //@ts-ignore
+import escapeHtml from "escape-html";
 import Vue from "vue";
 //@ts-ignore
 import { getappvm } from "./appvm.ts"; //@ts-ignore
@@ -119,7 +120,7 @@ function headeraddanchor(tmpcontainer: HTMLElement, path: string) {
 
     const headereles = headerselectors
         .map((t) => Array.from(tmpcontainer.querySelectorAll(t)))
-        .flat() as HTMLElement[];;
+        .flat() as HTMLElement[];
     headereles.forEach((e) => {
         // console.log(router.getparams());
         // console.log(e);
@@ -235,5 +236,3 @@ function handlecodecopy(tmpcontainer: HTMLElement) {
         );
     });
 }
-
-import escapeHtml from "escape-html";

@@ -4,8 +4,11 @@
         <header>
             <div
                 ref="mynavigationbar_dceff036a563faf668b4d4a50fd702d1d95"
-                id="mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95"
-                class="container-fluid fixed-top"
+                class="
+                    container-fluid
+                    fixed-top
+                    mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95
+                "
                 style="padding-right: 0; padding-left: 0"
             >
                 <nav
@@ -16,8 +19,7 @@
                     style="padding-right: 0; padding-left: 0"
                 >
                     <div
-                        class="mynavbar"
-                        id="nav-3fa9878ebc0dbb05688f058e3bcafc57386"
+                        class="mynavbar nav-3fa9878ebc0dbb05688f058e3bcafc57386"
                         style=""
                     >
                         <Toggledisplayofsidebar
@@ -71,35 +73,42 @@
                                 <span class="right-icon" />
                             </div>
                         </Disableablelinks>
+                        <Toggledisplayofsidebar
+                            v-show="middlescreen"
+                            :onclick="togglesidebarright"
+                        ></Toggledisplayofsidebar>
                     </div>
                 </nav>
             </div>
         </header>
         <div
-            class="mybodycontainer"
+            class="mybodycontainer mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3"
             :style="{
                 'margin-top': this.top,
             }"
             ref="mybody_143af32b9b8f396b798aeb8d4ee68ed9ca3"
-            id="mybody-143af32b9b8f396b798aeb8d4ee68ed9ca3"
         >
             <main :style="{ 'margin-left': this.left }">
                 <div class="container" style="padding-left: 20px">
                     <div>
                         <div
                             ref="contentcontainer_9ce8d13b9be97b46e89aeea8f242169cfa1"
-                            id="contentcontainer-9ce8d13b9be97b46e89aeea8f242169cfa1"
+                            class="
+                                contentcontainer-9ce8d13b9be97b46e89aeea8f242169cfa1
+                            "
                             style="margin-left: auto"
                         >
                             <h5
-                                class
-                                id="markdownurlsrc-63228f01b0737ac6a8b1c08af92dec0eb11"
+                                class="
+                                    markdownurlsrc-63228f01b0737ac6a8b1c08af92dec0eb11
+                                "
                                 v-text="urltext"
                                 v-show="showsrc"
                             ></h5>
                             <h5
-                                class
-                                id="markdownerror-4c6b19f7b26c2b519b8ff480769b5565d6b"
+                                class="
+                                    markdownerror-4c6b19f7b26c2b519b8ff480769b5565d6b
+                                "
                                 v-show="showerror"
                                 v-text="errorcontent"
                             ></h5>
@@ -119,7 +128,7 @@
         <Sidebarright
             :top="top"
             :html="sidebarrighthtml"
-            v-show="xianshicebianlan"
+            v-show="showsidebarright"
         ></Sidebarright>
     </div>
 </template>

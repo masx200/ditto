@@ -1,6 +1,6 @@
 import { defineComponent, ref } from "@vue/composition-api";
 import Vue from "vue";
-import { scrolltoelement } from "./sidebarscroll";
+import { scrolltoelement } from "./scrolltoelement";
 function onclick(e: MouseEvent) {
     const ele = e.target;
     if (!ele) {

@@ -6,7 +6,7 @@ specifiers:
   '@masx200/event-emitter-target': ^1.1.9
   '@masx200/ie11-usual-polyfills': ^1.0.4
   '@masx200/search-hash-params-router': ^1.4.0
-  '@masx200/webpack-react-vue-spa-awesome-config': ^3.5.0
+  '@masx200/webpack-react-vue-spa-awesome-config': ^3.5.1
   '@types/escape-html': ^1.0.1
   '@types/lodash': ^4.14.171
   '@types/marked': ^2.0.4
@@ -32,7 +32,7 @@ dependencies:
   '@masx200/event-emitter-target': 1.1.9
   '@masx200/ie11-usual-polyfills': 1.0.4
   '@masx200/search-hash-params-router': 1.4.0_ffa7f42f000b52c913a8ab5dcdf6c1bd
-  '@masx200/webpack-react-vue-spa-awesome-config': 3.5.0_typescript@4.3.5+vue@2.6.14
+  '@masx200/webpack-react-vue-spa-awesome-config': 3.5.1_typescript@4.3.5+vue@2.6.14
   '@types/escape-html': 1.0.1
   '@types/lodash': 4.14.171
   '@types/marked': 2.0.4
@@ -2303,8 +2303,8 @@ packages:
       '@masx200/event-emitter-target': 1.1.9
     dev: false
 
-  /@masx200/webpack-react-vue-spa-awesome-config/3.5.0_typescript@4.3.5+vue@2.6.14:
-    resolution: {integrity: sha512-ZYxuNCdWeMDoZziXOKN+RkSUISMR4GxaKrCXgiRBTwRE2Mq+yq1E9uZqNVDJljcQFoG+DjBBfN4S79IujHVW8A==}
+  /@masx200/webpack-react-vue-spa-awesome-config/3.5.1_typescript@4.3.5+vue@2.6.14:
+    resolution: {integrity: sha512-lCFV4zMhrGml4cPmB9zx5biJ344dgatrF1P70vs9QMRiZFLl/R7x6pjp30vgU7gH7zsWDPJuXhtH1LKqtCE3gA==}
     hasBin: true
     peerDependencies:
       react: 17.0.2
@@ -8071,7 +8071,7 @@ packages:
   /querystring/0.2.0:
     resolution: {integrity: sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=}
     engines: {node: '>=0.4.x'}
-    deprecated: The
+    deprecated: The querystring API is considered Legacy. new code should use the URLSearchParams API instead.
     dev: false
 
   /querystringify/2.2.0:

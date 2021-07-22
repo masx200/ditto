@@ -12,7 +12,7 @@ export async function compile_into_dom(data: string, mdurl: string) {
     tmpdoc.body.innerHTML = data;
     changeimgsrc(tmpdoc, mdurl);
     //@ts-ignore
-    const hljs = (await import("./highlight.min.ts")).default;
+    const hljs = (await import("./highlight.min.js")).default;
     Array.from(tmpdoc.body.querySelectorAll("pre code")).forEach(function (
         block: Element
     ) {

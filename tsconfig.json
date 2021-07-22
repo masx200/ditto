@@ -1,5 +1,5 @@
 {
-    "include": ["*.ts", "src/*.ts"],
+    "include": ["*.ts", "src/*.ts", "src/highlight.min.js"],
     "compilerOptions": {
         "lib": [
             "es5",
@@ -61,8 +61,7 @@
             "esnext.promise",
             "esnext.weakref"
         ],
-        "sourceMap": false,
-        "inlineSourceMap": false,
+        "sourceMap": true,
         "pretty": true,
         "removeComments": true,
         "moduleResolution": "node",

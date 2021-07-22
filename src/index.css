@@ -8,7 +8,7 @@ code {
 }
 
 /* #collapsibleNavbar, */
-#mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95 {
+.mynavigationbar-dceff036a563faf668b4d4a50fd702d1d95 {
     overflow: auto;
     max-height: 100%;
 }
@@ -180,4 +180,33 @@ a.sidebar-link:not(.active) {
     display: inline-block;
     border-radius: 3px;
     /* overflow: auto;*/
+}
+.sidebar-sub-header.active {
+    border-right-width: medium;
+    border-left-width: medium;
+}
+.sidebar-sub-header:not(.active) {
+    border-right-width: 0;
+    border-left-width: 0;
+}
+.subheaderH1 {
+    margin-left: 0;
+}
+.subheaderH2 {
+    margin-left: 1em;
+}
+.subheaderH3 {
+    margin-left: 2em;
+}
+.subheaderH4 {
+    margin-left: 3em;
+}
+.subheaderH5 {
+    margin-left: 4em;
+}
+.subheaderH6 {
+    margin-left: 5em;
+}
+.mybutton-8731e6c5bb5148e49e14cca7cdfa73e8 {
+    white-space: normal;
 }

@@ -9,5 +9,6 @@ export const 窄屏隐藏侧边栏 = debounce(() => {
     const appvm = getappvm();
     if (window.innerWidth < 550) {
         Reflect.set(appvm, "xianshicebianlan", false);
+        Reflect.set(appvm, "showsidebarright", false);
     }
 });
